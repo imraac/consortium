@@ -1,5 +1,5 @@
-
-import 'react';
+import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Consortium.css'; // Import your CSS styles
 
 const Consortium = () => {
@@ -67,21 +67,22 @@ const Consortium = () => {
 
         {/* Registration buttons and links */}
         <div style={{ marginTop: '20px' }}>
-          <button
-            style={{
-              backgroundColor: '#D15D51',
-              color: '#fff',
-              border: 'none',
-              padding: '10px 20px',
-              borderRadius: '1px',
-              cursor: 'pointer',
-              fontSize: '16px',
-              marginRight: '10px',
-            }}
-            onClick={() => window.location.href = '/registration'} 
-          >
-            Begin Registration
-          </button>
+          <Link to="/registration">
+            <button
+              style={{
+                backgroundColor: '#D15D51',
+                color: '#fff',
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '1px',
+                cursor: 'pointer',
+                fontSize: '16px',
+                marginRight: '10px',
+              }}
+            >
+              Begin Registration
+            </button>
+          </Link>
           <a href="/import-registration" style={{ marginRight: '10px', color: '#007BFF', textDecoration: 'none' }}>
             Import a saved registration
           </a>
@@ -93,68 +94,68 @@ const Consortium = () => {
 
       {/* Sleek Container */}
       <div className="sleek-container">
-          <h2>Why Join Us?</h2>
-          <p>
-            Formed in 1999, we bring together local and international NGOs working in Somalia in order to:
-          </p>
-          <ul>
-            <li>Share information and analysis on key issues</li>
-            <li>Facilitate closer coordination and joint advocacy</li>
-            <li>Improve representation with stakeholders including local authorities, the UN system, and donors</li>
-          </ul>
-          <p>
-            Together, we can share resources, knowledge, and experiences that will help us all succeed in our missions.
-            Join us in making a difference today!
-          </p>
+        <h2>Why Join Us?</h2>
+        <p>
+          Formed in 1999, we bring together local and international NGOs working in Somalia in order to:
+        </p>
+        <ul>
+          <li>Share information and analysis on key issues</li>
+          <li>Facilitate closer coordination and joint advocacy</li>
+          <li>Improve representation with stakeholders including local authorities, the UN system, and donors</li>
+        </ul>
+        <p>
+          Together, we can share resources, knowledge, and experiences that will help us all succeed in our missions.
+          Join us in making a difference today!
+        </p>
 
-          {/* Image placeholder */}
+        {/* Image placeholder */}
+        <div>
+          <img 
+            src="/motherchild.jpg"
+            alt="Consortium" 
+            style={{ width: '100%', height: 'auto', borderRadius: '1px' }} 
+          />
+        </div>
+
+        {/* Action buttons */}
+        <div style={{ marginTop: '20px' }}>
+          <button
+            style={{
+              backgroundColor: '#F79647',
+              color: '#fff',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '16px',
+              marginRight: '10px',
+              marginBottom: '20px',
+            }}
+          >
+            Become a Member
+          </button>
           <div>
             <img 
               src="/motherchild.jpg"
               alt="Consortium" 
-              style={{ width: '100%', height: 'auto', borderRadius: '1px' }} 
+              style={{ width: '100%', height: 'auto', borderRadius: '1px', marginBottom: "20px" }} 
             />
           </div>
-
-          {/* Action buttons */}
-          <div style={{ marginTop: '20px' }}>
-            <button
-              style={{
-                backgroundColor: '#F79647',
-                color: '#fff',
-                border: 'none',
-                padding: '10px 20px',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                fontSize: '16px',
-                marginRight: '10px',
-                marginBottom: '20px',
-              }}
-            >
-              Become a Member
-            </button>
-            <div>
-            <img 
-              src="/motherchild.jpg"
-              alt="Consortium" 
-              style={{ width: '100%', height: 'auto', borderRadius: '1px' , marginBottom: "20px"}} 
-            />
-          </div>
-            <button
-              style={{
-                backgroundColor: '#F79647',
-                color: '#fff',
-                border: 'none',
-                padding: '10px 20px',
-                borderRadius: '1px',
-                cursor: 'pointer',
-                fontSize: '16px',
-              }}
-            >
-              Join the Consortium
-            </button>
-          </div>
+          <button
+            style={{
+              backgroundColor: '#F79647',
+              color: '#fff',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '1px',
+              cursor: 'pointer',
+              fontSize: '16px',
+            }}
+          >
+            Join the Consortium
+          </button>
         </div>
+      </div>
     </div>
   );
 };
