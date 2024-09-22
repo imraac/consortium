@@ -75,6 +75,7 @@
 
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; 
 import Footer from './Footer'; // Import your Footer component
 import './ConsortiumRegistrationForm.css';
 
@@ -250,15 +251,15 @@ const ConsortiumRegistrationForm = () => {
           </select>
           {errors.membershipType && <p className="error">{errors.membershipType}</p>}
 
-          {/* Render button as a link if form is valid */}
+          {/* Render Link component if form is valid */}
           {isFormValid ? (
-            <a
-              href="/member-account-administrator"
+            <Link
+              to="/member-account-administrator"
               className="submit-button"
               style={{ display: 'inline-block', padding: '10px', backgroundColor: '#4CAF50', color: '#fff', textDecoration: 'none', textAlign: 'center', borderRadius: '5px' }}
             >
               Next
-            </a>
+            </Link>
           ) : (
             <button
               type="submit"
