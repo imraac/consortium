@@ -116,7 +116,7 @@ const LandingPage = () => {
         padding: "4rem"
       }}>
         <img
-          src="/src/assets/smallgirl.jpg"
+          src="/smallgirl.jpg"
           alt=""
           style={{
             maxWidth: "55%",
