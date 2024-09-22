@@ -130,7 +130,7 @@
 
 
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link } from 'react-router-dom'; // Import Link
 import './Registration.css';
 import Footer from "./Footer";
 
@@ -147,8 +147,6 @@ const Registration = () => {
     participatesInConsortium: false,
     understandsPrinciples: false,
   });
-
-  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -194,8 +192,8 @@ const Registration = () => {
           understandsPrinciples: false,
         });
 
-        // Navigate to Contact Details page
-        navigate('/contact-details'); // Use navigate instead of window.location.href
+        // Redirect to Contact Details page
+        // You can handle redirection here if needed, or keep it in Link
       } else {
         console.error('Registration failed:', response.statusText);
       }
@@ -244,9 +242,11 @@ const Registration = () => {
             <label htmlFor="participatesInConsortium">Yes</label>
           </div>
 
-          <button type="submit" style={{ backgroundColor: '#4CAF50', color: '#fff', padding: '10px', border: 'none' }}>
+        
+          <Link to="/contact-details" style={{ display: 'inline-block', marginTop: '10px', backgroundColor: '#4CAF50', color: '#fff', padding: '10px', textDecoration: 'none' }}>
             NEXT
-          </button>
+          </Link>
+
           <p>
             Our agency understands, commits to and agrees to uphold and respect the principles of Independence, Impartiality, and Neutrality.
           </p>
