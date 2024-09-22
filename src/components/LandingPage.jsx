@@ -11,7 +11,7 @@ const LandingPage = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src="/src/images/motherchild.jpg"
+              src="/src/assets/motherchild.jpg"
               className="d-block w-100"
               alt="FMS"
             />
@@ -38,7 +38,7 @@ const LandingPage = () => {
           </div>
           <div className="carousel-item">
             <img
-              src="/src/images/motherchild.jpg"
+              src="/src/assets/motherchild.jpg"
               className="d-block w-100"
               alt="245D"
             />
@@ -60,7 +60,7 @@ const LandingPage = () => {
           </div>
           <div className="carousel-item">
             <img
-              src="/src/images/motherchild.jpg"
+              src="/src/assets/motherchild.jpg"
               className="d-block w-100"
               alt="PCA Services"
             />
@@ -116,7 +116,7 @@ const LandingPage = () => {
         padding: "4rem"
       }}>
         <img
-          src="/src/images/smallgirl.jpg"
+          src="/src/assets/smallgirl.jpg"
           alt=""
           style={{
             maxWidth: "55%",

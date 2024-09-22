@@ -112,7 +112,7 @@ const Consortium = () => {
           {/* Image placeholder */}
           <div>
             <img 
-              src="/src/images/motherchild.jpg"
+              src="/src/assets/motherchild.jpg"
               alt="Consortium" 
               style={{ width: '100%', height: 'auto', borderRadius: '1px' }} 
             />
