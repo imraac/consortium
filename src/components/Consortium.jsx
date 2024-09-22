@@ -1,6 +1,4 @@
 
-
-
 import 'react';
 import './Consortium.css'; // Import your CSS styles
 
@@ -112,7 +110,7 @@ const Consortium = () => {
           {/* Image placeholder */}
           <div>
             <img 
-              src="/src/assets/motherchild.jpg"
+              src="/motherchild.jpg"
               alt="Consortium" 
               style={{ width: '100%', height: 'auto', borderRadius: '1px' }} 
             />
@@ -137,7 +135,7 @@ const Consortium = () => {
             </button>
             <div>
             <img 
-              src="/src/images/motherchild.jpg"
+              src="/motherchild.jpg"
               alt="Consortium" 
               style={{ width: '100%', height: 'auto', borderRadius: '1px' , marginBottom: "20px"}} 
             />

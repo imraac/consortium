@@ -100,29 +100,34 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
           <button
-            className="join-consortium-button"
-            style={{
-              backgroundColor: '#fff',
-              color: '#4CAF50',
-              border: 'none',
-              padding: '10px 20px',
-              marginLeft: '10px',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s, color 0.3s',
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#4CAF50';
-              e.target.style.color = 'white';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = '#fff';
-              e.target.style.color = '#4CAF50';
-            }}
-            onClick={() => navigate('/consortium')} // Navigate to the consortium page
-          >
-            Join Consortium
-          </button>
+  className="join-consortium-button"
+  style={{
+    backgroundColor: '#fff',
+    color: '#4CAF50',
+    border: 'none',
+    padding: '1px 2px',
+    minWidth: '150px', // Ensure a minimum width
+    borderRadius: '5px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s, color 0.3s',
+    display: 'flex', // Use flexbox for alignment
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '40px', // Ensure a consistent height
+  }}
+  onMouseEnter={(e) => {
+    e.target.style.backgroundColor = '#4CAF50';
+    e.target.style.color = 'white';
+  }}
+  onMouseLeave={(e) => {
+    e.target.style.backgroundColor = '#fff';
+    e.target.style.color = '#4CAF50';
+  }}
+  onClick={() => navigate('/consortium')}
+>
+  Join Consortium
+</button>
+
           <button
             className="login-button"
             style={{
@@ -141,11 +146,10 @@ const Navbar = () => {
             onMouseLeave={(e) => {
               e.target.style.backgroundColor = '#4CAF50';
             }}
-            onClick={() => {
-              // Handle login button click (e.g., redirect to login page)
-              console.log('Login button clicked');
-            }}
+            onClick={() => navigate('/login')} // Navigate to the login page
+          
           >
+            
             Login
           </button>
         </div>

@@ -1,0 +1,72 @@
+.member-account-administrator-container {
+    max-width: 1000px; /* Optional: You can adjust this width */
+    margin: 0; /* Remove auto margin for centering */
+    padding: 20px;
+    border: none; /* Remove the border */
+    border-radius: 8px;
+    padding-left: 150px; 
+    background-color: #f9f9f9; /* Keep the background color */
+}
+
+.member-account-administrator-container h1 {
+    text-align: left; /* Align heading to the left */
+    margin-bottom: 15px; /* Reduced margin */
+    color: #333;
+}
+
+.member-account-administrator-container h2 {
+    margin-top: 20px; /* Added space before h2 */
+    margin-bottom: 10px; /* Reduced margin */
+    color: #333;
+}
+
+.member-account-administrator-container label {
+    display: block;
+    margin-bottom: 5px; /* Reduced margin */
+    color: #555;
+}
+
+.member-account-administrator-container input[type="text"],
+.member-account-administrator-container input[type="url"],
+.member-account-administrator-container input[type="email"],
+.member-account-administrator-container input[type="number"],
+.member-account-administrator-container input[type="tel"],
+.member-account-administrator-container textarea {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 6px; /* Reduced padding */
+    margin-bottom: 10px; /* Reduced margin */
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 14px; /* Slightly smaller font size */
+}
+
+.member-account-administrator-container textarea {
+    resize: vertical;
+}
+
+.member-account-administrator-container input[type="checkbox"] {
+    margin-right: 5px; /* Reduced space between checkbox and label */
+}
+
+.member-account-administrator-container button {
+    width: auto; /* Let button size fit its content */
+    padding: 10px 20px; /* Adjust padding */
+    background-color: #D15D51;
+    color: #fff; /* Changed for better contrast */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Space above the button */
+}
+
+.member-account-administrator-container button:hover {
+    background-color: #c24b3a;
+}
+
+/* Optional: You can also add a custom class for form alignment */
+.form-container {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    align-items: flex-start; /* Align items to the left */
+}

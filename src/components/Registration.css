@@ -1,0 +1,62 @@
+.registration-form-container {
+    max-width: 1000px; /* Optional: You can adjust this width */
+    margin: 0; /* Remove auto margin for centering */
+    padding: 20px;
+    border: none; /* Remove the border */
+    border-radius: 8px;
+    padding-left: 150px; 
+    background-color: #f9f9f9; /* Optional: keep the background color */
+  }
+  
+  .registration-form-container h1 {
+    text-align: left; /* Align heading to the left */
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .registration-form-container p {
+    text-align: left; /* Align text to the left */
+    color: #666;
+  }
+  
+  .registration-form-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .registration-form-container input[type="text"],
+  .registration-form-container input[type="url"],
+  .registration-form-container input[type="number"],
+  .registration-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .registration-form-container textarea {
+    resize: vertical;
+  }
+  
+  .registration-form-container input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .registration-form-container button {
+    width: 10%;
+    padding: 12px;
+    background-color: #D15D51;
+    color:  #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .registration-form-container button:hover {
+    background-color: #c24b3a;
+  }
+  
