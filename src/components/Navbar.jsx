@@ -1,157 +1,183 @@
+// import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import './Navbar.css'; // Your existing CSS file
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
+// const Navbar = () => {
+//   const [dropdownOpen, setDropdownOpen] = useState(null);
+//   const navigate = useNavigate();
+
+//   const toggleDropdown = (index) => {
+//     setDropdownOpen(dropdownOpen === index ? null : index);
+//   };
+
+//   return (
+//     <header className="header">
+      
+//       <div className="call-us">Call Us: +1 234 567 890</div>
+      
+
+//       <nav className="nav">
+//         <div className="container nav__data">
+//           <div className="nav__logo">
+//             <img src="/path/to/logo.png" alt="Logo" />
+//             <span>Company Name</span>
+//           </div>
+          
+//           <ul className="nav__menu">
+//             <li>
+//               <a href="/" className="nav__link">Home</a>
+//             </li>
+//             <li className="dropdown" onMouseEnter={() => toggleDropdown(1)} onMouseLeave={() => toggleDropdown(null)}>
+//               <a href="#" className="nav__link dropdown__button">About Us</a>
+//               <i className="fa-solid fa-chevron-down dropdown__arrow"></i>
+//               {dropdownOpen === 1 && (
+//                 <div className="dropdown__content">
+//                   <a href="#" className="dropdown__link">Service 1</a>
+//                   <a href="#" className="dropdown__link">Service 2</a>
+//                   <a href="#" className="dropdown__link">Service 3</a>
+//                   <a href="#" className="dropdown__link">Service 1</a>
+//                   <a href="#" className="dropdown__link">Service 2</a>
+//                   <a href="#" className="dropdown__link">Service 3</a>
+//                 </div>
+//               )}
+//             </li>
+//             <li className="dropdown" onMouseEnter={() => toggleDropdown(2)} onMouseLeave={() => toggleDropdown(null)}>
+//               <a href="#" className="nav__link dropdown__button">Activities</a>
+//               <i className="fa-solid fa-chevron-down dropdown__arrow"></i>
+//               {dropdownOpen === 2 && (
+//                 <div className="dropdown__content">
+//                   <a href="#" className="dropdown__link">Activity 1</a>
+//                   <a href="#" className="dropdown__link">Activity 2</a>
+//                   <a href="#" className="dropdown__link">Activity 3</a>
+//                   <a href="#" className="dropdown__link">Service 1</a>
+//                   <a href="#" className="dropdown__link">Service 2</a>
+//                   <a href="#" className="dropdown__link">Service 3</a>
+//                 </div>
+//               )}
+//             </li>
+//             {/* Repeat for other dropdowns */}
+//           </ul>
+
+//           <div className="nav__icons">
+//             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+//               <FontAwesomeIcon icon={faFacebook} />
+//             </a>
+//             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+//               <FontAwesomeIcon icon={faTwitter} />
+//             </a>
+//             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+//               <FontAwesomeIcon icon={faInstagram} />
+//             </a>
+//             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+//               <FontAwesomeIcon icon={faLinkedin} />
+//             </a>
+
+//             <button className="btn join-consortium-button" onClick={() => navigate('/consortium')}>
+//               Join Consortium
+//             </button>
+//             <button className="btn login-button" onClick={() => navigate('/login')}>
+//               Login
+//             </button>
+//           </div>
+//         </div>
+//       </nav>
+//     </header>
+//   );
+// };
+
+// export default Navbar;
+
 
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import './Navbar.css'; // Import your CSS styles
+import { useNavigate } from 'react-router-dom';
+import './Navbar.css'; // Your existing CSS file
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(null); // Track which dropdown is open
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [dropdownOpen, setDropdownOpen] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDropdown = (index) => {
     setDropdownOpen(dropdownOpen === index ? null : index);
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <header className="main-header">
+    <header className="header">
       <div className="call-us">Call Us: +1 234 567 890</div>
 
-      <nav>
-        <img src="/path/to/logo.png" alt="Logo" />
-        <div className="nav-links">
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li className="dropdown" onMouseEnter={() => toggleDropdown(1)} onMouseLeave={() => toggleDropdown(null)}>
-              <a href="#">About Us</a>
-              <i className="fa-solid fa-chevron-down"></i>
-              {dropdownOpen === 1 && (
-                <div className="dropdown-content">
-                  <a href="#">Service 1</a>
-                  <a href="#">Service 2</a>
-                  <a href="#">Service 3</a>
-                </div>
-              )}
-            </li>
-            <li className="dropdown" onMouseEnter={() => toggleDropdown(2)} onMouseLeave={() => toggleDropdown(null)}>
-              <a href="#">Activities</a>
-              <i className="fa-solid fa-chevron-down"></i>
-              {dropdownOpen === 2 && (
-                <div className="dropdown-content">
-                  <a href="#">Activity 1</a>
-                  <a href="#">Activity 2</a>
-                  <a href="#">Activity 3</a>
-                </div>
-              )}
-            </li>
-            <li className="dropdown" onMouseEnter={() => toggleDropdown(3)} onMouseLeave={() => toggleDropdown(null)}>
-              <a href="#">Resources</a>
-              <i className="fa-solid fa-chevron-down"></i>
-              {dropdownOpen === 3 && (
-                <div className="dropdown-content">
-                  <a href="#">Resource 1</a>
-                  <a href="#">Resource 2</a>
-                  <a href="#">Resource 3</a>
-                </div>
-              )}
-            </li>
-            <li className="dropdown" onMouseEnter={() => toggleDropdown(4)} onMouseLeave={() => toggleDropdown(null)}>
-              <a href="#">Members</a>
-              <i className="fa-solid fa-chevron-down"></i>
-              {dropdownOpen === 4 && (
-                <div className="dropdown-content">
-                  <a href="#">Member 1</a>
-                  <a href="#">Member 2</a>
-                  <a href="#">Member 3</a>
-                </div>
-              )}
-            </li>
-            <li className="dropdown" onMouseEnter={() => toggleDropdown(5)} onMouseLeave={() => toggleDropdown(null)}>
-              <a href="#">Skill Development Hub</a>
-              <i className="fa-solid fa-chevron-down"></i>
-              {dropdownOpen === 5 && (
-                <div className="dropdown-content">
-                  <a href="#">Skill 1</a>
-                  <a href="#">Skill 2</a>
-                  <a href="#">Skill 3</a>
-                </div>
-              )}
-            </li>
-            <li>
-              <a href="/jobs">Jobs</a>
-            </li>
-          </ul>
-        </div>
+      <nav className="nav">
+        <div className="container nav__data">
+          <div className="nav__logo">
+            <img src="/path/to/logo.png" alt="Logo" />
+            <span>Company Name</span>
+          </div>
 
-        {/* Social Media Icons and Buttons */}
-        <div className="social-media" style={{ display: 'flex', alignItems: 'center' }}>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ color: 'blue', margin: '0 10px' }}>
-            <FontAwesomeIcon icon={faFacebook} />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" style={{ color: 'light', margin: '0 10px' }}>
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: 'white', margin: '0 10px' }}>
-            <FontAwesomeIcon icon={faInstagram} />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={{ color: 'light-blue', margin: '0 10px' }}>
-            <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-          <button
-  className="join-consortium-button"
-  style={{
-    backgroundColor: '#fff',
-    color: '#4CAF50',
-    border: 'none',
-    padding: '1px 2px',
-    minWidth: '150px', // Ensure a minimum width
-    borderRadius: '5px',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s, color 0.3s',
-    display: 'flex', // Use flexbox for alignment
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '40px', // Ensure a consistent height
-  }}
-  onMouseEnter={(e) => {
-    e.target.style.backgroundColor = '#4CAF50';
-    e.target.style.color = 'white';
-  }}
-  onMouseLeave={(e) => {
-    e.target.style.backgroundColor = '#fff';
-    e.target.style.color = '#4CAF50';
-  }}
-  onClick={() => navigate('/consortium')}
->
-  Join Consortium
-</button>
+          <div className="nav__menu-toggle" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+          </div>
 
-          <button
-            className="login-button"
-            style={{
-              backgroundColor: '#4CAF50',
-              color: '#fff',
-              border: 'none',
-              padding: '10px 20px',
-              marginLeft: '10px',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s, color 0.3s',
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#45a049';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = '#4CAF50';
-            }}
-            onClick={() => navigate('/login')} // Navigate to the login page
-          
-          >
-            
-            Login
-          </button>
+          <div className={`nav__menu ${menuOpen ? 'active' : ''}`}>
+            <ul>
+              <li>
+                <a href="/" className="nav__link">Home</a>
+              </li>
+              <li className="dropdown" onMouseEnter={() => toggleDropdown(1)} onMouseLeave={() => toggleDropdown(null)}>
+                <a href="#" className="nav__link dropdown__button">About Us</a>
+                <i className="fa-solid fa-chevron-down dropdown__arrow"></i>
+                {dropdownOpen === 1 && (
+                  <div className="dropdown__content">
+                    <a href="#" className="dropdown__link">Service 1</a>
+                    <a href="#" className="dropdown__link">Service 2</a>
+                    <a href="#" className="dropdown__link">Service 3</a>
+                  </div>
+                )}
+              </li>
+              <li className="dropdown" onMouseEnter={() => toggleDropdown(2)} onMouseLeave={() => toggleDropdown(null)}>
+                <a href="#" className="nav__link dropdown__button">Activities</a>
+                <i className="fa-solid fa-chevron-down dropdown__arrow"></i>
+                {dropdownOpen === 2 && (
+                  <div className="dropdown__content">
+                    <a href="#" className="dropdown__link">Activity 1</a>
+                    <a href="#" className="dropdown__link">Activity 2</a>
+                    <a href="#" className="dropdown__link">Activity 3</a>
+                  </div>
+                )}
+              </li>
+            </ul>
+
+            <div className="nav__icons">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+            </div>
+
+            <div className="nav__buttons">
+              <button className="btn join-consortium-button" onClick={() => navigate('/consortium')}>
+                Join Consortium
+              </button>
+              <button className="btn login-button" onClick={() => navigate('/login')}>
+                Login
+              </button>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
