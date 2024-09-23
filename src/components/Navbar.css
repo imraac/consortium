@@ -461,7 +461,7 @@ footer p {
 
   .nav-links ul li a {
     text-decoration: none;
-    color: #444;
+    color: #d63535;
     cursor: pointer;
   }
 
@@ -479,7 +479,7 @@ footer p {
     display: none;
     position: absolute;
     background-color: #d61e1e;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
     z-index: 1;
     border-top: 2px solid #9c2483;
     text-align: left;
@@ -522,6 +522,7 @@ footer p {
     font-weight: var(--font-semi-bold);
     padding: 1rem;
     transition: background-color 0.3s;
+    gap: 6rem;
   }
 
   .nav__link:hover {
@@ -547,6 +548,32 @@ footer p {
     align-items: center;
     gap: 1rem;
   }
+/* Remove underline from dropdown links */
+.dropdown__link {
+  text-decoration: none; /* This removes the underline */
+  color: #333; /* Set the link color to a dark shade for visibility */
+  padding: 8px 12px; /* Add padding to make the links more clickable */
+  display: block; /* Ensure the links take up the full width */
+}
+
+/* Change the background of the dropdown content to white */
+.dropdown__content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #ffffff; /* Set the background to white */
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+  z-index: 1;
+}
+
+.dropdown__link:hover {
+  background-color: #f1f1f1; /* Add a light gray background when hovering */
+}
+
+/* Show the dropdown content when the dropdown is hovered */
+.dropdown:hover .dropdown__content {
+  display: block;
+}
 
   .social-icon {
     font-size: 1.5rem;
@@ -620,6 +647,7 @@ footer p {
     top: 60px; /* Adjust to position below navbar */
     left: 0;
     right: 0;
+    gap: 2rem; 
     background-color: white; /* Ensure background is white */
     padding: 1rem;
     z-index: 1000; /* Ensure it appears above other content */
@@ -637,6 +665,7 @@ footer p {
   .nav__menu li {
     padding: 1rem; /* Add padding to menu items */
     text-align: center; /* Center text */
+    list-style: none;
   }
 
   .nav__menu-toggle {
