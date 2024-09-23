@@ -10,6 +10,7 @@ import ContactDetails from './components/ContactDetails';
 import ConsortiumRegistrationForm from './components/ConsortiumRegistrationForm';
 import Login from './components/Login';
 import MemberAccountAdministratorForm from './components/MemberAccountAdministratorForm';
+import AboutUs from './components/AboutUs';
 const App = () => {
   return (
     <Router>
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/consortium-registration" element={<ConsortiumRegistrationForm />} />
         <Route path="/member-account-administrator" element={<MemberAccountAdministratorForm />} /> {/* Add the new route */}
         <Route path="/login" element={<Login />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </Router>
   );

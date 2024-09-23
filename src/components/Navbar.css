@@ -507,6 +507,8 @@ footer p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    
   }
 
 
@@ -523,6 +525,7 @@ footer p {
     padding: 1rem;
     transition: background-color 0.3s;
     gap: 6rem;
+    
   }
 
   .nav__link:hover {
@@ -550,10 +553,12 @@ footer p {
   }
 /* Remove underline from dropdown links */
 .dropdown__link {
-  text-decoration: none; /* This removes the underline */
+  text-decoration: none !important; /* This removes the underline */
   color: #333; /* Set the link color to a dark shade for visibility */
-  padding: 8px 12px; /* Add padding to make the links more clickable */
-  display: block; /* Ensure the links take up the full width */
+  padding: 12px 16px; /* Add padding to make the links more clickable */
+ /* Add padding to make links more clickable */
+  display: block; /* Ensure links take up the full width */
+  font-weight: 500; /* Ensure the links take up the full width */
 }
 
 /* Change the background of the dropdown content to white */
@@ -562,12 +567,14 @@ footer p {
   position: absolute;
   background-color: #ffffff; /* Set the background to white */
   padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+  box-shadow: 0 2px 8px rgba(14, 159, 243, 0.1); /* Add a shadow for better visibility */
   z-index: 1;
+  min-width: 250px; /* Set a minimum width for the dropdown */
+  max-width: 350px; 
 }
 
 .dropdown__link:hover {
-  background-color: #f1f1f1; /* Add a light gray background when hovering */
+  background-color:  #3ABEF9; /* Add a light gray background when hovering */
 }
 
 /* Show the dropdown content when the dropdown is hovered */
@@ -593,24 +600,30 @@ footer p {
   }
 
   .join-consortium-button {
-    background-color: #fff;
-    color: #4caf50;
-    border: 2px solid #4caf50;
+    background-color: #3ABEF9 !important; /* Dark red background */
+    color: #f3f7f3 !important; /* Green text color */
+    border: 2px solid #4caf50; /* Green border */
+    padding: 0.5rem 1rem; /* Adjust padding for better appearance */
+    border-radius: 1px !important; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+    cursor: pointer;
+    margin-right: 2rem; /* Pointer cursor on hover */
   }
-
+  
   .join-consortium-button:hover {
-    background-color: #4caf50;
-    color:black;
+    background-color: #15e015 !important; /* Dark background on hover */
+    color: black; /* Change text color on hover */
   }
-
+  
   .login-button {
     background-color: #4caf50;
     color: white;
     border: none;
+    border-radius: 1px !important;
   }
 
   .login-button:hover {
-    background-color: #45a049;
+    background-color: #3ABEF9 !important;
   }
 
 /* Responsive Navbar */
@@ -676,6 +689,7 @@ footer p {
     width: 150px; /* Adjust logo size for mobile */
   }
 
+  
   .nav__icons {
     display: flex;
     justify-content: center; /* Center social icons */
