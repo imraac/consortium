@@ -5,7 +5,8 @@
     border: none; /* Remove the border */
     border-radius: 8px;
     padding-left: 150px; 
-    background-color: #f9f9f9; /* Keep the background color */
+    background-color: #f9f9f9;
+    margin-top: 200px; /* Keep the background color */
 }
 
 .contact-details-container h1 {

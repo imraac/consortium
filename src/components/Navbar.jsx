@@ -89,7 +89,6 @@
 
 // export default Navbar;
 
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css'; // Your existing CSS file
@@ -116,15 +115,17 @@ const Navbar = () => {
 
       <nav className="nav">
         <div className="container nav__data">
-          <div className="nav__logo">
-            <img src="/path/to/logo.png" alt="Logo" />
-            <span>Company Name</span>
+          <div className="nav_img">
+            <img src="/" alt="Logo" />
+          
           </div>
 
+          {/* Menu Toggle Icon for Mobile */}
           <div className="nav__menu-toggle" onClick={toggleMenu}>
             <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
           </div>
 
+          {/* Menu */}
           <div className={`nav__menu ${menuOpen ? 'active' : ''}`}>
             <ul>
               <li>
@@ -167,9 +168,7 @@ const Navbar = () => {
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
-            </div>
 
-            <div className="nav__buttons">
               <button className="btn join-consortium-button" onClick={() => navigate('/consortium')}>
                 Join Consortium
               </button>

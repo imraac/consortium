@@ -37,6 +37,7 @@
   margin-top: 80px; /* Adjust this value to match your navbar height */
   position: relative;
   z-index: 0;
+  margin-top: 143px;
 }
 
 .carousel-item img {
@@ -392,13 +393,13 @@ footer p {
 
 
 
-/* Use the provided CSS styles */
-/*=============== HEADER ===============*/
+
+
 /* Call Us Bar */
 .call-us {
   position: fixed; /* Fix it at the top */
   top: 0; /* Position at the very top */
-  background: #ACD36F;
+  background: #3ABEF9;
   padding: 1.3rem;
   text-align: right;
   color: white;
@@ -417,12 +418,10 @@ footer p {
     align-items: center;
     padding: 1% 2%;
     z-index: 1000; /* Lower than .call-us */
-    background-color: white; /* Add background for visibility */
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
-  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
-  transition: backdrop-filter 0.3s ease, background-color 0.3s ease; /* Smooth transition */
-
+    transition: backdrop-filter 0.3s ease, background-color 0.3s ease; /* Smooth transition */
   }
 
   /* Main Header */
@@ -510,7 +509,9 @@ footer p {
   .nav__link:hover {
     background-color: var(--first-color-lighten);
   }
-
+  .nav__menu li {
+    display: inline-block; /* Ensure li elements are inline */
+}
   .dropdown__content {
     display: none;
     position: absolute;
@@ -642,3 +643,8 @@ footer p {
 }
 
 /* Rest of your existing styles... */
+.nav_img img {
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+

@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between; /* Aligns containers side by side */
     padding: 20px;
+    margin-top: 220px;
 }
 
 .consortium-container {

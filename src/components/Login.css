@@ -4,6 +4,7 @@
     align-items: flex-start; /* Aligns items at the top */
     justify-content: space-between; /* Space between text and form */
     padding: 20px;
+    margin-top: 220px;
 }
 .login-page {
     display: flex;
