@@ -102,7 +102,7 @@
 // export default LandingPage;
 
 
-import React from 'react';
+import  'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Footer from "./Footer";
@@ -119,9 +119,9 @@ const LandingPage = () => {
             <div className="carousel-caption carousel-caption-style">
               <div className="caption-background">
                
-                <h5>FMS</h5>
+                <h5>CAPACITY & BUILDING</h5>
                 <p>
-                  SOM-NGO is dedicated to improving the health and well-being of communities through sustainable and impactful health programs...
+                Enhancing the skills and capabilities of minority-led organizations through training and support.
                 </p>
                 
                   <button className="btn btn-success caption-button">JOIN CONSORTIUM</button>
@@ -133,9 +133,9 @@ const LandingPage = () => {
             <img src="/motherchild.jpg" className="d-block w-100" alt="245D" />
             <div className="carousel-caption carousel-caption-style">
               <div className="caption-background">
-                <h5>Our Mission</h5>
+                <h5> STRUCTURE & MANAGEMENT</h5>
                 <p>
-                  Our mission is to promote sustainable development in areas affected by poverty, conflict, and natural disasters...
+                Our organizational structure is designed to ensure effective management and governance .
                 </p>
               </div>
             </div>
