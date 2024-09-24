@@ -297,7 +297,7 @@ const Navbar = () => {
       <nav className="nav">
         <div className="container nav__data">
           <div className="nav_img">
-            <img src="/fakelogo.jpg" alt="Logo" />
+            <img src="/logo1.png" alt="Logo" />
           </div>
 
           {/* Menu Toggle Icon for Mobile */}
@@ -375,34 +375,7 @@ const Navbar = () => {
                   </div>
                 )}
               </li>
-              <li
-                className="dropdown"
-                onMouseEnter={() => toggleDropdown(3)}
-                onMouseLeave={() => toggleDropdown(null)}
-              >
-                <span className="nav__link" style={{ textDecoration: "none" }}>
-                  Resources
-                </span>
-                {dropdownOpen === 3 && (
-                  <div className="dropdown__content">
-                    <Link to="/maps" className="dropdown__link" style={{ textDecoration: "none" }}>
-                      Maps
-                    </Link>
-                    <Link to="/documents" className="dropdown__link" style={{ textDecoration: "none" }}>
-                      Key Documents
-                    </Link>
-                    <Link to="/laws" className="dropdown__link" style={{ textDecoration: "none" }}>
-                      Government Law & Regulations
-                    </Link>
-                    <Link to="/useful-links" className="dropdown__link" style={{ textDecoration: "none" }}>
-                      Useful Links
-                    </Link>
-                    <Link to="/calendar" className="dropdown__link" style={{ textDecoration: "none" }}>
-                      Calendar
-                    </Link>
-                  </div>
-                )}
-              </li>
+             
               <li>
                 <Link to="/jobs" className="nav__link" style={{ textDecoration: "none" }}>
                   Jobs
@@ -439,6 +412,29 @@ const Navbar = () => {
                     <Link to="/additional-activities" className="dropdown__link" style={{ textDecoration: "none" }}>
                       Additional Activities
                     </Link>
+                  </div>
+                )}
+              </li>
+              <li
+                className="dropdown"
+                onMouseEnter={() => toggleDropdown(4)}
+                onMouseLeave={() => toggleDropdown(null)}
+              >
+                <span className="nav__link" style={{ textDecoration: "none" }}>
+                  Contacts
+                </span>
+                {dropdownOpen === 4 && (
+                  <div className="dropdown__content">
+                    <Link to="/coordination" className="dropdown__link" style={{ textDecoration: "none" }}>
+                    Secretariat
+                    </Link>
+                    <Link to="/advocacy" className="dropdown__link" style={{ textDecoration: "none" }}>
+                    Regional Representatives
+                    </Link>
+                    <Link to="/working-groups" className="dropdown__link" style={{ textDecoration: "none" }}>
+                    Seats Representatives 
+                    </Link>
+
                   </div>
                 )}
               </li>

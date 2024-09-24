@@ -295,7 +295,7 @@
   text-align: center;
   padding-top: 100px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Default grid for larger screens */
   gap: 20px;
 }
 
@@ -320,7 +320,7 @@
 }
 
 .services-col button {
-  background-color:#4CAF50;
+  background-color: #4CAF50;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -331,14 +331,16 @@
 }
 
 .services-col button:hover {
-  background-color: #4CAF50;
+  background-color: #45a049;
 }
 
 @media (max-width: 768px) {
   .services {
     width: 100%;
+    grid-template-columns: 1fr; /* Stack services in a single column */
   }
 }
+
 
 .team {
   width: 80%;
@@ -705,7 +707,7 @@ footer p {
 
 /* Rest of your existing styles... */
 .nav_img img {
-  width: 100px; /* Adjust the width as needed */
+  width: 170px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
 

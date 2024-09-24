@@ -6,9 +6,12 @@ const Consortium = () => {
   return (
     <div className="consortium-wrapper">
       <div className="consortium-container">
-        <h1>Join the Somalia NGO Consortium</h1>
+        <h1>Join the Minority Rights Organizations Consortium</h1>
         <p>
-          In order for us to maintain our credibility, we have to be strict on membership and ensure that everyone who becomes a member is doing what they say they are doing. Membership of the Somalia NGO Consortium requires that your agency is currently undertaking activities, direct operations and/or support to partner NGOs in Somalia.
+          The registration process will take approximately 20 minutes. Please have all necessary documents and information ready before you begin.
+        </p>
+        <p>
+          In order for us to maintain our credibility, we have to be strict on membership and ensure that everyone who becomes a member is doing what they say they are doing. Membership of the Minority Rights Organizations Consortium requires that your agency must be a Minority-led Organization, currently undertaking activities, direct operations and/or support to partner NGOs in Somalia.
         </p>
         <p>
           At your convenience, you may print the online registration checklist to be sure you have all necessary materials before starting the registration process.
@@ -21,7 +24,7 @@ const Consortium = () => {
         <ul>
           <li>Copy of the agency's registration certificate</li>
           <li>
-            Agency profile containing the following details of all country programmes for the past 1 - 2 years:
+            Agency profile containing the following details of the last three programmes for the past years:
             <ul>
               <li>Project Title</li>
               <li>Start date</li>
@@ -42,18 +45,17 @@ const Consortium = () => {
               <li>Auditor's comments and/or recommendations</li>
             </ul>
           </li>
-          <li>NGO Consortium Mandate: Download, scan and sign the last page</li>
-          <li>Red Crescent/ICRC Code of Conduct: Download, scan and sign the last page</li>
+          <li>MROs Consortium Mandate: Download, scan, and sign the last page</li>
         </ul>
 
         <h2>Required Information</h2>
         <p>Please provide the following information:</p>
         <ul>
-          <li>Brief description of agency (Max 200 words)</li>
+          <li>Brief description of the agency (how it is minority-led, Max 200 words)</li>
           <li>Mission statement (Max 200 words)</li>
-          <li>Reasons for joining Somalia NGO Consortium (Max 200 words)</li>
+          <li>Reasons for joining the MROs Consortium (Max 200 words)</li>
           <li>Number and date of agency registration</li>
-          <li>Headquarter, regional and local contact details</li>
+          <li>Headquarter, regional, and local contact details</li>
           <li>Years operational in Somalia/Somaliland</li>
           <li>Partners in Somalia/Somaliland</li>
           <li>Number of (national and international) staff working on Somalia/Somaliland projects</li>
@@ -62,7 +64,7 @@ const Consortium = () => {
           <li>Annual budget</li>
         </ul>
         <p style={{ color: 'orange' }}>
-          I confirm that I have read and understood the requirements for registering with the Somalia NGO Consortium. I understand that all information submitted during the registration process will be held in confidence and can only be accessed by the NGO Consortium Secretariat.
+          I confirm that I have read and understood the requirements for registering with the MROs Consortium. I understand that all information submitted during the registration process will be held in confidence and can only be accessed by the MROs Consortium Secretariat.
         </p>
 
         {/* Registration buttons and links */}
