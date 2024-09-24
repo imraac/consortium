@@ -297,7 +297,7 @@ const Navbar = () => {
       <nav className="nav">
         <div className="container nav__data">
           <div className="nav_img">
-            <img src="/" alt="Logo" />
+            <img src="/fakelogo.jpg" alt="Logo" />
           </div>
 
           {/* Menu Toggle Icon for Mobile */}
