@@ -1,0 +1,75 @@
+.advocacy-main-container {
+    display: flex; /* Enable flexbox layout */
+    justify-content: space-between; /* Space between the containers */
+    padding: 20px;
+    margin-top: 150px;
+    flex: 1; /* Padding around the main container */
+  }
+  
+  .advocacy-container {
+    padding: 20px;
+    
+    border-radius: 1px;
+    box-sizing: border-box; /* Ensure padding is included in total width */
+  }
+  
+  .left-aligned {
+    width: 45%; /* Adjust as necessary */
+  }
+  
+  .right-aligned {
+    width: 30%; /* Thin width */
+    height: auto; /* Let height adapt to content */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+  }
+  
+  .advocacy-section h2, .advocacy-section h3 {
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .advocacy-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .advocacy-section p {
+    margin-bottom: 10px;
+  }
+  @media (max-width: 768px) { /* Adjust the max-width as necessary */
+    .advocacy-main-container {
+      flex-direction: column; /* Stack the containers vertically */
+      margin-top: 60px; /* Reduced margin for smaller screens */
+    }
+    
+    .left-aligned, .right-aligned {
+      width: 100%; /* Full width for both containers */
+      margin-bottom: 20px; /* Space between the stacked containers */
+    }
+  
+    .right-aligned {
+      height: auto; /* Remove fixed height for better adaptability */
+    }
+  }
+  footer {
+    background-color: #f1f1f1; /* Change as necessary */
+    text-align: center; /* Center the footer text */
+    padding: 10px 0; /* Vertical padding for the footer */
+  }
+  /* General styles for the advocacy section */
+.advocacy-section h2 {
+    background-color: #3ABEF9; /* Background color for h2 */
+    color: white; /* Text color for better contrast */
+    padding: 10px; /* Padding around the text */
+    border-radius: 1px; /* Optional: round the corners */
+    display: inline-block; /* Prevents background color from extending */
+  }
+  
+  .advocacy-section h3 {
+    background-color: orange; /* Background color for h3 */
+    color: white; /* Text color for better contrast */
+    padding: 8px; /* Padding around the text */
+    border-radius: 1px; /* Optional: round the corners */
+    display: inline-block; /* Prevents background color from extending */
+  }
+  

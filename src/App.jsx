@@ -11,6 +11,7 @@ import ConsortiumRegistrationForm from './components/ConsortiumRegistrationForm'
 import Login from './components/Login';
 import MemberAccountAdministratorForm from './components/MemberAccountAdministratorForm';
 import AboutUs from './components/AboutUs';
+import Advocacy from './components/Advocacy';
 const App = () => {
   return (
     <Router>
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} /> {/* Route for the landing page */}
         <Route path="/about" element={<div>About Page</div>} />
+        
         <Route path="/contact" element={<div>Contact Page</div>} />
         <Route path="/services" element={<div>Services Page</div>} />
         <Route path="/consortium" element={<Consortium />} /> {/* Route for the Consortium page */}
@@ -27,6 +29,8 @@ const App = () => {
         <Route path="/member-account-administrator" element={<MemberAccountAdministratorForm />} /> {/* Add the new route */}
         <Route path="/login" element={<Login />} />
         <Route path="/about-us" element={<AboutUs />} />
+       
+        <Route path="/advocacy" element={<Advocacy />} />
       </Routes>
     </Router>
   );
