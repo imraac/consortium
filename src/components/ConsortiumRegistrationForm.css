@@ -72,3 +72,16 @@
     flex-direction: column; /* Stack form elements vertically */
     align-items: flex-start; /* Align items to the left */
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .consortium-form-container {
+        margin-top: 99px; /* Further reduce margin on smaller screens */
+        padding-left: 10px; /* Adjust left padding on smaller screens */
+        padding-right: 10px; /* Add right padding */
+    }
+
+    .consortium-form-container button {
+        width: 100%; /* Full width button on smaller screens */
+    }
+}

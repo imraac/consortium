@@ -63,4 +63,14 @@
 
 
   
-  
+  @media (max-width: 768px) {
+    .registration-form-container {
+        margin-top: 99px; /* Further reduce margin on smaller screens */
+        padding-left: 10px; /* Adjust padding on smaller screens */
+        padding-right: 10px; /* Add padding to the right */
+    }
+
+    .registration-form-container button {
+        width: 100%; /* Full width button on smaller screens */
+    }
+}
