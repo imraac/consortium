@@ -6,19 +6,21 @@
     border-radius: 8px;
     padding-left: 150px; 
     background-color: #f9f9f9;
-    margin-top: 200px; /* Keep the background color */
+    margin-top: 165px; /* Keep the background color */
 }
 
 .contact-details-container h1 {
     text-align: left; /* Align heading to the left */
     margin-bottom: 15px; /* Reduced margin */
     color: #333;
+    margin-top: 200px; 
 }
 
 .contact-details-container h2 {
     margin-top: 20px; /* Added space before h2 */
     margin-bottom: 10px; /* Reduced margin */
     color: #333;
+    margin-top: 0px; 
 }
 
 .contact-details-container label {
@@ -36,7 +38,7 @@
     width: calc(100% - 20px); /* Full width minus padding */
     padding: 6px; /* Reduced padding */
     margin-bottom: 10px; /* Reduced margin */
-    border: 1px solid #ccc;
+    border: 1px solid #98c1f0;
     border-radius: 2px;
     font-size: 14px; /* Slightly smaller font size */
 }
@@ -52,17 +54,17 @@
 .contact-details-container button {
     width: auto; /* Let button size fit its content */
     padding: 10px 20px; /* Adjust padding */
-    background-color: #D15D51;
+    background-color: #45a049;
     color: #fff; /* Changed for better contrast */
     border: none;
-    border-radius: 4px;
+    border-radius: 0px;
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px; /* Space above the button */
 }
 
 .contact-details-container button:hover {
-    background-color: #c24b3a;
+    background-color: #06cef1;
 }
 
 /* Optional: You can also add a custom class for form alignment */
@@ -70,4 +72,67 @@
     display: flex;
     flex-direction: column; /* Stack form elements vertically */
     align-items: flex-start; /* Align items to the left */
+}
+
+.submit-btn {
+    margin-top: 20px; /* Creates more space above the NEXT button */
+}
+
+.contact-details-container button:not(.submit-btn) {
+    margin-right: 500px; /* Space between buttons */
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-details-container {
+        max-width: 100%; /* Make container full-width */
+        padding-left: 20px; /* Reduce left padding */
+        margin-top: 100px; /* Adjust margin for smaller screens */
+    }
+
+    .contact-details-container input[type="text"],
+    .contact-details-container input[type="url"],
+    .contact-details-container input[type="email"],
+    .contact-details-container input[type="number"],
+    .contact-details-container input[type="tel"],
+    .contact-details-container textarea {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .contact-details-container button {
+        width: 100%; /* Make buttons full width */
+        margin-top: 10px;
+    }
+
+    .contact-details-container button:not(.submit-btn) {
+        margin-right: 0; /* Remove extra margin on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-details-container {
+        padding-left: 10px; /* Further reduce padding */
+        padding-right: 10px;
+        margin-top: 50px; /* Adjust for extra small screens */
+    }
+
+    .contact-details-container h1,
+    .contact-details-container h2 {
+        text-align: center;
+        margin-top: 55px;  /* Center text on very small screens */
+    }
+
+    .contact-details-container input[type="text"],
+    .contact-details-container input[type="url"],
+    .contact-details-container input[type="email"],
+    .contact-details-container input[type="number"],
+    .contact-details-container input[type="tel"],
+    .contact-details-container textarea {
+        font-size: 14px; /* Keep font size smaller on mobile */
+    }
+
+    .contact-details-container button {
+        font-size: 14px; /* Adjust button font size */
+        padding: 8px 16px; /* Adjust padding */
+    }
 }

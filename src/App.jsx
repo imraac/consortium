@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/services" element={<div>Services Page</div>} />
         <Route path="/consortium" element={<Consortium />} /> {/* Route for the Consortium page */}
         <Route path="/registration" element={<Registration />} />
-        <Route path="/contact-details" element={<ContactDetails />} />
+        <Route path="/personal-details" element={<ContactDetails />} />
         <Route path="/consortium-registration" element={<ConsortiumRegistrationForm />} />
         <Route path="/member-account-administrator" element={<MemberAccountAdministratorForm />} /> {/* Add the new route */}
         <Route path="/login" element={<Login />} />

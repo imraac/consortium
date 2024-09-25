@@ -199,7 +199,7 @@ const Registration = () => {
 
           {/* Link to next page */}
           <Link
-            to="/contact-details"
+            to="/personal-details"
             style={{
               display: 'inline-block',
               marginTop: '10px',
