@@ -1,18 +1,20 @@
-//personal information page
-
-
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './ContactDetails.css'; // Ensure to style as per your design
 import Footer from './Footer';
-//personal information page
+
+// Personal Information page
 const ContactDetails = () => {
   const [contactData, setContactData] = useState({
     founders: [{ name: '', contact: '', clan: '' }],
     boardDirectors: [{ name: '', contact: '', clan: '' }],
     keyStaffs: [{ name: '', contact: '', clan: '' }],
   });
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array ensures this runs only once
 
   const handleChange = (e, index, group) => {
     const { name, value } = e.target;
@@ -39,8 +41,10 @@ const ContactDetails = () => {
     <div className="contact-details-page">
       <div className="contact-details-container">
         <form onSubmit={handleSubmit}>
-          <h2>Personal Information </h2>
-          <p>Mention the names of the founders of the organization and the clans they belong to and they must be from minority clans, and they need to adhere to the guidelines provided by the Government of Somalia/Somaliland (please send the passports as supporting documents)</p>
+          <h2>Personal Information</h2>
+          <p>
+            Mention the names of the founders of the organization and the clans they belong to. They must be from minority clans, and they need to adhere to the guidelines provided by the Government of Somalia/Somaliland (please send the passports as supporting documents).
+          </p>
           {contactData.founders.map((founder, index) => (
             <div key={index} className="input-group">
               <label>Name:</label>
