@@ -67,7 +67,24 @@
 
 /* Optional: You can also add a custom class for form alignment */
 .form-container {
-    display: flex;
+    display: flex; 
     flex-direction: column; /* Stack form elements vertically */
-    align-items: flex-start; /* Align items to the left */
+    align-items: stretch; /* Stretch items to take full width */
+    gap: 15px; /* Align items to the left */
 }
+.submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3; /* Darker on hover */
+  }
+  

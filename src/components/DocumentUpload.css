@@ -1,0 +1,99 @@
+.documentUpload {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-image: url('logo1.png'); 
+    background-size: 1100px 300px; /* Set specific width and height */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    max-width: 100%; /* Set a max-width for the container */
+    margin: auto; /* Center the container horizontally */
+}
+
+
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.uploadForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+    
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="file"] {
+    margin-top: 5px;
+}
+
+.submitButton {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #aff7b3;
+}
+.documentUpload {
+    margin: 20px;
+}
+
+.uploadForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.submitButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #0056b3;
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .documentUpload {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .uploadForm {
+        margin-top: 10px; /* Reduce margin for smaller screens */
+    }
+
+    .formGroup {
+        margin-bottom: 10px; /* Reduce margin for smaller screens */
+    }
+
+    .submitButton {
+        padding: 8px 12px; /* Adjust button padding for smaller screens */
+        font-size: 14px; /* Reduce button font size for smaller screens */
+    }
+
+    h2 {
+        font-size: 20px; /* Adjust heading size for smaller screens */
+    }
+}

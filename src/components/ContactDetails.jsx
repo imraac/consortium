@@ -1,8 +1,12 @@
+//personal information page
+
+
+
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './ContactDetails.css'; // Ensure to style as per your design
 import Footer from './Footer';
-
+//personal information page
 const ContactDetails = () => {
   const [contactData, setContactData] = useState({
     founders: [{ name: '', contact: '', clan: '' }],

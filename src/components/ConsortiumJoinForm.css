@@ -1,0 +1,128 @@
+/* ConsortiumJoinForm.css */
+
+.formContainer {
+    max-width: 900px; /* Maintain max width for the form */
+    margin: 0; /* Remove auto margin to align left */
+    padding: 20px; /* Padding inside the form */
+    border: 1px solid #ccc; /* Border around the form */
+    border-radius: 0px; /* Rounded corners */
+    background-color: #f9f9f9; /* Background color */
+   
+    margin-top: 155px; /* Space from the top */
+}
+
+.formTitle {
+    text-align: center; /* Keep the title centered */
+    font-size: 24px; /* Font size for title */
+    margin-bottom: 20px; /* Space below title */
+    color: #333; 
+    /* Title color */
+}
+
+.formGroup {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+.formLabel {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below label */
+    font-weight: bold; /* Bold font for labels */
+}
+
+.formInput, .formTextarea {
+    width: 100%; /* Full width for inputs and textarea */
+    padding: 10px; /* Padding inside input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners for input fields */
+    font-size: 16px; /* Font size for input fields */
+}
+
+.formTextarea {
+    height: 100px; /* Fixed height for textarea */
+}
+
+.uploadNote {
+    margin-top: 10px; /* Space above upload note */
+    font-style: italic; /* Italic style for notes */
+    color: #555; /* Color for note text */
+}
+
+.documentList {
+    margin: 10px 0; /* Space above and below document list */
+    padding-left: 20px; /* Indent for document list */
+    list-style-type: disc; /* Disc style for list */
+}
+
+.submitButton {
+    display: block; /* Block display for button */
+    width: 25%; /* Full width for button */
+    padding: 10px; /* Padding inside button */
+    background-color: #007bff; /* Background color for button */
+    color: white; /* Text color for button */
+    border: none; /* No border for button */
+    border-radius: 4px; /* Rounded corners for button */
+    font-size: 16px; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.submitButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .formContainer {
+        width: 95%; /* Full width for smaller screens */
+        margin: 0 auto; /* Center the form container */
+    }
+
+    .formTitle {
+        font-size: 20px; /* Slightly smaller font for title */
+    }
+
+    .formInput, .formTextarea {
+        font-size: 14px; /* Smaller font for input fields */
+    }
+
+    .submitButton {
+        width: 40%; /* Full width for button on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .formContainer {
+        padding: 15px; /* Reduced padding for small screens */
+    }
+
+    .formTitle {
+        font-size: 18px; /* Further reduce title font size */
+    }
+
+    .formInput, .formTextarea {
+        font-size: 14px; /* Maintain smaller font size */
+        padding: 8px; /* Reduced padding for inputs */
+    }
+
+    .submitButton {
+        padding: 8px; /* Reduced padding for button */
+        font-size: 14px; /* Smaller font size for button */
+    }
+}
+/* Footer.css */
+
+.footer {
+    background-color: #f1f1f1; /* Light gray background */
+    text-align: center; /* Centered text */
+    padding: 10px; /* Padding around footer */
+    position: relative; /* Positioning */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+    margin-top: 20px; /* Space above the footer */
+}
+
+.footer p {
+    margin: 0; /* Remove default margin */
+    color: #333; /* Text color */
+    font-size: 14px; /* Font size */
+}
