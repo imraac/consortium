@@ -22,7 +22,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/about" element={<AboutUs />} /> {/* Adjusted to use AboutUs component */}
+        <Route path="/about-us" element={<AboutUs />} /> {/* Adjusted to use AboutUs component */}
         <Route path="/contact" element={<div>Contact Page</div>} />
         <Route path="/services" element={<div>Services Page</div>} />
         <Route path="/consortium" element={<Consortium />} />
