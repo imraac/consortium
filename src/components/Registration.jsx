@@ -1,8 +1,7 @@
 
 
-
-import { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
 import './Registration.css';
 import Footer from "./Footer";
 
@@ -19,6 +18,13 @@ const Registration = () => {
     participatesInConsortium: false,
     understandsPrinciples: false,
   });
+
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  // Scroll to the top of the page when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -64,8 +70,8 @@ const Registration = () => {
           understandsPrinciples: false,
         });
 
-        // Redirect to Contact Details page
-        // You can handle redirection here if needed, or keep it in Link
+        // Redirect to Personal Details page after successful submission
+        navigate('/personal-details'); // Use navigate for redirection
       } else {
         console.error('Registration failed:', response.statusText);
       }
@@ -195,22 +201,10 @@ const Registration = () => {
             <label htmlFor="understandsPrinciples">Yes</label>
           </div>
 
-         
-
-          {/* Link to next page */}
-          <Link
-            to="/personal-details"
-            style={{
-              display: 'inline-block',
-              marginTop: '10px',
-              backgroundColor: '#4CAF50',
-              color: '#fff',
-              padding: '10px',
-              textDecoration: 'none'
-            }}
-          >
-            NEXT
-          </Link>
+          {/* Submit button */}
+          <button type="submit" style={{ marginTop: '10px', backgroundColor: '#4CAF50', color: '#fff', padding: '10px', border: 'none', cursor: 'pointer' }}>
+            Submit
+          </button>
         </form>
       </div>
       <Footer /> {/* Add Footer here */}
