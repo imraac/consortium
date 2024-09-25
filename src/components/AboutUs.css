@@ -5,6 +5,10 @@
     border-radius: 8px;
     text-align: left; /* Align text to the left */
     margin-top: 120px;
+    background-image: url('logo1.png'); 
+    background-size: 800px 230px; /* Set specific width and height */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position:center;
     flex: 1;
   }
   
@@ -19,6 +23,7 @@
     margin: 20px 0 10px;
     color: #c02020; /* Change this color as needed */
   }
+  
   
   .about-us p {
     font-size: 1.1rem;
@@ -48,7 +53,7 @@
   
   .contact-container {
     flex: 1; /* Adjust as needed */
-    background-color:#c3e4f3; /* Light background for contrast */
+    /* Light background for contrast */
     padding: 20px;
     margin-top: 145px;
    

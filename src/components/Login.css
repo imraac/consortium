@@ -6,11 +6,13 @@
     padding: 20px;
     margin-top: 220px;
 }
+
 .login-page {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure the page takes at least the full height */
-  }
+}
+
 .text-section {
     max-width: 45%; /* Adjust as needed */
     margin-right: 6px; /* Space between text and form */
@@ -21,7 +23,7 @@
     padding: 20px;
     border-radius: 8px; /* Fix border-radius */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 30%; /* Full width for container */
+    width: 30%; /* Default width for larger screens */
     margin-right: 250px; /* Move the form container to the right */
 }
 
@@ -43,8 +45,10 @@ label {
 }
 
 input[type="email"],
-input[type="password"] {
-    width: 55%; /* Full width input fields */
+input[type="password"],
+input[type="text"], /* Include text input for consistency */
+input[type="tel"] { /* Include tel input for consistency */
+    width: 100%; /* Full width input fields for all types */
     padding: 10px; /* Padding inside input */
     border: 1px solid #ccc; /* Border style */
     border-radius: 4px; /* Rounded corners */
@@ -53,7 +57,9 @@ input[type="password"] {
 }
 
 input[type="email"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="text"]:focus, /* Include text input focus */
+input[type="tel"]:focus { /* Include tel input focus */
     border-color: #007bff; /* Border color on focus */
     outline: none; /* Remove default outline */
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add focus shadow */
@@ -72,4 +78,42 @@ input[type="password"]:focus {
 
 .login-button:hover {
     background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items */
+        margin-top: 100px; /* Adjust top margin */
+    }
+
+    .text-section {
+        max-width: 100%; /* Full width on smaller screens */
+        margin-right: 0; /* Remove margin */
+        margin-bottom: 20px; /* Space below text section */
+    }
+
+    .form-container {
+        width: 90%; /* Make form container wider */
+        margin-right: 0; /* Remove right margin */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 20px; /* Smaller heading size on very small screens */
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"],
+    input[type="tel"] {
+        font-size: 14px; /* Smaller input font size */
+    }
+
+    .login-button {
+        padding: 8px 16px; /* Smaller button padding */
+        font-size: 14px; /* Smaller button font size */
+    }
 }
