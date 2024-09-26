@@ -1,0 +1,56 @@
+
+  .dashboard-container {
+    padding: 100px;
+    margin-top: 90px;
+    border: 1px solid #75d7f0;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+  }
+  
+  .card {
+    background-color: #d8a10b;
+    border: 1px solid #d8a10b;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px; /* This is the side margin */
+    margin-bottom: 20px; /* Increase this to add more space below each card */
+    flex: 1 1 calc(30% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Move the card up */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  }
+  
+  .card.left {
+    margin-right: auto;
+  }
+  
+  .card.middle {
+    margin: 0 10px;
+  }
+  
+  .card.right {
+    margin-left: auto;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 5px 0;
+  }
+  

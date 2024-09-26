@@ -44,6 +44,18 @@ const Advocacy = () => {
         <div className="advocacy-container right-aligned"> {/* New thin and long right-aligned container */}
           <div className="advocacy-section">
             <h2>ADDITIONAL SERVICES</h2>
+            
+            <p>Our organization provides various support services to enhance the capabilities of local NGOs.</p>
+            <ul>
+              <li>Capacity Building Workshops</li>
+              <li>Resource Allocation</li>
+              <li>Technical Assistance</li>
+              <li>Monitoring and Evaluation Support</li>
+              <li>Networking Opportunities</li>
+            </ul>
+            <p>
+              Through these services, we aim to empower local organizations and foster a collaborative environment that drives sustainable development in Somalia.
+            </p>
             <h3>SUPPORT SERVICES</h3>
             <p>Our organization provides various support services to enhance the capabilities of local NGOs.</p>
             <ul>

@@ -5,10 +5,7 @@
     border-radius: 8px;
     text-align: left; /* Align text to the left */
     margin-top: 120px;
-    background-image: url('logo1.png'); 
-    background-size: 800px 230px; /* Set specific width and height */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position:center;
+   
     flex: 1;
   }
   

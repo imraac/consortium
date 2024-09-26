@@ -15,6 +15,7 @@ import AboutUs from './components/AboutUs';
 import Advocacy from './components/Advocacy';
 import ConsortiumJoinForm from './components/ConsortiumJoinForm'; // Ensure this path is correct
 import FormFeedbackPage from './components/FormFeedbackPage';
+import Dashboard from './components/Dashboard'; // Import your form component
 
 const App = () => {
   return (
@@ -35,7 +36,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/advocacy" element={<Advocacy />} />
         <Route path="/document-upload" element={<DocumentUpload />} />
-
+        
+        <Route path="/member-account-administrator" element={<Dashboard />} />
         {/* Optional: Catch-all route for undefined paths */}
         <Route path="*" element={<div>Page Not Found</div>} />
       </Routes>

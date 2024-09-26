@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DocumentUpload.css'; // Create this CSS file for styles
+import './DocumentUpload.css'; // Ensure this CSS file for styles
 
 const DocumentUpload = () => {
     const [files, setFiles] = useState({
@@ -18,11 +18,18 @@ const DocumentUpload = () => {
         icrcCodeOfConduct: 'No file chosen',
     });
 
+    const [showSuccessModal, setShowSuccessModal] = useState(false); // Modal state
+
     const handleFileChange = (e, documentName) => {
         const file = e.target.files[0];
 
         // Validate file type (PDF or Word)
-        const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+        const validTypes = [
+            'application/pdf', 
+            'application/msword', 
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        ];
+
         if (file && validTypes.includes(file.type)) {
             setFiles(prevFiles => ({ ...prevFiles, [documentName]: file }));
             setUploadStatus(prevStatus => ({ ...prevStatus, [documentName]: 'Successful' }));
@@ -35,15 +42,16 @@ const DocumentUpload = () => {
 
     const handleDragOver = (e) => {
         e.preventDefault();
-        e.stopPropagation();
     };
 
-    const handleDrop = (e, documentName) => {
+    const handleDrop = (e, documentName, inputRef) => {
         e.preventDefault();
-        e.stopPropagation();
         const file = e.dataTransfer.files[0];
+        
         if (file) {
-            handleFileChange({ target: { files: [file] } }, documentName);
+            // Set the dropped file to the input's files array
+            inputRef.current.files = e.dataTransfer.files;
+            handleFileChange({ target: inputRef.current }, documentName);
         }
     };
 
@@ -51,23 +59,18 @@ const DocumentUpload = () => {
         e.preventDefault();
         // Perform submission logic (e.g., sending files to server)
         console.log('Files to upload:', files);
-        alert('Documents uploaded successfully!');
-        // Clear file inputs after submission
-        setFiles({
-            registrationCertificate: null,
-            agencyProfile: null,
-            auditReport: null,
-            ngoConsortiumMandate: null,
-            icrcCodeOfConduct: null,
-        });
-        setUploadStatus({
-            registrationCertificate: 'No file chosen',
-            agencyProfile: 'No file chosen',
-            auditReport: 'No file chosen',
-            ngoConsortiumMandate: 'No file chosen',
-            icrcCodeOfConduct: 'No file chosen',
-        });
+
+        // Show the success message
+        setShowSuccessModal(true);
+        console.log('Modal should pop up now');
     };
+
+    // Create refs for inputs to programmatically update input's file list
+    const registrationRef = React.createRef();
+    const agencyProfileRef = React.createRef();
+    const auditReportRef = React.createRef();
+    const ngoConsortiumMandateRef = React.createRef();
+    const icrcCodeOfConductRef = React.createRef();
 
     return (
         <div className="documentUpload">
@@ -75,13 +78,14 @@ const DocumentUpload = () => {
             <form onSubmit={handleSubmit} className="uploadForm">
                 <div className="formGroup" 
                      onDragOver={handleDragOver} 
-                     onDrop={(e) => handleDrop(e, 'registrationCertificate')}>
+                     onDrop={(e) => handleDrop(e, 'registrationCertificate', registrationRef)}>
                     <label>
                         Registration Certificate:
                         <input
                             type="file"
                             accept=".pdf, .doc, .docx"
                             onChange={(e) => handleFileChange(e, 'registrationCertificate')}
+                            ref={registrationRef}
                             required
                         />
                     </label>
@@ -91,13 +95,14 @@ const DocumentUpload = () => {
                 </div>
                 <div className="formGroup" 
                      onDragOver={handleDragOver} 
-                     onDrop={(e) => handleDrop(e, 'agencyProfile')}>
+                     onDrop={(e) => handleDrop(e, 'agencyProfile', agencyProfileRef)}>
                     <label>
                         Agency Profile:
                         <input
                             type="file"
                             accept=".pdf, .doc, .docx"
                             onChange={(e) => handleFileChange(e, 'agencyProfile')}
+                            ref={agencyProfileRef}
                             required
                         />
                     </label>
@@ -107,13 +112,14 @@ const DocumentUpload = () => {
                 </div>
                 <div className="formGroup" 
                      onDragOver={handleDragOver} 
-                     onDrop={(e) => handleDrop(e, 'auditReport')}>
+                     onDrop={(e) => handleDrop(e, 'auditReport', auditReportRef)}>
                     <label>
                         Audit Report:
                         <input
                             type="file"
                             accept=".pdf, .doc, .docx"
                             onChange={(e) => handleFileChange(e, 'auditReport')}
+                            ref={auditReportRef}
                             required
                         />
                     </label>
@@ -123,13 +129,14 @@ const DocumentUpload = () => {
                 </div>
                 <div className="formGroup" 
                      onDragOver={handleDragOver} 
-                     onDrop={(e) => handleDrop(e, 'ngoConsortiumMandate')}>
+                     onDrop={(e) => handleDrop(e, 'ngoConsortiumMandate', ngoConsortiumMandateRef)}>
                     <label>
                         Signed NGO Consortium Mandate:
                         <input
                             type="file"
                             accept=".pdf, .doc, .docx"
                             onChange={(e) => handleFileChange(e, 'ngoConsortiumMandate')}
+                            ref={ngoConsortiumMandateRef}
                             required
                         />
                     </label>
@@ -139,13 +146,14 @@ const DocumentUpload = () => {
                 </div>
                 <div className="formGroup" 
                      onDragOver={handleDragOver} 
-                     onDrop={(e) => handleDrop(e, 'icrcCodeOfConduct')}>
+                     onDrop={(e) => handleDrop(e, 'icrcCodeOfConduct', icrcCodeOfConductRef)}>
                     <label>
                         Signed ICRC/Red Crescent Code of Conduct:
                         <input
                             type="file"
                             accept=".pdf, .doc, .docx"
                             onChange={(e) => handleFileChange(e, 'icrcCodeOfConduct')}
+                            ref={icrcCodeOfConductRef}
                             required
                         />
                     </label>
@@ -155,6 +163,19 @@ const DocumentUpload = () => {
                 </div>
                 <button type="submit" className="submitButton">Upload Documents</button>
             </form>
+
+            {/* Modal for success message */}
+            {showSuccessModal && (
+                <div className="modal">
+                    <div className="modalContent">
+                        <h3>Success!</h3>
+                        <p>Your registration process was successful, and your documents have been uploaded.</p>
+                        <button onClick={() => setShowSuccessModal(false)} className="closeButton">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

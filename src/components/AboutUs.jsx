@@ -10,14 +10,22 @@ const AboutUs = () => {
       <div className="about-us">
         <h2>How we work in Somalia/Somaliland</h2>
         <p>
-          The Somali NGO Consortium is a voluntary coordination mechanism of NGOs for NGOs: given the highly insecure environment, the complexity of the operating environment and the large numbers of agencies working in Somalia/Somaliland, a coordinated voice is critical to successfully conduct development and humanitarian aid.
+        Minority Rights Organizations (MRO) Consortium is a pioneering minority-led organization based in Somalia, dedicated to championing the rights and interests of marginalized communities. Founded and operated by minority groups themselves, our consortium serves as a crucial platform for advocacy, support, and collaboration.
         </p>
         <p>
-          The Somali NGO Consortium was established in 1999 and has since grown to become an effective network of non-governmental organisations (NGOs) working together to improve international aid coordination and raise the presence and profile of NGO representation within the aid coordination structure for Somalia/Somaliland. The NGO Consortium maintains its presence through its offices in Hargeisa, Garowe, Mogadishu, Baidao, Kismayo and Dhusamareeb.
+        Our mission is to empower minority communities by addressing systemic injustices and promoting equitable treatment and promote social justice, equality, and inclusion for marginalized groups, ensuring their voices are heard and their rights protected.
         </p>
         <p>
-          The reach of our services greatly extends beyond the immediate membership. We also work closely with INSO Somalia (formerly NSP and SPAS) in providing support to International and National NGOs so as to facilitate their safe and secure operations in Somalia / Somaliland.
+        Minority Rights Organizations (MRO) focuses on influencing policy reforms, providing resources and training to minority-led organizations, and fostering a collaborative environment to tackle common challenges. Through our initiatives, we work to amplify the voices of those who are often unheard and to drive meaningful change at both local and national levels.
         </p>
+        <p>
+        We offer a range of services, including advocacy campaigns, NGO certification, coordination of joint efforts, and representation in key forums. Our goal is to build a more inclusive society where minority groups can thrive and fully participate in all aspects of public life. Through collective action, we envision a Somalia where diversity is embraced, and all individuals can live with dignity, free from discrimination and inequality.
+        </p>
+        <h2>Our Core Values</h2>
+        <p>At the Minority Rights Organizations (MRO) Consortium, which is exclusively owned and managed by minority groups in Somalia, we are committed to:    • Inclusivity: Embracing the diversity of minority communities and ensuring all voices are represented.
+    • Empowerment: Supporting minority groups in asserting their rights and identities.
+    • Integrity: Upholding transparency, accountability, and ethical practices in all Consortium activities.
+    • Solidarity: Promoting unity among organizations and communities in the pursuit of justice and equality.</p>
         <h2>Vision</h2>
         <p>Stronger together for resilient Somali Communities.</p>
         <h2>Mission</h2>
