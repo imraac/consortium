@@ -1,0 +1,155 @@
+body {
+  /* Replace with your image path */
+   /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 100vh; /* Ensure the body takes the full height */
+    margin: 0; /* Remove default margin */
+}
+.profile-container {
+    padding: 40px;
+    max-width: 900px;
+    margin: 150px 0 0 20px; 
+    /* Removed auto centering and aligned to the left */
+}
+
+h2 {
+    text-align: center;
+    color: #362121;
+}
+
+h3 {
+    color: #444;
+}
+
+/* Profile Card Styles */
+.profile-card {
+    background-color: #d8a10b;
+    border: 1px solid #248697;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow-wrap: break-word; /* Wrap long text */
+    word-wrap: break-word; /* Ensure text wraps properly */
+    word-break: break-word; /* Break long words */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+/* Profile Details */
+.profile-details p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Buttons */
+.edit-button,
+.save-button,
+.cancel-button {
+    margin: 10px 5px;
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cancel-button {
+    background-color: #f44336;
+}
+
+/* Form Styles */
+.edit-profile-form label {
+    display: block;
+    margin: 15px 0 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.edit-profile-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Ensure text areas and input fields take full width */
+textarea, input[type="text"], input[type="email"] {
+    width: 100%; /* Full width for inputs and text areas */
+    max-width: 100%; /* Limit to max width */
+    padding: 10px; /* Padding for better touch targets */
+    margin-top: 10px; /* Margin for separation */
+    margin-bottom: 20px; /* Margin for spacing */
+    border: 1px solid #ccc; /* Border styling */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Add scrolling for long text */
+textarea {
+    min-height: 100px; /* Minimum height for text area */
+    max-height: 300px; /* Maximum height for text area */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 10px; /* Padding for smaller screens */
+    }
+
+    .profile-card {
+        padding: 10px; /* Padding for cards on smaller screens */
+    }
+
+    textarea, input[type="text"], input[type="email"] {
+        padding: 8px; /* Padding for inputs on smaller screens */
+    }
+}
+
+/* Profile Picture Styles */
+.profile-picture {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-image {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures the image covers the container */
+    margin-right: 10px;
+}
+
+.upload-button {
+    display: inline-block;
+}
+
+.delete-button {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c62828; /* Darker red */
+}
+
+

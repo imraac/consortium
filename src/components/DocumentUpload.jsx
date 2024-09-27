@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './DocumentUpload.css'; // Ensure this CSS file for styles
 
 const DocumentUpload = () => {
@@ -19,6 +20,7 @@ const DocumentUpload = () => {
     });
 
     const [showSuccessModal, setShowSuccessModal] = useState(false); // Modal state
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleFileChange = (e, documentName) => {
         const file = e.target.files[0];
@@ -62,7 +64,11 @@ const DocumentUpload = () => {
 
         // Show the success message
         setShowSuccessModal(true);
-        console.log('Modal should pop up now');
+
+        // After a delay, navigate to the member-account-administrator page
+        setTimeout(() => {
+            navigate('/member-account-administrator'); // Navigate to the desired page
+        }, 3000); // Redirect after 3 seconds (you can adjust the timing)
     };
 
     // Create refs for inputs to programmatically update input's file list

@@ -16,6 +16,7 @@ import Advocacy from './components/Advocacy';
 import ConsortiumJoinForm from './components/ConsortiumJoinForm'; // Ensure this path is correct
 import FormFeedbackPage from './components/FormFeedbackPage';
 import Dashboard from './components/Dashboard'; // Import your form component
+import ProfilePage from './components/ProfilePage';
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/feedback" element={<FormFeedbackPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/advocacy" element={<Advocacy />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/document-upload" element={<DocumentUpload />} />
         
         <Route path="/member-account-administrator" element={<Dashboard />} />
