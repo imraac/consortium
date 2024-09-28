@@ -1,233 +1,15 @@
 
 
 
-// import { useState } from 'react';
-// import { Link } from 'react-router-dom'; // Import Link
-// import './Registration.css';
-// import Footer from "./Footer";
-
-// const Registration = () => {
-//   const [formData, setFormData] = useState({
-//     agencyName: '',
-//     acronym: '',
-//     description: '',
-//     missionStatement: '',
-//     website: '',
-//     isNGO: false,
-//     yearsOperational: '',
-//     reasonToJoin: '',
-//     participatesInConsortium: false,
-//     understandsPrinciples: false,
-//   });
-
-//   const handleChange = (e) => {
-//     const { name, value, type, checked } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: type === 'checkbox' ? checked : value,
-//     });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     // Check for required fields
-//     if (!formData.agencyName || !formData.description || !formData.missionStatement || !formData.website || !formData.yearsOperational || !formData.reasonToJoin) {
-//       alert('Please fill in all required fields.');
-//       return;
-//     }
-
-//     try {
-//       const response = await fetch('/api/registration', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(formData),
-//       });
-
-//       if (response.ok) {
-//         const result = await response.json();
-//         console.log('Registration successful:', result);
-        
-//         // Reset form data
-//         setFormData({
-//           agencyName: '',
-//           acronym: '',
-//           description: '',
-//           missionStatement: '',
-//           website: '',
-//           isNGO: false,
-//           yearsOperational: '',
-//           reasonToJoin: '',
-//           participatesInConsortium: false,
-//           understandsPrinciples: false,
-//         });
-
-//         // Redirect to Contact Details page
-//         // You can handle redirection here if needed, or keep it in Link
-//       } else {
-//         console.error('Registration failed:', response.statusText);
-//       }
-//     } catch (error) {
-//       console.error('Error:', error);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <div className="registration-form-container">
-//         <h1>Agency Registration</h1>
-//         <p>All fields are required unless stated otherwise.</p>
-//         <h2>Basic Information</h2>
-//         <form onSubmit={handleSubmit}>
-//           {/* Full name of agency */}
-//           <label htmlFor="agencyName">Full name of agency:</label>
-//           <input
-//             type="text"
-//             id="agencyName"
-//             name="agencyName"
-//             value={formData.agencyName}
-//             onChange={handleChange}
-//             required
-//           />
-
-//           {/* Acronym (optional) */}
-//           <label htmlFor="acronym">Acronym (optional):</label>
-//           <input
-//             type="text"
-//             id="acronym"
-//             name="acronym"
-//             value={formData.acronym}
-//             onChange={handleChange}
-//           />
-
-//           {/* Brief description of agency */}
-//           <label htmlFor="description">Brief description of agency:</label>
-//           <textarea
-//             id="description"
-//             name="description"
-//             value={formData.description}
-//             onChange={handleChange}
-//             required
-//           />
-
-//           {/* Mission Statement */}
-//           <label htmlFor="missionStatement">Mission Statement:</label>
-//           <textarea
-//             id="missionStatement"
-//             name="missionStatement"
-//             value={formData.missionStatement}
-//             onChange={handleChange}
-//             required
-//           />
-
-//           {/* Website */}
-//           <label htmlFor="website">Website:</label>
-//           <input
-//             type="url"
-//             id="website"
-//             name="website"
-//             value={formData.website}
-//             onChange={handleChange}
-//             required
-//           />
-
-//           {/* Is NGO? */}
-//           <label>Is your agency a non-governmental organisation (NGO)?</label>
-//           <div>
-//             <input
-//               type="checkbox"
-//               id="isNGO"
-//               name="isNGO"
-//               checked={formData.isNGO}
-//               onChange={handleChange}
-//             />
-//             <label htmlFor="isNGO">Yes</label>
-//           </div>
-
-//           {/* Number of years operational */}
-//           <label htmlFor="yearsOperational">Number of years operational in Somalia/Somaliland:</label>
-//           <input
-//             type="number"
-//             id="yearsOperational"
-//             name="yearsOperational"
-//             value={formData.yearsOperational}
-//             onChange={handleChange}
-//             required
-//           />
-
-//           {/* Reason to join */}
-//           <label htmlFor="reasonToJoin">Please explain why you would like to join the consortium:</label>
-//           <textarea
-//             id="reasonToJoin"
-//             name="reasonToJoin"
-//             value={formData.reasonToJoin}
-//             onChange={handleChange}
-//             required
-//           />
-
-//           {/* Participates in Consortium activities */}
-//           <label>Is your agency willing to participate in NGO Consortium activities?</label>
-//           <div>
-//             <input
-//               type="checkbox"
-//               id="participatesInConsortium"
-//               name="participatesInConsortium"
-//               checked={formData.participatesInConsortium}
-//               onChange={handleChange}
-//             />
-//             <label htmlFor="participatesInConsortium">Yes</label>
-//           </div>
-
-//           {/* Understands and agrees to principles */}
-//           <p>
-//             Our agency understands, commits to and agrees to uphold and respect the principles of Independence, Impartiality, and Neutrality.
-//           </p>
-//           <div>
-//             <input
-//               type="checkbox"
-//               id="understandsPrinciples"
-//               name="understandsPrinciples"
-//               checked={formData.understandsPrinciples}
-//               onChange={handleChange}
-//             />
-//             <label htmlFor="understandsPrinciples">Yes</label>
-//           </div>
-
-         
-
-//           {/* Link to next page */}
-//           <Link
-//             to="/personal-details"
-//             style={{
-//               display: 'inline-block',
-//               marginTop: '10px',
-//               backgroundColor: '#4CAF50',
-//               color: '#fff',
-//               padding: '10px',
-//               textDecoration: 'none'
-//             }}
-//           >
-//             NEXT
-//           </Link>
-//         </form>
-//       </div>
-//       <Footer /> {/* Add Footer here */}
-//     </div>
-//   );
-// };
-
-// export default Registration;
-
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom';
+import axios from 'axios'; // Import axios
 import './Registration.css';
-import Footer from "./Footer";
+import Footer from './Footer';
 
 const Registration = () => {
   const [formData, setFormData] = useState({
-    agencyName: '',
+    fullName: '',
     acronym: '',
     description: '',
     missionStatement: '',
@@ -239,7 +21,9 @@ const Registration = () => {
     understandsPrinciples: false,
   });
 
-  // Scroll to top on component mount
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -254,29 +38,33 @@ const Registration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
+    setSuccess(false);
 
-    // Check for required fields
-    if (!formData.agencyName || !formData.description || !formData.missionStatement || !formData.website || !formData.yearsOperational || !formData.reasonToJoin) {
-      alert('Please fill in all required fields.');
+    if (!formData.fullName || !formData.description || !formData.missionStatement || !formData.website || !formData.yearsOperational || !formData.reasonToJoin) {
+      setError('Please fill in all required fields.');
       return;
     }
 
     try {
-      const response = await fetch('/api/registration', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // Replace fetch with axios
+      const response = await axios.post('http://127.0.0.1:5000/agency', {
+        full_name: formData.fullName,
+        acronym: formData.acronym,
+        description: formData.description,
+        mission_statement: formData.missionStatement,
+        website: formData.website,
+        is_ngo: formData.isNGO,
+        years_operational: formData.yearsOperational,
+        reason_for_joining: formData.reasonToJoin,
+        willing_to_participate: formData.participatesInConsortium,
+        commitment_to_principles: formData.understandsPrinciples,
       });
 
-      if (response.ok) {
-        const result = await response.json();
-        console.log('Registration successful:', result);
-        
-        // Reset form data
+      if (response.status === 200 || response.status === 201) {
+        setSuccess(true);
         setFormData({
-          agencyName: '',
+          fullName: '',
           acronym: '',
           description: '',
           missionStatement: '',
@@ -287,14 +75,11 @@ const Registration = () => {
           participatesInConsortium: false,
           understandsPrinciples: false,
         });
-
-        // Redirect to Contact Details page
-        // You can handle redirection here if needed, or keep it in Link
       } else {
-        console.error('Registration failed:', response.statusText);
+        setError('Registration failed');
       }
     } catch (error) {
-      console.error('Error:', error);
+      setError('An error occurred. Please try again.');
     }
   };
 
@@ -303,20 +88,18 @@ const Registration = () => {
       <div className="registration-form-container">
         <h1>Agency Registration</h1>
         <p>All fields are required unless stated otherwise.</p>
-        <h2>Basic Information</h2>
         <form onSubmit={handleSubmit}>
-          {/* Full name of agency */}
-          <label htmlFor="agencyName">Full name of agency:</label>
+          {/* Form fields remain the same as before */}
+          <label htmlFor="fullName">Full name of agency:</label>
           <input
             type="text"
-            id="agencyName"
-            name="agencyName"
-            value={formData.agencyName}
+            id="fullName"
+            name="fullName"
+            value={formData.fullName}
             onChange={handleChange}
             required
           />
 
-          {/* Acronym (optional) */}
           <label htmlFor="acronym">Acronym (optional):</label>
           <input
             type="text"
@@ -326,7 +109,6 @@ const Registration = () => {
             onChange={handleChange}
           />
 
-          {/* Brief description of agency */}
           <label htmlFor="description">Brief description of agency:</label>
           <textarea
             id="description"
@@ -336,7 +118,6 @@ const Registration = () => {
             required
           />
 
-          {/* Mission Statement */}
           <label htmlFor="missionStatement">Mission Statement:</label>
           <textarea
             id="missionStatement"
@@ -346,7 +127,6 @@ const Registration = () => {
             required
           />
 
-          {/* Website */}
           <label htmlFor="website">Website:</label>
           <input
             type="url"
@@ -357,7 +137,6 @@ const Registration = () => {
             required
           />
 
-          {/* Is NGO? */}
           <label>Is your agency a non-governmental organisation (NGO)?</label>
           <div>
             <input
@@ -370,8 +149,7 @@ const Registration = () => {
             <label htmlFor="isNGO">Yes</label>
           </div>
 
-          {/* Number of years operational */}
-          <label htmlFor="yearsOperational">Number of years operational in Somalia/Somaliland:</label>
+          <label htmlFor="yearsOperational">Number of years operational:</label>
           <input
             type="number"
             id="yearsOperational"
@@ -381,8 +159,7 @@ const Registration = () => {
             required
           />
 
-          {/* Reason to join */}
-          <label htmlFor="reasonToJoin">Please explain why you would like to join the consortium:</label>
+          <label htmlFor="reasonToJoin">Reason to join:</label>
           <textarea
             id="reasonToJoin"
             name="reasonToJoin"
@@ -391,8 +168,7 @@ const Registration = () => {
             required
           />
 
-          {/* Participates in Consortium activities */}
-          <label>Is your agency willing to participate in NGO Consortium activities?</label>
+          <label>Willing to participate in NGO Consortium activities?</label>
           <div>
             <input
               type="checkbox"
@@ -404,10 +180,7 @@ const Registration = () => {
             <label htmlFor="participatesInConsortium">Yes</label>
           </div>
 
-          {/* Understands and agrees to principles */}
-          <p>
-            Our agency understands, commits to and agrees to uphold and respect the principles of Independence, Impartiality, and Neutrality.
-          </p>
+          <label>Commitment to principles of Independence, Impartiality, and Neutrality:</label>
           <div>
             <input
               type="checkbox"
@@ -419,23 +192,15 @@ const Registration = () => {
             <label htmlFor="understandsPrinciples">Yes</label>
           </div>
 
-          {/* Link to next page */}
-          <Link
-            to="/personal-details"
-            style={{
-              display: 'inline-block',
-              marginTop: '10px',
-              backgroundColor: '#4CAF50',
-              color: '#fff',
-              padding: '10px',
-              textDecoration: 'none'
-            }}
-          >
-            NEXT
-          </Link>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          {success && <p style={{ color: 'green' }}> successful! press next</p>}
+
+          <button type="submit">Submit</button>
+
+          <Link to="/personal-details">Next</Link>
         </form>
       </div>
-      <Footer /> {/* Add Footer here */}
+      <Footer />
     </div>
   );
 };

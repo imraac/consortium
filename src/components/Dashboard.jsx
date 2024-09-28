@@ -14,11 +14,12 @@ const Dashboard = () => {
         Follow the links below to manage your profile, create events, add
         vacancies, documents, or web links and much more.
       </p>
+
       <p>
         Help files are provided throughout the system, but if anything is not
         clear, please email us.
       </p>
-
+      
       <div className="card-container">
         {/* Cards with more information at the top */}
         <div className="card left">
@@ -133,3 +134,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
