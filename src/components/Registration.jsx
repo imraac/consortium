@@ -17,7 +17,7 @@ const Registration = () => {
     isNGO: false,
     yearsOperational: '',
     reasonToJoin: '',
-    participatesInConsortium: false,
+    participatesInConsortium: false, 
     understandsPrinciples: false,
   });
 
@@ -206,3 +206,5 @@ const Registration = () => {
 };
 
 export default Registration;
+
+
