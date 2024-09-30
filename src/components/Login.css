@@ -117,3 +117,17 @@ input[type="tel"]:focus { /* Include tel input focus */
         font-size: 14px; /* Smaller button font size */
     }
 }
+.toggle-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .toggle-button:hover {
+    background-color: #0056b3;
+  }
+  

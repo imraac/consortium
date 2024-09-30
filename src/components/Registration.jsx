@@ -86,7 +86,7 @@ const Registration = () => {
   return (
     <div>
       <div className="registration-form-container">
-        <h1>Agency Registration</h1>
+        <h1>Basic Information</h1>
         <p>All fields are required unless stated otherwise.</p>
         <form onSubmit={handleSubmit}>
           {/* Form fields remain the same as before */}

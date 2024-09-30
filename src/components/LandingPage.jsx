@@ -185,8 +185,8 @@ const LandingPage = () => {
       {/* Services Section */}
       <section className="services">
         {[
-          { icon: "fas fa-hands-holding", title: "PCA HOME CARE", description: "Personal Care Assistants (PCAs) are provided by Minnesota Quality Care." },
-          { icon: "fa-solid fa-sitemap", title: "SOCIAL SUPPORT", description: "We do so much more than home care services for our clients." },
+          { icon: "fas fa-hands-holding", title: "MAIN ACTIVITIES", description: "Establishing and maintaining close links to other external actors whose actions impact upon Consortium members' work in Somalia." },
+          { icon: "fa-solid fa-sitemap", title: "SERVICES& ADVOCACY", description: "We do so much more than home care services for our clients." },
           { icon: "fa-solid fa-hand-holding-heart", title: "SOCIAL SUPPORT", description: "We do so much more than home care services for our clients." },
           { icon: "fa-solid fa-person-hiking", title: "TRANSPORTATION", description: "Transportation services for appointments, errands, and outings." },
         ].map(service => (

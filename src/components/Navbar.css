@@ -413,9 +413,6 @@ footer p {
 
 
 
-
-
-/* Call Us Bar */
 .call-us {
   position: fixed; /* Fix it at the top */
   top: 0; /* Position at the very top */
@@ -425,140 +422,134 @@ footer p {
   color: white;
   font-size: 1rem;
   z-index: 1001; /* Higher than the navbar */
-  width: 100%; /
-  
+  width: 100%;
 }
-  /* Navbar Styling */
-  nav {
-    position: fixed; /* Keep the navbar fixed at the top */
-    top: 60px; /* Adjust to position below the "Call Us" section */
-    width: 100%; /* Ensure navbar spans the width of the screen */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1% 2%;
-    z-index: 1000; /* Lower than .call-us */
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
-    transition: backdrop-filter 0.3s ease, background-color 0.3s ease; /* Smooth transition */
-  }
 
-  /* Main Header */
-  .main-header {
-    backdrop-filter: blur(10px);
-    background-image: linear-gradient(to bottom, #e7ecef00, #e7ecef);
-  }
-
-  /* Navbar Links */
-
-  .nav-links ul {
-    list-style: none;
-  }
-
-  .nav-links ul li {
-    display: inline-block;
-    padding: 8px 12px;
-  }
-
-  .nav-links ul li a {
-    text-decoration: none;
-    color: #d63535;
-    cursor: pointer;
-  }
-
-
-
-  .nav img {
-    width: 400px;
-  }
-
-  .nav-links .dropdown {
-    position: relative;
-  }
-
-  .nav-links .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #d61e1e;
-   
-    z-index: 1;
-    border-top: 2px solid #9c2483;
-    text-align: left;
-    width: 200px;
-    max-height: 300px;
-    overflow-y: auto;
-  }
-
-  .nav-links .dropdown-content a {
-    color: #d81616;
-    padding: 8px 12px;
-    display: block;
-    text-decoration: none;
-  }
-
-  .nav-links .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-
-  .nav-links .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  .nav__data {
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    
-  }
-
-
-
-  .nav__menu {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .nav__link {
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
-    padding: 1rem;
-    transition: background-color 0.3s;
-    gap: 6rem;
-    
-  }
-
-  .nav__link:hover {
-    background-color: var(--first-color-lighten);
-  }
-  .nav__menu li {
-    display: inline-block; /* Ensure li elements are inline */
+/* Navbar Styling */
+nav {
+  position: fixed; /* Keep the navbar fixed at the top */
+  top: 60px; /* Adjust to position below the "Call Us" section */
+  width: 100%; /* Ensure navbar spans the width of the screen */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 2%;
+  z-index: 1000; /* Lower than .call-us */
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease; /* Smooth transition */
 }
-  .dropdown__content {
-    display: none;
-    position: absolute;
-    background-color: var(--body-color);
-    padding: 1rem;
-    box-shadow: 0 2px 8px hsla(220, 68%, 12%, 0.1);
-  }
 
-  .dropdown:hover .dropdown__content {
-    display: block;
-  }
+/* Main Header */
+.main-header {
+  backdrop-filter: blur(10px);
+  background-image: linear-gradient(to bottom, #e7ecef00, #e7ecef);
+}
 
-  .nav__icons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
+/* Navbar Links */
+.nav-links ul {
+  list-style: none;
+}
+
+.nav-links ul li {
+  display: inline-block;
+  padding: 8px 12px;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #d63535;
+  cursor: pointer;
+}
+
+.nav img {
+  width: 400px;
+}
+
+.nav-links .dropdown {
+  position: relative;
+}
+
+.nav-links .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #d61e1e;
+  z-index: 1;
+  border-top: 2px solid #9c2483;
+  text-align: left;
+  width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.nav-links .dropdown-content a {
+  color: #d81616;
+  padding: 8px 12px;
+  display: block;
+  text-decoration: none;
+}
+
+.nav-links .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav__data {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem;
+  transition: background-color 0.3s;
+  gap: 6rem;
+}
+
+.nav__link:hover {
+  background-color: var(--first-color-lighten);
+}
+
+.nav__menu li {
+  display: inline-block; /* Ensure li elements are inline */
+}
+
+.dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: var(--body-color);
+  padding: 1rem;
+  box-shadow: 0 2px 8px hsla(220, 68%, 12%, 0.1);
+}
+
+.dropdown:hover .dropdown__content {
+  display: block;
+}
+
+.nav__icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Remove underline from dropdown links */
 .dropdown__link {
   text-decoration: none !important; /* This removes the underline */
   color: #333; /* Set the link color to a dark shade for visibility */
   padding: 12px 16px; /* Add padding to make the links more clickable */
- /* Add padding to make links more clickable */
   display: block; /* Ensure links take up the full width */
   font-weight: 500; /* Ensure the links take up the full width */
 }
@@ -572,11 +563,11 @@ footer p {
   box-shadow: 0 2px 8px rgba(14, 159, 243, 0.1); /* Add a shadow for better visibility */
   z-index: 1;
   min-width: 250px; /* Set a minimum width for the dropdown */
-  max-width: 350px; 
+  max-width: 350px;
 }
 
 .dropdown__link:hover {
-  background-color:  #3ABEF9; /* Add a light gray background when hovering */
+  background-color: #3ABEF9; /* Add a light gray background when hovering */
 }
 
 /* Show the dropdown content when the dropdown is hovered */
@@ -584,57 +575,55 @@ footer p {
   display: block;
 }
 
-  .social-icon {
-    font-size: 1.5rem;
-    color: var(--title-color);
-    transition: color 0.3s;
-  }
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  transition: color 0.3s;
+}
 
-  .social-icon:hover {
-    color: var(--first-color);
-  }
+.social-icon:hover {
+  color: var(--first-color);
+}
 
-  .btn {
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    cursor: pointer;
-  }
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
 
-  .join-consortium-button {
-    background-color: #3ABEF9 !important; /* Dark red background */
-    color: #f3f7f3 !important; /* Green text color */
-    border: 2px solid #4caf50; /* Green border */
-    padding: 0.5rem 1rem; /* Adjust padding for better appearance */
-    border-radius: 1px !important; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth transition */
-    cursor: pointer;
-    margin-right: 2rem; /* Pointer cursor on hover */
-  }
-  
-  .join-consortium-button:hover {
-    background-color: #15e015 !important; /* Dark background on hover */
-    color: black; /* Change text color on hover */
-  }
-  
-  .login-button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 1px !important;
-  }
+.join-consortium-button {
+  background-color: #3ABEF9 !important; /* Dark red background */
+  color: #f3f7f3 !important; /* Green text color */
+  border: 2px solid #4caf50; /* Green border */
+  padding: 0.5rem 1rem; /* Adjust padding for better appearance */
+  border-radius: 1px !important; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition */
+  cursor: pointer;
+  margin-right: 2rem; /* Pointer cursor on hover */
+}
 
-  .login-button:hover {
-    background-color: #3ABEF9 !important;
-  }
+.join-consortium-button:hover {
+  background-color: #15e015 !important; /* Dark background on hover */
+  color: black; /* Change text color on hover */
+}
+
+.login-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 1px !important;
+}
+
+.login-button:hover {
+  background-color: #3ABEF9 !important;
+}
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
   nav img {
     width: 150px;
   }
-
-  
 
   nav .fa-solid {
     color: black;
@@ -643,10 +632,7 @@ footer p {
     font-size: 22px;
     cursor: pointer;
   }
-
- 
 }
-/* Existing styles... */
 
 /* Navbar Menu Toggle */
 .nav__menu-toggle {
@@ -662,7 +648,7 @@ footer p {
     top: 60px; /* Adjust to position below navbar */
     left: 0;
     right: 0;
-    gap: 2rem; 
+    gap: 2rem;
     background-color: white; /* Ensure background is white */
     padding: 1rem;
     z-index: 1000; /* Ensure it appears above other content */
@@ -684,14 +670,14 @@ footer p {
   }
 
   .nav__menu-toggle {
-    display: block; /* Show toggle button on mobile */
+    display: block;
+    cursor: pointer; /* Show toggle button on mobile */
   }
 
   .nav img {
     width: 150px; /* Adjust logo size for mobile */
   }
 
-  
   .nav__icons {
     display: flex;
     justify-content: center; /* Center social icons */
@@ -710,4 +696,3 @@ footer p {
   width: 170px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
-
