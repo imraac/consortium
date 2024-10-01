@@ -7,7 +7,7 @@ const Footer = () => {
   const socialLinks = ['Facebook', 'Twitter', 'Instagram'];
 
   return (
-    <footer style={{ backgroundColor: '#EEEEEE', color: 'white', padding: '2rem 0' }}>
+    <footer style={{ backgroundColor: '#FAF7F0', color: 'white', padding: '2rem 0' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '1.5rem' }}>
 

@@ -115,7 +115,7 @@ const LandingPage = () => {
       <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="/motherchild.jpg" className="d-block w-100" alt="FMS" />
+            <img src="/manngo.jpg" className="d-block w-100" alt="FMS" />
             <div className="carousel-caption carousel-caption-style">
               <div className="caption-background">
                
@@ -141,7 +141,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="carousel-item">
-            <img src="/motherchild.jpg" className="d-block w-100" alt="PCA Services" />
+            <img src="/map.png" className="d-block w-100" alt="PCA Services" />
             <div className="carousel-caption carousel-caption-style">
               <div className="caption-background">
                 <h5>Marginalized & Minority People</h5>

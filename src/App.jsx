@@ -19,6 +19,7 @@ import Dashboard from './components/Dashboard';
 import ProfilePage from './components/ProfilePage';
 import CoreValues from './components/CoreValues';
 import StructureManagement from './components/StructureManagment';
+import Strategy from './components/Strategy';
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
         <Route path="/feedback" element={<FormFeedbackPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/advocacy" element={<Advocacy />} />
+        <Route path="/Strategy" element={<Strategy />} />
         <Route path="/structure-management" element={< StructureManagement/>} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/document-upload" element={<DocumentUpload />} />

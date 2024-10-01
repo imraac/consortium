@@ -1,0 +1,40 @@
+/* Strategy.css */
+
+.strategy-container {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    margin-top: 150px; 
+  }
+  
+  .strategy-svg {
+    width: 800px;
+    height: 900px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  .strategy-rect {
+    x: 10;
+    y: 10;
+    width: 780;
+    height: 880;
+    fill: #f9f9f9;
+    stroke: #ccc;
+    stroke-width: 2;
+    rx: 5;
+  }
+  
+  .strategy-title {
+    font-weight: bold;
+    font-size: 18px;
+    fill: #000;
+  }
+  
+  .strategy-goal {
+    font-weight: bold;
+  }
+  

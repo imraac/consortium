@@ -18,6 +18,7 @@ const ConsortiumMandate = () => {
       <p>
         The MROs Consortium in Somalia aims to build a powerful coalition that amplifies the voices of minority communities and drives meaningful change. Through collective action, we envision a Somalia where diversity is embraced, and all individuals can live with dignity, free from discrimination and inequality.
       </p>
+      
       <p>
         The MRO Consortium is dedicated to addressing and advancing the rights of minority groups in Somalia. Our mandate includes:
       </p>
