@@ -5,10 +5,12 @@ import Footer from './Footer';
 
 // Personal Information page
 const ContactDetails = () => {
+
   const [contactData, setContactData] = useState({
     founders: [{ name: '', contact: '', clan: '' }],
     boardDirectors: [{ name: '', contact: '', clan: '' }],
     keyStaffs: [{ name: '', contact: '', clan: '' }],
+
   });
 
   useEffect(() => {
@@ -121,6 +123,7 @@ const ContactDetails = () => {
                 onChange={(e) => handleChange(e, index, 'keyStaffs')}
                 required
               />
+              
               <label>Contact Number:</label>
               <input
                 type="text"
@@ -130,6 +133,7 @@ const ContactDetails = () => {
                 required
               />
               <label>Clan:</label>
+
               <input
                 type="text"
                 name="clan"

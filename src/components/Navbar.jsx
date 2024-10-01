@@ -6,8 +6,6 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faTwitter,
-  faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -28,7 +26,29 @@ const Navbar = () => {
 
   return (
     <header className="header">
-      <div className="call-us">Call Us: +1 234 567 890</div>
+   <div className="call-us">
+  <a
+    href="https://www.facebook.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: "#4267B2", display: "inline-block", marginRight: "7px" }} // Facebook blue with spacing
+  >
+    <FontAwesomeIcon icon={faFacebook} className="social-icon" />
+  </a>
+
+  <a
+    href="https://www.linkedin.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: "#0077B5", display: "inline-block", marginLeft: "7px" }} // LinkedIn blue with spacing
+  >
+    <FontAwesomeIcon icon={faLinkedin} className="social-icon" />
+  </a>
+
+ 
+</div>
+
+
 
       <nav className="nav">
         <div className="container nav__data">
@@ -177,38 +197,9 @@ const Navbar = () => {
             </ul>
 
             <div className="nav__icons">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-              >
-                <FontAwesomeIcon icon={faFacebook} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-              >
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
+              
+             
+            
 
               <button
                 className="btn join-consortium-button"

@@ -416,7 +416,7 @@ footer p {
 .call-us {
   position: fixed; /* Fix it at the top */
   top: 0; /* Position at the very top */
-  background: #3ABEF9;
+  background: #65cafd;
   padding: 1.3rem;
   text-align: right;
   color: white;
@@ -646,16 +646,20 @@ nav {
     flex-direction: column; /* Stack items vertically */
     position: absolute;
     top: 60px; /* Adjust to position below navbar */
-    left: 0;
     right: 0;
-    gap: 2rem;
+    width: 60%; /* Make the menu take up only 60% of the screen width */
+    height: 100vh; /* Make the menu height full screen */
     background-color: white; /* Ensure background is white */
     padding: 1rem;
     z-index: 1000; /* Ensure it appears above other content */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for showing menu */
+    transform: translateX(100%); /* Initially hide the menu by moving it off-screen */
   }
 
   .nav__menu.active {
     display: flex; /* Show menu when active */
+    transform: translateX(0); /* Slide the menu in from the right */
   }
 
   .nav__menu ul {
@@ -693,6 +697,55 @@ nav {
 
 /* Rest of your existing styles... */
 .nav_img img {
-  width: 170px; /* Adjust the width as needed */
+  width: 200px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
+}
+/* Adjust button styles for smaller screens */
+@media (max-width: 768px) {
+  /* Adjust login and consortium buttons for smaller screens */
+  .join-consortium-button, .login-button {
+    padding: 0.3rem 0.8rem; /* Reduce padding */
+    font-size: 0.9rem; /* Decrease font size */
+    margin: 0.5rem 0; /* Adjust margin for spacing */
+    width: 100%; /* Make buttons smaller and more responsive */
+    text-align: center; /* Ensure buttons are centered */
+  }
+
+  /* Center the buttons inside the navbar */
+  .nav__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%; /* Ensure buttons take up the available space */
+    gap: 0rem; /* Add gap between buttons */
+  }
+
+  /* Navbar icons smaller for mobile */
+
+
+  /* Ensure the nav__menu only takes up 60% of the screen and buttons align */
+  .nav__menu {
+    width: 75%;
+    padding: 1rem;
+    
+  }
+
+  /* Ensure the icons are aligned properly in the smaller screen navbar */
+  .nav__icons {
+    display: flex;
+    justify-content: space-around; /* Space out the icons evenly */
+    width: 100%; /* Ensure icons take up the width */
+  }
+
+  /* Adjust the overall navbar styles for smaller screens */
+  .nav {
+    padding: 0.86rem;
+     /* Reduce navbar padding */
+  }
+
+  /* Adjust the logo to fit within the smaller navbar */
+  .nav img {
+    width: 120px; /* Reduce logo size for smaller screens */
+  }
 }

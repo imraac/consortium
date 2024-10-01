@@ -1,0 +1,24 @@
+.core-values-wrapper {
+    padding: 20px;
+    background-color: #fcfeff; /* Light background color */
+    /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px 0; /* Margin above and below */
+    margin-top: 150px; /* Default margin for larger screens */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .core-values-wrapper {
+        margin-top: 95px; /* Reduced margin for smaller screens */
+    }
+}
+
+.core-values-list {
+    list-style-type: disc; /* Bullet points */
+    padding-left: 20px; /* Indentation */
+}
+
+.core-values-list li {
+    margin-bottom: 10px; /* Space between list items */
+}

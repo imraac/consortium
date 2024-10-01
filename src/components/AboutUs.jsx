@@ -12,20 +12,20 @@ const AboutUs = () => {
         <p>
         Minority Rights Organizations (MRO) Consortium is a pioneering minority-led organization based in Somalia, dedicated to championing the rights and interests of marginalized communities. Founded and operated by minority groups themselves, our consortium serves as a crucial platform for advocacy, support, and collaboration.
         </p>
+
         <p>
         Our mission is to empower minority communities by addressing systemic injustices and promoting equitable treatment and promote social justice, equality, and inclusion for marginalized groups, ensuring their voices are heard and their rights protected.
         </p>
+
         <p>
         Minority Rights Organizations (MRO) focuses on influencing policy reforms, providing resources and training to minority-led organizations, and fostering a collaborative environment to tackle common challenges. Through our initiatives, we work to amplify the voices of those who are often unheard and to drive meaningful change at both local and national levels.
         </p>
+        
         <p>
         We offer a range of services, including advocacy campaigns, NGO certification, coordination of joint efforts, and representation in key forums. Our goal is to build a more inclusive society where minority groups can thrive and fully participate in all aspects of public life. Through collective action, we envision a Somalia where diversity is embraced, and all individuals can live with dignity, free from discrimination and inequality.
         </p>
-        <h2>Our Core Values</h2>
-        <p>At the Minority Rights Organizations (MRO) Consortium, which is exclusively owned and managed by minority groups in Somalia, we are committed to:    • Inclusivity: Embracing the diversity of minority communities and ensuring all voices are represented.
-    • Empowerment: Supporting minority groups in asserting their rights and identities.
-    • Integrity: Upholding transparency, accountability, and ethical practices in all Consortium activities.
-    • Solidarity: Promoting unity among organizations and communities in the pursuit of justice and equality.</p>
+       
+       
         <h2>Vision</h2>
         <p>Stronger together for resilient Somali Communities.</p>
         <h2>Mission</h2>

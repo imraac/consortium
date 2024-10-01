@@ -1,0 +1,17 @@
+.consortium-mandate-wrapper {
+    padding: 20px;
+    background-color: #ffffff; /* Light background color */
+    border: 1px solid #f4f7fa; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px 0; /* Margin above and below */
+    margin-top: 150px; /* Default margin for larger screens */
+}
+
+.mandate-list {
+    list-style-type: disc; /* Bullet points */
+    padding-left: 20px; /* Indentation */
+}
+
+.mandate-list li {
+    margin-bottom: 10px; /* Space between list items */
+}

@@ -1,8 +1,8 @@
-import React from 'react'; // Make sure to import React
+import React from 'react'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-import Navbar from './components/Navbar'; // Adjust the path as needed
+import ConsortiumMandate from './components/ConsortiumMandate';
+import Navbar from './components/Navbar'; 
 import LandingPage from './components/LandingPage';
 import Consortium from './components/Consortium';
 import Registration from './components/Registration';
@@ -13,10 +13,11 @@ import Login from './components/Login';
 import MemberAccountAdministratorForm from './components/MemberAccountAdministratorForm';
 import AboutUs from './components/AboutUs';
 import Advocacy from './components/Advocacy';
-import ConsortiumJoinForm from './components/ConsortiumJoinForm'; // Ensure this path is correct
+import ConsortiumJoinForm from './components/ConsortiumJoinForm'; 
 import FormFeedbackPage from './components/FormFeedbackPage';
-import Dashboard from './components/Dashboard'; // Import your form component
+import Dashboard from './components/Dashboard';
 import ProfilePage from './components/ProfilePage';
+import CoreValues from './components/CoreValues';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/contact" element={<div>Contact Page</div>} />
         <Route path="/services" element={<div>Services Page</div>} />
         <Route path="/consortium" element={<Consortium />} />
+        <Route path="/core-values" element={<CoreValues />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/personal-details" element={<ContactDetails />} />
         <Route path="/consortium-registration" element={<ConsortiumRegistrationForm />} />
@@ -38,9 +40,8 @@ const App = () => {
         <Route path="/advocacy" element={<Advocacy />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/document-upload" element={<DocumentUpload />} />
-        
+        <Route path="/consortium-mandate" element={<ConsortiumMandate />} /> {/* Corrected this line */}
         <Route path="/member-account-administrator" element={<Dashboard />} />
-        {/* Optional: Catch-all route for undefined paths */}
         <Route path="*" element={<div>Page Not Found</div>} />
       </Routes>
     </Router>
