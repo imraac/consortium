@@ -18,6 +18,7 @@ import FormFeedbackPage from './components/FormFeedbackPage';
 import Dashboard from './components/Dashboard';
 import ProfilePage from './components/ProfilePage';
 import CoreValues from './components/CoreValues';
+import StructureManagement from './components/StructureManagment';
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/feedback" element={<FormFeedbackPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/advocacy" element={<Advocacy />} />
+        <Route path="/structure-management" element={< StructureManagement/>} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/document-upload" element={<DocumentUpload />} />
         <Route path="/consortium-mandate" element={<ConsortiumMandate />} /> {/* Corrected this line */}

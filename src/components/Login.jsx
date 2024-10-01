@@ -73,6 +73,7 @@ const Login = () => {
       <div className="login-container">
         <div className="text-section">
           <h2>{isSignup ? 'Sign Up' : 'Member Login'}</h2>
+          
           {/* Display error message */}
           {error && <p className="error-message">{error}</p>}
           <button onClick={() => setIsSignup(!isSignup)} className="toggle-button">

@@ -12,7 +12,6 @@ const FormFeedbackPage = () => {
             <p>{message}</p>
             {!isError && (
                 <p className="successDetails">
-                    Your registration is almost complete. Kindly note this DOES NOT MEAN you are a member!
                 </p>
             )}
             {isError && (
