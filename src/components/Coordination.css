@@ -1,51 +1,43 @@
 .coordination-wrapper {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column; /* Stack items vertically */
-    position: relative; /* Ensure positioning context for the image */
-    width: 100%; /* Full width for the wrapper */
-    min-height: 100vh; /* Minimum height to fill the viewport */
-    padding: 20px; /* Optional: Add padding for spacing */
-    box-sizing: border-box; /* Include padding in total width */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  margin-top: 159px;
+}
+
+.image-container {
+  flex: 1; /* Take up equal space */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.coordination-image {
+  max-width: 100%; /* Ensure the image is responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.text-container {
+  flex: 2; /* Take up more space for text */
+}
+
+.coordination-activities, .representation-section {
+  margin-bottom: 20px; /* Space between sections */
+}
+
+.coordination-list, .representation-list {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  list-style-position: inside; /* Adjust list styles */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .coordination-wrapper {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: flex-start; /* Align items to the left */
+    margin-top: 80px; /* Reduce space above for smaller screens */
   }
-  
+
   .image-container {
-    position: relative; /* Positioning context for the text overlay */
-    width: 100%; /* Make the image container full width */
-    max-width: 20000px; /* Optional: Limit the max width */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 10px; /* Add margin below image */
   }
-  
-  .coordination-image {
-    width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
-  .text-overlay {
-    position: absolute; /* Position the text overlay */
-    top: 20%; /* Adjust as needed */
-    left: 20%; /* Adjust as needed */
-    color: white; /* Text color for visibility */
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent background for better visibility */
-    padding: 20px; /* Add some padding */
-    border-radius: 8px; /* Optional: Rounded corners */
-  }
-  
-  .coordination-activities {
-    margin-top: 10px; /* Space between heading and activities */
-  }
-  
-  .coordination-list {
-    list-style-type: disc; /* Style for list items */
-    padding-left: 20px; /* Space from the left */
-  }
-  
-  .representation-section {
-    margin-top: 20px; /* Space between sections */
-  }
-  
-  .representation-list {
-    list-style-type: decimal; /* Style for ordered list */
-    padding-left: 20px; /* Space from the left */
-  }
-  
+}
