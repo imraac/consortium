@@ -36,8 +36,12 @@
   /* Adjust the size for smaller screens */
   @media (max-width: 768px) {
     .responsive-svg {
-      max-width: 100%;
+        max-width: 100%;
     }
-  }
-  
+    
+    /* Adjust margin for smaller screens */
+    .consortium-mandate-wrapper {
+        margin-top: 103px; /* Reduced margin for smaller screens */
+    }
+}
   

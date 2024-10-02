@@ -20,6 +20,8 @@ import ProfilePage from './components/ProfilePage';
 import CoreValues from './components/CoreValues';
 import StructureManagement from './components/StructureManagment';
 import Strategy from './components/Strategy';
+import Coordination from './components/Coordination'; 
+
 
 const App = () => {
   return (
@@ -34,6 +36,8 @@ const App = () => {
         <Route path="/core-values" element={<CoreValues />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/personal-details" element={<ContactDetails />} />
+        <Route path="/coordination" element={<Coordination />} /> {/* Removed leading space */}
+
         <Route path="/consortium-registration" element={<ConsortiumRegistrationForm />} />
         <Route path="/agency-details" element={<ConsortiumJoinForm />} />
         <Route path="/contact-details" element={<MemberAccountAdministratorForm />} />

@@ -36,34 +36,35 @@ const ConsortiumMandate = () => {
 
       {/* SVG Diagram */}
       <div className="consortium-diagram">
-        <svg width="500" height="400" xmlns="http://www.w3.org/2000/svg">
-          {/* General Assembly */}
-          <rect x="150" y="10" width="200" height="40" fill="#d3d3d3" stroke="black"/>
-          <text x="250" y="35" font-family="Arial" font-size="14" text-anchor="middle">General Assembly</text>
+  <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" className="responsive-svg">
+    {/* General Assembly */}
+    <rect x="150" y="10" width="200" height="40" fill="#65cafd" stroke="black" />
+    <text x="250" y="35" fontFamily="Arial" fontSize="14" textAnchor="middle">General Assembly</text>
 
-          {/* Steering Committee */}
-          <rect x="150" y="70" width="200" height="40" fill="#d3d3d3" stroke="black"/>
-          <text x="250" y="95" font-family="Arial" font-size="14" text-anchor="middle">Steering Committee</text>
-          
-          {/* Regional Coordinators */}
-          <rect x="30" y="130" width="180" height="40" fill="#d3d3d3" stroke="black"/>
-          <text x="120" y="155" font-family="Arial" font-size="12" text-anchor="middle">Regional Coordinators</text>
+    {/* Steering Committee */}
+    <rect x="150" y="70" width="200" height="40" fill="#65cafd" stroke="black" />
+    <text x="250" y="95" fontFamily="Arial" fontSize="14" textAnchor="middle">Steering Committee</text>
+    
+    {/* Regional Coordinators */}
+    <rect x="30" y="130" width="180" height="40" fill="#65cafd" stroke="black" />
+    <text x="120" y="155" fontFamily="Arial" fontSize="12" textAnchor="middle">Regional Coordinators</text>
 
-          {/* Working Groups */}
-          <rect x="290" y="130" width="180" height="40" fill="#d3d3d3" stroke="black"/>
-          <text x="380" y="155" font-family="Arial" font-size="12" text-anchor="middle">Working Groups</text>
+    {/* Working Groups */}
+    <rect x="290" y="130" width="180" height="40" fill="#65cafd" stroke="black" />
+    <text x="380" y="155" fontFamily="Arial" fontSize="12" textAnchor="middle">Working Groups</text>
 
-          {/* Support Team */}
-          <rect x="150" y="200" width="200" height="40" fill="#d3d3d3" stroke="black"/>
-          <text x="250" y="225" font-family="Arial" font-size="14" text-anchor="middle">Support Team</text>
+    {/* Support Team */}
+    <rect x="150" y="200" width="200" height="40" fill="#65cafd" stroke="black" />
+    <text x="250" y="225" fontFamily="Arial" fontSize="14" textAnchor="middle">Support Team</text>
 
-          {/* Lines connecting elements */}
-          <line x1="250" y1="50" x2="250" y2="70" stroke="black" stroke-width="2"/>
-          <line x1="250" y1="110" x2="120" y2="130" stroke="black" stroke-width="2"/>
-          <line x1="250" y1="110" x2="380" y2="130" stroke="black" stroke-width="2"/>
-          <line x1="250" y1="110" x2="250" y2="200" stroke="black" stroke-width="2"/>
-        </svg>
-      </div>
+    {/* Lines connecting elements */}
+    <line x1="250" y1="50" x2="250" y2="70" stroke="black" strokeWidth="2" />
+    <line x1="250" y1="110" x2="120" y2="130" stroke="black" strokeWidth="2" />
+    <line x1="250" y1="110" x2="380" y2="130" stroke="black" strokeWidth="2" />
+    <line x1="250" y1="110" x2="250" y2="200" stroke="black" strokeWidth="2" />
+  </svg>
+</div>
+
 
       {/* Footer */}
       <Footer />

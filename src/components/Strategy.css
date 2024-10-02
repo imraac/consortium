@@ -1,40 +1,111 @@
 /* Strategy.css */
+html, body {
+  height: 100%; /* Ensure the body and html take up the full height */
+  margin: 0;
+}
 
 .strategy-container {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    margin-top: 150px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  flex-grow: 1; /* Ensures the content grows to fill space */
+  margin-top: 158px;
+}
+
+.strategy-container p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 1px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 45%; /* Right side content (50% of the width) */
+  margin-right: 20px; /* Add space between text and cards */
+  
+}
+
+.strategy-svg {
+  width: 50%; /* Left side SVG container (50% of the width) */
+  height: auto;
+  overflow-y: auto;
+  margin-top: -99px;
+}
+
+.strategy-svg text {
+  font-size: 14px;
+  fill: #333;
+}
+
+.strategy-goal {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.strategy-rect {
+  fill: #e0e0e0;
+  stroke: #bbb;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Cover the entire bottom width */
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure the page height is at least the viewport height */
+}
+
+.content {
+  flex-grow: 1; /* Ensure content takes up remaining space before footer */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .strategy-container {
+    flex-direction: column; /* Stack the paragraph and SVG vertically */
   }
   
+
+  .strategy-container p {
+    width: 100%; /* Make the paragraph take full width */
+    margin-right: 0; /* Remove the margin to prevent any space on the right */
+    margin-bottom: 20px; /* Add space between the paragraph and the SVG */
+  }
+
   .strategy-svg {
-    width: 800px;
-    height: 900px;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
+    width: 100%; /* Make the SVG take full width */
   }
-  
-  .strategy-rect {
-    x: 10;
-    y: 10;
-    width: 780;
-    height: 880;
-    fill: #f9f9f9;
-    stroke: #ccc;
-    stroke-width: 2;
-    rx: 5;
-  }
-  
-  .strategy-title {
-    font-weight: bold;
-    font-size: 18px;
-    fill: #000;
-  }
-  
-  .strategy-goal {
-    font-weight: bold;
-  }
-  
+}
+.button-style {
+  background-color: #f07f16; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+.button-style:hover {
+  background-color: #5ec8f1;
+}
+
+.download-section {
+  margin-top: 20px;
+}

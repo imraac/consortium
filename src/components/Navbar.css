@@ -29,7 +29,16 @@
 }
 
 .caption-button {
-  font-size: 1.5rem;
+  font-size: 1rem; /* Adjust button font size for smaller screens */
+  padding: 8px 16px; /* Adjust button padding */
+  display: block; /* Make the button block-level */
+  margin: 1rem auto 0 auto; /* Center the button with auto margins */
+  text-align: center;
+  background-color: #5bc6f8 !important; /* Dark green color */
+  color: white; /* White text color */
+  border: none; /* Remove any borders */
+  border-radius: 1px !important; /* Make corners sharp (no rounding) */
+  cursor: pointer;
 }
 
 /* Ensure Carousel is Below Navbar */
@@ -101,7 +110,8 @@
   }
 
   .carousel-caption button {
-    font-size: 12px;
+    font-size: 0.875rem; /* Further reduce button size */
+    padding: 6px 16px;
   }
 }
 
