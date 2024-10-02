@@ -1,7 +1,9 @@
+
+
+
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Consortium.css'; // Import your CSS styles
-
 const Consortium = () => {
   return (
     <div className="consortium-wrapper">
@@ -113,7 +115,7 @@ const Consortium = () => {
         {/* Image placeholder */}
         <div>
           <img 
-            src="/motherchild.jpg"
+            src="/map.png"
             alt="Consortium" 
             style={{ width: '100%', height: 'auto', borderRadius: '1px' }} 
           />
@@ -138,11 +140,72 @@ const Consortium = () => {
           </button>
           <div>
             <img 
-              src="/motherchild.jpg"
+              src="/help.jpg"
               alt="Consortium" 
               style={{ width: '100%', height: 'auto', borderRadius: '1px', marginBottom: "20px" }} 
             />
           </div>
+          <div>
+            <img 
+              src="/readinguncle.jpg"
+              alt="Consortium" 
+              style={{ width: '100%', height: 'auto', borderRadius: '1px', marginBottom: "20px" }} 
+            />
+          </div>
+          
+          {/* New Text Section */}
+          <div>
+            <h2>Current Members</h2>
+            <p>View our current members to see who is part of the consortium:</p>
+            <ul>
+              <li>
+                <strong>Access for Relief and Development (ACRED)</strong>
+                <br />
+                <a href="http://www.acred.org" target="_blank" rel="noopener noreferrer">www.acred.org</a>
+              </li>
+              <li>
+                <strong>Daami Youth Development Organization (DYDO)</strong>
+                <br />
+                <a href="http://www.dydo.net" target="_blank" rel="noopener noreferrer">www.dydo.net</a>
+              </li>
+              <li>
+                <strong>International Development Association of Africa (IDAA)</strong>
+                <br />
+                <a href="http://www.idaainternational.org" target="_blank" rel="noopener noreferrer">www.idaainternational.org</a>
+              </li>
+              <li>
+                <strong>Juba Valley Development Center (JVDC)</strong>
+                <br />
+                <a href="http://www.jvdc.org" target="_blank" rel="noopener noreferrer">www.jvdc.org</a>
+              </li>
+              <li>
+                <strong>Livelihood Relief and Development Organization (LRDO)</strong>
+                <br />
+                <a href="http://www.lrdo.org" target="_blank" rel="noopener noreferrer">www.lrdo.org</a>
+              </li>
+              <li>
+                <strong>Marginalized Communities Advocacy Network (MCAN)</strong>
+                <br />
+                <a href="http://www.mcan-africa.org" target="_blank" rel="noopener noreferrer">www.mcan-africa.org</a>
+              </li>
+              <li>
+                <strong>Puntland Minority Women Development Organization (PMWDO)</strong>
+                <br />
+                <a href="http://www.pmwdo.org" target="_blank" rel="noopener noreferrer">www.pmwdo.org</a>
+              </li>
+              <li>
+                <strong>Save Minority Women and Children (SMWC)</strong>
+                <br />
+                <a href="http://www.smwc.site" target="_blank" rel="noopener noreferrer">www.smwc.site</a>
+              </li>
+              <li>
+                <strong>Voice of Somali Minority Women Organization (VOSOMWO)</strong>
+                <br />
+                <a href="http://www.vosomwo.org" target="_blank" rel="noopener noreferrer">www.vosomwo.org</a>
+              </li>
+            </ul>
+          </div>
+
           <button
             style={{
               backgroundColor: '#F79647',
@@ -152,9 +215,10 @@ const Consortium = () => {
               borderRadius: '1px',
               cursor: 'pointer',
               fontSize: '16px',
+              marginBottom: '20px',
             }}
           >
-            Join the Consortium
+            Learn More
           </button>
         </div>
       </div>

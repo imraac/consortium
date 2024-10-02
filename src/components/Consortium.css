@@ -12,7 +12,9 @@
     margin: 10px 90px 90px;
     font-family: Arial, sans-serif;
     border-radius: 8px;
+    margin-top: -50px;
 }
+
 
 .sleek-container {
     padding: 20px;
@@ -21,8 +23,9 @@
     margin-right: 70px; 
     font-family: Arial, sans-serif;
     background-color: #e0e0e0; /* Sleek background */
-    border-radius: 8px;
+    border-radius: 1px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: -50px;
 }
 
 /* Headings and paragraphs */
@@ -74,7 +77,7 @@ button.submit-button:hover {
     .consortium-wrapper {
         flex-direction: column; /* Stack containers vertically */
         align-items: center;    /* Center the items */
-        margin-top: 0; /* Remove the large gap at the top */
+        margin-top: 15px; /* Remove the large gap at the top */
         padding-top: 80px; /* Adjust this if the navbar height changes */
     }
 
