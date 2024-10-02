@@ -603,8 +603,8 @@ nav {
   padding: 0.5rem; /* Reduce padding for smaller screens */
   box-shadow: 0 2px 8px rgba(14, 159, 243, 0.1); /* Add a shadow for better visibility */
   z-index: 1;
-  min-width: 150px; /* Set a smaller minimum width for the dropdown */
-  max-width: 250px; /* Reduce maximum width for smaller screens */
+  min-width: 190px; /* Set a smaller minimum width for the dropdown */
+  max-width: 200px; /* Reduce maximum width for smaller screens */
   left: 0; /* Align dropdown to the left */
   right: 0; /* Allow the dropdown to fill the available width */
   margin: auto; /* Center the dropdown horizontally */
