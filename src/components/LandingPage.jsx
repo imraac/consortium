@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Footer from "./Footer";
 import './Navbar.css'; 
-
+import { Link } from 'react-router-dom';
 
 
 const LandingPage = () => {
@@ -93,23 +93,48 @@ const LandingPage = () => {
           </p>
         </div>
       </section>
+    
 
-      {/* Services Section */}
-      <section className="services">
-        {[
-          { icon: "fas fa-hands-holding", title: "MAIN ACTIVITIES", description: "Establishing and maintaining close links to other external actors whose actions impact upon Consortium members' work in Somalia." },
-          { icon: "fa-solid fa-sitemap", title: "SERVICES& ADVOCACY", description: "We do so much more than home care services for our clients." },
-          { icon: "fa-solid fa-hand-holding-heart", title: "SOCIAL SUPPORT", description: "We do so much more than home care services for our clients." },
-          { icon: "fa-solid fa-person-hiking", title: "TRANSPORTATION", description: "Transportation services for appointments, errands, and outings." },
-        ].map(service => (
-          <div className="services-col" key={service.title}>
-            <i className={service.icon + " service-icon"}></i>
-            <h3 className="service-title">{service.title}</h3>
-            <p className="service-description">{service.description}</p>
-            <button className="learn-more-button">LEARN MORE</button>
-          </div>
-        ))}
-      </section>
+<section className="services">
+  {[
+    {
+      icon: "fas fa-handshake",
+      title: "MAIN ACTIVITIES",
+      description: "Establishing and maintaining close links to other external actors whose actions impact upon Consortium members' work in Somalia.",
+      link: "/about-us" // You can set the link here for this service
+    },
+    {
+      icon: "fas fa-bullhorn",
+      title: "SERVICES & ADVOCACY",
+      description: "We do so much more than home care services for our clients.",
+      link: "/advocacy" // Link for the advocacy service
+    },
+    {
+      icon: "fa-solid fa-cogs", // Icon for additional services
+      title: "ADDITIONAL SERVICES",
+      description: "Explore additional services we provide to support the community and our partners.",
+      link: "/strategy" // Link for the strategy service
+    },
+    {
+      icon: "fas fa-chart-line",
+      title: "ESTIMATED RESULTS",
+      description: "Urgent and important joint actions are coordinated, and NGO key messages and advocacy.",
+      link: "/structure-management" // Link for the estimated results service
+    }
+  ].map((service, index) => (
+    <div className="services-col" key={service.title}>
+      <i className={service.icon + " service-icon"} style={{ color: '#5bc6f8' }}></i> {/* Apply the color here */}
+      <h3 className="service-title">{service.title}</h3>
+      <p className="service-description">{service.description}</p>
+      <Link to={service.link} className="learn-more-button">
+        LEARN MORE
+      </Link>
+    </div>
+  ))}
+</section>
+
+
+
 
       <Footer />
     </div>
