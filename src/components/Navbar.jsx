@@ -153,21 +153,13 @@ const Navbar = () => {
                     <Link to="/advocacy" className="dropdown__link" style={{ textDecoration: "none" }}>
                       Advocacy
                     </Link>
-                    <Link to="/working-groups" className="dropdown__link" style={{ textDecoration: "none" }}>
-                      Working Groups
+                    <Link to="/consortium-members" className="dropdown__link" style={{ textDecoration: "none" }}>
+                      Members
                     </Link>
                     <Link to="/representation" className="dropdown__link" style={{ textDecoration: "none" }}>
                       Representation
                     </Link>
-                    <Link to="/info-sharing" className="dropdown__link" style={{ textDecoration: "none" }}>
-                      Information Sharing
-                    </Link>
-                    <Link to="/twinning-program" className="dropdown__link" style={{ textDecoration: "none" }}>
-                      Twinning Program
-                    </Link>
-                    <Link to="/additional-activities" className="dropdown__link" style={{ textDecoration: "none" }}>
-                      Additional Activities
-                    </Link>
+                    
                   </div>
                 )}
               </li>
@@ -181,7 +173,7 @@ const Navbar = () => {
                 </span>
                 {dropdownOpen === 4 && (
                   <div className="dropdown__content">
-                    <Link to="/coordination" className="dropdown__link" style={{ textDecoration: "none" }}>
+                    <Link to="/secretariat" className="dropdown__link" style={{ textDecoration: "none" }}>
                     Secretariat
                     </Link>
                     <Link to="/advocacy" className="dropdown__link" style={{ textDecoration: "none" }}>

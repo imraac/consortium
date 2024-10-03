@@ -585,7 +585,6 @@ nav {
   align-items: center;
   gap: 1rem;
 }
-
 /* Remove underline from dropdown links */
 .dropdown__link {
   text-decoration: none !important; /* This removes the underline */
@@ -610,13 +609,13 @@ nav {
   margin: auto; /* Center the dropdown horizontally */
 }
 
-.dropdown__link:hover {
-  background-color: #3ABEF9; /* Add a light gray background when hovering */
+/* Show the dropdown content when the dropdown is active */
+.dropdown.active .dropdown__content {
+  display: block; /* Display dropdown when active */
 }
 
-/* Show the dropdown content when the dropdown is hovered */
-.dropdown:hover .dropdown__content {
-  display: block;
+.dropdown__link:hover {
+  background-color: #3ABEF9; /* Add a light gray background when hovering */
 }
 
 /* Media query for smaller screens */
@@ -630,6 +629,7 @@ nav {
     padding: 6px 10px; /* Further reduce padding for smaller screens */
   }
 }
+
 
 
 .social-icon {

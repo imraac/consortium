@@ -21,8 +21,8 @@ import CoreValues from './components/CoreValues';
 import StructureManagement from './components/StructureManagment';
 import Strategy from './components/Strategy';
 import Coordination from './components/Coordination'; 
-
-
+import Secretariat from './components/Secretariat';
+import ConsortiumMembers from './components/ConsortiumMembers';
 const App = () => {
   return (
     <Router>
@@ -35,9 +35,11 @@ const App = () => {
         <Route path="/consortium" element={<Consortium />} />
         <Route path="/core-values" element={<CoreValues />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="/consortium-members" element={<ConsortiumMembers />} />
+        
         <Route path="/personal-details" element={<ContactDetails />} />
         <Route path="/coordination" element={<Coordination />} /> {/* Removed leading space */}
-
+        <Route path="/secretariat" element={<Secretariat />} />
         <Route path="/consortium-registration" element={<ConsortiumRegistrationForm />} />
         <Route path="/agency-details" element={<ConsortiumJoinForm />} />
         <Route path="/contact-details" element={<MemberAccountAdministratorForm />} />
