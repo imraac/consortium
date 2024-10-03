@@ -15,6 +15,7 @@
     border-radius: 8px;
     margin-top: -50px;
     background-color: white !important; 
+ 
 }
 
 
@@ -80,7 +81,7 @@ button.submit-button:hover {
         flex-direction: column; /* Stack containers vertically */
         align-items: center;    /* Center the items */
         margin-top: 15px; /* Remove the large gap at the top */
-        padding-top: 80px; /* Adjust this if the navbar height changes */
+        padding-top: 125px; /* Adjust this if the navbar height changes */
     }
 
     .consortium-container {
