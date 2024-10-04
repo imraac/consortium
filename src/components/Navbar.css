@@ -69,6 +69,7 @@
 /* Carousel Caption */
 .carousel-caption h5 {
   font-size: 5rem;
+  margin-top: -15px;
 }
 .carousel-caption h2 {
   font-size: 5rem;
@@ -95,7 +96,7 @@
   }
   
   .carousel-caption {
-    width: 90%; /* Limit caption width on smaller screens */
+    width: 75%; /* Limit caption width on smaller screens */
     padding: 15px; /* Adjust padding for smaller screens */
     right: 5%; /* Adjust position for smaller screens */
     text-align: right; /* Keep right alignment */
@@ -103,6 +104,7 @@
 
   .carousel-caption h5 {
     font-size: 1.5rem;
+    margin-top: -10px;
   }
 
   .carousel-caption p {
@@ -112,6 +114,7 @@
   .carousel-caption button {
     font-size: 0.875rem; /* Further reduce button size */
     padding: 6px 16px;
+    margin-bottom: 100px !important;
   }
 }
 
