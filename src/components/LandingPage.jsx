@@ -26,8 +26,7 @@ const LandingPage = () => {
                 </p> */}
                 <p style={{ color: '#FFC700' }}>
                 The MROs Consortium in Somalia aims in
-                Bringing Somalia to the Forefront, Identifying concerns
-                Canvassing for input and consensus from members .
+                Bringing Somalia to the Forefront .
 </p>
                 
                   <button className="btn btn-success caption-button">JOIN CONSORTIUM</button>
