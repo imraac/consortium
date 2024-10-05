@@ -28,7 +28,7 @@ const Signup = () => {
       if (response.ok) {
         localStorage.setItem("access_token", data.access_token);
         console.log("Signup successful", data);
-        navigate("/consortium");
+        navigate("/login");
       } else {
         setError(data.message);
       }

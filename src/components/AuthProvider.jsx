@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 
 // Create context for authentication
 const AuthContext = createContext();
@@ -8,13 +8,12 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Check if token exists in localStorage and verify it
   useEffect(() => {
     const verifyToken = async () => {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("access_token");
       if (token) {
         try {
-          const response = await fetch("http://127.0.0.1:5000/verify-token", {
+          const response = await fetch("http://localhost:5000/verify-token", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -27,11 +26,11 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(true);
             setUser(data.user);
           } else {
-            await logout();
+            logout();
           }
         } catch (error) {
           console.error("Token verification failed", error);
-          await logout();
+          logout();
         }
       } else {
         setIsAuthenticated(false);
@@ -43,29 +42,16 @@ export const AuthProvider = ({ children }) => {
     verifyToken();
   }, []);
 
-  // Login function to be called after successful login/signup
-  const login = async (userData, token) => {
+  const login = (userData, token) => {
     setIsAuthenticated(true);
     setUser(userData);
-    localStorage.setItem("token", token);
+    localStorage.setItem("access_token", token);
   };
 
-  // Logout function to clear the state and token
-  const logout = async () => {
+  const logout = () => {
     setIsAuthenticated(false);
     setUser(null);
-    localStorage.removeItem("token");
-
-    try {
-      await fetch("http://127.0.0.1:5000/logout", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-    } catch (error) {
-      console.error("Logout error:", error);
-    }
+    localStorage.removeItem("access_token");
   };
 
   return (
@@ -77,5 +63,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use authentication context
 export const useAuth = () => useContext(AuthContext);

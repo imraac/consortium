@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
+import { useAuth } from "./AuthProvider";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleLoginSubmit = async (e) => {
@@ -25,7 +26,7 @@ const Login = () => {
       const data = await response.json();
       if (response.ok) {
         localStorage.setItem("access_token", data.access_token);
-        console.log("Login successful", data);
+        login(data.user, data.access_token); // Store user and token in context
         navigate("/consortium");
       } else {
         setError(data.message);
