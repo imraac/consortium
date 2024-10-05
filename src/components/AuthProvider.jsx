@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 
+// Create context for authentication
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -7,6 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Check if token exists in localStorage and verify it
   useEffect(() => {
     const verifyToken = async () => {
       const token = localStorage.getItem("token");
@@ -41,12 +43,14 @@ export const AuthProvider = ({ children }) => {
     verifyToken();
   }, []);
 
+  // Login function to be called after successful login/signup
   const login = async (userData, token) => {
     setIsAuthenticated(true);
     setUser(userData);
     localStorage.setItem("token", token);
   };
 
+  // Logout function to clear the state and token
   const logout = async () => {
     setIsAuthenticated(false);
     setUser(null);
@@ -73,4 +77,5 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
+// Custom hook to use authentication context
 export const useAuth = () => useContext(AuthContext);

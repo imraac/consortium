@@ -32,7 +32,7 @@ const AuthContent = ({ children }) => {
           <p className="text-gray-700">
             New to the platform?{" "}
             <Link
-              to="/registration"
+              to="/signup"
               className="text-blue-600 font-semibold hover:underline"
             >
               Sign up here
