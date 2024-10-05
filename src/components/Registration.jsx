@@ -48,7 +48,7 @@ const Registration = () => {
 
     try {
       // Replace fetch with axios
-      const response = await axios.post('http://127.0.0.1:5000/agency', {
+      const response = await axios.post('http://127.0.0.1:5000/agencies', {
         full_name: formData.fullName,
         acronym: formData.acronym,
         description: formData.description,

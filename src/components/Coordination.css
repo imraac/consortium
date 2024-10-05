@@ -34,10 +34,41 @@
     flex-direction: column; /* Stack image and text vertically */
     align-items: flex-start; /* Align items to the left */
     margin-top: 80px; /* Reduce space above for smaller screens */
+    padding: 0 20px; /* Add padding for overall spacing */
   }
 
   .image-container {
     margin-right: 0; /* Remove right margin */
     margin-bottom: 10px; /* Add margin below image */
+    width: 100%; /* Ensure the image container takes full width */
+  }
+
+  /* Style adjustments for headings */
+  .coordination-wrapper h2 {
+    font-size: 24px; /* Adjust font size */
+    margin-bottom: 10px; /* Space below heading */
+  }
+
+  .coordination-wrapper h3 {
+    font-size: 20px; /* Adjust font size */
+    margin-bottom: 8px; /* Space below heading */
+  }
+
+  /* Adjust paragraph styles */
+  .coordination-wrapper p {
+    font-size: 16px; /* Adjust font size */
+    line-height: 1.5; /* Improved readability */
+    margin-bottom: 15px; /* Space below paragraphs */
+  }
+
+  /* Style adjustments for lists */
+  .coordination-wrapper ul {
+    padding-left: 20px; /* Indent the list */
+    margin-bottom: 15px; /* Space below lists */
+  }
+
+  .coordination-wrapper li {
+    font-size: 16px; /* Adjust font size */
+    margin-bottom: 5px; /* Space between list items */
   }
 }

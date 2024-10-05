@@ -69,6 +69,7 @@
 /* Carousel Caption */
 .carousel-caption h5 {
   font-size: 5rem;
+  margin-top: -15px;
 }
 .carousel-caption h2 {
   font-size: 5rem;
@@ -95,7 +96,7 @@
   }
   
   .carousel-caption {
-    width: 90%; /* Limit caption width on smaller screens */
+    width: 75%; /* Limit caption width on smaller screens */
     padding: 15px; /* Adjust padding for smaller screens */
     right: 5%; /* Adjust position for smaller screens */
     text-align: right; /* Keep right alignment */
@@ -103,6 +104,7 @@
 
   .carousel-caption h5 {
     font-size: 1.5rem;
+    margin-top: -17px;
   }
 
   .carousel-caption p {
@@ -112,6 +114,7 @@
   .carousel-caption button {
     font-size: 0.875rem; /* Further reduce button size */
     padding: 6px 16px;
+    margin-bottom: 100px !important;
   }
 }
 
@@ -141,6 +144,7 @@
 }
 
 .services {
+  position: relative; 
   width: 100%;
   margin: auto;
   text-align: center;
@@ -149,8 +153,29 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  background-image: url('/help.jpg') !important;
+  background-size: cover; /* Cover the entire section */
+  background-position: center; 
+  background-repeat: no-repeat; 
+
 }
 
+.service-title {
+  color: white !important;  /* Dark color for the title */
+  font-weight: bold; /* Optional: make the title bold */
+}
+
+.service-description {
+
+  color: #070707 !important;/* White color for the description */
+}
+
+
+@media (max-width: 768px) {
+  .services {
+    padding-top: 50px !important; /* Adjusts padding for smaller screens */
+  }
+}
 .services-col {
   margin-bottom: 40px;
   padding: 20px;
@@ -172,16 +197,24 @@
 }
 
 .learn-more-button {
-  background-color:#4CAF50;
+  background-color:#7cd4f7;
   color: #fff;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
-  border-radius: 4px;
+  border-radius: 1px;
   cursor: pointer;
+  text-decoration: none; 
   transition: background-color 0.3s ease;
 }
-
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .learn-more-button {
+    background-color: #7cd4f7 !important; /* Same color for smaller screens */
+    font-size: 14px;
+    border-radius: 1px !important; /* Optional: slightly smaller font size for smaller screens */
+  }
+}
 
 
 
@@ -307,6 +340,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Default grid for larger screens */
   gap: 20px;
+  
 }
 
 .services-col {
@@ -325,7 +359,7 @@
 }
 
 .services-col p {
-  color: #555;
+  color: #0f0d0d !important;
   line-height: 1.6;
 }
 
@@ -554,12 +588,11 @@ nav {
   align-items: center;
   gap: 1rem;
 }
-
 /* Remove underline from dropdown links */
 .dropdown__link {
   text-decoration: none !important; /* This removes the underline */
   color: #333; /* Set the link color to a dark shade for visibility */
-  padding: 12px 16px; /* Add padding to make the links more clickable */
+  padding: 8px 12px; /* Reduce padding for smaller screens */
   display: block; /* Ensure links take up the full width */
   font-weight: 500; /* Ensure the links take up the full width */
 }
@@ -569,21 +602,38 @@ nav {
   display: none; /* Hidden by default */
   position: absolute;
   background-color: #ffffff; /* Set the background to white */
-  padding: 1rem;
+  padding: 0.5rem; /* Reduce padding for smaller screens */
   box-shadow: 0 2px 8px rgba(14, 159, 243, 0.1); /* Add a shadow for better visibility */
   z-index: 1;
-  min-width: 250px; /* Set a minimum width for the dropdown */
-  max-width: 350px;
+  min-width: 190px; /* Set a smaller minimum width for the dropdown */
+  max-width: 200px; /* Reduce maximum width for smaller screens */
+  left: 0; /* Align dropdown to the left */
+  right: 0; /* Allow the dropdown to fill the available width */
+  margin: auto; /* Center the dropdown horizontally */
+}
+
+/* Show the dropdown content when the dropdown is active */
+.dropdown.active .dropdown__content {
+  display: block; /* Display dropdown when active */
 }
 
 .dropdown__link:hover {
   background-color: #3ABEF9; /* Add a light gray background when hovering */
 }
 
-/* Show the dropdown content when the dropdown is hovered */
-.dropdown:hover .dropdown__content {
-  display: block;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .dropdown__content {
+    min-width: 200px; /* Set a smaller minimum width */
+    max-width: 150px; /* Further reduce maximum width */
+  }
+
+  .dropdown__link {
+    padding: 6px 10px; /* Further reduce padding for smaller screens */
+  }
 }
+
+
 
 .social-icon {
   font-size: 1.5rem;
@@ -649,6 +699,39 @@ nav {
   display: none; /* Hide by default */
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .nav__menu {
+    position: absolute; 
+    color: #0c0c0c;/* Keep it absolute to position below the navbar */
+    display: none; /* Hide menu by default */
+    flex-direction: column; /* Stack items vertically */
+    top: 60px; /* Position below navbar */
+    right: 0;
+    width: 100% !important; /* Make the menu take up 100% of the screen width */
+    height: calc(100vh - 60px); /* Make the menu height full screen minus navbar height */
+    background-color: #ace8facc !important; /* Ensure background is slightly transparent */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    padding: 1rem;
+    z-index: 1000; /* Ensure it appears above other content */
+    box-shadow: -2px 0 5px rgba(123, 185, 221, 0.1); /* Add shadow for better visibility */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for showing menu */
+    transform: translateX(100%); /* Initially hide the menu by moving it off-screen */
+    /* Set the background image */
+    background-size: cover !important; /* Cover the entire section */
+    background-position: bottom center !important; /* Position the image towards the bottom center */
+    background-repeat: no-repeat !important; 
+    background-attachment: fixed !important;
+ 
+     /* Fix background attachment to viewport */
+  }
+  
+  /* Additional styles for smaller screens */
+  .nav__menu {
+    background-size: contain; /* Adjust background size for smaller screens */
+    background-position: top center; /* Position the image at the top center */
+  }
+}
+
 
 @media (max-width: 768px) {
   .nav__menu {
@@ -657,7 +740,7 @@ nav {
     position: absolute;
     top: 60px; /* Adjust to position below navbar */
     right: 0;
-    width: 60%; /* Make the menu take up only 60% of the screen width */
+    width: 90% !important; /* Make the menu take up only 60% of the screen width */
     height: 100vh; /* Make the menu height full screen */
     background-color: white; /* Ensure background is white */
     padding: 1rem;
@@ -665,6 +748,7 @@ nav {
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
     transition: transform 0.3s ease-in-out; /* Smooth transition for showing menu */
     transform: translateX(100%); /* Initially hide the menu by moving it off-screen */
+    
   }
 
   .nav__menu.active {
@@ -719,6 +803,7 @@ nav {
     margin: 0.5rem 0; /* Adjust margin for spacing */
     width: 100%; /* Make buttons smaller and more responsive */
     text-align: center; /* Ensure buttons are centered */
+    color: #ffffff !important;
   }
 
   /* Center the buttons inside the navbar */
