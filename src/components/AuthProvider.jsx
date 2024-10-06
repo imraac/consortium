@@ -1,6 +1,5 @@
-import React, { createContext, useState, useEffect, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
-// Create context for authentication
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -10,14 +9,14 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const verifyToken = async () => {
-      const token = localStorage.getItem("access_token");
+      const token = localStorage.getItem('token');
       if (token) {
         try {
-          const response = await fetch("http://localhost:5000/verify-token", {
-            method: "POST",
+          const response = await fetch('http://127.0.0.1:5000/verify-token', {
+            method: 'POST',
             headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
             },
           });
 
@@ -26,11 +25,12 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(true);
             setUser(data.user);
           } else {
-            logout();
+     
+            await logout();
           }
         } catch (error) {
-          console.error("Token verification failed", error);
-          logout();
+          console.error('Token verification failed', error);
+          await logout();
         }
       } else {
         setIsAuthenticated(false);
@@ -42,22 +42,31 @@ export const AuthProvider = ({ children }) => {
     verifyToken();
   }, []);
 
-  const login = (userData, token) => {
+  const login = async (userData, token) => {
     setIsAuthenticated(true);
     setUser(userData);
-    localStorage.setItem("access_token", token);
+    localStorage.setItem('token', token);
   };
 
-  const logout = () => {
+  const logout = async () => {
     setIsAuthenticated(false);
     setUser(null);
-    localStorage.removeItem("access_token");
+    localStorage.removeItem('token');
+  
+    try {
+      await fetch('http://127.0.0.1:5000/logout', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
   };
 
   return (
-    <AuthContext.Provider
-      value={{ isAuthenticated, user, login, logout, isLoading }}
-    >
+    <AuthContext.Provider value={{ isAuthenticated, user, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );
