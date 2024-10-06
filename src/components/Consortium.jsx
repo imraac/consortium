@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Consortium.css'; // Import your CSS styles
