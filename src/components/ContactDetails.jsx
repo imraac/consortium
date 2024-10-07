@@ -38,6 +38,8 @@ const ContactDetails = () => {
 
     const token = localStorage.getItem('token'); // Retrieve your JWT token
 
+    
+
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
