@@ -19,7 +19,9 @@
     text-align: left; /* Align text to the left */
     color: #666;
   }
-  
+  .next-button{
+    margin-left: 600px;
+  }
   .registration-form-container label {
     display: block;
     margin-bottom: 8px;
