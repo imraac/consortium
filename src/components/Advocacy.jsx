@@ -5,14 +5,13 @@ import Footer from "./Footer";
 const Advocacy = () => {
   return (
     <>
-      <div className="advocacy-main-container"> {/* Main container for flex layout */}
-        <div className="advocacy-container left-aligned"> {/* Left-aligned container */}
+      <div className="advocacy-main-container">
+        <div className="advocacy-container left-aligned">
           <div className="advocacy-section">
-            <h2>SERVICES </h2>
-            <h2>  &   ADVOCACY</h2>
+            <h2>SERVICES & ADVOCACY</h2>
             <p>Bringing Somalia to the Forefront</p>
             <p>
-              The Somalia NGO Consortium facilitates joint approaches and advocacy and influences policy change, increasing local, regional and international awareness of Somali humanitarian and development issues.
+              The Somalia NGO Consortium facilitates joint approaches and advocacy and influences policy change, increasing local, regional, and international awareness of Somali humanitarian and development issues.
             </p>
             <p>
               The Somalia NGO Consortium influences positive policy change in areas of shared concerns raised by member organisations. The Consortium coordinates and facilitates members' advocacy initiatives through the following process:
@@ -28,7 +27,7 @@ const Advocacy = () => {
             </ul>
             <h3>Estimated Results</h3>
             <ul>
-              <li>Urgent and important joint actions are coordinated, and NGO key messages and advocacy positions are identified, facilitated and shared with stakeholders.</li>
+              <li>Urgent and important joint actions are coordinated, and NGO key messages and advocacy positions are identified, facilitated, and shared with stakeholders.</li>
               <li>Increased public awareness of NGO programming and key humanitarian and developmental issues in Somalia.</li>
               <li>Links to international agencies and bodies for support of national advocacy initiatives and improved international awareness of main Somali NGO concerns.</li>
             </ul>
@@ -41,10 +40,9 @@ const Advocacy = () => {
             </ul>
           </div>
         </div>
-        <div className="advocacy-container right-aligned"> {/* New thin and long right-aligned container */}
+        <div className="advocacy-container right-aligned">
           <div className="advocacy-section">
             <h2>ADDITIONAL SERVICES</h2>
-            
             <p>Our organization provides various support services to enhance the capabilities of local NGOs.</p>
             <ul>
               <li>Capacity Building Workshops</li>

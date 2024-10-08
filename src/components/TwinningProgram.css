@@ -1,0 +1,104 @@
+/* General styles for the section */
+.twinning-section {
+  background-color: #f9f9f9; /* Light background for readability */
+  padding: 40px; /* Increased padding for more space */
+  display: flex; /* Use flexbox for side-by-side layout */
+  justify-content: center; /* Center the containers horizontally */
+  align-items: flex-start; /* Align containers at the top */
+  flex-wrap: wrap; /* Allow containers to wrap on smaller screens */
+  margin-top: 100px; /* Increased value for more space below the navbar */
+}
+
+/* Container styles */
+.twinning-container {
+  margin: 20px; /* Margin for spacing between containers */
+  padding: 20px; /* Padding inside containers */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  flex: 1; /* Allow each container to grow and take equal space */
+  min-width: 300px; /* Minimum width for containers */
+}
+
+/* Header styles */
+h1 {
+  font-size: 4rem; /* Significantly larger font size */
+  color: #ffffff; /* White color for contrast */
+  background: linear-gradient(90deg, #1c81e7, #00cfff); /* Bright gradient background */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Fill text with gradient */
+  margin-bottom: 30px; /* Increased space below the title */
+  padding: 15px; /* Padding around the title for better appearance */
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7); /* More pronounced text shadow for depth */
+  border-bottom: 6px solid #1c81e7; /* Thicker bottom border for emphasis */
+  text-align: center; /* Center align the title */
+  letter-spacing: 1px; /* Increased letter spacing for a more airy feel */
+  font-weight: bold; /* Bold font for added emphasis */
+  transform: translateY(-10px); /* Slight upward movement to make it pop */
+}
+
+h2 {
+  font-size: 2rem; /* Subtitle size */
+  color: #1c5880; /* Blue color for subtitles */
+  margin-top: 20px; /* Space above the subtitle */
+  margin-bottom: 10px; /* Space below the subtitle */
+}
+
+h3 {
+  font-size: 1.5rem; /* Subsection title size */
+  color: #2874c0; /* Dark grey for subsection titles */
+  margin-top: 15px; /* Space above the subsection title */
+}
+
+/* Paragraph styles */
+p {
+  font-size: 1rem; /* Normal text size */
+  line-height: 1.6; /* Line height for readability */
+  color: #333; /* Darker grey for text */
+  margin-bottom: 15px; /* Space below paragraphs */
+}
+
+/* List styles */
+ul {
+  margin-left: 20px; /* Left margin for lists */
+  margin-bottom: 15px; /* Space below lists */
+}
+
+li {
+  margin-bottom: 5px; /* Space between list items */
+}
+
+/* Divider styles */
+.section-divider {
+  border: none;
+  border-top: 2px solid #2980b9; /* Blue divider */
+  margin: 20px 0; /* Space above and below the divider */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .twinning-section {
+    flex-direction: column; /* Stack containers on smaller screens */
+    align-items: center; /* Center align containers */
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjust main title size */
+  }
+
+  h2 {
+    font-size: 1.75rem; /* Adjust subtitle size */
+  }
+
+  h3 {
+    font-size: 1.75rem; /* Increase font size */
+    color: #1c65ad; /* Darker color for visibility */
+    background-color: #bbdefb; /* Light background color */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 20px; /* Space above the header */
+    margin-bottom: 10px; /* Space below the header */
+    text-align: left; /* Left-align text */
+  }
+  
+}

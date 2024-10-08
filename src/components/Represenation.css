@@ -1,0 +1,72 @@
+.representation-main-container {
+    max-width: 1200px; 
+    margin: 0 auto; /* Center the container */
+    padding: 40px; /* Add padding for spacing */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  /* Styling for the representation container */
+  .representation-container {
+    background-color: #ffffff; /* White background for contrast */
+    padding: 20px; /* Inner padding for content */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  /* Styling for main headers (h2) */
+  .representation-container h2 {
+    font-size: 2.5rem; /* Increase size for emphasis */
+    color: #2c3e50; /* Dark color for good contrast */
+    margin-bottom: 15px; /* Space below heading */
+    font-weight: 700; /* Bold weight for visibility */
+    text-align: left; /* Align text to the left */
+    padding: 15px; /* Padding for spacing */
+    background-color: #eaf3ff; /* Light blue background */
+    border-left: 5px solid #2980b9; /* Left border for emphasis */
+    border-radius: 4px; /* Slightly rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  /* Styling for sub-headers (h3) */
+  .representation-container h3 {
+    font-size: 2rem; /* Slightly smaller than h2 */
+    color: #3498db; /* Blue color for subheadings */
+    margin-top: 20px; /* Space above subheading */
+    margin-bottom: 10px; /* Space below subheading */
+    font-weight: 600; /* Semi-bold for distinction */
+    text-align: left; /* Align text to the left */
+    padding: 10px; /* Padding for spacing */
+    background-color: #f0f8ff; /* Very light blue background */
+    border-bottom: 2px solid #3498db; /* Bottom border for emphasis */
+    border-radius: 4px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  /* Paragraph styling */
+  .representation-container p {
+    font-size: 1rem; /* Standard text size */
+    line-height: 1.6; /* Line height for readability */
+    color: #555; /* Gray text color */
+    margin-bottom: 15px; /* Space below paragraphs */
+  }
+  
+  /* List styling */
+  .representation-container ul {
+    list-style-type: disc; /* Bulleted lists */
+    padding-left: 20px; /* Indentation for list */
+    margin-bottom: 15px; /* Space below list */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .representation-main-container {
+      padding: 20px; /* Adjust padding for smaller screens */
+    }
+  
+    .representation-container {
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  }
+  

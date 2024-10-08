@@ -26,6 +26,9 @@ import ConsortiumMembers from "./components/ConsortiumMembers";
 import { AuthProvider } from "./components/AuthProvider";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Signup from "./components/Singup";
+import TwinningProgram from "./components/TwinningProgram";
+import Representation from "./components/Representation";
+import InfoSharing from "./components/InfoSharing";
 
 const App = () => {
   return (
@@ -57,6 +60,9 @@ const App = () => {
           <Route path="/consortium-members" element={<ConsortiumMembers />} />
           <Route path="/personal-details" element={<ContactDetails />} />
           <Route path="/coordination" element={<Coordination />} />
+          <Route path="/twinning-program" element={<TwinningProgram />} />
+          <Route path="/representation" element={<Representation />} /> {/* New Route for Representation */}
+          <Route path="/info-sharing" element={<InfoSharing />} /> 
           <Route path="/secretariat" element={<Secretariat />} />
           <Route
             path="/consortium-registration"

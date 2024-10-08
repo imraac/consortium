@@ -1,74 +1,153 @@
+/* General container for the component */
 .coordination-wrapper {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center items vertically */
-  margin-top: 159px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f0f4f8; /* Light background for contrast */
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  font-family: 'Lato', sans-serif; /* Use a modern font like Lato or Montserrat */
 }
 
+/* Image section */
 .image-container {
-  flex: 1; /* Take up equal space */
-  margin-right: 20px; /* Space between image and text */
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .coordination-image {
-  max-width: 100%; /* Ensure the image is responsive */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.coordination-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Text content section */
 .text-container {
-  flex: 2; /* Take up more space for text */
+  color: #2c3e50;
+  text-align: center;
+  width: 100%; 
+  padding: 20px;
 }
 
-.coordination-activities, .representation-section {
-  margin-bottom: 20px; /* Space between sections */
+.text-container h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-align: center;
 }
 
+.text-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Intro text */
+.intro-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+.text-container p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+.text-container strong {
+  color: #2c3e50; /* Dark blue accent */
+  font-weight: bold;
+}
+
+/* List styling (no bullet points) */
 .coordination-list, .representation-list {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  list-style-position: inside; /* Adjust list styles */
+  margin-bottom: 30px;
+  padding-left: 0;
+  color: #34495e;
 }
 
-/* Media query for smaller screens */
+.coordination-list li, .representation-list li {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 0; /* No padding to remove bullet effect */
+}
+
+/* Section divider */
+.section-divider {
+  border: none;
+  height: 3px;
+  background-color: #2c3e50; /* Dark blue divider for accent */
+  width: 80px;
+  margin: 40px 0;
+}
+
+/* Information Sharing section */
+.text-container ul {
+  padding-left: 0; /* Remove bullets */
+}
+
+.text-container ul li {
+  list-style-type: none; /* No bullet points */
+  margin-bottom: 12px;
+  padding-left: 0;
+}
+
+/* Buttons for calls to action */
+.cta-button {
+  display: inline-block;
+  background-color: #0056b3; /* Dark blue button */
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  margin-top: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #004080;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .coordination-wrapper {
-    flex-direction: column; /* Stack image and text vertically */
-    align-items: flex-start; /* Align items to the left */
-    margin-top: 80px; /* Reduce space above for smaller screens */
-    padding: 0 20px; /* Add padding for overall spacing */
+    padding: 30px;
   }
 
-  .image-container {
-    margin-right: 0; /* Remove right margin */
-    margin-bottom: 10px; /* Add margin below image */
-    width: 100%; /* Ensure the image container takes full width */
+  .coordination-image {
+    max-width: 100%;
   }
 
-  /* Style adjustments for headings */
-  .coordination-wrapper h2 {
-    font-size: 24px; /* Adjust font size */
-    margin-bottom: 10px; /* Space below heading */
+  .text-container h1 {
+    font-size: 2.5rem;
   }
 
-  .coordination-wrapper h3 {
-    font-size: 20px; /* Adjust font size */
-    margin-bottom: 8px; /* Space below heading */
+  .text-container h2 {
+    font-size: 1.7rem;
   }
 
-  /* Adjust paragraph styles */
-  .coordination-wrapper p {
-    font-size: 16px; /* Adjust font size */
-    line-height: 1.5; /* Improved readability */
-    margin-bottom: 15px; /* Space below paragraphs */
-  }
-
-  /* Style adjustments for lists */
-  .coordination-wrapper ul {
-    padding-left: 20px; /* Indent the list */
-    margin-bottom: 15px; /* Space below lists */
-  }
-
-  .coordination-wrapper li {
-    font-size: 16px; /* Adjust font size */
-    margin-bottom: 5px; /* Space between list items */
+  .text-container p, .coordination-list li, .representation-list li {
+    font-size: 1rem;
   }
 }

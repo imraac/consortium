@@ -340,8 +340,9 @@ const Navbar = () => {
                       Information Sharing
                     </Link>
                     <Link to="/twinning-program" className="dropdown__link" style={{ textDecoration: "none" }} onClick={closeMenu}>
-                      Twinning Program
-                    </Link>
+  Twinning Program
+</Link>
+
                     <Link to="/additional-activities" className="dropdown__link" style={{ textDecoration: "none" }} onClick={closeMenu}>
                       Additional Activities
                     </Link>

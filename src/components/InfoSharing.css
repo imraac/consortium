@@ -1,0 +1,47 @@
+/* Main container for the InfoSharing component */
+.info-sharing-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Vertically centers the content */
+    height: 100vh;  /* Takes the full height of the viewport */
+    padding: 40px 20px;  /* Padding for spacing */
+    background-color: #f5f9ff;  /* Light background color for contrast */
+  }
+  
+  /* Container for the content inside InfoSharing */
+  .info-sharing-container {
+    max-width: 800px;  /* Constrain width for readability */
+    background-color: #ffffff;  /* White background for the content area */
+    border-radius: 8px;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    padding: 20px;  /* Padding for inner content */
+    text-align: left;  /* Ensure text alignment to the left */
+  }
+  
+  /* Styling for headers */
+  h2 {
+    font-size: 2rem;  /* Larger font size for main header */
+    color: #2a5db0;  /* Primary color for headers */
+    margin-bottom: 15px;  /* Space below the header */
+    text-align: center;  /* Centered text */
+  }
+  
+  h3 {
+    font-size: 1.5rem;  /* Font size for subheaders */
+    color: #2a5db0;  /* Primary color for subheaders */
+    margin: 20px 0 10px;  /* Margin for spacing */
+  }
+  
+  p {
+    line-height: 1.6;  /* Improved readability */
+    margin: 10px 0;  /* Spacing between paragraphs */
+  }
+  
+  ul {
+    margin-left: 20px;  /* Indentation for list items */
+  }
+  
+  li {
+    margin-bottom: 5px;  /* Space between list items */
+  }
+  

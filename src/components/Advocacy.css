@@ -1,75 +1,89 @@
 .advocacy-main-container {
-    display: flex; /* Enable flexbox layout */
-    justify-content: space-between; /* Space between the containers */
-    padding: 20px;
-    margin-top: 150px;
-    flex: 1; /* Padding around the main container */
-  }
-  
-  .advocacy-container {
-    padding: 20px;
-    
-    border-radius: 1px;
-    box-sizing: border-box; /* Ensure padding is included in total width */
-  }
-  
-  .left-aligned {
-    width: 45%; /* Adjust as necessary */
-  }
-  
-  .right-aligned {
-    width: 30%; /* Thin width */
-    height: auto; /* Let height adapt to content */
-    overflow-y: auto; /* Allow scrolling if content exceeds height */
-  }
-  
-  .advocacy-section h2, .advocacy-section h3 {
-    color: #333;
-    margin-top: 20px;
-  }
-  
-  .advocacy-section ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-  
-  .advocacy-section p {
-    margin-bottom: 10px;
-  }
-  @media (max-width: 768px) { /* Adjust the max-width as necessary */
-    .advocacy-main-container {
+  display: flex; /* Enable flexbox layout */
+  justify-content: space-between; /* Space between the containers */
+  align-items: flex-start; /* Align items at the top */
+  padding: 20px; /* Padding for the main container */
+  margin-top: 150px; 
+  background-color: #f9f9f9;
+}
+
+.advocacy-container {
+  padding: 15px; /* Padding inside each container */
+  margin: 0; /* No extra margins */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: white; /* White background for the containers */
+  box-sizing: border-box; /* Include padding in total width */
+}
+
+.left-aligned {
+  width: 60%; /* Adjust to make the left container wider */
+}
+
+.right-aligned {
+  width: 35%; /* Narrower right container */
+  height: auto; /* Height adapts to content */
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+/* Styling for main headers (h2) */
+.advocacy-section h2 {
+  font-size: 2.5rem; /* Increase size for emphasis */
+  color: #2c3e50; /* Dark color for good contrast */
+  margin-bottom: 15px; /* Space below heading */
+  font-weight: 700; /* Bold weight for visibility */
+  text-align: left; /* Align text to the left */
+  padding: 15px; /* Padding for spacing */
+  background-color: #eaf3ff; /* Light blue background */
+  border-left: 5px solid #2980b9; /* Left border for emphasis */
+  border-radius: 4px; /* Slightly rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Styling for sub-headers (h3) */
+.advocacy-section h3 {
+  font-size: 2rem; /* Slightly smaller than h2 */
+  color: #3498db; /* Blue color for subheadings */
+  margin-top: 20px; /* Space above subheading */
+  margin-bottom: 10px; /* Space below subheading */
+  font-weight: 600; /* Semi-bold for distinction */
+  text-align: left; /* Align text to the left */
+  padding: 10px; /* Padding for spacing */
+  background-color: #f0f8ff; /* Very light blue background */
+  border-bottom: 2px solid #3498db; /* Bottom border for emphasis */
+  border-radius: 4px; /* Slightly rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+
+
+.advocacy-section ul {
+  list-style-type: disc; /* List style */
+  margin-left: 20px; /* Indent list */
+}
+
+.advocacy-section p {
+  margin-bottom: 10px; /* Space between paragraphs */
+}
+
+@media (max-width: 768px) { /* Responsive adjustments */
+  .advocacy-main-container {
       flex-direction: column; /* Stack the containers vertically */
       margin-top: 60px; /* Reduced margin for smaller screens */
-    }
-    
-    .left-aligned, .right-aligned {
+  }
+  
+  .left-aligned, .right-aligned {
       width: 100%; /* Full width for both containers */
-      margin-bottom: 20px; /* Space between the stacked containers */
-    }
-  
-    .right-aligned {
+      margin-bottom: 0; /* No space between stacked containers */
+  }
+
+  .right-aligned {
       height: auto; /* Remove fixed height for better adaptability */
-    }
   }
-  footer {
-    background-color: #f1f1f1; /* Change as necessary */
-    text-align: center; /* Center the footer text */
-    padding: 10px 0; /* Vertical padding for the footer */
-  }
-  /* General styles for the advocacy section */
-.advocacy-section h2 {
-    background-color: #3ABEF9; /* Background color for h2 */
-    color: white; /* Text color for better contrast */
-    padding: 10px; /* Padding around the text */
-    border-radius: 1px; /* Optional: round the corners */
-    display: inline-block; /* Prevents background color from extending */
-  }
-  
-  .advocacy-section h3 {
-    background-color: orange; /* Background color for h3 */
-    color: white; /* Text color for better contrast */
-    padding: 8px; /* Padding around the text */
-    border-radius: 1px; /* Optional: round the corners */
-    display: inline-block; /* Prevents background color from extending */
-  }
-  
+}
+
+footer {
+  background-color: #f1f1f1; /* Change as necessary */
+  text-align: center; /* Center the footer text */
+  padding: 10px 0; /* Vertical padding for the footer */
+}
