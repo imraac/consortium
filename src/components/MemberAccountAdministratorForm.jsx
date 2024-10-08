@@ -1,9 +1,14 @@
+
+
+
+
 import { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './MemberAccountAdministratorForm.css';
 
 // Contact detail page
 const MemberAccountAdministratorForm = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
   const [formData, setFormData] = useState({
     agencyRegistrationDate: '',
     agencyRegistrationNumber: '',
@@ -35,10 +40,64 @@ const MemberAccountAdministratorForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Member Account Administrator Details:', formData);
-    // Handle form submission logic here, such as sending data to the backend
+
+    const token = localStorage.getItem('token'); // Retrieve your JWT token
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    };
+
+    try {
+      const response = await fetch('http://127.0.0.1:5000/member-account', {
+        method: 'POST',
+        headers: config.headers,
+        body: JSON.stringify({
+          member_name: formData.hqName, // Assuming member_name is the name of the contact
+          member_email: formData.hqEmail, // Assuming member_email is the email of the contact
+          agency_registration_date: formData.agencyRegistrationDate,
+          agency_registration_number: formData.agencyRegistrationNumber,
+          hq_name: formData.hqName,
+          hq_position: formData.hqPosition,
+          hq_email: formData.hqEmail,
+          hq_address: formData.hqAddress,
+          hq_city: formData.hqCity,
+          hq_state: formData.hqState,
+          hq_country: formData.hqCountry,
+          hq_telephone: formData.hqTelephone,
+          hq_telephone2: formData.hqTelephone2,
+          hq_fax: formData.hqFax,
+          regional_same_as_hq: formData.regionalSameAsHQ,
+          regional_name: formData.regionalName,
+          regional_position: formData.regionalPosition,
+          regional_email: formData.regionalEmail,
+          regional_address: formData.regionalAddress,
+          regional_city: formData.regionalCity,
+          regional_state: formData.regionalState,
+          regional_country: formData.regionalCountry,
+          regional_telephone: formData.regionalTelephone,
+          regional_telephone2: formData.regionalTelephone2,
+          regional_fax: formData.regionalFax
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Response from backend:', data);
+
+      // Redirect to agency-details page after successful submission
+      navigate('/agency-details'); // Use navigate to go to the agency-details page
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Handle error accordingly
+    }
   };
 
   return (
@@ -277,11 +336,13 @@ const MemberAccountAdministratorForm = () => {
             />
           </>
         )}
-        
-        <Link to="/agency-details" className="submit-button">
-          Submit
-        </Link>
+
+        <button type="submit">Submit</button>
       </form>
+
+      <div className="go-back">
+        <Link to="/previous-page">Go Back</Link>
+      </div>
     </div>
   );
 };
