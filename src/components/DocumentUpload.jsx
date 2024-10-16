@@ -1,6 +1,4 @@
-
-
-import React, { useState, createRef } from 'react';
+import { useState, createRef } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './DocumentUpload.css'; // Ensure this CSS file for styles
 
@@ -22,6 +20,7 @@ const DocumentUpload = () => {
     });
 
     const [showSuccessModal, setShowSuccessModal] = useState(false); // Modal state
+    const [approvalMessage, setApprovalMessage] = useState(''); // State for approval message
     const navigate = useNavigate(); // Initialize useNavigate
 
     const handleFileChange = (e, documentName) => {
@@ -61,32 +60,43 @@ const DocumentUpload = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         const formData = new FormData();
         Object.keys(files).forEach((key) => {
             if (files[key]) {
                 formData.append(key, files[key]);
             }
         });
-
+    
         const token = localStorage.getItem('token'); // Retrieve your JWT token
-
+    
         try {
-            const response = await fetch('http://127.0.0.1:5000/upload', {
+            const uploadResponse = await fetch('http://127.0.0.1:5000/upload', {
                 method: 'POST',
                 body: formData,
                 headers: {
                     Authorization: `Bearer ${token}`, // Include the token in the request headers
                 },
             });
+    
+            if (uploadResponse.ok) {
+                // Notify admin about the pending approval
+                const notifyResponse = await fetch('http://127.0.0.1:5000/admin/notify-approval', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                    body: JSON.stringify({ message: 'New documents uploaded for approval.' }),
+                });
 
-            if (response.ok) {
-                setShowSuccessModal(true);
-
-                // After a delay, navigate to the member-account-administrator page
-                setTimeout(() => {
-                    navigate('/member-account-administrator'); // Navigate to the desired page
-                }, 3000); // Redirect after 3 seconds (you can adjust the timing)
+                if (notifyResponse.ok) {
+                    setApprovalMessage('Your uploads have been sent for approval.'); // Update approval message
+                } else {
+                    alert('Error notifying admin for approval. Please try again.');
+                }
+                
+                setShowSuccessModal(true); // Show success modal
             } else {
                 alert('Error uploading documents. Please try again.');
             }
@@ -201,6 +211,7 @@ const DocumentUpload = () => {
                     <div className="modalContent">
                         <h3>Success!</h3>
                         <p>Your registration process was successful, and your documents have been uploaded.</p>
+                        <p>{approvalMessage}</p> {/* Display approval message */}
                         <button onClick={() => setShowSuccessModal(false)} className="closeButton">
                             Close
                         </button>
