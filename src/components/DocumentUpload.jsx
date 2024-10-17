@@ -172,7 +172,7 @@ const DocumentUpload = () => {
                      onDragOver={handleDragOver}
                      onDrop={(e) => handleDrop(e, 'ngo_consortium_mandate', ngoConsortiumMandateRef)}>
                     <label>
-                        Signed NGO Consortium Mandate:
+                        Signed Minority Rights Organizations (MRO) Mandate:
                         <input
                             type="file"
                             accept=".pdf, .doc, .docx"
@@ -189,7 +189,7 @@ const DocumentUpload = () => {
                      onDragOver={handleDragOver}
                      onDrop={(e) => handleDrop(e, 'icrc_code_of_conduct', icrcCodeOfConductRef)}>
                     <label>
-                        Signed ICRC/Red Crescent Code of Conduct:
+                        Provide Passport Photo & ID :
                         <input
                             type="file"
                             accept=".pdf, .doc, .docx"
