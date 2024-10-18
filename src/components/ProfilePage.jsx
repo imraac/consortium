@@ -1,279 +1,3 @@
-// import React, { useState } from "react";
-// import "./ProfilePage.css"; // Import the CSS file for styling
-
-// const ProfilePage = () => {
-//   const [isEditing, setIsEditing] = useState(false);
-//   const [isPrivate, setIsPrivate] = useState(false);
-//   const [profileData, setProfileData] = useState({
-//     membershipStatus: "Active",
-//     membershipExpiration: "31/12/2024",
-//     mission: "ACRED mission is to promote sustainable development in areas affected by poverty, conflict, and natural disasters.",
-//     website: "www.acred.org",
-//     partners: "FAO",
-//     fieldOffice: "Hodan",
-//     contactName: "Abdishakur Mohamed Afrah",
-//     position: "Deputy Executive Director and Head of Programs",
-//     email: "info@acred.org",
-//     address: "Taleh street, Hodan District, Mogadishu, Somalia, Benadir, Somalia",
-//     tel1: "+252 614 979727",
-//     tel2: "+252 615 649366",
-//     fax: "N/A",
-//   });
-
-//   const [profilePicture, setProfilePicture] = useState(null); // State for profile picture
-
-//   const togglePrivacy = () => {
-//     setIsPrivate(!isPrivate);
-//   };
-
-//   const handleEdit = () => {
-//     setIsEditing(true);
-//   };
-
-//   const handleSave = () => {
-//     setIsEditing(false);
-//     console.log("Profile updated:", profileData);
-//   };
-
-//   const handleCancel = () => {
-//     setIsEditing(false);
-//   };
-
-//   const handleChange = (e) => {
-//     setProfileData({
-//       ...profileData,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   const handlePictureChange = (e) => {
-//     const file = e.target.files[0];
-//     if (file) {
-//       const reader = new FileReader();
-//       reader.onloadend = () => {
-//         setProfilePicture(reader.result);
-//       };
-//       reader.readAsDataURL(file);
-//     }
-//   };
-
-//   const handlePictureDelete = () => {
-//     setProfilePicture(null);
-//   };
-
-//   return (
-//     <div className="profile-page">
-//       <div className="profile-container">
-//         <h2>My Profile</h2>
-//         <p>See an overview of your agency's account and any attached child members.</p>
-
-//         <div className="profile-card">
-//           <div className="profile-header">
-//             <div className="membership-info">
-//               <p>
-//                 <strong>Current membership status:</strong> {profileData.membershipStatus}
-//               </p>
-//               <p>
-//                 <strong>Membership Expiration:</strong> {profileData.membershipExpiration}
-//               </p>
-//             </div>
-//             <div className="profile-picture">
-//               {profilePicture ? (
-//                 <>
-//                   <img src={profilePicture} alt="Profile" className="profile-image" />
-//                   <button className="delete-button" onClick={handlePictureDelete}>Delete Picture</button>
-//                 </>
-//               ) : (
-//                 <div className="upload-button">
-//                   <input type="file" accept="image/*" onChange={handlePictureChange} />
-//                 </div>
-//               )}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="profile-card">
-//           <h3>Settings</h3>
-//           <ul>
-//             <li>View child accounts</li>
-//             <li>Request child account removal</li>
-//             <li>Request additional child account(s)</li>
-//           </ul>
-//           <p>
-//             <strong>Profile:</strong>
-//             <label>
-//               <input type="checkbox" checked={isPrivate} onChange={togglePrivacy} />
-//               Make this profile private
-//             </label>
-//           </p>
-
-//           {isEditing ? (
-//             <div>
-//               <button className="save-button" onClick={handleSave}>Save</button>
-//               <button className="cancel-button" onClick={handleCancel}>Cancel</button>
-//             </div>
-//           ) : (
-//             <button className="edit-button" onClick={handleEdit}>Edit</button>
-//           )}
-//         </div>
-
-//         {/* Other sections for Mission, Website, Partners, Field Offices, Contact Information remain unchanged */}
-//         <div className="profile-card">
-//           <h3>Mission</h3>
-//           {isEditing ? (
-//             <textarea
-//               name="mission"
-//               value={profileData.mission}
-//               onChange={handleChange}
-//             />
-//           ) : (
-//             <p>{profileData.mission}</p>
-//           )}
-//         </div>
-
-//         <div className="profile-card">
-//           <h3>Website</h3>
-//           {isEditing ? (
-//             <input
-//               type="text"
-//               name="website"
-//               value={profileData.website}
-//               onChange={handleChange}
-//             />
-//           ) : (
-//             <p>{profileData.website}</p>
-//           )}
-//         </div>
-
-//         <div className="profile-card">
-//           <h3>Partners in Somalia</h3>
-//           {isEditing ? (
-//             <input
-//               type="text"
-//               name="partners"
-//               value={profileData.partners}
-//               onChange={handleChange}
-//             />
-//           ) : (
-//             <p>{profileData.partners}</p>
-//           )}
-//         </div>
-
-//         <div className="profile-card">
-//           <h3>Field Offices</h3>
-//           {isEditing ? (
-//             <input
-//               type="text"
-//               name="fieldOffice"
-//               value={profileData.fieldOffice}
-//               onChange={handleChange}
-//             />
-//           ) : (
-//             <p>{profileData.fieldOffice}</p>
-//           )}
-//         </div>
-
-//         <div className="profile-card">
-//           <h3>Contact Information</h3>
-//           {isEditing ? (
-//             <>
-//               <p>
-//                 <strong>HQ contact:</strong>{" "}
-//                 <input
-//                   type="text"
-//                   name="contactName"
-//                   value={profileData.contactName}
-//                   onChange={handleChange}
-//                 />
-//               </p>
-//               <p>
-//                 <strong>Position:</strong>{" "}
-//                 <input
-//                   type="text"
-//                   name="position"
-//                   value={profileData.position}
-//                   onChange={handleChange}
-//                 />
-//               </p>
-//               <p>
-//                 <strong>Email:</strong>{" "}
-//                 <input
-//                   type="email"
-//                   name="email"
-//                   value={profileData.email}
-//                   onChange={handleChange}
-//                 />
-//               </p>
-//               <p>
-//                 <strong>Address:</strong>{" "}
-//                 <input
-//                   type="text"
-//                   name="address"
-//                   value={profileData.address}
-//                   onChange={handleChange}
-//                 />
-//               </p>
-//               <p>
-//                 <strong>Tel 1:</strong>{" "}
-//                 <input
-//                   type="text"
-//                   name="tel1"
-//                   value={profileData.tel1}
-//                   onChange={handleChange}
-//                 />
-//               </p>
-//               <p>
-//                 <strong>Tel 2:</strong>{" "}
-//                 <input
-//                   type="text"
-//                   name="tel2"
-//                   value={profileData.tel2}
-//                   onChange={handleChange}
-//                 />
-//               </p>
-//               <p>
-//                 <strong>Fax:</strong>{" "}
-//                 <input
-//                   type="text"
-//                   name="fax"
-//                   value={profileData.fax}
-//                   onChange={handleChange}
-//                 />
-//               </p>
-//             </>
-//           ) : (
-//             <>
-//               <p>
-//                 <strong>HQ contact:</strong> {profileData.contactName}
-//               </p>
-//               <p>
-//                 <strong>Position:</strong> {profileData.position}
-//               </p>
-//               <p>
-//                 <strong>Email:</strong> {profileData.email}
-//               </p>
-//               <p>
-//                 <strong>Address:</strong> {profileData.address}
-//               </p>
-//               <p>
-//                 <strong>Tel 1:</strong> {profileData.tel1}
-//               </p>
-//               <p>
-//                 <strong>Tel 2:</strong> {profileData.tel2}
-//               </p>
-//               <p>
-//                 <strong>Fax:</strong> {profileData.fax}
-//               </p>
-//             </>
-//           )}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProfilePage;
-
 
 
 
@@ -284,61 +8,70 @@ const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [isPrivate, setIsPrivate] = useState(false);
   const [profileData, setProfileData] = useState({
-    membershipStatus: "",
-    membershipExpiration: "",
-    mission: "",
-    website: "",
-    partners: "",
-    fieldOffice: "",
-    contactName: "",
-    position: "",
-    email: "",
-    address: "",
-    tel1: "",
-    tel2: "",
-    fax: "",
+    membershipStatus: "Active",
+    membershipExpiration: "31/12/2024",
+    mission: "", 
+    website: "", 
+    partners: "FAO",
+    fieldOffice: "Hodan",
+    
   });
-  const [profilePicture, setProfilePicture] = useState(null);
-  const [membersData, setMembersData] = useState([]); // State to hold child member accounts
-  const [loading, setLoading] = useState(true); // Loading state to manage API call
 
-  // Fetch profile data from the backend when the component mounts
+  const [profilePicture, setProfilePicture] = useState(null); // State for profile picture
+
+  // Fetch agency data for mission and website and member account data
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/profile', {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          console.error("No authentication token found. Please log in.");
+          return;
+        }
+
+        // Fetching member account data
+        const memberResponse = await fetch('http://localhost:5000/member-account/1', { // Change the ID as needed
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
           },
         });
 
-        if (response.ok) {
-          const data = await response.json();
-          setProfileData({
-            membershipStatus: data.agency.membershipStatus,
-            membershipExpiration: data.agency.membershipExpiration,
-            mission: data.agency.mission,
-            website: data.agency.website,
-            partners: data.agency.partners,
-            fieldOffice: data.agency.fieldOffice,
-            contactName: data.agency.contactName,
-            position: data.agency.position,
-            email: data.agency.email,
-            address: data.agency.address,
-            tel1: data.agency.tel1,
-            tel2: data.agency.tel2,
-            fax: data.agency.fax,
-          });
-          setMembersData(data.members); // Set members data from the response
-        } else {
-          console.error("Failed to fetch profile data:", response.statusText);
+        const memberData = await memberResponse.json();
+        if (memberData) {
+          setProfileData((prevData) => ({
+            ...prevData,
+            contactName: memberData.hq_name,
+            position: memberData.hq_position,
+            email: memberData.hq_email,
+            address: `${memberData.hq_address}, ${memberData.hq_city}, ${memberData.hq_state}, ${memberData.hq_country}`,
+            tel1: memberData.hq_telephone,
+            tel2: memberData.hq_telephone2,
+            fax: memberData.hq_fax,
+          }));
+        }
+
+        // Fetching agency data for mission and website
+        const agencyResponse = await fetch('http://localhost:5000/agency', {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const agencyData = await agencyResponse.json();
+        if (agencyData && agencyData.agencies.length > 0) {
+          const firstAgency = agencyData.agencies[0]; // Get the first agency
+          setProfileData((prevData) => ({
+            ...prevData,
+            mission: firstAgency.mission_statement || "", // Update mission
+            website: firstAgency.website || "", // Update website
+          }));
         }
       } catch (error) {
-        console.error("Error fetching profile data:", error);
-      } finally {
-        setLoading(false);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -356,7 +89,6 @@ const ProfilePage = () => {
   const handleSave = () => {
     setIsEditing(false);
     console.log("Profile updated:", profileData);
-    // You would also want to send the updated data to the backend here
   };
 
   const handleCancel = () => {
@@ -384,10 +116,6 @@ const ProfilePage = () => {
   const handlePictureDelete = () => {
     setProfilePicture(null);
   };
-
-  if (loading) {
-    return <div>Loading profile...</div>;
-  }
 
   return (
     <div className="profile-page">
@@ -445,7 +173,6 @@ const ProfilePage = () => {
           )}
         </div>
 
-        {/* Display agency mission, website, and contact information */}
         <div className="profile-card">
           <h3>Mission</h3>
           {isEditing ? (
@@ -544,7 +271,7 @@ const ProfilePage = () => {
               <p>
                 <strong>Tel 1:</strong>{" "}
                 <input
-                  type="text"
+                  type="tel"
                   name="tel1"
                   value={profileData.tel1}
                   onChange={handleChange}
@@ -553,7 +280,7 @@ const ProfilePage = () => {
               <p>
                 <strong>Tel 2:</strong>{" "}
                 <input
-                  type="text"
+                  type="tel"
                   name="tel2"
                   value={profileData.tel2}
                   onChange={handleChange}
@@ -562,7 +289,7 @@ const ProfilePage = () => {
               <p>
                 <strong>Fax:</strong>{" "}
                 <input
-                  type="text"
+                  type="tel"
                   name="fax"
                   value={profileData.fax}
                   onChange={handleChange}
@@ -594,22 +321,6 @@ const ProfilePage = () => {
               </p>
             </>
           )}
-        </div>
-
-        {/* Display child member accounts */}
-        <div className="profile-card">
-          <h3>Child Member Accounts</h3>
-          <ul>
-            {membersData.length > 0 ? (
-              membersData.map((member, index) => (
-                <li key={index}>
-                  <strong>{member.contactName}</strong> - {member.position} ({member.email})
-                </li>
-              ))
-            ) : (
-              <li>No child member accounts available.</li>
-            )}
-          </ul>
         </div>
       </div>
     </div>
