@@ -246,10 +246,10 @@ const LandingPage = () => {
     <div className="service--scroll">
       <Marquee 
         gradient={false} 
-        speed={20} 
+        speed={10} 
         pauseOnHover={true}
         pauseOnClick={true} 
-        delay={20}
+        delay={50}   
         play={true} 
         direction="left"
       >
