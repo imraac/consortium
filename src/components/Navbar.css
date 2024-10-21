@@ -483,6 +483,147 @@ footer p {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 60vh; /* Adjust based on your design */
+  padding: 2.5rem 2rem; /* Top and bottom padding */
+}
+
+.servicesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.servicesHeader h2 {
+  font-family: var(--primaryFont);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.service--scroll {
+  width: 100%; /* Ensures the marquee takes full width */
+  overflow: hidden; /* Hide overflowing content */
+  position: relative; /* Positioning for inner content */
+}
+
+.servicesContainer {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping in the marquee */
+  align-items: center;
+  justify-content: center; 
+  width: 100%;
+  margin-top: 3.5rem;
+  padding: 0 2rem;
+}
+
+.service--box {
+  background: #FAFAFA;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  width: 1600px; /* Set a width for service boxes */
+  height: auto; /* Allow height to adjust based on content */
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  transition: 300ms ease-in-out;
+}
+
+.service--box:hover {
+  transform: scale(1.05); /* Slight scale on hover */
+}
+
+.service-icon {
+  font-size: 40px; /* Size for icons */
+}
+
+.service-description {
+  text-align: center; /* Center-align text */
+  margin: 1rem 0; /* Space around description */
+}
+
+.learn-more-button {
+  margin-top: 1rem; /* Space above the button */
+  padding: 0.5rem 1rem; /* Padding for the button */
+  background-color: #3ABEF9; /* Button color */
+  color: white; /* Text color */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.learn-more-button:hover {
+  background-color: #4caf50; /* Change color on hover */
+}
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+  .service--box {
+      width: 190px; /* Adjust width for smaller screens */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .services {
+      padding: 1rem; /* Adjust padding */
+  }
+
+  .servicesHeader h2 {
+      font-size: 3rem; /* Adjust header font size */
+  }
+
+  .servicesContainer {
+      padding: 0.5rem; /* Adjust padding */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .service--box {
+      width: 135px; /* Further adjust for smaller screens */
+  }
+
+  .servicesHeader h2 {
+      font-size: 2.5rem; /* Smaller header size */
+  }
+}
+
+
+
+
+
+
+
+
 .call-us {
   position: fixed; /* Fix it at the top */
   top: 0; /* Position at the very top */
@@ -770,11 +911,11 @@ nav {
     color: #0c0c0c;/* Keep it absolute to position below the navbar */
     display: none; /* Hide menu by default */
     flex-direction: column; /* Stack items vertically */
-    top: 60px; /* Position below navbar */
+    top: 61px; /* Position below navbar */
     right: 0;
     width: 100% !important; /* Make the menu take up 100% of the screen width */
     height: calc(100vh - 60px); /* Make the menu height full screen minus navbar height */
-    background-color: #ace8facc !important; /* Ensure background is slightly transparent */
+    background-color: #fcfdfdcc !important; /* Ensure background is slightly transparent */
     backdrop-filter: blur(10px); /* Apply blur effect */
     padding: 1rem;
     z-index: 1000; /* Ensure it appears above other content */
@@ -804,12 +945,13 @@ nav {
     display: none; /* Hide menu by default */
     flex-direction: column; /* Stack items vertically */
     position: absolute;
-    top: 60px; /* Adjust to position below navbar */
+    top: 61px; /* Adjust to position below navbar */
     right: 0;
     width: 60% !important; /* Make the menu take up only 60% of the screen width */
     height: 100vh; /* Make the menu height full screen */
     background-color: white; /* Ensure background is white */
     padding: 1rem;
+    background-image: url('/hands2-QvFd5z-7.png');
     z-index: 1000; /* Ensure it appears above other content */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
     transition: transform 0.3s ease-in-out; /* Smooth transition for showing menu */
