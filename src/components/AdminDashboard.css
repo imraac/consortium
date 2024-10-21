@@ -1,0 +1,419 @@
+
+/* Header Section */
+
+
+
+
+
+/* Header Section */
+/* Header Section */
+.admin-dash-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+   /* White background for contrast */
+    /* Subtle shadow for depth */
+    position: fixed; /* Fixed position to stay at the top */
+    width: 100%;
+    top: 153px; /* Adjust this to be below the sticky navbar */
+    z-index: 10; /* Keep it on top of other elements */
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
+}
+
+
+  
+  .burger-menu {
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+  }
+  
+  .admin-dash-header-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .admin-dash-header-icons .burger-menu {
+    margin-left: 15px; /* Space between icons */
+  }
+  
+
+.admin-dash-logo a {
+    color: #333; /* Dark color for the logo text */
+    font-size: 20px; /* Slightly larger font size */
+    font-weight: 700; /* Bold font weight */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.admin-dash-logo a:hover {
+    color: #007bff; /* Change color on hover */
+}
+.admin-dash-search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    margin: 0 20px; /* Margin for spacing */
+    flex-grow: 1; /* Allow the search box to take available space */
+}
+
+.admin-dash-search-box input {
+    padding: 8px; /* Add padding for a better appearance */
+    border: 1px solid #ccc; /* Light border color */
+    border-radius: 4px; /* Rounded corners */
+    width: 100%; /* Make it responsive */
+    max-width: 300px; /* Set a max width to avoid it getting too wide */
+    outline: none; /* Remove the default outline */
+}
+.admin-dash-search-box i {
+    margin-left: 8px; /* Space between the input and the icon */
+    color: #666; /* Icon color */
+}
+.admin-dash-search-box input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+.admin-dash-header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.burger-menu {
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 15px; /* Space between the burger menu and account section */
+    color: #333; /* Dark color for icon */
+}
+
+.admin-dash-account {
+    display: flex;
+    align-items: center;
+}
+
+.admin-dash-account span {
+    margin-right: 10px; /* Space between text and image */
+    font-weight: 500; /* Slightly bold */
+    color: #333; /* Dark color for text */
+}
+
+.admin-dash-account img {
+    width: 35px; /* Profile image size */
+    height: 35px; /* Profile image size */
+    border-radius: 50%; /* Circular profile image */
+    object-fit: cover; /* Ensures the image covers the element */
+    border: 2px solid #007bff; /* Border around the profile image */
+}
+
+
+
+/* Container */
+.admin-dash-container {
+    display: flex;
+    margin-top: 60px;
+    margin-top: 200px; /* Push down the container below the fixed header */
+}
+
+/* Sidebar Section */
+.admin-dash-sidebar {
+    width: 250px;
+    padding: 2rem 1rem;
+    background: #fff;
+    height: calc(100vh - 60px); /* Full height minus header height */
+    position: fixed; /* Make it fixed for desktop */
+    top: 60px; /* Position below the navbar */
+    left: -250px; /* Start hidden off-screen */
+    transition: left 0.3s ease; /* Animation for opening */
+    z-index: 10; /* Ensure it is above the main content */
+}
+
+.admin-dash-sidebar.open {
+    left: 0; /* Slide the sidebar into view */
+}
+
+.admin-dash-links a {
+    display: block;
+    font-size: 13px;
+    margin: 0.5rem 0;
+    color: rgb(100, 100, 100);
+}
+
+.admin-dash-links a:hover {
+    background: rgb(235, 235, 235);
+}
+
+.admin-dash-active {
+    border-left: 2px solid rgb(100, 100, 100);
+}
+
+/* Main Body Section */
+.admin-dash-main-body {
+    /* Adjust for the sidebar width */
+    padding: 1rem;
+    width: 100%; /* Adjust to fit the sidebar */
+}
+
+/* Promo Card */
+/* Promo Card */
+.admin-dash-promo-card {
+    background-image: url('/happypeople.jpg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire card */
+    background-position: center; /* Center the background image */
+    color: #f7f7c8; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 9rem; /* Padding for inner spacing */
+    margin-top: 25px; /* Space above the card */
+    position: relative; /* Set position for overlay */
+    overflow: hidden; /* Prevent overflow of elements */
+}
+
+.admin-dash-promo-card::before {
+    content: ""; /* Empty content for overlay */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Cover the top */
+    left: 0; /* Cover the left */
+    right: 0; /* Cover the right */
+    bottom: 0; /* Cover the bottom */
+    background-color: rgba(43, 43, 44, 0.5); /* Semi-transparent overlay */
+    border-radius: 8px; /* Match border radius */
+    z-index: 1; /* Place overlay above background but below text */
+}
+
+.admin-dash-promo-card h1,
+.admin-dash-promo-card span,
+.admin-dash-promo-card button {
+    position: relative; /* Position text elements above the overlay */
+    z-index: 2; /* Ensure text appears above the overlay */
+    text-align: center; /* Center text */
+}
+
+
+/* History Lists */
+.admin-dash-history-lists {
+    margin-top: 20px;
+}
+
+.admin-dash-table {
+    background: #fff;
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.admin-dash-table th, .admin-dash-table td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.admin-dash-table th {
+    font-size: 15px;
+}
+
+.admin-dash-table td {
+    font-size: 13px;
+    color: rgb(100, 100, 100);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .admin-dash-sidebar {
+        position: absolute; /* Change to absolute for mobile */
+        top: 60px; /* Position below the navbar */
+        left: -100%; /* Hide the sidebar off-screen */
+        height: calc(100vh - 60px);
+    }
+
+    .admin-dash-sidebar.open {
+        left: 0; /* Slide the sidebar into view */
+    }
+
+    .admin-dash-main-body {
+        margin-left: 0; /* Reset margin when sidebar is hidden */
+        width: 100%; /* Take full width */
+    }
+}
+.admin-dash-user-card {
+    background: rgb(255, 255, 255);
+    color: #333;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 20px; /* Space between promo card and user card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.admin-dash-user-card h2 {
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+.admin-dash-user-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensure borders are collapsed */
+}
+
+.admin-dash-user-table th,
+.admin-dash-user-table td {
+    padding: 0.75rem; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Border for separation */
+}
+
+.admin-dash-user-table th {
+    background-color: #f5f5f5; /* Light background for headers */
+}
+.admin-dash-header {
+    display: flex;
+    justify-content: space-between; /* Adjust alignment */
+    align-items: center;
+    padding: 10px 20px; /* Add padding */
+    background-color: #eef3f3; /* Example background color */
+    color: white; /* Text color */
+}
+
+.toggle-user-card-btn {
+    background-color: #3ABEF9 !important; /* Dark red background */
+    color: #f3f7f3 !important; /* Green text color */
+   /* Green border */
+    padding: 0.5rem 1rem; /* Adjust padding for better appearance */
+    border-radius: 1px !important; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+    cursor: pointer;
+    margin: 0 1rem; 
+}
+
+.toggle-user-card-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+.admin-dash-sidebar {
+    width: 250px; /* Sidebar width */
+    transition: transform 0.3s ease; /* Smooth transition */
+    transform: translateX(-100%); /* Initially hidden */
+  }
+  
+  .admin-dash-sidebar.open {
+    transform: translateX(0); /* Show the sidebar when open */
+  }
+  .admin-dash-sidebar-header {
+    position: relative; /* Position relative to allow absolute positioning of child */
+    display: flex; /* Optional: use flex for alignment */
+    align-items: center; /* Center items vertically */
+    padding: 10px 15px; /* Padding for sidebar header */
+}
+
+.close-sidebar {
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* Distance from the top */
+    right: 15px; /* Distance from the right */
+    cursor: pointer; /* Pointer cursor for clickable icon */
+    font-size: 24px; /* Adjust size of the close icon */
+}
+
+
+  
+  .admin-dash-sidebar-header h4 {
+    margin: 0; /* Remove default margin */
+  }
+  .admin-dash-application-card {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .admin-dash-application-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin-dash-application-table th, .admin-dash-application-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .admin-dash-application-table th {
+    background-color: #62b43c;
+  }
+  
+  .admin-dash-application-table button {
+    padding: 5px 10px;
+    background-color:  #3ABEF9 ;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+  }
+  .toggle-application-card-btn{
+    color: red;
+  }
+  
+  .admin-dash-application-table button:hover {
+    background-color: #57b300;
+  }
+  
+
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is above other content */
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-content iframe {
+    border: none; /* Remove the default border from the iframe */
+    border-radius: 5px; /* Rounded corners for the iframe */
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  .pdf-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .pdf-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  

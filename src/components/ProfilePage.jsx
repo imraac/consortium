@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+
+
+
+import React, { useState, useEffect } from "react";
 import "./ProfilePage.css"; // Import the CSS file for styling
 
 const ProfilePage = () => {
@@ -7,20 +10,73 @@ const ProfilePage = () => {
   const [profileData, setProfileData] = useState({
     membershipStatus: "Active",
     membershipExpiration: "31/12/2024",
-    mission: "ACRED mission is to promote sustainable development in areas affected by poverty, conflict, and natural disasters.",
-    website: "www.acred.org",
+    mission: "", 
+    website: "", 
     partners: "FAO",
     fieldOffice: "Hodan",
-    contactName: "Abdishakur Mohamed Afrah",
-    position: "Deputy Executive Director and Head of Programs",
-    email: "info@acred.org",
-    address: "Taleh street, Hodan District, Mogadishu, Somalia, Benadir, Somalia",
-    tel1: "+252 614 979727",
-    tel2: "+252 615 649366",
-    fax: "N/A",
+    
   });
 
   const [profilePicture, setProfilePicture] = useState(null); // State for profile picture
+
+  // Fetch agency data for mission and website and member account data
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          console.error("No authentication token found. Please log in.");
+          return;
+        }
+
+        // Fetching member account data
+        const memberResponse = await fetch('http://localhost:5000/member-account/1', { // Change the ID as needed
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const memberData = await memberResponse.json();
+        if (memberData) {
+          setProfileData((prevData) => ({
+            ...prevData,
+            contactName: memberData.hq_name,
+            position: memberData.hq_position,
+            email: memberData.hq_email,
+            address: `${memberData.hq_address}, ${memberData.hq_city}, ${memberData.hq_state}, ${memberData.hq_country}`,
+            tel1: memberData.hq_telephone,
+            tel2: memberData.hq_telephone2,
+            fax: memberData.hq_fax,
+          }));
+        }
+
+        // Fetching agency data for mission and website
+        const agencyResponse = await fetch('http://localhost:5000/agency', {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const agencyData = await agencyResponse.json();
+        if (agencyData && agencyData.agencies.length > 0) {
+          const firstAgency = agencyData.agencies[0]; // Get the first agency
+          setProfileData((prevData) => ({
+            ...prevData,
+            mission: firstAgency.mission_statement || "", // Update mission
+            website: firstAgency.website || "", // Update website
+          }));
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchProfileData();
+  }, []);
 
   const togglePrivacy = () => {
     setIsPrivate(!isPrivate);
@@ -117,7 +173,6 @@ const ProfilePage = () => {
           )}
         </div>
 
-        {/* Other sections for Mission, Website, Partners, Field Offices, Contact Information remain unchanged */}
         <div className="profile-card">
           <h3>Mission</h3>
           {isEditing ? (
@@ -216,7 +271,7 @@ const ProfilePage = () => {
               <p>
                 <strong>Tel 1:</strong>{" "}
                 <input
-                  type="text"
+                  type="tel"
                   name="tel1"
                   value={profileData.tel1}
                   onChange={handleChange}
@@ -225,7 +280,7 @@ const ProfilePage = () => {
               <p>
                 <strong>Tel 2:</strong>{" "}
                 <input
-                  type="text"
+                  type="tel"
                   name="tel2"
                   value={profileData.tel2}
                   onChange={handleChange}
@@ -234,7 +289,7 @@ const ProfilePage = () => {
               <p>
                 <strong>Fax:</strong>{" "}
                 <input
-                  type="text"
+                  type="tel"
                   name="fax"
                   value={profileData.fax}
                   onChange={handleChange}

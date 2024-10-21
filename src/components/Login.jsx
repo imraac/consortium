@@ -1,14 +1,14 @@
 
 
 
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import { useAuth } from "./AuthProvider";
-import axios from "axios"; // Import axios
+import axios from "axios";
 
 const Login = () => {
-  // State hooks for managing form input and loading/error states
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,14 +16,12 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  // Handle form submission
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     try {
-      // Sending a POST request to the login endpoint using axios
       const response = await axios.post("http://localhost:5000/login", {
         email,
         password,
@@ -38,28 +36,13 @@ const Login = () => {
         // Update context with user and token
         login(data.user, data.access_token);
 
-        // Verify the token
-        const token = data.access_token; // Use the received token
-        try {
-          const verifyResponse = await axios.post(
-            "http://127.0.0.1:5000/verify-token",
-            {},
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-                "Content-Type": "application/json",
-              },
-            }
-          );
-
-          // Handle the response from the verify-token endpoint
-          if (verifyResponse.status === 200) {
-            // Token is valid, navigate to the consortium page
-            navigate("/consortium");
-          }
-        } catch (verifyError) {
-          console.error(verifyError);
-          setError("Token verification failed. Please log in again.");
+        // Redirect logic based on user role, approval status, and document status
+        if (data.user.role === "admin") {
+          navigate("/admin-dashboard");
+        } else if (data.user.is_approved && data.user.document_status === "Approved") {
+          navigate("/member-account-administrator");
+        } else {
+          navigate("/consortium");
         }
       }
     } catch (err) {
@@ -127,7 +110,7 @@ const Login = () => {
               disabled={loading}
               className="w-full py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300 disabled:opacity-50"
             >
-              Login
+              {loading ? "Logging in..." : "Login"}
             </button>
           </form>
         </div>

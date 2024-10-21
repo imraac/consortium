@@ -601,7 +601,7 @@ nav {
 .dropdown__content {
   display: none; /* Hidden by default */
   position: absolute;
-  background-color: #ffffff; /* Set the background to white */
+  background-color: white; /* Set the background to white */
   padding: 0.5rem; /* Reduce padding for smaller screens */
   box-shadow: 0 2px 8px rgba(14, 159, 243, 0.1); /* Add a shadow for better visibility */
   z-index: 1;
@@ -669,8 +669,8 @@ nav {
 }
 
 .login-button {
-  background-color: #4caf50;
-  color: white;
+  background-color: #4caf50 !important;
+  color: white !important;
   border: none;
   border-radius: 1px !important;
 }

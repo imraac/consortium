@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import axios from 'axios'; // Import axios for making HTTP requests
 import './ConsortiumJoinForm.css';
 
 const ConsortiumJoinForm = () => {
@@ -11,7 +12,7 @@ const ConsortiumJoinForm = () => {
     const [documents, setDocuments] = useState([]);
     const navigate = useNavigate(); // Initialize useNavigate
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
     
         // Validate the form inputs
@@ -25,11 +26,41 @@ const ConsortiumJoinForm = () => {
             navigate('/feedback', { state: { message: 'Requested number of additional accounts must be a valid positive number.', isError: true } });
             return;
         }
-    
-        // If all validations pass
-        navigate('/feedback', { state: { message: 'Congratulations! The information provided is correct, and your registration is almost complete. Kindly note this DOES NOT MEAN your are a member !', isError: false } });
-        
-        // You can handle form data submission logic here (e.g., sending to an API)
+
+        // Prepare the data to be sent to the backend
+        const applicationData = {
+            full_name: fullName,
+            email_address: emailAddress,
+            additional_accounts: additionalAccountsNum,
+            mailing_list: mailingList,
+            email_copy: emailCopy,
+        };
+
+        const token = localStorage.getItem('token'); // Retrieve your JWT token
+
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        };
+
+        try {
+            // Send the POST request to the backend
+            const response = await axios.post('http://127.0.0.1:5000/consortium_application', applicationData, config);
+            
+            // Redirect on success
+            navigate('/feedback', { state: { message: response.data.message, isError: false } });
+        } catch (error) {
+            // Handle error response from the server
+            if (error.response) {
+                navigate('/feedback', { state: { message: error.response.data.error || 'An error occurred while submitting the application.', isError: true } });
+            } else {
+                navigate('/feedback', { state: { message: 'Network error. Please try again later.', isError: true } });
+            }
+        }
+
+        // For debugging purposes
         console.log({ fullName, emailAddress, additionalAccounts: additionalAccountsNum, mailingList, emailCopy, documents });
     };
     

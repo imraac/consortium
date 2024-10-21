@@ -16,7 +16,7 @@ const FormFeedbackPage = () => {
             )}
             {isError && (
                 <p className="errorDetails">
-                    Please review the information you submitted. Make sure all fields are filled out correctly and try again.
+                    seems like you took alot of time in one page. log back in 
                 </p>
             )}
 
