@@ -153,7 +153,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  background-image: url('/help.jpg') !important;
+  background-image: url('/manngo.jpg') !important;
   background-size: cover; /* Cover the entire section */
   background-position: center; 
   background-repeat: no-repeat; 
@@ -502,9 +502,6 @@ footer p {
 
 
 
-
-
-
 .services {
   display: flex;
   flex-direction: column;
@@ -536,7 +533,7 @@ footer p {
 
 .servicesContainer {
   display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping in the marquee */
+  flex-wrap: wrap; /* Allow wrapping of service boxes */
   align-items: center;
   justify-content: center; 
   width: 100%;
@@ -550,7 +547,7 @@ footer p {
   border-radius: 10px;
   width: 1600px; /* Set a width for service boxes */
   height: auto; /* Allow height to adjust based on content */
-  margin: 1.5rem;
+  margin: 1rem; /* Reduced margin for smaller screens */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -589,7 +586,7 @@ footer p {
 /* Media Queries */
 @media screen and (max-width: 992px) {
   .service--box {
-      width: 190px; /* Adjust width for smaller screens */
+      width: 45%; /* Adjust width for medium screens */
   }
 }
 
@@ -605,11 +602,17 @@ footer p {
   .servicesContainer {
       padding: 0.5rem; /* Adjust padding */
   }
+
+  .service--box {
+      width: 48%; /* Adjust width for smaller screens */
+      margin: 0.5rem; /* Adjust margins */
+  }
 }
 
 @media screen and (max-width: 600px) {
   .service--box {
-      width: 135px; /* Further adjust for smaller screens */
+      width: 90%; /* Full width for very small screens */
+      margin: 0.5rem; /* Smaller margins */
   }
 
   .servicesHeader h2 {
