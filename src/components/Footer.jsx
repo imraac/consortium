@@ -165,10 +165,10 @@ const Footer = () => {
         <div style={{ textAlign: 'center', marginTop: '1.5rem', borderTop: '1px solid #ddd', paddingTop: '1rem' }}> {/* Light border for separation */}
           <p style={{ fontSize: '0.875rem', color: '#555' }}> {/* Changed color to darker shade */}
             &copy; {new Date().getFullYear()} MROs Consortium. All rights reserved. <br />
-            <Link to="/privacy-policy" style={{ color: '#f8b400', textDecoration: 'underline' }}>Privacy policy</Link> | 
-            <Link to="/terms-and-conditions" style={{ color: '#f8b400', textDecoration: 'underline' }}> Terms and conditions</Link> | 
-            <Link to="/cookies-policy" style={{ color: '#f8b400', textDecoration: 'underline' }}> Cookies policy</Link> | 
-            <Link to="/copyright" style={{ color: '#f8b400', textDecoration: 'underline' }}> Copyright © 2024 MROs Consortium</Link>
+            <Link to="/privacy-policy" style={{ color: '#002D74', textDecoration: 'underline' }}>Privacy policy</Link> | 
+            <Link to="/terms-and-conditions" style={{ color: '#002D74', textDecoration: 'underline' }}> Terms and conditions</Link> | 
+            <Link to="/cookies-policy" style={{ color: '#002D74', textDecoration: 'underline' }}> Cookies policy</Link> | 
+            <Link to="/copyright" style={{ color: '#002D74', textDecoration: 'underline' }}> Copyright © 2024 MROs Consortium</Link>
           </p>
         </div>
       </div>

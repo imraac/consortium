@@ -1,56 +1,122 @@
+/* Dashboard Container */
+.dashboard-container {
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 100px; /* Padding around the content */
+  font-family: 'Arial', sans-serif; /* Font for the dashboard */
+  border-radius: 8px; /* Rounded corners */
+}
 
-  .dashboard-container {
-    padding: 100px;
-    margin-top: 90px;
-    border: 1px solid #75d7f0;
-  }
-  
+/* Header Styles */
+.dashboard-header {
+  text-align: left; /* Align header text to the left */
+  margin-bottom: 40px; /* Space below the header */
+  padding-bottom: 20px; /* Padding at the bottom for visual separation */
+  border-bottom: 3px solid #2375ac; /* Underline for emphasis */
+}
+
+.dashboard-header h2 {
+  font-size: 1.5em; /* Larger font size for main title */
+  color: #2c3e50; /* Darker shade for the header */
+  margin: 100px; /* Remove default margin */
+  font-weight: bold; /* Make the header bold */
+}
+
+.dashboard-header p {
+  color: #232930; /* Medium dark text for better readability */
+  font-size: 1.1em; /* Slightly larger font size */
+  margin: 10px 0; /* Margin for spacing */
+}
+
+/* Card Container */
+.card-container {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(4, 1fr); /* Four equal columns for larger screens */
+  gap: 20px; /* Space between cards */
+}
+
+/* Card Styles */
+.card {
+  background-color: #c9c7c7; /* White background for cards */
+  border: 1px solid #dcdcdc; /* Light gray border for cards */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Reduced internal padding */
+  transition: transform 0.3s ease; /* Smooth transition for effects */
+}
+
+.card:hover {
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Card Headings */
+.card h2 {
+  font-size: 1.2em; /* Slightly smaller font size for card headings */
+  color: #2980b9; /* Professional blue for headings */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+/* Card Text */
+.card p {
+  font-size: 0.9em; /* Slightly smaller text size for the body */
+  color: #11121d; /* Dark gray for body text */
+  line-height: 1.6; /* Line height for readability */
+}
+
+/* Unordered List in Cards */
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* No padding */
+}
+
+ul li {
+  margin: 15px 0; /* Space between list items */
+}
+
+/* Link Styles */
+a {
+  text-decoration: none; /* No underline for links */
+  color: #2980b9; /* Consistent color for links */
+  transition: color 0.3s, text-decoration 0.3s; /* Smooth transition on hover */
+}
+
+a:hover {
+  color: #1a5276; /* Darker shade on hover */
+  text-decoration: underline; /* Underline on hover for indication */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
   .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns for medium screens */
   }
-  
+}
+
+@media (max-width: 600px) {
+  .dashboard-header h2 {
+    font-size: 1.3em; /* Smaller heading on small screens */
+    margin: 20px 0; /* Adjust margin for smaller screens */
+  }
+
+  .dashboard-header p {
+    font-size: 1em; /* Adjust font size for smaller screens */
+    margin: 10px 0; /* Adjust margin for spacing */
+  }
+
+  .card-container {
+    grid-template-columns: 1fr; /* Stack cards in a single column on small screens */
+  }
+
   .card {
-    background-color: #d8a10b;
-    border: 1px solid #d8a10b;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px; /* This is the side margin */
-    margin-bottom: 20px; /* Increase this to add more space below each card */
-    flex: 1 1 calc(30% - 20px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%; /* Ensure cards take full width of the screen */
+    padding: 10px; /* Reduce padding for small screens */
   }
-  
-  .card:hover {
-    transform: translateY(-10px); /* Move the card up */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+
+  .card h2 {
+    font-size: 1.1em; /* Further reduce heading size on small screens */
+    margin-bottom: 8px; /* Adjust margin below headings */
   }
-  
-  .card.left {
-    margin-right: auto;
+
+  .card p {
+    font-size: 0.85em; /* Slightly reduce paragraph text size */
+    line-height: 1.5; /* Adjust line height for readability */
   }
-  
-  .card.middle {
-    margin: 0 10px;
-  }
-  
-  .card.right {
-    margin-left: auto;
-  }
-  
-  h2 {
-    color: #333;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  ul li {
-    margin: 5px 0;
-  }
-  
+}
