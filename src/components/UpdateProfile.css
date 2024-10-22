@@ -1,0 +1,131 @@
+.update-profile-wrapper {
+    display: flex; /* Use flexbox to align items */
+    margin: 0 auto; /* Center horizontally */
+    height: 100vh; /* Make the wrapper full height of the viewport */
+    width: 100%; /* Full width */
+}
+
+.update-profile-container {
+    width: 50%; /* Profile section takes half of the page */
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    margin-right: 20px; /* Space between profile and FAQs */
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+}
+
+.update-profile-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.update-profile-form .form-group {
+    margin-bottom: 20px;
+}
+
+.update-profile-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.update-profile-form input,
+.update-profile-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.update-profile-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+/* FAQ Box Styling */
+.faqs-container {
+    width: 50%; /* FAQ section takes the other half of the page */
+    padding: 30px; /* Increased padding for better spacing */
+    background-color: #f7f7f7; /* Light gray background for contrast */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    font-family: 'Arial', sans-serif; /* Consistent font */
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align items at the start */
+    margin-top: 220px;
+}
+
+.faqs-container h4 {
+    font-size: 26px; /* Slightly larger font for the header */
+    color: #0056b3; /* Darker blue for better readability */
+    margin-bottom: 20px; /* Increased bottom margin */
+    border-bottom: 2px solid #007bff; /* Underline for emphasis */
+    padding-bottom: 10px; /* Padding for spacing */
+}
+
+.faqs-container ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.faqs-container li {
+    margin-bottom: 15px; /* Spacing between FAQ items */
+    padding: 10px; /* Padding inside each FAQ item */
+    background-color: #ffffff; /* White background for each item */
+    border-radius: 8px; /* Rounded corners for items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s; /* Smooth transition on hover */
+}
+
+.faqs-container li:hover {
+    transform: translateY(-2px); /* Slightly lift on hover */
+}
+
+.faqs-container strong {
+    color: #333; /* Darker color for question text */
+}
+
+.faqs-container p {
+    margin-top: 5px; /* Margin for spacing */
+    font-size: 16px; /* Font size for answers */
+    color: #555; /* Slightly lighter color for answer text */
+}
+.back-button-profile {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 180px; /* Adjust distance from the top of the page */
+    left: 20px; /* Adjust distance from the left of the page */
+  }
+  
+  .back-button:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+

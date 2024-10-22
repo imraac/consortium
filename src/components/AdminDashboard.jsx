@@ -479,11 +479,11 @@ const AdminDashboard = () => {
                       <td>{application.email}</td>
                       <td>{application.status}</td>
                       <td>
-                        <button onClick={() => openModal(application.registration_certificate)}>Registration Certificate</button>
+                        <button onClick={() => openModal(application.registration_certificate)}>Registration Cert</button>
                         <button onClick={() => openModal(application.agency_profile)}>Agency Profile</button>
                         <button onClick={() => openModal(application.audit_report)}>Audit Report</button>
-                        <button onClick={() => openModal(application.ngo_consortium_mandate)}>NGO Consortium Mandate</button>
-                        <button onClick={() => openModal(application.icrc_code_of_conduct)}>ICRC Code of Conduct</button>
+                        <button onClick={() => openModal(application.ngo_consortium_mandate)}>(MRO)Consortium Mandate</button>
+                        <button onClick={() => openModal(application.icrc_code_of_conduct)}>Passport Photo & ID</button>
                       </td>
                       <td>
                         <button 

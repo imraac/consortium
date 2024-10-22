@@ -1,0 +1,52 @@
+.child-accounts-page {
+    padding: 20px;
+    max-width: 1000px; /* Increased maximum width for the page */
+    margin-left: 0; /* Align to the left */
+    padding-top: 220px;
+}
+.child-accounts-header {
+    color: black; /* Change text color to black */
+    font-size: 24px; /* Set a larger font size */
+    margin-bottom: 20px; /* Add some spacing below the header */
+    font-weight: bold; /* Make it bold */
+}
+
+
+.child-accounts-table {
+    width: 100%; /* Make the table take up the full width of the container */
+    border-collapse: collapse;
+    margin-top: 30px; /* Increased margin to lower the table */
+}
+
+.child-accounts-table th,
+.child-accounts-table td {
+    border: 1px solid #84878f;
+    padding: 12px; /* Increased padding for a larger table */
+    text-align: left;
+}
+
+.child-accounts-table th {
+    background-color: #b9c1e4;
+    font-weight: bold;
+}
+
+.child-accounts-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.back-button-child {
+    background-color: #498cd4; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px; /* Spacing below the button */
+}
+
+.back-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+

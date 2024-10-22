@@ -1,0 +1,119 @@
+.edit-hq-contact-wrapper {
+    justify-content: center; /* Align to the left */
+    align-items: flex-start; /* Align items to the top */
+    width: 160%; /* Full width of the page */
+    background-color: #f4f4f4; /* Light background color */
+    font-family: 'Arial', sans-serif;
+    padding-top: 50px; /* Adjusted top padding */
+    padding-top: 140px;
+    padding-left: 20px; /* Add left padding to push content further left */
+}
+
+/* Back button styling */
+.back-button {
+    position: absolute;
+    top: 20px; /* Position the button above the form */
+    left: 50px;
+    background-color: transparent;
+    color: #007bff;
+    font-size: 16px;
+    text-decoration: underline;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px; /* Space below the button */
+    padding-top: 150px;
+}
+
+.back-button:hover {
+    color: #0056b3;
+}
+
+/* Container for the form */
+.edit-hq-contact-container {
+    background-color: #fff;
+    padding: 20px; /* Reduced padding for less height */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Increased width */
+    margin: 20px; /* Gives space from edges on smaller screens */
+}
+
+/* Heading */
+.edit-hq-contact-container h2 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 15px; /* Reduced space between heading and form */
+    text-align: center;
+}
+
+/* Form group */
+.edit-hq-contact-form .form-group {
+    margin-bottom: 15px; /* Reduced space between form groups */
+}
+
+/* Labels for input fields */
+.edit-hq-contact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+/* Input fields styling */
+.edit-hq-contact-form input {
+    width: 100%;
+    padding: 8px; /* Reduced padding to decrease input height */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Input focus state */
+.edit-hq-contact-form input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Submit button */
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px; /* Reduced button height */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px; /* Reduced space between form and button */
+}
+
+/* Submit button hover state */
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .edit-hq-contact-container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .edit-hq-contact-form input {
+        font-size: 14px;
+    }
+
+    .submit-button {
+        padding: 8px;
+    }
+}
+
+
+
+
+
+
+
+
