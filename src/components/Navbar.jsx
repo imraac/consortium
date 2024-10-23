@@ -32,7 +32,10 @@ const Navbar = () => {
   return (
     <header className="header">
      <div className="call-us">
- 
+   <button className="btn join-consortium-button mobile-only" onClick={() => { navigate("/consortium"); closeMenu(); }}>
+          <i className="fas fa-users" style={{ color: '#FFD700' }}></i> Join The consortium
+        </button>
+   
      
      <a
     href="https://wa.me/0704390612" // WhatsApp link
@@ -110,7 +113,7 @@ const Navbar = () => {
                 onMouseLeave={() => toggleDropdown(null)}
               >
                 <span className="nav__link" style={{ textDecoration: "none" }}>
-                  About Us
+                  About Us <i class="fas fa-angle-down"></i>
                 </span>
                 {dropdownOpen === 1 && (
                   <div className="dropdown__content">
@@ -138,7 +141,7 @@ const Navbar = () => {
                 onMouseLeave={() => toggleDropdown(null)}
               >
                 <span className="nav__link" style={{ textDecoration: "none" }}>
-                  Activities
+                  Activities <i class="fas fa-angle-down"></i>
                 </span>
                 {dropdownOpen === 2 && (
                   <div className="dropdown__content">
@@ -169,7 +172,7 @@ const Navbar = () => {
 
               <li>
                 <Link to="/jobs" className="nav__link" style={{ textDecoration: "none" }} onClick={closeMenu}>
-                  Jobs
+                  resourses <i class="fas fa-angle-down"></i>
                 </Link>
               </li>
               <li
@@ -178,7 +181,7 @@ const Navbar = () => {
                 onMouseLeave={() => toggleDropdown(null)}
               >
                 <span className="nav__link" style={{ textDecoration: "none" }}>
-                  Membership
+                  Membership <i class="fas fa-angle-down"></i>
                 </span>
                 {dropdownOpen === 4 && (
                   <div className="dropdown__content">
@@ -203,7 +206,7 @@ const Navbar = () => {
                 onMouseLeave={() => toggleDropdown(null)}
               >
                 <span className="nav__link" style={{ textDecoration: "none" }}>
-                  Contacts
+                  Contacts <i class="fas fa-angle-down"></i>
                 </span>
                 {dropdownOpen === 4 && (
                   <div className="dropdown__content">
@@ -229,7 +232,9 @@ const Navbar = () => {
                   closeMenu();
                 }}
               >
-                Join Consortium
+              <i className="fas fa-users" style={{ color: '#FFD700' }}></i>  
+                Join The Consortium 
+
               </button>
               <button
                 className="btn login-button"
@@ -238,7 +243,8 @@ const Navbar = () => {
                   closeMenu();
                 }}
               >
-                Login
+                Login <i className="fas fa-sign-in-alt" style={{ color: 'white', fontSize: '14px' }}></i> 
+
               </button>
             </div>
           </div>

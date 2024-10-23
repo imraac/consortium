@@ -3,14 +3,15 @@
   margin: 0 auto; /* Center the container horizontally */
   padding: 100px; /* Padding around the content */
   font-family: 'Arial', sans-serif; /* Font for the dashboard */
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 8px;
+  /* Rounded corners */
 }
 
 /* Header Styles */
 .dashboard-header {
   text-align: left; /* Align header text to the left */
-  margin-bottom: 40px; /* Space below the header */
-  padding-bottom: 20px; /* Padding at the bottom for visual separation */
+  margin-bottom: 4px; /* Space below the header */
+  padding-bottom: 2px; /* Padding at the bottom for visual separation */
   border-bottom: 3px solid #2375ac; /* Underline for emphasis */
 }
 
@@ -19,6 +20,24 @@
   color: #2c3e50; /* Darker shade for the header */
   margin: 100px; /* Remove default margin */
   font-weight: bold; /* Make the header bold */
+}
+.logout-button {
+
+  color: rgb(223, 20, 20);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.logout-message {
+  margin-top: 10px;
+  color: green;
 }
 
 .dashboard-header p {
