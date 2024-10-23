@@ -1,105 +1,77 @@
+/* Global font family for all text elements */
+body, p, h1, h2, h3, h4, h5, h6, ul, li, a, span, div {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+/* Keep the existing styles for specific elements */
 .about-us {
-    max-width: 800px; /* Limit the width for better readability */
-    margin: 20px; /* Remove auto centering */
-    padding: 20px;
-    border-radius: 8px;
-    text-align: left; /* Align text to the left */
-    margin-top: 120px;
-   
-    flex: 1;
-  }
-  
-  .about-us h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .about-us h2 {
-    font-size: 1.8rem;
-    margin: 20px 0 10px;
-    color: #c02020; /* Change this color as needed */
-  }
-  
-  
-  .about-us p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 15px;
-    text-align: left; /* Ensure paragraphs are left-aligned */
-  }
-  
-  .about-us p:last-child {
-    margin-bottom: 0; /* Remove margin for the last paragraph */
-  }
-  
+  /* Limit the width for better readability */
+  margin: 20px; /* Remove auto centering */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left; /* Align text to the left */
+  margin-top: 1px;
+  flex: 1;
+}
+
+.about-us h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-us h2 {
+  font-size: 1.8rem;
+  margin: 20px 0 10px;
+  color: #c02020; /* Change this color as needed */
+}
+
+.about-us p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+  text-align: left; /* Ensure paragraphs are left-aligned */
+}
+
+.about-us p:last-child {
+  margin-bottom: 0; /* Remove margin for the last paragraph */
+}
+
+.about-us-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px;
+  color: #c3e4f3 !important; /* Add this color globally */
+}
+
+/* Ensure text does not overflow */
+.contact-container p {
+  word-wrap: break-word; /* Allow long words to break onto the next line */
+  overflow-wrap: break-word; /* For better browser support */
+}
+
+ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  overflow-wrap: break-word; /* Ensure long text in list items breaks properly */
+}
+
+ul li {
+  margin: 8px 0; /* Space between items */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
   .about-us-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-    color: #c3e4f3 !important ;
-    transition: color 0.3s; 
-    min-height: 100vh;  
+    flex-direction: column; /* Stack items vertically */
   }
-  
+
   .about-us {
-    flex: 2; /* Adjust as needed */
-    padding: 20px;
+    margin-bottom: 20px; /* Add space between sections */
   }
-  
+
   .contact-container {
-    flex: 1; /* Adjust as needed */
-    /* Light background for contrast */
-    padding: 20px;
-    margin-top: 145px;
-   
-    box-shadow: 0 2px 5px  #626263 ;
-    overflow: hidden; /* Prevent overflow */
+    width: 100%; /* Full width on smaller screens */
   }
-  
-  .contact-container h2,
-  .contact-container h3 {
-    margin-top: 0;
-  }
-  
-  .contacts {
-    display: block; /* Change to block to stack items vertically */
-    margin-top: 20px;
-  }
-  
-  .contacts > div {
-    margin-bottom: 20px; /* Space between different contact sections */
-  }
-  
-  /* Ensure text does not overflow */
-  .contact-container p {
-    word-wrap: break-word; /* Allow long words to break onto the next line */
-    overflow-wrap: break-word; /* For better browser support */
-  }
-  
-  ul {
-    list-style-type: none; /* Remove default list styling */
-    padding: 0;
-    overflow-wrap: break-word; /* Ensure long text in list items breaks properly */
-  }
-  
-  ul li {
-    margin: 8px 0; /* Space between items */
-  }
-  
-  /* Media query for smaller screens */
-  @media (max-width: 768px) {
-    .about-us-container {
-      flex-direction: column; /* Stack items vertically */
-    }
-  
-    .about-us {
-      margin-bottom: 20px; /* Add space between sections */
-    }
-  
-    .contact-container {
-      width: 100%; /* Full width on smaller screens */
-    }
-  }
-  
+}

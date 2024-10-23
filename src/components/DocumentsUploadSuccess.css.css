@@ -1,0 +1,69 @@
+/* Modal Container */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(253, 248, 248, 0.5); /* Semi-transparent black background */
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure modal appears above all other content */
+  }
+  
+  /* Modal Content */
+  .modalContent {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in animation */
+  }
+  
+  /* Modal Header */
+  .modalContent h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #28a745; /* Green color to indicate success */
+  }
+  
+  /* Modal Message */
+  .modalContent p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Close Button */
+  .closeButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .closeButton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Fade-in Animation for Modal */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px); /* Slide in from the top */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Final position */
+    }
+  }
+  

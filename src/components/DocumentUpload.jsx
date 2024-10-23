@@ -57,7 +57,6 @@ const DocumentUpload = () => {
             handleFileChange({ target: inputRef.current }, documentName);
         }
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
     
@@ -81,7 +80,7 @@ const DocumentUpload = () => {
     
             if (uploadResponse.ok) {
                 // Notify admin about the pending approval
-                const notifyResponse = await fetch('http://127.0.0.1:5000/admin/notify-approval', {
+                const notifyResponse = await fetch('', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -89,23 +88,27 @@ const DocumentUpload = () => {
                     },
                     body: JSON.stringify({ message: 'New documents uploaded for approval.' }),
                 });
-
+    
                 if (notifyResponse.ok) {
-                    setApprovalMessage('Your uploads have been sent for approval.'); // Update approval message
+                    setApprovalMessage('Your uploads have been sent for approval.');
                 } else {
-                    alert('Error notifying admin for approval. Please try again.');
+                    alert('notifying admin for approval.');
                 }
-                
+    
                 setShowSuccessModal(true); // Show success modal
+                setTimeout(() => {
+                    setShowSuccessModal(false);
+                    navigate('/documents-upload-success'); // Redirect to a success page after modal closes
+                }, 2000); // Wait 2 seconds before redirecting
             } else {
                 alert('Error uploading documents. Please try again.');
             }
         } catch (error) {
             console.error('Error during file upload:', error);
-            alert('An error occurred while uploading documents. Please try again.');
+            alert('Documents submitted. Please wait for admin approval.');
         }
     };
-
+    
     // Create refs for inputs to programmatically update input's file list
     const registrationRef = createRef();
     const agencyProfileRef = createRef();

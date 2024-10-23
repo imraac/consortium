@@ -238,6 +238,7 @@ import AdminDashboard from "./components/AdminDashboard"; // Import the AdminDas
 import { AuthProvider } from "./components/AuthProvider";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Signup from "./components/Singup";
+import DocumentUploadSuccess from "./components/DocumentUploadSuccess";
 import UpdateProfile from "./components/UpdateProfile";
 import ContactInfo from "./components/ContactInfo";
 import ChildAccount from "./components/ChildAccount";
@@ -296,6 +297,7 @@ const App = () => {
           <Route path="/update-contact" element={<ContactInfo />} />
           <Route path="/child-accounts" element={<ChildAccount />} />
 
+          <Route path="/documents-upload-success" element={<DocumentUploadSuccess />} />
 
           <Route path="/document-upload" element={<DocumentUpload />} />
           <Route path="/consortium-mandate" element={<ConsortiumMandate />} />

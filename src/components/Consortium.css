@@ -2,9 +2,9 @@
     display: flex;
     justify-content: space-between; /* Aligns containers side by side on larger screens */
     padding: 20px;
-    margin-top: 220px;
+    margin-top: 200px;
     flex-wrap: wrap;
-    background-color: white !important; /* Allow containers to wrap on smaller screens */
+    /* Allow containers to wrap on smaller screens */
 }
 
 .consortium-container {
@@ -13,7 +13,7 @@
     margin: 10px 90px 90px;
     font-family: Arial, sans-serif;
     border-radius: 8px;
-    margin-top: -50px;
+    margin-top: -90px;
     background-color: white !important; 
  
 }
@@ -28,13 +28,14 @@
     background-color: #e0e0e0; /* Sleek background */
     border-radius: 1px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-top: -50px;
+    margin-top: -7px;
 }
 
 /* Headings and paragraphs */
 h1, h2 {
     text-align: left;
     color: #4CAF50;
+    font-size: 1.5rem !important;
 }
 
 p {

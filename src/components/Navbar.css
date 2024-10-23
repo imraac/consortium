@@ -820,11 +820,11 @@ nav {
   cursor: pointer;
   position: relative;
   padding: 10px 24px;
-  font-size: 25px;
-  font-weight: 800;
+  font-size: 17px !important;
+  font-weight: 800 !important;
   border-radius: 1px !important;
   background: linear-gradient(45deg,  #3ABEF9 ,  #3ABEF9  ); /* Black to white gradient */
-  color: white !important; /* Default text color */
+  color: rgb(255, 255, 255) !important; /* Default text color */
   background-color: transparent;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   overflow: hidden;
@@ -839,7 +839,7 @@ nav {
     width: 50px;
     height: 50px;
     border-radius: inherit;
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    background-color: rgba(202, 46, 35, 0.2); /* Semi-transparent white */
     transform: scale(0);
     z-index: -1;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -1054,5 +1054,53 @@ nav {
   /* Adjust the logo to fit within the smaller navbar */
   .nav img {
     width: 120px; /* Reduce logo size for smaller screens */
+  }
+}
+/* Default style for the "Join The Consortium" button (hidden by default) */
+.call-us .join-consortium-button {
+  display: none; /* Hidden on larger screens */
+}
+
+/* Show the "Join The Consortium" button only on smaller screens */
+/* Default style for the "Join The Consortium" button (hidden by default) */
+.call-us .join-consortium-button {
+  display: none; /* Hidden on larger screens */
+}
+
+/* Show the "Join The Consortium" button only on smaller screens */
+@media (max-width: 768px) {
+  .call-us .join-consortium-button {
+    display: inline-block;
+    font-size: 10px; /* Smaller font size */
+    padding: 4px 6px; /* Small padding */
+    margin-left: 5px;
+    background-color: #008080 !important; /* Teal */
+    border: none;
+    border-radius: 1px !important;
+    color: #FFF; /* White text */
+    cursor: pointer;
+    width: auto; /* Prevent the button from taking the full width */
+    position: relative;
+    left: 0; /* Align the button to the left */
+    transition: background-color 0.3s, transform 0.2s; /* Add a smooth transition */
+  }
+
+  .call-us .join-consortium-button:hover {
+    background-color: #005757 !important; /* Darker teal on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+
+  .call-us .join-consortium-button i {
+    margin-right: 2px; /* Reduce icon-text margin */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .call-us .join-consortium-button {
+    font-size: 8px; /* Even smaller font size */
+    padding: 2px 4px; /* Very small padding */
+    width: auto; /* Ensure it doesn't take full width */
+    margin-left: 5px; /* Maintain some left margin */
   }
 }
