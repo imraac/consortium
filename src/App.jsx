@@ -242,6 +242,7 @@ import DocumentUploadSuccess from "./components/DocumentUploadSuccess";
 import UpdateProfile from "./components/UpdateProfile";
 import ContactInfo from "./components/ContactInfo";
 import ChildAccount from "./components/ChildAccount";
+import ResetPassword from "./components/ResetPassword";
 
 const App = () => {
   return (
@@ -285,6 +286,8 @@ const App = () => {
           />
           <Route path="/feedback" element={<FormFeedbackPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="reset-password/:token" element={<ResetPassword/>}/>
+
           <Route path="/signup" element={<Signup />} />
           <Route path="/advocacy" element={<Advocacy />} />
           <Route path="/Strategy" element={<Strategy />} />
