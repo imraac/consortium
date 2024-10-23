@@ -642,7 +642,7 @@ footer p {
 /* Navbar Styling */
 nav {
   position: fixed; /* Keep the navbar fixed at the top */
-  top: 60px; /* Adjust to position below the "Call Us" section */
+  top: 50px; /* Adjust to position below the "Call Us" section */
   width: 100%; /* Ensure navbar spans the width of the screen */
   display: flex;
   justify-content: space-between;
@@ -678,7 +678,7 @@ nav {
 }
 
 .nav img {
-  width: 400px;
+  width: 220px !important;
 }
 
 .nav-links .dropdown {
@@ -891,7 +891,7 @@ nav {
 /* Responsive Navbar */
 @media (max-width: 768px) {
   nav img {
-    width: 150px;
+    width: 150px ;
   }
 
   nav .fa-solid {
@@ -993,9 +993,6 @@ nav {
     cursor: pointer; /* Show toggle button on mobile */
   }
 
-  .nav img {
-    width: 150px; /* Adjust logo size for mobile */
-  }
 
 
 
@@ -1070,28 +1067,28 @@ nav {
 /* Show the "Join The Consortium" button only on smaller screens */
 @media (max-width: 768px) {
   .call-us .join-consortium-button {
-    display: inline-block;
-    font-size: 10px; /* Smaller font size */
-    padding: 4px 6px; /* Small padding */
-    margin-left: 5px;
+    display: inline-block !important;
+    font-size: 15px !important; /* Smaller font size */
+    padding: 4px 6px ; /* Small padding */
+    margin-left: 5px !important;
     background-color: #008080 !important; /* Teal */
     border: none;
     border-radius: 1px !important;
     color: #FFF; /* White text */
     cursor: pointer;
-    width: auto; /* Prevent the button from taking the full width */
-    position: relative;
-    left: 0; /* Align the button to the left */
-    transition: background-color 0.3s, transform 0.2s; /* Add a smooth transition */
+    width: auto !important; /* Prevent the button from taking the full width */
+    position: relative !important;
+    left: 0 !important;  /* Align the button to the left */
+    transition: background-color 0.3s, transform 0.2s !important; /* Add a smooth transition */
   }
 
   .call-us .join-consortium-button:hover {
     background-color: #005757 !important; /* Darker teal on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
   }
-
+ 
   .call-us .join-consortium-button i {
-    margin-right: 2px; /* Reduce icon-text margin */
+    margin-right: 2px !important; /* Reduce icon-text margin */
   }
 }
 
@@ -1101,6 +1098,6 @@ nav {
     font-size: 8px; /* Even smaller font size */
     padding: 2px 4px; /* Very small padding */
     width: auto; /* Ensure it doesn't take full width */
-    margin-left: 5px; /* Maintain some left margin */
+    margin-left: 5px !important; /* Maintain some left margin */
   }
 }

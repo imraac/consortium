@@ -33,7 +33,7 @@ const Navbar = () => {
     <header className="header">
      <div className="call-us">
    <button className="btn join-consortium-button mobile-only" onClick={() => { navigate("/consortium"); closeMenu(); }}>
-          <i className="fas fa-users" style={{ color: '#FFD700' }}></i> Join The consortium
+          <i className="fas fa-users" style={{ color: 'white' }}></i> Join 
         </button>
    
      
@@ -47,7 +47,7 @@ const Navbar = () => {
       src="/372010_linkedin_stamp_social_icon.png
 "
       alt="WhatsApp"
-      style={{ width: "35px", height: "35px", marginLeft: "7px" }}
+      style={{ width: "25px", height: "25px", marginLeft: "140px" }}
     />
   </a>
   <a
@@ -59,7 +59,7 @@ const Navbar = () => {
     <img
       src="/3184113_media_social_whatsapp_icon.svg"
       alt="WhatsApp"
-      style={{ width: "35px", height: "35px", marginLeft: "7px" }}
+      style={{ width: "25px", height: "25px", marginLeft: "7px" }}
     />
   </a>
   <a
@@ -71,7 +71,7 @@ const Navbar = () => {
     <img
       src="/11244080_x_twitter_elon musk_twitter new logo_icon.svg"
       alt="WhatsApp"
-      style={{ width: "24px", height: "24px", marginLeft: "7px" }}
+      style={{ width: "20px", height: "20px", marginLeft: "7px" }}
     />
   </a>
   <a
@@ -84,7 +84,7 @@ const Navbar = () => {
       src="/5365678_fb_facebook_facebook logo_icon.svg
 "
       alt="WhatsApp"
-      style={{ width: "24px", height: "24px", marginLeft: "7px" }}
+      style={{ width: "20px", height: "20px", marginLeft: "7px" }}
     />
   </a>
 </div>
