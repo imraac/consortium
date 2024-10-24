@@ -4,9 +4,27 @@
     /* Light border */
     border-radius: 5px; /* Rounded corners */
     margin: 20px 0; /* Margin above and below */
-    margin-top: 150px; /* Default margin for larger screens */
+    margin-top: 10px; /* Default margin for larger screens */
 }
-
+/* Media query for smaller screens */
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+    .core-values-wrapper {
+        margin-top: 5px !important; /* Reduced margin for smaller screens */
+    }
+}
+.core-values-list {
+    list-style-type: none; /* Removes default bullet points */
+    padding: 0;
+  }
+  
+  .core-values-list li {
+    margin-bottom: 20px; /* Spacing between core values */
+  }
+  
+  .core-values-list p {
+    margin: 5px 0 0 20px; /* Indentation for paragraphs under each core value */
+  }
+  
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .core-values-wrapper {
@@ -22,3 +40,8 @@
 .core-values-list li {
     margin-bottom: 10px; /* Space between list items */
 }
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+    .hero-gradient {
+      margin-top: 139px; /* Reduced margin for smaller screens */
+    }
+  }

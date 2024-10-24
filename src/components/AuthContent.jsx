@@ -56,7 +56,7 @@ const AuthContent = () => {
     <div
       className="flex items-center justify-center min-h-screen bg-cover bg-center"
       style={{
-        backgroundImage: "url('https://a0.anyrgb.com/pngimg/1200/678/gerardus-mercator-equirectangular-projection-mercator-projection-map-projection-mapa-polityczna-isolated-blank-map-wikimedia-commons-globe-world-map.png')", // Replace with your image URL
+        backgroundImage: "url('wow.png')", // Replace with your image URL
       }}
     >
       <div className="auth-prompt bg-white p-10 rounded-xl shadow-2xl max-w-lg text-center border border-gray-200 transition-transform transform hover:scale-105">

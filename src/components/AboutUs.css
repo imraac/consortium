@@ -75,3 +75,58 @@ ul li {
     width: 100%; /* Full width on smaller screens */
   }
 }
+.centered-message {
+  text-align: center !important;      /* Center the text horizontally */
+  margin: 20px 0;         /* Add some vertical spacing */
+  font-size: 18px;        /* Adjust the font size as needed */
+  color: #333;            /* Change the text color */
+  /* You can add more styling properties as needed */
+}
+
+
+
+
+@keyframes backgroundChange {
+  0% {
+    background-color: #65cafd; /* Start with blue */
+  }
+  50% {
+    background-color: #ffffff; /* Fade to white */
+  }
+  100% {
+    background-color: #65cafd; /* Back to blue */
+  }
+}
+
+.hero-gradient {
+  animation: backgroundChange 5s ease-in-out infinite; /* Adjust duration as needed */
+  position: relative;
+  margin-top: 150px; /* Ensure positioning for absolute children */
+}
+
+/* Fade-in animation for the image */
+.hero-gradient img {
+  animation: fadeIn 5s ease-in-out forwards; /* Use forwards to keep it visible */
+  animation-delay: 3.5s;
+   /* Start fading in when background is almost white */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start invisible */
+  }
+  40% {
+    opacity: 1; /* Fade in */
+  }
+  70% {
+    opacity: 1; /* Stay visible */
+  }
+  100% {
+    opacity: 0; /* Fade out before background changes */
+  }
+}
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+  .hero-gradient {
+    margin-top: 138px; /* Reduced margin for smaller screens */
+  }
+}
