@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import { useParams, useNavigate } from 'react-router-dom';
+
+import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
+
 import './ResetPassword.css';
 
 const ResetPassword = () => {
@@ -44,6 +48,7 @@ const ResetPassword = () => {
                 // Optionally navigate to another page after successful reset
                 // navigate('/login');
                 navigate('/login');
+
             } else {
                 setError("Failed to reset password.");
             }
@@ -68,6 +73,18 @@ const ResetPassword = () => {
                             type="password"
                             id="new-password"
                             className="reset-password-input"
+
+                <h2>Reset Password</h2>
+                {message && <p className="success-message">{message}</p>}
+                {error && <p className="error-message">{error}</p>}
+
+                <form onSubmit={handleResetPassword}>
+                    <div className="mb-4">
+                        <label htmlFor="new-password" className="block">New Password:</label>
+                        <input
+                            type="password"
+                            id="new-password"
+
                             value={newPassword}
                             onChange={(e) => setNewPassword(e.target.value)}
                             required
@@ -79,12 +96,23 @@ const ResetPassword = () => {
                             type="password"
                             id="confirm-password"
                             className="reset-password-input"
+
+                    <div className="mb-4">
+                        <label htmlFor="confirm-password" className="block">Confirm Password:</label>
+                        <input
+                            type="password"
+                            id="confirm-password"
+
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             required
                         />
                     </div>
+
                     <button type="submit" className="reset-password-button">Reset Password</button>
+
+                    <button type="submit">Reset Password</button>
+
                 </form>
             </div>
         </div>
