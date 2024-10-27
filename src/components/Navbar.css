@@ -892,6 +892,7 @@ nav {
 @media (max-width: 768px) {
   nav img {
     width: 150px ;
+    margin-top: 16px;
   }
 
   nav .fa-solid {
@@ -914,7 +915,7 @@ nav {
     color: #0c0c0c;/* Keep it absolute to position below the navbar */
     display: none; /* Hide menu by default */
     flex-direction: column; /* Stack items vertically */
-    top: 61px; /* Position below navbar */
+    top: 104px !important; /* Position below navbar */
     right: 0;
     width: 100% !important; /* Make the menu take up 100% of the screen width */
     height: calc(100vh - 60px); /* Make the menu height full screen minus navbar height */
@@ -954,7 +955,7 @@ nav {
     height: 100vh; /* Make the menu height full screen */
     background-color: white; /* Ensure background is white */
     padding: 1rem;
-    background-image: url('/hands2-QvFd5z-7.png');
+    background-image: url('/wow.png');
     z-index: 1000; /* Ensure it appears above other content */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
     transition: transform 0.3s ease-in-out; /* Smooth transition for showing menu */

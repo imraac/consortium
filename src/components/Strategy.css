@@ -4,29 +4,28 @@ html, body {
   margin: 0;
 }
 
+
 .strategy-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 2px;
-  font-family: Arial, sans-serif;
-
-  flex-grow: 1; /* Ensures the content grows to fill space */
-  margin-top: 158px;
+  justify-content: center; /* Centers the container horizontally */
+  align-items: center; /* Centers the container vertically */
+  padding: 20px;
 }
 
 .strategy-container p {
   font-size: 16px;
   color: #333;
   line-height: 1.6;
-  background-color: #ecf0f1;
-  padding: 15px;
-  border-radius: 1px;
-
-  width: 45%; /* Right side content (50% of the width) */
-  margin-right: 20px; /* Add space between text and cards */
-  
+  background-color: #ffff;
+  padding: 20px;
+/* Softens the border */
+  width: 60%; /* Centered and responsive width */
+  margin: 0 auto; /* Centers the paragraph within the container */
+ /* Adds a subtle shadow for depth */
+  text-align: left; 
+  margin-top: -7px;/* Aligns text to the left */
 }
+
 
 .strategy-svg {
   width: 50%; /* Left side SVG container (50% of the width) */
