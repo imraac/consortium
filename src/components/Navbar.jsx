@@ -177,6 +177,14 @@ const Navbar = () => {
                 {dropdownOpen === 2 && (
                   <div className="dropdown__content">
                     <Link
+                      to="/certification"
+                      className="dropdown__link"
+                      style={{ textDecoration: "none" }}
+                      onClick={closeMenu}
+                    >
+                      NGO-Certification
+                    </Link>
+                    <Link
                       to="/coordination"
                       className="dropdown__link"
                       style={{ textDecoration: "none" }}

@@ -1,46 +1,81 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+/* Wrapper styles */
 .coordination-wrapper {
   display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center items vertically */
-  margin-top: 159px;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  justify-content: center; /* Center contents horizontally */
+  margin-top: 20px; /* Space above the coordination section */
+  padding: 0 20px; /* Add horizontal padding for breathing space */
 }
 
-.image-container {
-  flex: 1; /* Take up equal space */
-  margin-right: 20px; /* Space between image and text */
-}
-
-.coordination-image {
-  max-width: 100%; /* Ensure the image is responsive */
-  height: auto; /* Maintain aspect ratio */
-}
-
+/* Text container styles */
 .text-container {
   flex: 2; /* Take up more space for text */
+  text-align: center; /* Align text to the left */
+  width: 100%; /* Ensure full width */
 }
 
-.coordination-activities, .representation-section {
-  margin-bottom: 20px; /* Space between sections */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.coordination-list, .representation-list {
+h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #0056b3; /* Color for headings */
+}
+
+/* Coordination activities styles */
+.coordination-activities {
+  margin: 20px 0;
+}
+
+.coordination-list, .representation-list, .information-sharing-list {
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
   list-style-position: inside; /* Adjust list styles */
 }
 
+/* Styles for list items */
+.coordination-list li,
+.representation-list li,
+.information-sharing-list li {
+  margin-bottom: 10px; /* Space between list items */
+  color: #555; /* List item color */
+}
+
+/* Representation section styles */
+.representation-section {
+  margin: 20px 0;
+}
+
+/* Information Sharing section */
+h3 + p {
+  margin-top: 10px;
+  color: #555; /* General text color */
+  line-height: 1.6; /* Improve line spacing for readability */
+}
+
+
+
+
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .coordination-wrapper {
-    flex-direction: column; /* Stack image and text vertically */
+    flex-direction: column; /* Stack items vertically */
     align-items: flex-start; /* Align items to the left */
-    margin-top: 80px; /* Reduce space above for smaller screens */
-    padding: 0 20px; /* Add padding for overall spacing */
-  }
-
-  .image-container {
-    margin-right: 0; /* Remove right margin */
-    margin-bottom: 10px; /* Add margin below image */
-    width: 100%; /* Ensure the image container takes full width */
+    margin-top: 10px; /* Reduce space above for smaller screens */
   }
 
   /* Style adjustments for headings */
@@ -62,7 +97,8 @@
   }
 
   /* Style adjustments for lists */
-  .coordination-wrapper ul {
+  .coordination-wrapper ul,
+  .coordination-wrapper ol {
     padding-left: 20px; /* Indent the list */
     margin-bottom: 15px; /* Space below lists */
   }
