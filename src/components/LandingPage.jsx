@@ -345,7 +345,7 @@ const LandingPage = () => {
             <img src="/manngo.jpg" className="d-block w-100" alt="FMS" />
             <div className="carousel-caption carousel-caption-style">
               <div className="caption-background">
-                <h5>SERVICES & ADVOCACY</h5>
+                <h5>VOICE OF THE VOICELESS</h5>
                 <p style={{ color: '#FFC700' }}>
                   The MROs Consortium in Somalia aims in Bringing Somalia to the Forefront.
                 </p>
@@ -357,7 +357,7 @@ const LandingPage = () => {
             <img src="/motherchild.jpg" className="d-block w-100" alt="245D" />
             <div className="carousel-caption carousel-caption-style">
               <div className="caption-background">
-                <h5>STRUCTURE & MANAGEMENT</h5>
+                <h5>ADVOCATING FOR EQUALITY</h5>
                 <p style={{ color: '#FFC700' }}>
                   The MROs Consortium in Somalia aims to build a powerful coalition that amplifies the voices of minority communities ...
                 </p>
@@ -365,14 +365,14 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="carousel-item">
-            <img src="/map2.png" className="d-block w-100" alt="PCA Services" />
+            <img src="/happypeople.jpg" className="d-block w-100" alt="PCA Services" />
             <div className="carousel-caption carousel-caption-style">
               <div className="caption-background">
-                <h5 style={{ textTransform: 'uppercase', color: '#000000' }}>
+                <h5 style={{ textTransform: 'uppercase', color: '#EEE' }}>
                   Marginalized & Minority People
                 </h5>
-                <p style={{ color: '#4A4947' }}>
-                  Our organization provides various support services to enhance the capabilities of local NGOs.
+                <p style={{ color: '#FFC700' }}>
+                  The MROs Consortium in Somalia aims to build a powerful coalition that amplifies the voices of minority communities ...
                 </p>
                 <button className="btn btn-success caption-button">JOIN CONSORTIUM</button>
               </div>

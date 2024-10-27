@@ -46,7 +46,7 @@
   margin-top: 80px; /* Adjust this value to match your navbar height */
   position: relative;
   z-index: 0;
-  margin-top: 143px;
+  margin-top: 150px;
 }
 
 .carousel-item img {
@@ -84,14 +84,14 @@
 @media (max-width: 768px) {
   .carousel-item img {
     height: 300px;
-    margin-top: 0px; 
+    margin-top: 10px; 
     /* Reduce image height on smaller screens */
   }
   @media (max-width: 768px) {
   
   
     .carousel {
-      margin-top: 60px; /* Adjust this value according to your navbar height */
+      margin-top: 79px; /* Adjust this value according to your navbar height */
     }
   }
   
