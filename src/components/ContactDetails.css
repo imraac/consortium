@@ -6,7 +6,7 @@
     border-radius: 8px;
     padding-left: 150px; 
     background-color: #f9f9f9;
-    margin-top: 165px; /* Keep the background color */
+    margin-top: 150px; /* Keep the background color */
 }
 
 .contact-details-container h1 {
@@ -87,7 +87,7 @@
     .contact-details-container {
         max-width: 100%; /* Make container full-width */
         padding-left: 20px; /* Reduce left padding */
-        margin-top: 100px; /* Adjust margin for smaller screens */
+        margin-top: 100px !important; /* Adjust margin for smaller screens */
     }
 
     .contact-details-container input[type="text"],

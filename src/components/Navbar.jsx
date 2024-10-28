@@ -201,7 +201,7 @@ const Navbar = () => {
                       Representation
                     </Link>
                     <Link
-                      to="/info-sharing"
+                      to="/information-sharing"
                       className="dropdown__link"
                       style={{ textDecoration: "none" }}
                       onClick={closeMenu}
@@ -227,7 +227,7 @@ const Navbar = () => {
                       Twinning Program
                     </Link>
                     <Link
-                      to="/additional-activities"
+                      to="/additional-services"
                       className="dropdown__link"
                       style={{ textDecoration: "none" }}
                       onClick={closeMenu}

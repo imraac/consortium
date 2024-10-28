@@ -1,18 +1,18 @@
 
 
 import React, { useEffect } from 'react';
-import Footer from './Footer'; // Import the Footer component
-import './ConsortiumMandate.css'; // Import your CSS styles (if needed)
+import Footer from './Footer'; 
+import './ConsortiumMandate.css';
 
 const ConsortiumMandate = () => {
-  // Scroll to top when the component is rendered
+ 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div>
-      {/* Hero Section */}
+    
       <div className="hero-container">
         <main className="hero-gradient animate-bg relative">
           <header className="flex flex-row justify-center md:h-96 items-center p-8">
@@ -26,7 +26,7 @@ const ConsortiumMandate = () => {
           </header>
           
           <img
-            src="/readinguncle.jpg" // Correct image path without "/public"
+            src="/readinguncle.jpg" 
             alt="Minority Rights Organizations"
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
             style={{ opacity: 0 }} // Start with opacity 0

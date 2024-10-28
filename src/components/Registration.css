@@ -6,7 +6,7 @@
     border-radius: 8px;
     padding-left: 150px; 
     background-color: #f9f9f9; 
-    margin-top: 170px;/* Optional: keep the background color */
+    margin-top: 150px;/* Optional: keep the background color */
   }
   
   .registration-form-container h1 {
@@ -70,7 +70,7 @@
   
   @media (max-width: 768px) {
     .registration-form-container {
-        margin-top: 99px; /* Further reduce margin on smaller screens */
+        margin-top: 150px; /* Further reduce margin on smaller screens */
         padding-left: 10px; /* Adjust padding on smaller screens */
         padding-right: 10px; /* Add padding to the right */
     }
@@ -79,3 +79,6 @@
         width: 100%; /* Full width button on smaller screens */
     }
 }
+
+
+

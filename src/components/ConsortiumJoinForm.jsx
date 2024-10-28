@@ -136,7 +136,7 @@ const ConsortiumJoinForm = () => {
                         <li>Agency Profile</li>
                         <li>Audit Report</li>
                         <li>Signed NGO Consortium Mandate</li>
-                        <li>Signed ICRC/Red Crescent Code of Conduct</li>
+                        <li>Passport Photo & ID Attached together</li>
                     </ul>
                     <p>All documents must be in PDF or Microsoft Word format.</p>
                 </div>
