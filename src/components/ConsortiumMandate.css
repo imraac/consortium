@@ -4,7 +4,7 @@
     border: 1px solid #f4f7fa; /* Light border */
     border-radius: 5px; /* Rounded corners */
     margin: 20px 0; /* Margin above and below */
-    margin-top: 150px; /* Default margin for larger screens */
+    margin-top: 10px; /* Default margin for larger screens */
 }
 
 .mandate-list {
@@ -24,7 +24,7 @@
 .consortium-diagram {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin-bottom: -70px;
   }
   
   .responsive-svg {
@@ -41,7 +41,7 @@
     
     /* Adjust margin for smaller screens */
     .consortium-mandate-wrapper {
-        margin-top: 103px; /* Reduced margin for smaller screens */
+        margin-top: 1px; /* Reduced margin for smaller screens */
     }
 }
   

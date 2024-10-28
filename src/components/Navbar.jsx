@@ -193,22 +193,6 @@ const Navbar = () => {
                       Coordination
                     </Link>
                     <Link
-                      to="/advocacy"
-                      className="dropdown__link"
-                      style={{ textDecoration: "none" }}
-                      onClick={closeMenu}
-                    >
-                      Advocacy
-                    </Link>
-                    <Link
-                      to="/working-groups"
-                      className="dropdown__link"
-                      style={{ textDecoration: "none" }}
-                      onClick={closeMenu}
-                    >
-                      Working Groups
-                    </Link>
-                    <Link
                       to="/representation"
                       className="dropdown__link"
                       style={{ textDecoration: "none" }}
@@ -224,6 +208,16 @@ const Navbar = () => {
                     >
                       Information Sharing
                     </Link>
+                    <Link
+                      to="/working-groups"
+                      className="dropdown__link"
+                      style={{ textDecoration: "none" }}
+                      onClick={closeMenu}
+                    >
+                      Working Groups
+                    </Link>
+                   
+                   
                     <Link
                       to="/twinning-program"
                       className="dropdown__link"
@@ -318,12 +312,12 @@ const Navbar = () => {
                       Members
                     </Link>
                     <Link
-                      to="/representation"
+                      to="/feature-Stories"
                       className="dropdown__link"
                       style={{ textDecoration: "none" }}
                       onClick={closeMenu}
                     >
-                      Representation
+                    Feature Stories
                     </Link>
                   </div>
                 )}
