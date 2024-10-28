@@ -1,86 +1,4 @@
-// // Secretariat.jsx
-// import React from 'react';
-// import './Secretariat.css'; // Make sure to import the CSS file
-// import Footer from './Footer';
-// const Secretariat = () => {
-//   // Secretariat members
-//   const secretariatMembers = [
-//     { role: 'Director', email: 'director@mrosconsortium.org' },
-//     { role: 'Deputy Director', email: 'dep.director@mrosconsortium.org' },
-//     { role: 'General Secretary', email: 'secretary@mrosconsortium.org' },
-//     { role: 'Treasurer', email: 'treasure@mrosconsortium.org' },
-//     { role: 'Membership & Communications Officer', email: 'memb.comms@mrosconsortium.org' },
-//     { role: 'Program Support Officer', email: 'program.support@mrosconsortium.org' },
-//     { role: 'Advocacy and Communications Specialist', email: 'advocacy@mrosconsortium.org' },
-//     { role: 'Finance & Grants Manager', email: 'finance@mrosconsortium.org' },
-//   ];
 
-//   // Regional Coordinators
-//   const regionalCoordinators = [
-//     { name: 'Regional Coordinator - Benadir (Mogadishu based)', email: 'rc.benadir@mrosconsortium.org' },
-//     { name: 'Regional Coordinator – Somaliland (Hargeisa based)', email: 'rc.somaliland@mrosconsortium.org' },
-//     { name: 'Regional Coordinator - Hirshabelle (Jowhar based)', email: 'rc.hirshabelle@mrosconsortium.org' },
-//     { name: 'Regional Coordinator – South west state (Baidoa based)', email: 'rc.southwest@mrosconsortium.org' },
-//     { name: 'Regional Coordinator - Jubaland (Doolow based)', email: 'rc.jubballand@mrosconsortium.org' },
-//     { name: 'Regional Coordinator – Puntland (Garowe based)', email: 'rc.puntland@mrosconsortium.org' },
-//     { name: 'Regional Coordinator - Galmudug (Dusamareb based)', email: 'rc.galmudug@mrosconsortium.org' },
-//   ];
-
-//   // Seats Representatives
-//   const seatsRepresentatives = [
-//     { name: 'Somali protection Cluster Seat', email: 'spc.seat@mrosconsortium.org' },
-//     { name: 'Humanitarian Country Team HCT Seat', email: 'hct.seat@mrosconsortium.org' },
-//     { name: 'Humanitarian Task force HTF Seat', email: 'htf.seat@mrosconsortium.org' },
-//     { name: 'Gender in Humanitarian Action (GIHA) Seat', email: 'giha.seat@mrosconsortium.org' },
-//   ];
-
-//   return (
-//     <div className="secretariat-container">
-//       {/* Secretariat Section */}
-//       <div className="secretariat-section">
-//         <h1 className='h'>Secretariat</h1>
-//         <ul className="secretariat-list">
-//           {secretariatMembers.map((member, index) => (
-//             <li key={index} className="secretariat-item">
-//               <span className="secretariat-role">{member.role}</span>
-//               <a href={`mailto:${member.email}`} className="secretariat-email">{member.email}</a>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-
-//       {/* Regional Representatives Section */}
-//       <div className="secretariat-section">
-//         <h1 className='h'>Regional Representatives</h1>
-//         <ul className="secretariat-list">
-//           {regionalCoordinators.map((rep, index) => (
-//             <li key={index} className="secretariat-item">
-//               <span className="secretariat-role">{rep.name}</span>
-//               <a href={`mailto:${rep.email}`} className="secretariat-email">{rep.email}</a>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-
-//       {/* Seats Representatives Section */}
-//       <div className="secretariat-section">
-//         <h1 className='h'>Seats Representatives</h1>
-//         <ul className="secretariat-list">
-//           {seatsRepresentatives.map((seat, index) => (
-//             <li key={index} className="secretariat-item">
-//               <span className="secretariat-role">{seat.name}</span>
-//               <a href={`mailto:${seat.email}`} className="secretariat-email">{seat.email}</a>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//       <Footer />
-//     </div>
-    
-//   );
-// };
-
-// export default Secretariat;
 
 
 import React from 'react';
@@ -90,7 +8,7 @@ import Footer from './Footer'; // Import the Footer component
 const Secretariat = () => {
   // Secretariat members
   const secretariatMembers = [
-    { role: 'Director', email: 'director@mrosconsortium.org' },
+    { role: 'Director', email: 'director@mrosconsortium.org', isDirector: true },
     { role: 'Deputy Director', email: 'dep.director@mrosconsortium.org' },
     { role: 'General Secretary', email: 'secretary@mrosconsortium.org' },
     { role: 'Treasurer', email: 'treasure@mrosconsortium.org' },
@@ -100,67 +18,49 @@ const Secretariat = () => {
     { role: 'Finance & Grants Manager', email: 'finance@mrosconsortium.org' },
   ];
 
-  // Regional Coordinators
-  const regionalCoordinators = [
-    { name: 'Regional Coordinator - Benadir (Mogadishu based)', email: 'rc.benadir@mrosconsortium.org' },
-    { name: 'Regional Coordinator – Somaliland (Hargeisa based)', email: 'rc.somaliland@mrosconsortium.org' },
-    { name: 'Regional Coordinator - Hirshabelle (Jowhar based)', email: 'rc.hirshabelle@mrosconsortium.org' },
-    { name: 'Regional Coordinator – South west state (Baidoa based)', email: 'rc.southwest@mrosconsortium.org' },
-    { name: 'Regional Coordinator - Jubaland (Doolow based)', email: 'rc.jubballand@mrosconsortium.org' },
-    { name: 'Regional Coordinator – Puntland (Garowe based)', email: 'rc.puntland@mrosconsortium.org' },
-    { name: 'Regional Coordinator - Galmudug (Dusamareb based)', email: 'rc.galmudug@mrosconsortium.org' },
-  ];
-
-  // Seats Representatives
-  const seatsRepresentatives = [
-    { name: 'Somali protection Cluster Seat', email: 'spc.seat@mrosconsortium.org' },
-    { name: 'Humanitarian Country Team HCT Seat', email: 'hct.seat@mrosconsortium.org' },
-    { name: 'Humanitarian Task force HTF Seat', email: 'htf.seat@mrosconsortium.org' },
-    { name: 'Gender in Humanitarian Action (GIHA) Seat', email: 'giha.seat@mrosconsortium.org' },
-  ];
-
   return (
-    <div className="secretariat-container">
+    <div className="secretariat-page">
+      {/* Hero Section */}
+      <main className="hero-gradient animate-bg relative">
+        <header className="flex flex-row justify-center md:h-96 items-center p-8">
+          <h1 className="text-sm md:text-lg lg:text-2xl xl:text-3xl font-semibold text-black text-center">
+            Join the
+            <div className="inline-block bg-orange-400 transform -rotate-3 px-1 md:px-2 rounded-md py-1 text-sm md:text-lg lg:text-xl xl:text-2xl">
+              Minority Rights Organizations
+            </div>
+            Consortium
+          </h1>
+        </header>
+        
+        <img
+          src="/readinguncle.jpg" // Correct image path without "/public"
+          alt="Minority Rights Organizations"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+          style={{ opacity: 0 }} // Start with opacity 0
+        />
+      </main>
+
       {/* Secretariat Section */}
-      <div className="secretariat-section">
-        <h1 className='h'>Secretariat</h1>
-        <ul className="secretariat-list">
-          {secretariatMembers.map((member, index) => (
-            <li key={index} className="secretariat-item">
-              <span className="secretariat-role">{member.role}</span>
-              <a href={`mailto:${member.email}`} className="secretariat-email">{member.email}</a>
-            </li>
-          ))}
-        </ul>
+      <div className="secretariat-container">
+        <div className="secretariat-section membership-info">
+          <h2 className="consortium-title">Secretariat</h2>
+          <div className="secretariat-list">
+            {secretariatMembers.map((member, index) => (
+              <div key={index} className="secretariat-item">
+                <span className={`secretariat-role ${member.isDirector ? 'secretariat-director' : ''}`}>
+                  {member.role}
+                </span>
+                <a href={`mailto:${member.email}`} className="secretariat-email">{member.email}</a>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-
-      {/* Regional Representatives Section */}
-      <div className="secretariat-section">
-        <h1 className='h'>Regional Representatives</h1>
-        <ul className="secretariat-list">
-          {regionalCoordinators.map((rep, index) => (
-            <li key={index} className="secretariat-item">
-              <span className="secretariat-role">{rep.name}</span>
-              <a href={`mailto:${rep.email}`} className="secretariat-email">{rep.email}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Seats Representatives Section */}
-      <div className="secretariat-section">
-        <h1 className='h'>Seats Representatives</h1>
-        <ul className="secretariat-list">
-          {seatsRepresentatives.map((seat, index) => (
-            <li key={index} className="secretariat-item">
-              <span className="secretariat-role">{seat.name}</span>
-              <a href={`mailto:${seat.email}`} className="secretariat-email">{seat.email}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-<div className='footer'><Footer /></div>
       
+      {/* Footer at the bottom of the page */}
+      <div className='footer'>
+        <Footer />
+      </div>
     </div>
   );
 };
