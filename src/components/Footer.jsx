@@ -207,13 +207,13 @@ const Footer = () => {
               <li style={{ marginBottom: '0.5rem' }}>
                 <Link to="/member-calendar" style={{ color: '#555', textDecoration: 'none', display: 'block', width: 'fit-content' }}>
                   <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: '8px' }} />
-                  Member calendar
+                 Calendar
                 </Link>
               </li>
               <li style={{ marginBottom: '0.5rem' }}>
                 <Link to="/skills-development-hub" style={{ color: '#555', textDecoration: 'none', display: 'block', width: 'fit-content' }}>
                   <FontAwesomeIcon icon={faLightbulb} style={{ marginRight: '8px' }} />
-                  Skills Development Hub
+                  Skills  Hub
                 </Link>
               </li>
               <li style={{ marginBottom: '0.5rem' }}>

@@ -13,11 +13,13 @@
     margin: 10px 90px 90px;
     font-family: Arial, sans-serif;
     border-radius: 8px;
-    margin-top: -90px;
+  
     background-color: white !important; 
  
 }
-
+.H1{
+    color:#65cafd ;
+}
 
 .sleek-container {
     padding: 20px;

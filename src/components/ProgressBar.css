@@ -1,0 +1,97 @@
+/* ProgressBar.css */
+
+.progress-container {
+    position: fixed; /* Fixed to the right side */
+    top: 20%; /* Adjust based on your layout */
+    right: 10px; /* Add space from the edge */
+    width: 500px; /* Full width for larger screens */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 1px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(1, 141, 235, 0.2); /* Slightly stronger shadow */
+    padding: 15px; /* Padding for inner spacing */
+   /* Ensure it stays above other elements */
+    transition: width 0.3s ease, right 0.3s ease; /* Smooth transition */
+    margin-bottom: 0; /* Default margin below */
+}
+
+.progress-bar {
+    height: 10px; /* Height of the progress bar */
+    background-color: #54e62f; /* Color of the progress */
+    border-radius: 10px; /* Rounded corners */
+    transition: width 0.4s ease; /* Smooth transition for progress updates */
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px; /* Space between progress bar and steps */
+}
+
+.step {
+    flex: 1; /* Even spacing */
+    text-align: center; /* Centered text */
+    position: relative; /* For positioning */
+    font-size: 14px; /* Font size */
+    color: #777; /* Default color for steps */
+}
+
+.step.completed {
+    font-weight: bold; /* Bold for completed steps */
+    color: #54e62f; /* Color for completed steps */
+}
+
+.step:before {
+    content: ''; /* Circular marker */
+    display: block;
+    width: 10px; /* Marker size */
+    height: 10px;
+    border-radius: 50%; /* Circular shape */
+    background-color: #8a8e91; /* Marker color */
+    position: absolute; /* Positioning */
+    left: 50%; /* Center it */
+    transform: translateX(-50%); /* Center it */
+    top: -6px; /* Position above the step text */
+}
+
+.step.completed:before {
+    background-color: #54e62f; /* Green for completed markers */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .progress-container {
+        position: static; /* Moves the container with the flow of the document */
+        width: 100%; /* Full width on smaller screens */
+        margin: 10px auto; /* Center it within the page */
+        padding: 10px;
+        margin-top: 158px;
+        margin-bottom: 30px; /* Reduced spacing for medium screens */
+    }
+
+    .progress-steps {
+        flex-wrap: wrap; /* Allows steps to wrap on smaller screens */
+        gap: 8px; /* Adds spacing between steps */
+    }
+
+    .step {
+        font-size: 12px; /* Slightly smaller font size */
+        padding: 5px; /* Padding for better touch targets */
+        flex: 1 1 45%; /* Allows two steps per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .progress-container {
+        width: 95vw; /* Width fits within smaller screens */
+        padding: 8px;
+        margin-bottom: -140px; 
+    
+    }
+
+    .step {
+        font-size: 11px; /* Smaller font for compact size */
+        flex: 1 1 100%; /* One step per row */
+        padding: 5px; /* Adjusted padding */
+    }
+}

@@ -240,7 +240,7 @@ const Consortium = () => {
   style={{
     textAlign: 'center',         // Center the text
     fontSize: '2.5rem',         // Make the font size larger
-    color: '#D15D51',           // Set a contrasting color for the text
+    color: '#65cafd',           // Set a contrasting color for the text
     fontWeight: 'bold',          // Make the font bold
     margin: '20px 0',           // Add vertical margins for spacing
     textTransform: 'uppercase',  // Transform text to uppercase for emphasis
@@ -258,14 +258,14 @@ const Consortium = () => {
       <div
         style={{
           height: '4px', // Adjust the height as needed
-          backgroundColor: '#D15D51', // Set the color of the line
+          backgroundColor: '#65cafd', // Set the color of the line
           width: '100%', // Make it span the full width
           marginBottom: '20px', // Space between the line and content
         }}
       ></div>
 
       <div className="consortium-container">
-        <h1>Join the Minority Rights Organizations Consortium</h1>
+        <h1 className='H1'>Join the Minority Rights Organizations Consortium</h1>
         <p>
           The registration process will take approximately 20 minutes. Please have all necessary documents and information ready before you begin.
         </p>

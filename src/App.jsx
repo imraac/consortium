@@ -39,6 +39,12 @@ import Certification from './components/Certification'; // Import the Certificat
 import ForgotPassword from "./components/ForgotPassword";
 import RegionalRepresentatives from './components/RegionalRepresentatives'; // Import the new component
 import SeatsRepresentatives from './components/SeatsRepresentatives'; // Import the new component
+import FeatureStories from './components/FeatureStories';
+import RepresentationComponent from './components/RepresentationComponent';
+import InformationSharingComponent from './components/InformationSharingComponent'; // Adjust the path if needed
+import WorkingGroupsComponent from './components/WorkingGroupsComponent';
+import TwinningProgramComponent from './components/TwinningProgramComponent';
+import AdditionalServicesComponent from './components/AdditionalServicesComponent';
 
 
 const App = () => {
@@ -71,9 +77,15 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route path="/representation" element={<RepresentationComponent />} /> {/* Representation Route */}
+          <Route path="/information-sharing" element={<InformationSharingComponent />} />
+          <Route path="/working-groups" element={<WorkingGroupsComponent />} />
+          <Route path="/twinning-program" element={<TwinningProgramComponent />} />
+          <Route path="/additional-services" element={<AdditionalServicesComponent />} />
+
           <Route path="/regional-representatives" element={<RegionalRepresentatives />} />
           <Route path="/seats-representatives" element={<SeatsRepresentatives />} />
-
+          <Route path="/feature-stories" element={<FeatureStories />} />
           <Route path="/consortium-members" element={<ConsortiumMembers />} />
           <Route path="/personal-details" element={<ContactDetails />} />
           <Route path="/coordination" element={<Coordination />} />
