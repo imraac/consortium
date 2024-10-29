@@ -255,7 +255,9 @@ const Navbar = () => {
                       style={{ textDecoration: "none" }}
                       onClick={closeMenu}
                     >
-                      Resource 1
+                 Assessment 
+
+
                     </Link>
                     <Link
                       to="/resource-2" // Replace with actual path
@@ -263,7 +265,7 @@ const Navbar = () => {
                       style={{ textDecoration: "none" }}
                       onClick={closeMenu}
                     >
-                      Resource 2
+                     ⁠Report & Publication
                     </Link>
                     <Link
                       to="/resource-3" // Replace with actual path
@@ -271,7 +273,7 @@ const Navbar = () => {
                       style={{ textDecoration: "none" }}
                       onClick={closeMenu}
                     >
-                      Resource 3
+                      ⁠Events
                     </Link>
                   </div>
                 )}
