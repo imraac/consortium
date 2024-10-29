@@ -1,7 +1,7 @@
 import { useState, createRef } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './DocumentUpload.css'; // Ensure this CSS file for styles
-
+import Footer from './Footer';
 const DocumentUpload = () => {
     const [files, setFiles] = useState({
         registration_certificate: null,
@@ -221,6 +221,7 @@ const DocumentUpload = () => {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 };

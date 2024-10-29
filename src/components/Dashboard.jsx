@@ -229,7 +229,8 @@ const Dashboard = () => {
 
       <div className="card-container">
         <div className="card">
-          <h2>My Profile</h2>
+        <svg stroke="currentColor" fill="currentColor"  color = "sky"stroke-width="0" version="1.1" viewBox="0 0 16 16" height="2em" width="3em" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 0h-12c-0.825 0-1.5 0.675-1.5 1.5v13c0 0.825 0.675 1.5 1.5 1.5h12c0.825 0 1.5-0.675 1.5-1.5v-13c0-0.825-0.675-1.5-1.5-1.5zM13 14h-11v-12h11v12zM4 9h7v1h-7zM4 11h7v1h-7zM5 4.5c0-0.828 0.672-1.5 1.5-1.5s1.5 0.672 1.5 1.5c0 0.828-0.672 1.5-1.5 1.5s-1.5-0.672-1.5-1.5zM7.5 6h-2c-0.825 0-1.5 0.45-1.5 1v1h5v-1c0-0.55-0.675-1-1.5-1z"></path></svg>
+          <h2> My Profile</h2>
           <p>
             <Link to="/profile">View and edit your profile information</Link>.
           </p>
@@ -248,6 +249,7 @@ const Dashboard = () => {
 
         <div className="card">
           <h2>Login Activity</h2>
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"  color = "#2980b9" stroke-linejoin="round" height="3em" width="3em" xmlns="http://www.w3.org/2000/svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
           {loginHistory && loginHistory.length > 0 ? (
             <>
               <p>Recent login:</p>
@@ -275,17 +277,11 @@ const Dashboard = () => {
           </ul>
         </div>
 
-        <div className="card">
-          <h2>Field Visits</h2>
-          <p>Notify us when your staff will be in Somalia by logging their field visits.</p>
-          <ul>
-            <li><Link to="/manage-field-visit">Manage a field visit</Link></li>
-            <li><Link to="/add-field-visit">Add a field visit</Link></li>
-          </ul>
-        </div>
 
         <div className="card">
           <h2>Events</h2>
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="3em" 
+          color = "#2980b9"width="3em" xmlns="http://www.w3.org/2000/svg"><path d="M17 10H7v2h10v-2zm2-7h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-5-5H7v2h7v-2z"></path></svg>
           <p><Link to="/calendar">Manage my calendar</Link>.</p>
           <ul>
             <li><Link to="/manage-event">Manage or create an event</Link></li>
@@ -294,6 +290,7 @@ const Dashboard = () => {
 
         <div className="card">
           <h2>Documents</h2>
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1" viewBox="0 0 48 48" enable-background="new 0 0 48 48" height="3em" width="3em" xmlns="http://www.w3.org/2000/svg"><polygon fill="#90CAF9" points="40,45 8,45 8,3 30,3 40,13"></polygon><polygon fill="#E1F5FE" points="38.5,14 29,14 29,4.5"></polygon><g fill="#1976D2"><rect x="16" y="21" width="17" height="2"></rect><rect x="16" y="25" width="13" height="2"></rect><rect x="16" y="29" width="17" height="2"></rect><rect x="16" y="33" width="13" height="2"></rect></g></svg>
           <p>Share key documents with other members on our key documents page, from minutes to press statements.</p>
           <ul>
             <li><Link to="/manage-document">Manage a document</Link></li>
