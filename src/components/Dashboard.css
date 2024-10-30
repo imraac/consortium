@@ -55,8 +55,8 @@
 
 /* Card Styles */
 .card {
-  background-color: #c9c7c7; /* White background for cards */
-  border: 1px solid #dcdcdc; /* Light gray border for cards */
+  background-color: #f7f2ef;; /* White background for cards */
+  border: 1px solid #abafb1; /* Light gray border for cards */
   border-radius: 8px; /* Rounded corners */
   padding: 15px; /* Reduced internal padding */
   transition: transform 0.3s ease; /* Smooth transition for effects */
@@ -214,5 +214,10 @@ a:hover {
 
 
 .c2{
-  margin-bottom: -3px !important;
+  margin-bottom: 15px !important;
+}
+
+
+h2{
+  color: rgb(88, 82, 82) !important;
 }

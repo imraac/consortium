@@ -1,34 +1,43 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
 .documentUpload {
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-image: url('logo1.png'); 
-    background-size: 1100px 300px; /* Set specific width and height */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center; /* Centers the image */
-    max-width: 100%; /* Set a max-width for the container */
-    margin: auto; /* Center the container horizontally */
-    margin-top: 1200px;
+    background-color: white;
+    background-image: url('logo1.png');
+    background-size: 1100px 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 100%;
+    margin: 0 auto; /* Center the container horizontally */
+    margin-top: 35px;
+    overflow: hidden; /* Prevents overflow of content */
 }
+
 .modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1200px;
+    margin-top: 10px;
 }
 
 .modalContent {
-    background-color: rgb(86, 240, 39);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .closeButton {
@@ -45,8 +54,6 @@
     background-color: #28a3eb;
 }
 
-
-
 h2 {
     margin-bottom: 15px;
 }
@@ -55,11 +62,12 @@ h2 {
     display: flex;
     flex-direction: column;
     margin-top: 200px;
+    max-width: 100%;
 }
 
 .formGroup {
     margin-bottom: 15px;
-    
+    max-width: 100%;
 }
 
 label {
@@ -68,6 +76,7 @@ label {
 
 input[type="file"] {
     margin-top: 5px;
+    max-width: 100%;
 }
 
 .submitButton {
@@ -82,10 +91,13 @@ input[type="file"] {
 .submitButton:hover {
     background-color: #aff7b3;
 }
+
+/* Document upload styles */
 .documentUpload {
     margin: 20px;
 }
 
+/* Form Styles */
 .uploadForm {
     display: flex;
     flex-direction: column;
@@ -108,26 +120,29 @@ input[type="file"] {
 .submitButton:hover {
     background-color: #0056b3;
 }
+
 /* Media Queries for Responsiveness */
 @media (max-width: 600px) {
     .documentUpload {
-        padding: 15px; /* Reduce padding for smaller screens */
+        padding: 15px;
+        background-image: none;
+        margin-top: 150px; /* Hide the background image on smaller screens */
     }
 
     .uploadForm {
-        margin-top: 10px; /* Reduce margin for smaller screens */
+        margin-top: 10px;
     }
 
     .formGroup {
-        margin-bottom: 10px; /* Reduce margin for smaller screens */
+        margin-bottom: 10px;
     }
 
     .submitButton {
-        padding: 8px 12px; /* Adjust button padding for smaller screens */
-        font-size: 14px; /* Reduce button font size for smaller screens */
+        padding: 8px 12px;
+        font-size: 14px;
     }
 
     h2 {
-        font-size: 20px; /* Adjust heading size for smaller screens */
+        font-size: 20px;
     }
 }

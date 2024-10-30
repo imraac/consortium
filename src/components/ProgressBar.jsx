@@ -28,7 +28,7 @@ import React from 'react';
 import './ProgressBar.css'; // Import your CSS file for styling
 
 const ProgressBar = ({ currentStep, totalSteps, stepNames }) => {
-  const percentage = (currentStep / totalSteps) * 100;
+  const percentage = (currentStep / totalSteps) * 90;
 
   return (
     <div className="progress-container">

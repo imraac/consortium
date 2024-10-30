@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect } from "react";
 import "./ProfilePage.css"; // Import the CSS file for styling
+import Footer from './Footer';
 
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -123,25 +124,17 @@ const ProfilePage = () => {
         <h2>My Profile</h2>
         <p>See an overview of your agency's account and any attached child members.</p>
 
-        <div className="profile-card">
+        <div className="">
           <div className="profile-header">
-            <div className="membership-info">
-              <p>
-                <strong>Current membership status:</strong> {profileData.membershipStatus}
-              </p>
-              <p>
-                <strong>Membership Expiration:</strong> {profileData.membershipExpiration}
-              </p>
-            </div>
+           
             <div className="profile-picture">
               {profilePicture ? (
                 <>
-                  <img src={profilePicture} alt="Profile" className="profile-image" />
-                  <button className="delete-button" onClick={handlePictureDelete}>Delete Picture</button>
+                  
                 </>
               ) : (
                 <div className="upload-button">
-                  <input type="file" accept="image/*" onChange={handlePictureChange} />
+                 
                 </div>
               )}
             </div>
@@ -200,33 +193,9 @@ const ProfilePage = () => {
           )}
         </div>
 
-        <div className="profile-card">
-          <h3>Partners in Somalia</h3>
-          {isEditing ? (
-            <input
-              type="text"
-              name="partners"
-              value={profileData.partners}
-              onChange={handleChange}
-            />
-          ) : (
-            <p>{profileData.partners}</p>
-          )}
-        </div>
+      
 
-        <div className="profile-card">
-          <h3>Field Offices</h3>
-          {isEditing ? (
-            <input
-              type="text"
-              name="fieldOffice"
-              value={profileData.fieldOffice}
-              onChange={handleChange}
-            />
-          ) : (
-            <p>{profileData.fieldOffice}</p>
-          )}
-        </div>
+      
 
         <div className="profile-card">
           <h3>Contact Information</h3>
@@ -323,6 +292,7 @@ const ProfilePage = () => {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

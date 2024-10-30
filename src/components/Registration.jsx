@@ -255,7 +255,7 @@ const Registration = () => {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [currentStep, setCurrentStep] = useState(1); // Initialize current step
-  const totalSteps = 3; // Define total steps
+  const totalSteps = 5; // Define total steps
   const navigate = useNavigate();
   const stepNames = ['Registration', 'Personal Details', 'Consortium Registration', 'contact-details' , 'agency-details'];
 

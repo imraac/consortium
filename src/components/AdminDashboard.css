@@ -1,7 +1,23 @@
 
 /* Header Section */
 
+@media (max-width: 768px) {
+  .admin-dash-header {
+      padding: 5px 10px;
+  }
+  .admin-dash-sidebar {
+      height: calc(100vh - 60px);
+  }
 
+  /* Hide Sidebar Off-Screen and Slide-in */
+  .admin-dash-sidebar {
+      transform: translateX(-100%);
+      position: fixed;
+  }
+  .admin-dash-sidebar.open {
+      transform: translateX(0);
+  }
+}
 
 
 
@@ -12,7 +28,7 @@
     align-items: center;
     justify-content: space-between;
     height: 60px;
-    padding: 0 20px;
+    padding: 10 400px !important;
    /* White background for contrast */
     /* Subtle shadow for depth */
     position: fixed; /* Fixed position to stay at the top */
@@ -23,6 +39,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
   transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
+  margin-top: -5px;
 }
 
 
@@ -53,30 +70,7 @@
 .admin-dash-logo a:hover {
     color: #007bff; /* Change color on hover */
 }
-.admin-dash-search-box {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center horizontally */
-    margin: 0 20px; /* Margin for spacing */
-    flex-grow: 1; /* Allow the search box to take available space */
-}
 
-.admin-dash-search-box input {
-    padding: 8px; /* Add padding for a better appearance */
-    border: 1px solid #ccc; /* Light border color */
-    border-radius: 4px; /* Rounded corners */
-    width: 100%; /* Make it responsive */
-    max-width: 300px; /* Set a max width to avoid it getting too wide */
-    outline: none; /* Remove the default outline */
-}
-.admin-dash-search-box i {
-    margin-left: 8px; /* Space between the input and the icon */
-    color: #666; /* Icon color */
-}
-.admin-dash-search-box input:focus {
-    border-color: #007bff; /* Change border color on focus */
-    outline: none; /* Remove outline */
-}
 
 .admin-dash-header-icons {
     display: flex;
@@ -101,13 +95,6 @@
     color: #333; /* Dark color for text */
 }
 
-.admin-dash-account img {
-    width: 35px; /* Profile image size */
-    height: 35px; /* Profile image size */
-    border-radius: 50%; /* Circular profile image */
-    object-fit: cover; /* Ensures the image covers the element */
-    border: 2px solid #007bff; /* Border around the profile image */
-}
 
 
 
@@ -249,6 +236,46 @@
     margin-bottom: 1rem; /* Space below the heading */
 }
 
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .admin-dash-user-card {
+      padding: 1rem;
+      margin-top: 10px;
+      border-radius: 5px;
+  }
+
+  .admin-dash-user-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+  }
+
+  .admin-dash-user-table th, .admin-dash-user-table td {
+      font-size: 0.9rem; /* Reduce font size for smaller screens */
+  }
+
+  /* Ensure table responsiveness */
+  .admin-dash-user-table {
+      display: block;
+      overflow-x: auto; /* Allow horizontal scrolling on very small screens */
+      white-space: nowrap; /* Prevent content from wrapping */
+  }
+}
+
+/* Further adjustments for extra-small screens */
+@media (max-width: 480px) {
+  .admin-dash-user-card {
+      padding: 0.75rem;
+  }
+
+  .admin-dash-user-card h2 {
+      font-size: 1rem;
+  }
+
+  .admin-dash-user-table th, .admin-dash-user-table td {
+      padding: 0.5rem; /* Adjust padding for compact layout */
+  }
+}
 .admin-dash-user-table {
     width: 100%;
     border-collapse: collapse; /* Ensure borders are collapsed */
@@ -348,7 +375,8 @@
     cursor: pointer;
   }
   .toggle-application-card-btn{
-    color: red;
+    color: rgb(34, 75, 6);
+
   }
   
   .admin-dash-application-table button:hover {
@@ -416,4 +444,102 @@
     font-size: 20px;
     cursor: pointer;
   }
-  
+  @media (max-width: 768px) {
+    /* Adjust header layout */
+    .admin-dash-header {
+        flex-direction: column;
+        align-items: start;
+        padding: 10px;
+    }
+    .admin-dash-header-icons {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    /* Make sidebar slide in from the side */
+    .admin-dash-sidebar {
+        width: 100%;
+        height: calc(100vh - 60px);
+        position: absolute;
+        top: 60px;
+        left: -100%;
+    }
+    .admin-dash-sidebar.open {
+        left: 0;
+    }
+
+    /* Center promo card text and reduce padding */
+    .admin-dash-promo-card {
+        padding: 3rem 1rem;
+    }
+
+    /* Responsive table layout for smaller screens */
+    .admin-dash-table,
+    .admin-dash-application-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+  /* Header Adjustments for Mobile */
+  .admin-dash-header {
+      flex-direction: column;
+      align-items: start;
+      padding: 10px;
+  }
+
+  .admin-dash-header-icons {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+  }
+
+  /* Sidebar Adjustments for Mobile */
+  .admin-dash-sidebar {
+      width: 100%;
+      height: calc(100vh - 60px);
+      position: absolute;
+      top: 60px;
+      left: -100%;
+  }
+
+  .admin-dash-sidebar.open {
+      left: 0;
+  }
+
+  /* Center promo card text and reduce padding */
+  .admin-dash-promo-card {
+      padding: 3rem 1rem;
+  }
+
+  /* Responsive Table for Smaller Screens */
+  .admin-dash-table,
+  .admin-dash-application-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+}
+.admin-dash-promo-card h1,
+.admin-dash-promo-card span,
+.admin-dash-promo-card button {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Tablet and Larger Screen Styles */
+@media (min-width: 769px) {
+  .admin-dash-header,
+  .admin-dash-sidebar,
+  .admin-dash-promo-card,
+  .admin-dash-table {
+      /* Laptop styles remain as they are */
+  }
+}
