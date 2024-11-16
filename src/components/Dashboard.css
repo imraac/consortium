@@ -4,6 +4,7 @@
   padding: 100px; /* Padding around the content */
   font-family: 'Arial', sans-serif; /* Font for the dashboard */
   border-radius: 8px;
+
   /* Rounded corners */
 }
 
@@ -12,12 +13,12 @@
   text-align: left; /* Align header text to the left */
   margin-bottom: 4px; /* Space below the header */
   padding-bottom: 2px; /* Padding at the bottom for visual separation */
-  border-bottom: 3px solid #2375ac; /* Underline for emphasis */
+  border-bottom: 3px solid #1789db !important; /* Underline for emphasis */
 }
 
 .dashboard-header h2 {
   font-size: 1.5em; /* Larger font size for main title */
-  color: #2c3e50; /* Darker shade for the header */
+  color: #4a91d8 !important; /* Darker shade for the header */
   margin: 100px; /* Remove default margin */
   font-weight: bold; /* Make the header bold */
 }
@@ -41,7 +42,7 @@
 }
 
 .dashboard-header p {
-  color: #232930; /* Medium dark text for better readability */
+  color: #0d0f11; /* Medium dark text for better readability */
   font-size: 1.1em; /* Slightly larger font size */
   margin: 10px 0; /* Margin for spacing */
 }
@@ -55,8 +56,8 @@
 
 /* Card Styles */
 .card {
-  background-color: #f7f2ef;; /* White background for cards */
-  border: 1px solid #abafb1; /* Light gray border for cards */
+  background-color: #B7E0FF; /* White background for cards */
+  border: 1px solid #eff4f7; /* Light gray border for cards */
   border-radius: 8px; /* Rounded corners */
   padding: 15px; /* Reduced internal padding */
   transition: transform 0.3s ease; /* Smooth transition for effects */
@@ -69,14 +70,14 @@
 /* Card Headings */
 .card h2 {
   font-size: 1.2em; /* Slightly smaller font size for card headings */
-  color: #2980b9; /* Professional blue for headings */
+  color: #3497da; /* Professional blue for headings */
   margin-bottom: 10px; /* Space below heading */
 }
 
 /* Card Text */
 .card p {
   font-size: 0.9em; /* Slightly smaller text size for the body */
-  color: #11121d; /* Dark gray for body text */
+  color: #6f6f75; /* Dark gray for body text */
   line-height: 1.6; /* Line height for readability */
 }
 
@@ -93,12 +94,12 @@ ul li {
 /* Link Styles */
 a {
   text-decoration: none; /* No underline for links */
-  color: #2980b9; /* Consistent color for links */
+  color: #61b5ec; /* Consistent color for links */
   transition: color 0.3s, text-decoration 0.3s; /* Smooth transition on hover */
 }
 
 a:hover {
-  color: #1a5276; /* Darker shade on hover */
+  color: #289ee2; /* Darker shade on hover */
   text-decoration: underline; /* Underline on hover for indication */
 }
 

@@ -319,9 +319,12 @@
 // export default LandingPage;
 
 
-import React, { useState } from 'react'; // Ensure useState is imported
+import React, { useState, useEffect } from 'react'; // Ensure useState is imported
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css'; // Import Leaflet styles
+
 import Footer from "./Footer";
 import './Navbar.css'; 
 import { Link } from 'react-router-dom';
@@ -335,7 +338,53 @@ const LandingPage = () => {
   };
   
   const [paused, setPaused] = useState(false); // Correctly initialize useState
+  const statsData = [
+    { count: 5000, text: "Communities Supported" },
+    { count: 150, text: "Advocacy Campaigns" },
+    { count: 25, text: "Years of Service" },
+    { count: 112, text: "SNC Membership in 2024" },
+  ];
 
+  const [counts, setCounts] = useState(statsData.map(() => 0));
+
+  useEffect(() => {
+    const intervalIds = statsData.map((stat, index) => {
+      const increment = Math.ceil(stat.count / 100); // Increment value
+      return setInterval(() => {
+        setCounts((prevCounts) =>
+          prevCounts.map((count, i) =>
+            i === index ? (count + increment >= stat.count ? stat.count : count + increment) : count
+          )
+        );
+      }, 30);
+    });
+
+    // Clear intervals after counters reach their values
+    return () => intervalIds.forEach(clearInterval);
+  }, []);
+// The GeoJSON data for Somalia's boundaries
+const somaliaGeoJson = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Somalia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          // GeoJSON coordinates for Somalia (simplified)
+          [
+            [43.1319, 10.1776], [43.799, 10.7013], [44.339, 10.4183], // Add coordinates for Somalia here
+            // You can find the complete GeoJSON data for Somalia on various GeoJSON repositories.
+            [45.3143562, 2.0469345], // Coordinates for Mogadishu to center the map
+          ]
+        ]
+      }
+    }
+  ]
+};
   return (
     <div>
       {/* Carousel Section */}
@@ -407,6 +456,44 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Statistics Section */}
+      <section className="statistics" style={{ backgroundColor: 'white', padding: '40px 0' }}>
+        <div className="container text-center">
+          <h2 style={{ color: theme.secondary }}>Our Impact</h2>
+          <div className="row">
+            {statsData.map((stat, index) => (
+              <div className="col-md-3 mb-4" key={index}>
+                <div style={{
+                  padding: '20px',
+                  borderRadius: '10px',
+                
+                  textAlign: 'center',
+                }}>
+                  <h3 style={{ color: "#C4E1F6", fontSize: '3rem' }}>
+                    {counts[index]}+
+                  </h3>
+                  <p style={{ color: theme.primary, fontSize: '1.1rem', fontWeight: 'bold' }}>
+                    {stat.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="map-section" style={{ padding: '0px 0', textAlign: 'center', backgroundColor: '#ff0000' }}>
+        <div className="map-container" style={{ width: '100%', height: '400px' }}>
+          <MapContainer center={[2.0469345, 45.3143562]} zoom={12} style={{ height: '100%', width: '100%' }}>
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+            <Marker position={[2.0469345, 45.3143562]}>
+              <Popup>Mogadishu, Somalia</Popup>
+            </Marker>
+          </MapContainer>
+        </div>
+      </section>
       {/* Services Section with Marquee */}
       <section className="services" style={{ backgroundColor: theme.secondary }}>
         <div className="servicesContainer">
@@ -475,6 +562,9 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Map Section */}
+   
 
       <Footer />
     </div>
