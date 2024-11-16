@@ -175,7 +175,7 @@ const Signup = () => {
         setError(data.message);
       }
     } catch (err) {
-      setError("Error signing up. Please try again later.");
+      setError("Oops!. Please try again later.");
     } finally {
       setLoading(false);
     }
