@@ -364,16 +364,20 @@ const Navbar = () => {
             </ul>
 
             <div className="nav__icons">
-              <button
-                className="btn join-consortium-button"
-                onClick={() => {
-                  navigate("/consortium");
-                  closeMenu();
-                }}
-              >
-                <i className="fas fa-users" style={{ color: "#FFD700" }}></i>
-                Join The Consortium
-              </button>
+            <button
+    className="join-consortium-button"
+    onClick={() => {
+      navigate("/consortium");
+      closeMenu();
+    }}
+  >
+    <span>Join The Consortium</span>
+    <svg width="15px" height="10px" viewBox="0 0 13 10">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline>
+    </svg>
+  </button>
+              
               <button
   className="button login-button"
   onClick={() => {
