@@ -851,6 +851,7 @@ footer p {
 
 
 
+
 .call-us {
   position: fixed; /* Fix it at the top */
   top: 0; /* Position at the very top */
@@ -1029,59 +1030,67 @@ nav {
 
 
 
-.btn {
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
 .join-consortium-button {
-  /* Rounded corners */
-  transition: background-color 0.3s; /* Smooth transition */
-  cursor: pointer;
-  margin-right: 3rem; /* Pointer cursor on hover */
-  cursor: pointer;
   position: relative;
-  padding: 10px 24px;
-  font-size: 17px !important;
-  font-weight: 800 !important;
-  border-radius: 1px !important;
-  background: linear-gradient(45deg,  #3ABEF9 ,  #3ABEF9  ); /* Black to white gradient */
-  color: rgb(255, 255, 255) !important; /* Default text color */
-  background-color: transparent;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  overflow: hidden;
-  display: flex;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 50px;
-    height: 50px;
-    border-radius: inherit;
-    background-color: rgba(202, 46, 35, 0.2); /* Semi-transparent white */
-    transform: scale(0);
-    z-index: -1;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  &:hover::before {
-    transform: scale(3);
-  }
-
-  &:hover {
-    color: black; /* Text color on hover */
-    transform: scale(1.1);
-    box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
-  }
-
-  &:active {
-    transform: scale(1);
-  }
+  gap: 10px;  /* Space between text and icon */
 }
+
+.join-consortium-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.join-consortium-button span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.join-consortium-button svg {
+  position: relative;
+  width: 15px; /* Set the width to match the SVG size */
+  height: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.join-consortium-button:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.join-consortium-button:hover svg {
+  transform: translateX(0);
+}
+
+.join-consortium-button:active {
+  transform: scale(0.95);
+}
+
 
 
 .login-button {
