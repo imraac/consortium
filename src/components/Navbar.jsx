@@ -30,65 +30,58 @@ const Navbar = () => {
   return (
     <header className="header">
       <div className="call-us">
-        <button
-          className="btn join-consortium-button mobile-only"
-          onClick={() => {
-            navigate("/consortium");
-            closeMenu();
-          }}
-        >
-          <i className="fas fa-users" style={{ color: "white" }}></i> Join
-        </button>
+  <p className="moving-text">    🇸OMALIA📍 </p>
+  
+  <a
+    href="https://wa.me/0704390612"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="whatsapp-icon"
+  >
+    <img
+      src="/circlinkedin.webp"
+      alt="WhatsApp"
+      style={{ width: "25px", height: "25px", marginLeft: "140px" }}
+    />
+  </a>
+  <a
+    href="https://wa.me/0704390612"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="whatsapp-icon"
+  >
+    <img
+      src="/WhatsApp.svg.png"
+      alt="WhatsApp"
+      style={{ width: "25px", height: "25px", marginLeft: "7px" }}
+    />
+  </a>
+  <a
+    href="https://wa.me/0704390612"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="whatsapp-icon"
+  >
+    <img
+      src="/11244080_x_twitter_elon musk_twitter new logo_icon.svg"
+      alt="WhatsApp"
+      style={{ width: "20px", height: "20px", marginLeft: "7px" }}
+    />
+  </a>
+  <a
+    href="https://wa.me/0704390612"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="whatsapp-icon"
+  >
+    <img
+      src="/5365678_fb_facebook_facebook logo_icon.svg"
+      alt="WhatsApp"
+      style={{ width: "20px", height: "20px", marginLeft: "7px" }}
+    />
+  </a>
+</div>
 
-        <a
-          href="https://wa.me/0704390612" // WhatsApp link
-          target="_blank"
-          rel="noopener noreferrer"
-          className="whatsapp-icon"
-        >
-          <img
-            src="/372010_linkedin_stamp_social_icon.png"
-            alt="WhatsApp"
-            style={{ width: "25px", height: "25px", marginLeft: "140px" }}
-          />
-        </a>
-        <a
-          href="https://wa.me/0704390612" // WhatsApp link
-          target="_blank"
-          rel="noopener noreferrer"
-          className="whatsapp-icon"
-        >
-          <img
-            src="/3184113_media_social_whatsapp_icon.svg"
-            alt="WhatsApp"
-            style={{ width: "25px", height: "25px", marginLeft: "7px" }}
-          />
-        </a>
-        <a
-          href="https://wa.me/0704390612" // WhatsApp link
-          target="_blank"
-          rel="noopener noreferrer"
-          className="whatsapp-icon"
-        >
-          <img
-            src="/11244080_x_twitter_elon musk_twitter new logo_icon.svg"
-            alt="WhatsApp"
-            style={{ width: "20px", height: "20px", marginLeft: "7px" }}
-          />
-        </a>
-        <a
-          href="https://wa.me/0704390612" // WhatsApp link
-          target="_blank"
-          rel="noopener noreferrer"
-          className="whatsapp-icon"
-        >
-          <img
-            src="/5365678_fb_facebook_facebook logo_icon.svg"
-            alt="WhatsApp"
-            style={{ width: "20px", height: "20px", marginLeft: "7px" }}
-          />
-        </a>
-      </div>
       <nav className="nav">
         <div className="container nav__data">
           <div className="nav_img">

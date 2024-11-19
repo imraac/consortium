@@ -459,7 +459,7 @@ const somaliaGeoJson = {
       {/* Statistics Section */}
       <section className="statistics" style={{ backgroundColor: 'white', padding: '40px 0' }}>
         <div className="container text-center">
-          <h2 style={{ color: theme.secondary }}>Our Impact</h2>
+     
           <div className="row">
             {statsData.map((stat, index) => (
               <div className="col-md-3 mb-4" key={index}>
