@@ -242,15 +242,15 @@ const Login = () => {
         <div className="w-full md:w-1/2">
           <img
             className="rounded-2xl mx-auto mt-8 md:mt-0"
-            src="/hands2-QvFd5z-7.png"
+            src="/Logos.jpeg"
             alt="Login illustration"
           />
         </div>
 
         <div className="w-full md:w-1/2 px-8 md:px-16">
-          <h2 className="font-bold text-2xl text-[#002D74]">Login</h2>
+          <h4 className="font-bold text-2xl text-[#002D74]"> Join the Minority Rights Organisation by signing up and creating an account.</h4>
           <p className="text-xs mt-4 text-[#002D74]">
-            If you are already a member, easily log in
+          If you're already a member, simply log in.
           </p>
 
           {error && <p className="text-red-600 mt-2">{error}</p>}
