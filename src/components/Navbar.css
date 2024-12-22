@@ -7,127 +7,57 @@
   font-weight: 700;
 }
 
-
-
-
-/* From Uiverse.io by ilkhoeri */ 
-.button {
-  --h-button: 48px;
-  --w-button: 102px;
-  --round: 0.75rem;
-  cursor: pointer;
+.login-button {
   position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: all 0.25s ease;
-  background: radial-gradient(
-      65.28% 65.28% at 50% 100%,
-     white
-      rgba(22, 21, 22, 0) 100%
-    ),
-    linear-gradient(0deg, #f9f8fa, #efeef5);
-  border-radius: var(--round);
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff; /* Blue */
   border: none;
-  outline: none;
-  padding: 12px 18px;
-}
-.button::before,
-.button::after {
-  content: "";
-  position: absolute;
-  inset: var(--space);
-  transition: all 0.5s ease-in-out;
-  border-radius: calc(var(--round) - var(--space));
-  z-index: 0;
-}
-.button::before {
-  --space: 1px;
-  background: linear-gradient(
-    177.95deg,
-    white,
-   white
-  );
-}
-.button::after {
-  --space: 2px;
-  background: radial-gradient(
-      65.28% 65.28% at 50% 100%,
-      #65cafd,
-      rgba(223, 113, 255, 0) 100%
-    ),
-    linear-gradient(0deg, #65cafd, #4793d1);
-}
-.button:active {
-  transform: scale(0.95);
-}
-
-.fold {
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 1rem;
-  width: 1rem;
-  display: inline-block;
-  transition: all 0.5s ease-in-out;
-  background: radial-gradient(
-    100% 75% at 55%,
-    rgba(223, 113, 255, 0.8) 0%,
-    rgba(223, 113, 255, 0) 100%
-  );
-  box-shadow: 0 0 3px black;
-  border-bottom-left-radius: 0.5rem;
-  border-top-right-radius: var(--round);
-}
-.fold::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 150%;
-  height: 150%;
-  transform: rotate(45deg) translateX(0%) translateY(-18px);
-  background-color: #e8e8e8;
-  pointer-events: none;
-}
-.button:hover .fold {
-  margin-top: -1rem;
-  margin-right: -1rem;
-}
-
-.points_wrapper {
+  border-radius: 5px;
+  cursor: pointer;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  position: absolute;
-  z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
-.points_wrapper .point {
-  bottom: -10px;
-  position: absolute;
-  animation: floating-points infinite ease-in-out;
-  pointer-events: none;
-  width: 2px;
-  height: 2px;
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.login-button .inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-button .icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.login-button:hover .icon {
+  transform: scale(1.2);
+}
+
+/* Points Effect */
+.points_wrapper {
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
+}
+
+.point {
+  width: 4px;
+  height: 4px;
   background-color: #fff;
-  border-radius: 9999px;
+  border-radius: 50%;
 }
-@keyframes floating-points {
-  0% {
-    transform: translateY(0);
-  }
-  85% {
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(-55px);
-    opacity: 0;
-  }
-}
+
+
+
 .points_wrapper .point:nth-child(1) {
   left: 10%;
   opacity: 1;
@@ -958,7 +888,7 @@ nav {
   padding: 1rem;
   transition: background-color 0.3s;
   gap: 6rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+  font-family:  Cochin, Georgia, Times !important;
   font-weight: 200px;
   
 }

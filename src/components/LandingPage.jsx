@@ -481,7 +481,7 @@ const somaliaGeoJson = {
           </div>
         </div>
       </section>
-      <section className="map-section" style={{ padding: '0px 0', textAlign: 'center', backgroundColor: '#ff0000' }}>
+      {/* <section className="map-section" style={{ padding: '0px 0', textAlign: 'center', backgroundColor: '#ff0000' }}>
         <div className="map-container" style={{ width: '100%', height: '400px' }}>
           <MapContainer center={[2.0469345, 45.3143562]} zoom={12} style={{ height: '100%', width: '100%' }}>
             <TileLayer
@@ -493,7 +493,7 @@ const somaliaGeoJson = {
             </Marker>
           </MapContainer>
         </div>
-      </section>
+      </section> */}
       {/* Services Section with Marquee */}
       <section className="services" style={{ backgroundColor: theme.secondary }}>
         <div className="servicesContainer">
@@ -567,6 +567,19 @@ const somaliaGeoJson = {
    
 
       <Footer />
+      <section className="map-section" style={{ padding: '0px 0', textAlign: 'center', backgroundColor: '#ff0000' }}>
+        <div className="map-container" style={{ width: '100%', height: '400px' }}>
+          <MapContainer center={[2.0469345, 45.3143562]} zoom={12} style={{ height: '100%', width: '100%' }}>
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+            <Marker position={[2.0469345, 45.3143562]}>
+              <Popup>Mogadishu, Somalia</Popup>
+            </Marker>
+          </MapContainer>
+        </div>
+      </section>
     </div>
   );
 };
