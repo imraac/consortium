@@ -84,9 +84,11 @@ const Navbar = () => {
 
       <nav className="nav">
         <div className="container nav__data">
-          <div className="nav_img">
-            <img src="/logo1.png" alt="Logo" />
-          </div>
+        <div className="nav_img">
+  <Link to="/">
+    <img src="/logo1.png" alt="Logo" />
+  </Link>
+</div>
 
           {/* Menu Toggle Icon for Mobile */}
           <div className="nav__menu-toggle" onClick={toggleMenu}>

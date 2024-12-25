@@ -1190,7 +1190,7 @@ nav {
 
 /* Rest of your existing styles... */
 .nav_img img {
-  width: 200px;
+  width: 250px !important;
   margin-top: -2px; /* Adjust the width as needed */
   height: auto; 
   margin-bottom: -9px;/* Maintain aspect ratio */

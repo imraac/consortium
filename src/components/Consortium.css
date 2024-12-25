@@ -83,7 +83,7 @@ button.submit-button:hover {
     .consortium-wrapper {
         flex-direction: column; /* Stack containers vertically */
         align-items: center;    /* Center the items */
-        margin-top: 15px; /* Remove the large gap at the top */
+        margin-top: 79px; /* Remove the large gap at the top */
         padding-top: 125px; /* Adjust this if the navbar height changes */
     }
 
