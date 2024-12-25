@@ -94,7 +94,7 @@ const Login = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
-            Join the Minority Rights Organisation by signing up and creating an account.
+            Join the Minority Rights Organisation (MROs) by creating an account.
           </motion.h4>
 
           <motion.p
