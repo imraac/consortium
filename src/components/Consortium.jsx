@@ -27,13 +27,22 @@ const Consortium = () => {
       </motion.h1>
 
       <motion.p 
-        style={{ marginBottom: '20px', fontSize: '16px', lineHeight: '1.5' }}
-        initial={{ opacity: 0 }} // Start with zero opacity
-        animate={{ opacity: 1 }} // Animate to full opacity
-        transition={{ duration: 1, delay: 0.2 }} // Transition with a delay
-      >
-        In order for us to maintain our credibility, we have to be strict on membership and ensure that everyone who becomes a member is doing what they say they are doing. Membership of the Somalia NGO Consortium requires that your agency is currently undertaking activities, direct operations, and/or support to partner NGOs in Somalia.
-      </motion.p>
+  style={{ 
+    marginBottom: '20px', 
+    fontSize: '16px', 
+    lineHeight: '1.5', 
+    color: 'white',
+    backgroundColor: '#e52707', // Added background color
+    padding: '10px', // Optional: Add padding for better spacing
+    borderRadius: '1px' // Optional: Add rounded corners
+  }}
+  initial={{ opacity: 0 }} // Start with zero opacity
+  animate={{ opacity: 1 }} // Animate to full opacity
+  transition={{ duration: 1, delay: 0.2 }} // Transition with a delay
+>
+  In order for us to maintain our credibility, we have to be strict on membership and ensure that everyone who becomes a member is doing what they say they are doing. Membership of the Minority Rights Organizations Consortium requires that your agency must be a Minority-led Organization, currently undertaking activities, direct operations and/or support to partner NGOs in Somalia.
+</motion.p>
+
 
       <motion.div
         style={{
@@ -87,9 +96,33 @@ const Consortium = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          Required Information
+         Required Documents
+         
         </motion.h2>
-
+        {/* <div style={{ marginTop: '20px', textAlign: 'center' }}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <a
+            href="/assets/document.pdf" // Relative path to your document
+            download // Enables download functionality
+            style={{
+              backgroundColor: '#D15D51',
+              color: '#fff',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '5px',
+              textDecoration: 'none',
+              cursor: 'pointer',
+              fontSize: '16px',
+            }}
+          >
+            Download Registration Checklist
+          </a>
+        </motion.div>
+      </div> */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

@@ -1079,11 +1079,10 @@ nav {
     color: #0c0c0c;/* Keep it absolute to position below the navbar */
     display: none; /* Hide menu by default */
     flex-direction: column; /* Stack items vertically */
-    top: 76px !important; /* Position below navbar */
+    top: 86px !important; /* Position below navbar */
     right: 0;
-    width: 100% !important; /* Make the menu take up 100% of the screen width */
     height: calc(100vh - 60px); /* Make the menu height full screen minus navbar height */
-    background-color: #fcfdfdcc !important; /* Ensure background is slightly transparent */
+    background-color: #eaeff1 !important; /* Ensure background is slightly transparent */
     backdrop-filter: blur(10px); /* Apply blur effect */
     padding: 1rem;
     z-index: 1000; /* Ensure it appears above other content */
