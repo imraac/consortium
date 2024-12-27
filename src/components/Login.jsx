@@ -81,7 +81,7 @@ const Login = () => {
         <div className="w-full md:w-1/2">
           <img
             className="rounded-2xl mx-auto mt-8 md:mt-0"
-            src="/Logos.jpeg"
+            src="/Privacy policy.gif"
             alt="Login illustration"
           />
         </div>
