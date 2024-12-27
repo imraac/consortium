@@ -101,7 +101,13 @@ ul li {
 .hero-gradient {
   animation: backgroundChange 5s ease-in-out infinite; /* Adjust duration as needed */
   position: relative;
-  margin-top: 150px; /* Ensure positioning for absolute children */
+  margin-top: 146px; /* Default margin-top */
+}
+
+@media (max-width: 768px) { /* Adjust max-width as needed for small screen sizes */
+  .hero-gradient {
+    margin-top: 136px !important; /* Smaller margin-top for small screens */
+  }
 }
 
 /* Fade-in animation for the image */
