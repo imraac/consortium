@@ -1,8 +1,6 @@
-
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from "react-router-dom";
 import ConsortiumMandate from "./components/ConsortiumMandate";
 import Navbar from "./components/Navbar";
 import LandingPage from "./components/LandingPage";
@@ -49,23 +47,17 @@ const App = () => {
   return (
     <AuthProvider>
       <Router>
-        <Navbar />
+        <NavbarWrapper />
         <Routes>
-          <Route 
-            path="/certification" 
-            element={<Certification />} 
-          />
-          <Route 
-            path="/" 
-            element={
-              <ProtectedRoute>
-                <LandingPage />
-              </ProtectedRoute>
-            } 
-          />
+          {/* Redirect root ("/") to "/login" */}
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/certification" element={<Certification />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<div>Contact Page</div>} />
           <Route path="/services" element={<div>Services Page</div>} />
+          <Route path="/landingpage" element={<LandingPage />} />
 
           <Route
             path="/consortium"
@@ -101,10 +93,8 @@ const App = () => {
           <Route path="/agency-details" element={<ConsortiumJoinForm />} />
           <Route path="/contact-details" element={<MemberAccountAdministratorForm />} />
           <Route path="/feedback" element={<FormFeedbackPage />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/reset-password" element={<ForgotPassword />} />
-          <Route path="/signup" element={<Signup />} />
           <Route path="/advocacy" element={<Advocacy />} />
           <Route path="/Strategy" element={<Strategy />} />
           <Route path="/structure-management" element={<StructureManagement />} />
@@ -129,6 +119,18 @@ const App = () => {
       </Router>
     </AuthProvider>
   );
+};
+
+// This component checks if the current route is login or signup and conditionally renders the Navbar
+const NavbarWrapper = () => {
+  const location = useLocation();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true); // Ensure navbar is rendered only after the component is mounted
+  }, []);
+
+  return isMounted && location.pathname !== "/login" && location.pathname !== "/signup" ? <Navbar /> : null;
 };
 
 export default App;

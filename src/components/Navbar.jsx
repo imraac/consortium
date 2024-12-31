@@ -100,7 +100,7 @@ const Navbar = () => {
             <ul>
               <li>
                 <Link
-                  to="/"
+                  to="/landingpage"
                   className="nav__link"
                   style={{ textDecoration: "none" }}
                   onClick={closeMenu}
