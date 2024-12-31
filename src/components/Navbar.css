@@ -888,7 +888,7 @@ nav {
   padding: 1rem;
   transition: background-color 0.3s;
   gap: 6rem;
-  font-family:  Cochin, Georgia, Times !important;
+  font-family:  Cochin, Georgia, Times;
   font-weight: 200px;
   
 }
@@ -1112,7 +1112,7 @@ nav {
   animation: slide-text 3s ease-out forwards; /* Stop animation at the end */
   font-size: 1.2rem; /* Adjust font size */
   font-weight: bold;
-  font-family: 'Times New Roman', Times, serif !important;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: 200px;
   color:#ebe8dd;
 }

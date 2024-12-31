@@ -142,7 +142,7 @@
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Footer from "./Footer";
+
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -188,7 +188,7 @@ const Signup = () => {
         <div className="w-full md:w-1/2">
         <img
           className="rounded-2xl mx-auto mt-8 md:mt-0"
-          src="/hands2-QvFd5z-7.png"
+          src="/touse.svg"
           alt="Login illustration"
         />
       </div>
@@ -267,24 +267,28 @@ const Signup = () => {
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white"
               >
-                <option value="member">Member</option>
+                <option value="member">Full membership</option>
                 <option value="admin">Admin</option>
               </select>
+              <p className="mt-4 text-center text-xs sm:text-sm text-gray-500">
+          By continuing, you agree to our <a href="#" className="text-[#FF6247] hover:underline">Terms of Service</a> and <a href="#" className="text-[#FF6247] hover:underline">Privacy Policy</a>.
+        </p>
             </div>
             <button
-              type="submit"
-              disabled={loading}
-              className="bg-[#65cafd] text-white py-2 hover:scale-105 duration-300 "
-            >
-              {loading ? "Signing up..." : "Sign Up"}
-            </button>
+  type="submit"
+  disabled={loading}
+  className="bg-gradient-to-r from-[#65cafd] via-[#0085d0] to-[#006bb3] text-white py-2 hover:scale-105 duration-300 hover:shadow-lg hover:shadow-[#65cafd] focus:outline-none"
+>
+  {loading ? "Signing up..." : "Sign Up"}
+</button>
+
           </form>
         </div>
 
         {/* Right Column (Image) */}
         
       </div>
-      <Footer />
+  
     </section>
   );
 };
