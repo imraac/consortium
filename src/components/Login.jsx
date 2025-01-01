@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "./AuthProvider";
-import { FaArrowLeft } from "react-icons/fa"; // Importing the left arrow icon
-import { color, motion } from "framer-motion"; // Framer Motion for animations
+import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa"; // Importing the eye icons
+import { motion } from "framer-motion"; // Framer Motion for animations
 
 // Styles for Footer
 const styles = {
@@ -20,7 +20,6 @@ const styles = {
     borderTop: "1px solid #8f827a",
     margin: "0 auto 1rem",
     width: "50%",
-   
   },
   footerText: {
     color: "#002D74",
@@ -55,6 +54,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(""); // State for success message
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -90,7 +90,7 @@ const Login = () => {
         }
       }, 5000);
     } catch (err) {
-      setSuccess("Error logging in. Please make sure your login details are correct.");
+      setSuccess("Sorry, your password was incorrect. Please double-check your password.");
       setLoading(false);
       if (err.response) {
         setError(err.response.data.message || "Error logging in. Please try again later.");
@@ -133,21 +133,29 @@ const Login = () => {
 
           <form onSubmit={handleLoginSubmit} className="flex flex-col gap-4">
             <input
-              className="p-2 mt-8 rounded-xl border"
+              className="p-2 mt-8  border"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
               required
             />
-            <input
-              className="p-2 rounded-xl border"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              required
-            />
+            <div className="relative">
+              <input
+                className="p-2  border w-full"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+              />
+              <div
+                className="absolute top-3 right-3 cursor-pointer"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ?<FaEye />:   <FaEyeSlash />}
+              </div>
+            </div>
             <button
               type="submit"
               disabled={loading}
