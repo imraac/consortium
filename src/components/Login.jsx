@@ -1,8 +1,36 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "./AuthProvider";
-import { FaArrowLeft } from "react-icons/fa"; // Importing the left arrow icon
+import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa"; // Importing the eye icons
+import { motion } from "framer-motion"; // Framer Motion for animations
+
+// Styles for Footer
+const styles = {
+  footerContainer: {
+    textAlign: "center",
+    padding: "1rem",
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    zIndex: 10,
+    backgroundColor: "white",
+  },
+  horizontalLine: {
+    borderTop: "1px solid #8f827a",
+    margin: "0 auto 1rem",
+    width: "50%",
+  },
+  footerText: {
+    color: "#002D74",
+    margin: "0",
+  },
+  footerLink: {
+    color: "",
+    textDecoration: "none",
+    margin: "0 0.5rem",
+  },
+};
 
 // SuccessMessage Component
 const SuccessMessage = ({ message, isError }) => {
@@ -26,10 +54,10 @@ const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(""); // State for success message
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  // Function to handle the login submission
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -44,16 +72,14 @@ const Login = () => {
 
       const data = response.data;
 
-      // Set a timer to simulate the spinner for 5 seconds
       setTimeout(() => {
-        setLoading(false); // Hide spinner after 5 seconds
+        setLoading(false);
 
         if (response.status === 200) {
           localStorage.setItem("access_token", data.access_token);
           login(data.user, data.access_token);
           setSuccess("You've successfully logged in! Please wait while your account is being created.");
 
-          // Navigate based on user role or status after the spinner
           if (data.user.role === "admin") {
             navigate("/admin-dashboard");
           } else if (data.user.is_approved && data.user.document_status === "Approved") {
@@ -62,11 +88,10 @@ const Login = () => {
             navigate("/consortium");
           }
         }
-      }, 5000); // Set spinner timeout for 5 seconds
-
+      }, 5000);
     } catch (err) {
-      setSuccess("Error logging in. Please make sure your login details are correct.");
-      setLoading(false); // Hide spinner immediately on error
+      setSuccess("Sorry, your password was incorrect. Please double-check your password.");
+      setLoading(false);
       if (err.response) {
         setError(err.response.data.message || "Error logging in. Please try again later.");
       } else {
@@ -76,11 +101,9 @@ const Login = () => {
   };
 
   return (
-    <section className="bg-white flex flex-col justify-between">
-      {/* Success/Error Message */}
+    <section className="bg-white flex flex-col justify-between min-h-screen relative">
       <SuccessMessage message={success} isError={!!error} />
 
-      {/* Show the Spinner in the middle of the page */}
       {loading && (
         <div className="fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-500 flex justify-center items-center z-50">
           <div className="spinner-border text-light" role="status">
@@ -90,40 +113,49 @@ const Login = () => {
       )}
 
       <div className="flex flex-col-reverse md:flex-row max-w-5xl mx-auto mt-[164px] w-full items-center">
-        {/* Image Section */}
-        <div className="w-full md:w-1/2">
+        {/* Animated Image */}
+        <motion.div
+          className="w-full md:w-1/2"
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <img className="rounded-2xl mx-auto mt-8 md:mt-0" src="/test2.svg" alt="Login illustration" />
-        </div>
+        </motion.div>
 
-        {/* Login Form Section */}
+        {/* Form Section */}
         <div className="w-full md:w-1/2 px-8 md:px-16">
           <h4 className="font-bold text-2xl text-[#002D74]">
             Join the Minority Rights Organisation (MROs) by creating an account.
           </h4>
-          <p className="text-xs mt-4 text-[#002D74]">
-            If you're already a member, simply log in.
-          </p>
-
+          <p className="text-xs mt-4 text-[#002D74]">If you're already a member, simply log in.</p>
           {error && <p className="text-red-600 mt-2">{error}</p>}
 
-          {/* Show Login Form */}
           <form onSubmit={handleLoginSubmit} className="flex flex-col gap-4">
             <input
-              className="p-2 mt-8 rounded-xl border"
+              className="p-2 mt-8  border"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
               required
             />
-            <input
-              className="p-2 rounded-xl border"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              required
-            />
+            <div className="relative">
+              <input
+                className="p-2  border w-full"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+              />
+              <div
+                className="absolute top-3 right-3 cursor-pointer"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ?<FaEye />:   <FaEyeSlash />}
+              </div>
+            </div>
             <button
               type="submit"
               disabled={loading}
@@ -146,7 +178,7 @@ const Login = () => {
             <p>Don't have an account?</p>
             <Link to="/signup">
               <button
-                className="py-2 px-5 text-white border border-red-500 hover:scale-110 duration-300 bg-gradient-to-r from-[#65cafd] via-[#0085d0] to-[#006bb3] hover:shadow-lg hover:shadow-[#65cafd] focus:outline-none"
+                className="py-2 px-5 text-blue border border-red-500 hover:scale-110 duration-300  hover:shadow-lg hover:shadow-[#65cafd] focus:outline-none"
               >
                 Register
               </button>
@@ -155,13 +187,28 @@ const Login = () => {
         </div>
       </div>
 
-      {/* Arrow Back to Signup */}
-      <Link 
-        to="/signup" 
+      <Link
+        to="/signup"
         className="absolute top-20 left-2 md:left-[300px] flex items-center justify-center w-12 h-12 bg-gradient-to-r from-[#65cafd] via-[#65cafd] to-[#65cafd] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-2xl hover:shadow-[#65cafd] transition-all duration-300"
       >
         <FaArrowLeft className="text-xl" />
       </Link>
+
+      <motion.div
+        style={styles.footerContainer}
+        initial={{ y: 50 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <div style={styles.horizontalLine}></div>
+        <p style={styles.footerText}>
+          &copy; {new Date().getFullYear()} MROs Consortium. All rights reserved. <br />
+          <Link to="/privacy-policy" style={styles.footerLink}>Privacy policy</Link> | 
+          <Link to="/terms-and-conditions" style={styles.footerLink}>Terms and conditions</Link> | 
+          <Link to="/cookies-policy" style={styles.footerLink}>Cookies policy</Link> | 
+          <Link to="/copyright" style={styles.footerLink}>Copyright</Link>
+        </p>
+      </motion.div>
     </section>
   );
 };

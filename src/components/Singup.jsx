@@ -142,8 +142,34 @@
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { color, motion } from "framer-motion"; // Framer Motion for animations
 
-
+const styles = {
+  footerContainer: {
+    textAlign: "center",
+    padding: "1rem",
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    zIndex: 10,
+    backgroundColor: "white",
+  },
+  horizontalLine: {
+    borderTop: "1px solid #8f827a",
+    margin: "0 auto 1rem",
+    width: "50%",
+   
+  },
+  footerText: {
+    color: "#002D74",
+    margin: "0",
+  },
+  footerLink: {
+    color: "",
+    textDecoration: "none",
+    margin: "0 0.5rem",
+  },
+};
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -271,7 +297,7 @@ const Signup = () => {
                 <option value="admin">Admin</option>
               </select>
               <p className="mt-4 text-center text-xs sm:text-sm text-gray-500">
-          By continuing, you agree to our <a href="#" className="text-[#FF6247] hover:underline">Terms of Service</a> and <a href="#" className="text-[#FF6247] hover:underline">Privacy Policy</a>.
+          By continuing, you agree to our <a href="#" className="text-[#002D74] hover:underline">Terms of Service</a> and <a href="#" className="text-[#002D74] hover:underline">Privacy Policy</a>.
         </p>
             </div>
             <button
@@ -285,10 +311,25 @@ const Signup = () => {
           </form>
         </div>
 
+
         {/* Right Column (Image) */}
         
       </div>
-  
+   <motion.div
+        style={styles.footerContainer}
+        initial={{ y: 50 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <div style={styles.horizontalLine}></div>
+        <p style={styles.footerText}>
+          &copy; {new Date().getFullYear()} MROs Consortium. All rights reserved. <br />
+          <Link to="/privacy-policy" style={styles.footerLink}>Privacy policy</Link> | 
+          <Link to="/terms-and-conditions" style={styles.footerLink}>Terms and conditions</Link> | 
+          <Link to="/cookies-policy" style={styles.footerLink}>Cookies policy</Link> | 
+          <Link to="/copyright" style={styles.footerLink}>Copyright</Link>
+        </p>
+      </motion.div>
     </section>
   );
 };

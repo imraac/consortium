@@ -89,12 +89,7 @@ const DocumentUpload = () => {
                     body: JSON.stringify({ message: 'New documents uploaded for approval.' }),
                 });
     
-                if (notifyResponse.ok) {
-                    setApprovalMessage('Your uploads have been sent for approval.');
-                } else {
-                    alert('notifying admin for approval.');
-                }
-    
+               
                 setShowSuccessModal(true); // Show success modal
                 setTimeout(() => {
                     setShowSuccessModal(false);

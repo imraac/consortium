@@ -12,7 +12,7 @@ const Consortium = () => {
         style={{
           textAlign: 'center',         // Center the text
           fontSize: '2.5rem',         // Make the font size larger
-          color: '#65cafd',           // Set a contrasting color for the text
+          color: '#4CAF50',           // Set a contrasting color for the text
           fontWeight: 'bold',          // Make the font bold
           margin: '20px 0',           // Add vertical margins for spacing
           textTransform: 'uppercase',  // Transform text to uppercase for emphasis
@@ -31,8 +31,8 @@ const Consortium = () => {
     marginBottom: '20px', 
     fontSize: '16px', 
     lineHeight: '1.5', 
-    color: 'white',
-    backgroundColor: '#e52707', // Added background color
+    color: '#fa6005',
+    backgroundColor: '#EEE', // Added background color
     padding: '10px', // Optional: Add padding for better spacing
     borderRadius: '1px' // Optional: Add rounded corners
   }}
@@ -99,7 +99,7 @@ const Consortium = () => {
          Required Documents
          
         </motion.h2>
-        {/* <div style={{ marginTop: '20px', textAlign: 'center' }}>
+        <div style={{ marginTop: '20px', textAlign: 'center' }}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -108,21 +108,24 @@ const Consortium = () => {
           <a
             href="/assets/document.pdf" // Relative path to your document
             download // Enables download functionality
-            style={{
-              backgroundColor: '#D15D51',
-              color: '#fff',
-              border: 'none',
-              padding: '10px 20px',
-              borderRadius: '5px',
-              textDecoration: 'none',
-              cursor: 'pointer',
-              fontSize: '16px',
-            }}
+          style={{
+  backgroundColor: '#D15D51',
+  color: '#fff',
+  border: 'none',
+  padding: '10px 20px',
+  marginBottom: '20px',  // Ensure positive margin is applied
+  borderRadius: '5px',
+  textDecoration: 'none',
+  cursor: 'pointer',
+  fontSize: '16px',
+  display: 'inline-block',  // Ensure the margin is applied properly
+}}
+
           >
             Download Registration Checklist
           </a>
         </motion.div>
-      </div> */}
+      </div>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -228,10 +231,10 @@ const Consortium = () => {
                 Begin Registration
               </button>
             </Link>
-            <a href="/import-registration" style={{ marginRight: '10px', color: '#007BFF', textDecoration: 'none' }}>
+            <a href="/not-found" style={{ marginRight: '10px', color: '#007BFF', textDecoration: 'none' }}>
               Import a saved registration
             </a>
-            <a href="/load-documents" style={{ color: '#007BFF', textDecoration: 'none' }}>
+            <a href="/not-found" style={{ color: '#007BFF', textDecoration: 'none' }}>
               Skip to load documents
             </a>
           </motion.div>
