@@ -362,7 +362,7 @@ const Navbar = () => {
             <button
     className="join-consortium-button"
     onClick={() => {
-      navigate("/consortium");
+      navigate("/registration");
       closeMenu();
     }}
   >

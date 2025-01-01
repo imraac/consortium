@@ -256,7 +256,7 @@
 
 
 // ConsortiumRegistrationForm.js
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 import ProgressBar from './ProgressBar'; // Import the ProgressBar component
@@ -265,9 +265,8 @@ import './ConsortiumRegistrationForm.css';
 const ConsortiumRegistrationForm = () => {
   const navigate = useNavigate();
 
-  // Define the current step and total steps for progress tracking
-  const currentStep = 3; // Set to 3 for ConsortiumRegistrationForm
-  const totalSteps = 4; // Define the total steps
+  const currentStep = 2;
+  const totalSteps = 4;
   const stepNames = ['Registration', 'Personal Details', 'Consortium Registration', 'Contact Details', 'Agency Details'];
 
   const [formData, setFormData] = useState({
@@ -286,12 +285,37 @@ const ConsortiumRegistrationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionMessage, setSubmissionMessage] = useState('');
 
+  // Token management
+  const refreshTokenInterval = 5 * 60 * 1000; // Refresh every 5 minutes
+  const getToken = () => localStorage.getItem('token');
+  const setToken = (token) => localStorage.setItem('token', token);
+
+  const refreshToken = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:5000/refresh-token', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${getToken()}` },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setToken(data.newToken);
+      } else {
+        console.error('Failed to refresh token.');
+      }
+    } catch (error) {
+      console.error('Error refreshing token:', error);
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(refreshToken, refreshTokenInterval);
+    return () => clearInterval(interval); // Clear interval on unmount
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const validateForm = () => {
@@ -305,10 +329,8 @@ const ConsortiumRegistrationForm = () => {
     if (!formData.annualBudget) formErrors.annualBudget = 'Annual budget is required';
 
     setErrors(formErrors);
-
     const isValid = Object.keys(formErrors).length === 0;
     setIsFormValid(isValid);
-
     return isValid;
   };
 
@@ -317,25 +339,18 @@ const ConsortiumRegistrationForm = () => {
 
     if (validateForm()) {
       setIsSubmitting(true);
-
-      const token = localStorage.getItem('token');
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      };
-
       try {
         const response = await fetch('http://127.0.0.1:5000/consortium', {
           method: 'POST',
-          headers: config.headers,
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+            'Content-Type': 'application/json',
+          },
           body: JSON.stringify(formData),
         });
 
         if (response.ok) {
           setSubmissionMessage('Form submitted successfully!');
-          setIsFormValid(false);
           setFormData({
             activeYear: '',
             partnerNGOs: '',
