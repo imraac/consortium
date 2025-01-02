@@ -495,78 +495,12 @@ const somaliaGeoJson = {
         </div>
       </section> */}
       {/* Services Section with Marquee */}
-      <section className="services" style={{ backgroundColor: theme.secondary }}>
-        <div className="servicesContainer">
-          <div className="service--scroll">
-            <Marquee 
-              gradient={false} 
-              speed={5} // Adjust speed to be slower
-              pauseOnHover={true}
-              pauseOnClick={true} 
-              delay={5000}   
-              direction="left"
-              paused={paused ? true : undefined} // Proper handling of paused state
-              onMouseEnter={() => setPaused(true)} 
-              onMouseLeave={() => setPaused(false)}
-            >
-              {[
-                {
-                  icon: "fas fa-handshake",
-                  title: "MAIN ACTIVITIES",
-                  description: "Establishing and maintaining close links to other external actors whose actions impact upon Consortium members' work in Somalia. Coordination and facilitation of public briefings and media events to increase public understanding of NGO programming and major humanitarian and developmental concerns in Somalia.",
-                  link: "/about-us"
-                },
-                {
-                  icon: "fas fa-bullhorn",
-                  title: "SERVICES & ADVOCACY",
-                  description: "We do so much more than home care services for our clients. The Somalia NGO Consortium facilitates joint approaches and advocacy and influences policy change, increasing local, regional, and international awareness of Somali humanitarian and development issues.",
-                  link: "/advocacy"
-                },
-                {
-                  icon: "fa-solid fa-cogs",
-                  title: "ADDITIONAL SERVICES",
-                  description: "Explore additional services we provide to support the community and our partners.",
-                  link: "/strategy"
-                },
-                {
-                  icon: "fas fa-chart-line",
-                  title: "ESTIMATED RESULTS",
-                  description: "Urgent and important joint actions are coordinated, and NGO key messages and advocacy.",
-                  link: "/structure-management"
-                }
-              ].map((service, index) => (
-                <div className="service--box" key={index} style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',  // Transparent/very light background
-                  backdropFilter: 'blur(10px)',  // Apply blur effect
-                  border: '1px solid rgba(255, 255, 255, 0.3)',  // Light border to enhance frosted-glass look
-                  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',    // Subtle shadow for depth
-                  padding: '20px',
-                  borderRadius: '10px',
-                  textAlign: 'center',
-                  minWidth: '200px',
-                  margin: '10px',
-                }}>
-                  <i className={`${service.icon} service-icon`} style={{ color: '#ffffff' }}></i> {/* White icon color */}
-                  <h3 style={{ color: '#ffffff' }}>{service.title}</h3> {/* White text for clarity */}
-                  <p className="service-description" style={{ color: '#eeeeee' }}>{service.description}</p> {/* Slightly lighter text */}
-                  <Link to={service.link} className="learn-more-button" style={{
-                    color: '#ffffff',  // White link color
-                    borderBottom: '1px solid #ffffff',
-                    textDecoration: 'none',
-                  }}>
-                    LEARN MORE
-                  </Link>
-                </div>
-              ))}
-            </Marquee>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Map Section */}
    
 
-      <Footer />
+     
       <section className="map-section" style={{ padding: '0px 0', textAlign: 'center', backgroundColor: '#ff0000' }}>
         <div className="map-container" style={{ width: '100%', height: '400px' }}>
           <MapContainer center={[2.0469345, 45.3143562]} zoom={12} style={{ height: '100%', width: '100%' }}>
@@ -580,6 +514,7 @@ const somaliaGeoJson = {
           </MapContainer>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

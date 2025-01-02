@@ -93,9 +93,9 @@ const Login = () => {
       setSuccess("Sorry, your password was incorrect. Please double-check your password.");
       setLoading(false);
       if (err.response) {
-        setError(err.response.data.message || "Error logging in. Please try again later.");
+        setError(err.response.data.message || "invlid member email");
       } else {
-        setError("Error logging in. Please try again later.");
+        setError("Opss!");
       }
     }
   };

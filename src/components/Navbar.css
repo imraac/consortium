@@ -901,63 +901,76 @@ nav {
   display: inline-block; /* Ensure li elements are inline */
 }
 
+/* Base dropdown content */
 .dropdown__content {
   display: none;
   position: absolute;
-  background-color: var(--body-color);
+  background-color: #f7f7f7; /* Soft light gray background */
   padding: 1rem;
-  box-shadow: 0 2px 8px hsla(220, 68%, 12%, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-height: 200px; /* Set a maximum height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  border-radius: 8px; /* Add rounded corners for a smoother look */
 }
 
+/* Hover effect for dropdown */
 .dropdown:hover .dropdown__content {
   display: block;
 }
-  
-/* Remove underline from dropdown links */
+
+/* Dropdown link styles */
 .dropdown__link {
-  text-decoration: none !important; /* This removes the underline */
-  color: #333; /* Set the link color to a dark shade for visibility */
-  padding: 8px 12px; /* Reduce padding for smaller screens */
-  display: block; /* Ensure links take up the full width */
-  font-weight: 500; /* Ensure the links take up the full width */
+  text-decoration: none !important; /* Remove underline */
+  color: #333; /* Dark text for good readability */
+  padding: 8px 12px; /* Comfortable padding */
+  display: block; /* Make links take up full width */
+  font-weight: 500; /* Slightly bolder text for better emphasis */
+  border-radius: 6px; /* Rounded corners for the link */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
 }
 
-/* Change the background of the dropdown content to white */
+/* Hover effect for links */
+.dropdown__link:hover {
+  background-color: #3abef9; /* Light blue background on hover */
+  color: white; /* Change text color to white on hover for contrast */
+}
+
+/* Styling for the dropdown content */
 .dropdown__content {
   display: none; /* Hidden by default */
   position: absolute;
-  background-color: white; /* Set the background to white */
-  padding: 0.5rem; /* Reduce padding for smaller screens */
-  box-shadow: 0 2px 8px rgba(14, 159, 243, 0.1); /* Add a shadow for better visibility */
+  background-color: #ffffff; /* White background for clarity */
+  padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for a soft depth effect */
   z-index: 1;
   min-width: 190px; /* Set a smaller minimum width for the dropdown */
-  max-width: 200px; /* Reduce maximum width for smaller screens */
-  left: 0; /* Align dropdown to the left */
-  right: 0; /* Allow the dropdown to fill the available width */
+  max-width: 200px; /* Set a maximum width */
+  left: 0;
+  right: 0;
   margin: auto;
-   /* Center the dropdown horizontally */
+  max-height: 200px; /* Set a maximum height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border-radius: 8px; /* Rounded corners for dropdown */
 }
 
-/* Show the dropdown content when the dropdown is active */
+/* Show the dropdown content when active */
 .dropdown.active .dropdown__content {
-  display: block; /* Display dropdown when active */
+  display: block;
 }
 
-.dropdown__link:hover {
-  background-color: #3ABEF9; /* Add a light gray background when hovering */
-}
-
-/* Media query for smaller screens */
+/* Mobile view adjustments */
 @media (max-width: 768px) {
   .dropdown__content {
     min-width: 200px; /* Set a smaller minimum width */
-    max-width: 150px; /* Further reduce maximum width */
+    max-width: 150px; /* Further reduce maximum width for mobile */
+    max-height: 150px; /* Reduce max-height for mobile */
   }
 
   .dropdown__link {
-    padding: 6px 10px; /* Further reduce padding for smaller screens */
+    padding: 6px 10px; /* Smaller padding for mobile screens */
   }
 }
+
 
 
 
@@ -1069,123 +1082,87 @@ nav {
 }
 
 /* Navbar Menu Toggle */
+
+
+
+
+
+ /* Navbar Menu Toggle */
+/* Default styles for larger screens */
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__menu li {
+  display: inline-block; /* Keep items inline by default */
+}
+
 .nav__menu-toggle {
   display: none; /* Hide by default */
   cursor: pointer;
 }
+
+/* Styles for small screens */
 @media (max-width: 768px) {
   .nav__menu {
-    position: absolute; 
-    color: #0c0c0c;/* Keep it absolute to position below the navbar */
-    display: none; /* Hide menu by default */
-    flex-direction: column; /* Stack items vertically */
-    top: 86px !important; /* Position below navbar */
-    right: 0;
-    height: calc(100vh - 60px); /* Make the menu height full screen minus navbar height */
-    background-color: #eaeff1 !important; /* Ensure background is slightly transparent */
-    backdrop-filter: blur(10px); /* Apply blur effect */
-    padding: 1rem;
-    z-index: 1000; /* Ensure it appears above other content */
-    box-shadow: -2px 0 5px rgba(123, 185, 221, 0.1); /* Add shadow for better visibility */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for showing menu */
-    transform: translateX(100%); /* Initially hide the menu by moving it off-screen */
-    /* Set the background image */
-
-    background-size: cover !important; /* Cover the entire section */
-    background-position: bottom center !important; /* Position the image towards the bottom center */
-    background-repeat: no-repeat !important; 
-    background-attachment: fixed !important;
- 
-     /* Fix background attachment to viewport */
-  }
-  
-  /* Additional styles for smaller screens */
-  .nav__menu {
-    background-size: contain; /* Adjust background size for smaller screens */
-    background-position: top center; /* Position the image at the top center */
-  }
-}
-
-.moving-text {
-  position: absolute;
-  white-space: nowrap; /* Prevents text from breaking into multiple lines */
-  animation: slide-text 3s ease-out forwards; /* Stop animation at the end */
-  font-size: 1.2rem; /* Adjust font size */
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 200px;
-  color:#ebe8dd;
-}
-
-/* Keyframes for sliding effect */
-@keyframes slide-text {
-  0% {
-    transform: translateX(100%); /* Start off-screen (right) */
-  }
-  100% {
-    transform: translateX(0); /* End on the left side */
-  }
-}
-
-@media (max-width: 768px) {
-  .nav__menu {
-    display: none; /* Hide menu by default */
-    flex-direction: column; /* Stack items vertically */
     position: absolute;
-    top: 60px; /* Adjust to position below navbar */
-    right: 0;
-    width: 70% !important; /* Make the menu take up only 60% of the screen width */
-    height: 100vh; /* Make the menu height full screen */
-    background-color: white; /* Ensure background is white */
+    top: 80px; /* Position at the top of the screen */
+    left: 0; /* Align with the left edge of the screen */
+    width: 100% !important; /* Full width */
+    height: 60vh; /* Half of the viewport height */
+    background-color: white; /* Background color */
+    z-index: 1000;
     padding: 1rem;
-    background-image: url('');
-    z-index: 1000; /* Ensure it appears above other content */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+   /* Shadow for better visibility */
+    transform: translateY(-115%); /* Initially hide the menu */
     transition: transform 0.3s ease-in-out; /* Smooth transition for showing menu */
-    transform: translateX(100%); /* Initially hide the menu by moving it off-screen */
-    
-    .nav__menu.active {
-      display: flex; /* Show menu when active */
-      transform: translateX(0); /* Bring menu into view */
-    }
-  
-    .nav__menu-item {
-      width: 100%; /* Ensure each item takes the full width */
-      text-align: left; /* Align text to the left */
-      padding: 10px; /* Add padding for clickable area */
-    }
+    flex-direction: column; /* Stack items vertically on small screens */
   }
 
   .nav__menu.active {
-    display: flex; /* Show menu when active */
-    transform: translateX(0); /* Slide the menu in from the right */
-  }
-
-  .nav__menu ul {
-    list-style: none;
-    padding: 0; /* Remove default padding */
+    display: flex;
+    transform: translateY(0); /* Slide the menu in from the top */
   }
 
   .nav__menu li {
-    padding: 1rem; /* Add padding to menu items */
-    text-align: center; /* Center text */
-    list-style: none;
+    display: block; /* Stack items vertically */
+    text-align: center;
+    padding: 1rem 0; /* Vertical padding */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Divider between items */
   }
 
+  .nav__menu li:last-child {
+    border-bottom: none; /* Remove border from last item */
+  }
+
+  .nav__menu a {
+    text-decoration: none;
+    color: rgb(56, 53, 53);
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block; /* Ensure the whole item is clickable */
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav__menu a:hover {
+    color: #0c0c0c;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+
+  /* Toggle button for mobile */
   .nav__menu-toggle {
     display: block;
-    cursor: pointer; /* Show toggle button on mobile */
-  }
-
-
-
-
-  .nav__buttons {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center buttons */
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #0c0c0c;
   }
 }
+
+
 
 /* Rest of your existing styles... */
 .nav_img img {
