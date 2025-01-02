@@ -6,16 +6,21 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 const Footer = () => {
   return (
     <motion.footer
-      style={{ backgroundColor: '#FFFFFF', color: '#333', padding: '2rem 0' }}
-      initial={{ opacity: 0 }} // Start invisible
-      animate={{ opacity: 1 }} // Fade in
-      transition={{ duration: 0.5 }} // Fade-in duration
-    >
+    style={{
+      background: 'linear-gradient(to top, #FFFFFF, #)',
+      color: '#333',
+      padding: '2rem 0',
+    }}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+  
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem' }}>
         <motion.div
           style={styles.container}
-          initial={{ x: -200 }} // Start from left
-          animate={{ x: 0 }} // Slide in to normal position
+          initial={{ x: -200 }}
+          animate={{ x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           {/* Resources Section */}
@@ -23,41 +28,26 @@ const Footer = () => {
             style={styles.section}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }} // Delay to make it appear after the container
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h4 style={styles.title}>Resources</h4>
-            <ul style={styles.list}>
-              <li style={styles.listItem}>
-                <Link to="/key-documents" style={styles.link}>
-                  Key documents
-                </Link>
-              </li>
-              <li style={styles.listItem}>
-                <Link to="/useful-links" style={styles.link}>
-                  Useful links
-                </Link>
-              </li>
-              <li style={styles.listItem}>
-                <Link to="/member-calendar" style={styles.link}>
-                  Calendar
-                </Link>
-              </li>
-              <li style={styles.listItem}>
-                <Link to="/skills-development-hub" style={styles.link}>
-                  Skills Hub
-                </Link>
-              </li>
-              <li style={styles.listItem}>
-                <Link to="/all-resources" style={styles.link}>
-                  All resources
-                </Link>
-              </li>
-              <li style={styles.listItem}>
-                <Link to="/contact-form" style={styles.link}>Contact form</Link>
-              </li>
-              <li style={styles.listItem}>
-                <Link to="/feedback-form" style={styles.link}>Feedback form</Link>
-              </li>
+            <ul style={styles.gridList}>
+              {[
+                { name: 'Key documents', path: '/key-documents' },
+                { name: 'Useful links', path: '/useful-links' },
+                { name: 'Calendar', path: '/member-calendar' },
+                { name: 'Skills Hub', path: '/skills-development-hub' },
+                { name: 'All resources', path: '/all-resources' },
+                { name: 'Contact form', path: '/contact-form' },
+                { name: 'Feedback form', path: '/feedback-form' },
+              ].map((item, index) => (
+                <li key={index} style={styles.listItem}>
+                  <Link to={item.path} style={styles.link}>
+                    <span style={styles.linkIcon}>🔗</span>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </motion.div>
         </motion.div>
@@ -148,10 +138,13 @@ const styles = {
     fontWeight: 'bold',
     marginBottom: '1rem',
   },
-  list: {
-    listStyleType: 'none',
+  gridList: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+    gap: '0.5rem',
     padding: 0,
     margin: 0,
+    listStyleType: 'none',
   },
   listItem: {
     marginBottom: '0.5rem',
@@ -159,7 +152,18 @@ const styles = {
   link: {
     color: '#555',
     textDecoration: 'none',
-    display: 'block',
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0.5rem',
+    borderRadius: '4px',
+    transition: 'background-color 0.3s, color 0.3s',
+  },
+  linkIcon: {
+    marginRight: '0.5rem',
+  },
+  linkHover: {
+    color: '#333',
+    backgroundColor: '#f5f5f5',
   },
   socialMediaSection: {
     display: 'flex',
