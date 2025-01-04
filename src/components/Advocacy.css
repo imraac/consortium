@@ -3,6 +3,7 @@
     justify-content: space-between; /* Space between the containers */
     padding: 20px;
     margin-top: 150px;
+    font-size: 0.95rem;
     flex: 1; /* Padding around the main container */
   }
   

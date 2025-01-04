@@ -5,6 +5,7 @@
     border-radius: 5px; /* Rounded corners */
     margin: 20px 0; /* Margin above and below */
     margin-top: 10px; /* Default margin for larger screens */
+    
 }
 /* Media query for smaller screens */
 @media (max-width: 768px) { /* Adjust the breakpoint as needed */
@@ -15,6 +16,7 @@
 .core-values-list {
     list-style-type: none; /* Removes default bullet points */
     padding: 0;
+    
   }
   
   .core-values-list li {

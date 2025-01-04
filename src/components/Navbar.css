@@ -295,6 +295,7 @@
 .why-us-content {
   max-width: 40%;
   color: black;
+  font-size: 0.55rem;
 }
 
 .services {
@@ -317,6 +318,7 @@
 .service-title {
   color: white !important;  /* Dark color for the title */
   font-weight: bold; /* Optional: make the title bold */
+
 }
 
 .service-description {
@@ -432,11 +434,13 @@
 .needs-content {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-size: 0.55rem;
+
 }
 
 .why-us-content p,
 .needs-content {
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin-bottom: 1rem;
 }
 
@@ -483,7 +487,7 @@
 
 .why-us-content h2,
 .needs-content {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -889,6 +893,7 @@ nav {
   transition: background-color 0.3s;
   gap: 6rem;
   font-family:  Cochin, Georgia, Times;
+  font-size: 0.89rem;
   font-weight: 200px;
   
 }
