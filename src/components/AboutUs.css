@@ -1,6 +1,7 @@
 /* Global font family for all text elements */
 body, p, h1, h2, h3, h4, h5, h6, ul, li, a, span, div {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  
 }
 
 /* Keep the existing styles for specific elements */
@@ -12,18 +13,21 @@ body, p, h1, h2, h3, h4, h5, h6, ul, li, a, span, div {
   text-align: left; /* Align text to the left */
   margin-top: 1px;
   flex: 1;
+  font-size: 0.55rem !important;
 }
 
 .about-us h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #333;
+  
 }
 
 .about-us h2 {
   font-size: 1.8rem;
   margin: 20px 0 10px;
-  color: #c02020; /* Change this color as needed */
+  color: #c06020 !important; /* Change this color as needed */
+  font-size: 1rem !important;
 }
 
 .about-us p {
@@ -32,6 +36,7 @@ body, p, h1, h2, h3, h4, h5, h6, ul, li, a, span, div {
   color: #555;
   margin-bottom: 15px;
   text-align: left; /* Ensure paragraphs are left-aligned */
+  font-size: 0.85rem !important;
 }
 
 .about-us p:last-child {

@@ -178,7 +178,7 @@ const styles = {
   },
   footerBottom: {
     textAlign: 'center',
-    marginTop: '1.5rem',
+    marginTop: '0.55rem',
     borderTop: '1px solid #ddd',
     paddingTop: '1rem',
     fontSize: "0.75rem",
