@@ -7,9 +7,10 @@ const Footer = () => {
   return (
     <motion.footer
     style={{
-      background: 'linear-gradient(to top, #FFFFFF, #)',
+      background: 'linear-gradient(to top, #FFFFFF, #FFFFFF)',
       color: '#333',
       padding: '2rem 0',
+      fontSize: "0.85rem",
     }}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -157,6 +158,7 @@ const styles = {
     padding: '0.5rem',
     borderRadius: '4px',
     transition: 'background-color 0.3s, color 0.3s',
+    
   },
   linkIcon: {
     marginRight: '0.5rem',
@@ -179,11 +181,14 @@ const styles = {
     marginTop: '1.5rem',
     borderTop: '1px solid #ddd',
     paddingTop: '1rem',
+    fontSize: "0.75rem",
+    
   },
   footerLink: {
     color: '#002D74',
     textDecoration: 'underline',
     margin: '0 0.25rem',
+    fontSize: "0.75rem",
   },
 };
 
