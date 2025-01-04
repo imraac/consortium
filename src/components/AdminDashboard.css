@@ -49,14 +49,7 @@
     font-size: 24px; /* Adjust size as needed */
   }
   
-  .admin-dash-header-icons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .admin-dash-header-icons .burger-menu {
-    margin-left: 15px; /* Space between icons */
-  }
+ 
   
 
 .admin-dash-logo a {
@@ -72,11 +65,6 @@
 }
 
 
-.admin-dash-header-icons {
-    display: flex;
-    align-items: center;
-}
-
 .burger-menu {
     cursor: pointer;
     font-size: 24px;
@@ -84,16 +72,6 @@
     color: #333; /* Dark color for icon */
 }
 
-.admin-dash-account {
-    display: flex;
-    align-items: center;
-}
-
-.admin-dash-account span {
-    margin-right: 10px; /* Space between text and image */
-    font-weight: 500; /* Slightly bold */
-    color: #333; /* Dark color for text */
-}
 
 
 
@@ -147,7 +125,7 @@
 /* Promo Card */
 /* Promo Card */
 .admin-dash-promo-card {
-    background-image: url('/happypeople.jpg'); /* Path to your background image */
+    background-image: url('https://i0.wp.com/nightingaledvs.com/wp-content/uploads/2023/05/image2.png?fit=1999%2C1151&ssl=1'); /* Path to your background image */
     background-size: cover; /* Cover the entire card */
     background-position: center; /* Center the background image */
     color: #f7f7c8; /* Text color */
@@ -223,97 +201,186 @@
         width: 100%; /* Take full width */
     }
 }
+/* Main User Card */
 .admin-dash-user-card {
-    background: rgb(255, 255, 255);
-    color: #333;
-    border-radius: 8px;
-    padding: 2rem;
-    margin-top: 20px; /* Space between promo card and user card */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background: linear-gradient(145deg, #ff8c00, #ffdd70); /* Bright gradient background */
+  color: #333;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 30px;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden; /* So the shadow doesn't get cut off */
 }
 
+/* Hover Effect */
+.admin-dash-user-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Style */
 .admin-dash-user-card h2 {
-    margin-bottom: 1rem; /* Space below the heading */
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* User Table */
+.admin-dash-user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
 
-/* Responsive adjustments for smaller screens */
+/* Table Head */
+.admin-dash-user-table th {
+  background-color: #ff8c00;
+  color: #fff;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+/* Table Body */
+.admin-dash-user-table td {
+  padding: 0.8rem;
+  color: #444;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover Row Effect */
+.admin-dash-user-table tr:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design for Small Screens */
 @media (max-width: 768px) {
   .admin-dash-user-card {
-      padding: 1rem;
-      margin-top: 10px;
-      border-radius: 5px;
+      padding: 1.25rem;
+      margin-top: 20px;
+      border-radius: 10px;
+      max-width: 90%;
   }
 
   .admin-dash-user-card h2 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-bottom: 0.75rem;
   }
 
   .admin-dash-user-table th, .admin-dash-user-table td {
-      font-size: 0.9rem; /* Reduce font size for smaller screens */
+      font-size: 0.95rem;
   }
 
-  /* Ensure table responsiveness */
   .admin-dash-user-table {
       display: block;
-      overflow-x: auto; /* Allow horizontal scrolling on very small screens */
-      white-space: nowrap; /* Prevent content from wrapping */
+      overflow-x: auto;
+      white-space: nowrap;
   }
 }
 
 /* Further adjustments for extra-small screens */
 @media (max-width: 480px) {
   .admin-dash-user-card {
-      padding: 0.75rem;
+      padding: 1rem;
+      border-radius: 8px;
   }
 
   .admin-dash-user-card h2 {
-      font-size: 1rem;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
   }
 
   .admin-dash-user-table th, .admin-dash-user-table td {
-      padding: 0.5rem; /* Adjust padding for compact layout */
+      padding: 0.75rem;
+      font-size: 0.85rem;
   }
 }
-.admin-dash-user-table {
-    width: 100%;
-    border-collapse: collapse; /* Ensure borders are collapsed */
+
+/* Button to toggle the visibility of users */
+.admin-dash-user-card button {
+  background-color: #ff8c00;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem;
 }
 
-.admin-dash-user-table th,
-.admin-dash-user-table td {
-    padding: 0.75rem; /* Padding for table cells */
-    text-align: left; /* Align text to the left */
-    border-bottom: 1px solid #ddd; /* Border for separation */
+.admin-dash-user-card button:hover {
+  background-color: #ff6600;
+  transform: translateY(-3px);
 }
 
-.admin-dash-user-table th {
-    background-color: #f5f5f5; /* Light background for headers */
-}
-.admin-dash-header {
-    display: flex;
-    justify-content: space-between; /* Adjust alignment */
-    align-items: center;
-    padding: 10px 20px; /* Add padding */
-    background-color: #eef3f3; /* Example background color */
-    color: white; /* Text color */
-}
-
-.toggle-user-card-btn {
-    background-color: #3ABEF9 !important; /* Dark red background */
-    color: #f3f7f3 !important; /* Green text color */
-   /* Green border */
-    padding: 0.5rem 1rem; /* Adjust padding for better appearance */
-    border-radius: 1px !important; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth transition */
-    cursor: pointer;
-    margin: 0 1rem; 
+/* Modal for Document Viewer */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.toggle-user-card-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
+
+.modal-content iframe {
+  width: 100%;
+  height: 600px;
+  border-radius: 8px;
+}
+
+.modal-content button {
+  background-color: #ff8c00;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #ff6600;
+}
+
+
+
+
+
+
 .admin-dash-sidebar {
     width: 250px; /* Sidebar width */
     transition: transform 0.3s ease; /* Smooth transition */
@@ -330,58 +397,145 @@
     padding: 10px 15px; /* Padding for sidebar header */
 }
 
-.close-sidebar {
-    position: absolute; /* Absolute positioning */
-    top: 10px; /* Distance from the top */
-    right: 15px; /* Distance from the right */
-    cursor: pointer; /* Pointer cursor for clickable icon */
-    font-size: 24px; /* Adjust size of the close icon */
+
+
+  
+
+.admin-dash-application-card {
+  margin: 20px 0; /* Reduced margin for cleaner spacing */
+  padding: 20px; /* More compact padding */
+  background: 
+   
+    url('map2.png'); /* Add your background image here */
+  background-size: cover; /* Ensure the image covers the entire card */
+  background-position: center; /* Center the image for balance */
+  border-radius: 12px; /* Slightly smaller radius for modern look */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow for elegance */
+  width: 100%; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
   
-  .admin-dash-sidebar-header h4 {
-    margin: 0; /* Remove default margin */
-  }
-  .admin-dash-application-card {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+  /* Hover Effect for Cards */
+  .admin-dash-application-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   }
   
+  /* Table Layout */
   .admin-dash-application-table {
     width: 100%;
     border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1.5rem; /* Compact spacing */
+    background-color: #ffffff;
+    overflow: hidden;
+    /* Matches card styling */
   }
   
-  .admin-dash-application-table th, .admin-dash-application-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-  }
-  
+  /* Table Header */
   .admin-dash-application-table th {
-    background-color: #62b43c;
+    padding: 12px;
+    background: linear-gradient(135deg, #4A90E2, #65CAFD);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
   
+  /* Table Cells */
+  .admin-dash-application-table td {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  /* Row Hover Effect */
+  .admin-dash-application-table tr:hover {
+    background-color: #f5fbff; /* Subtle hover color */
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Button Style */
   .admin-dash-application-table button {
-    padding: 5px 10px;
-    background-color:  #3ABEF9 ;
-    color: white;
+    padding: 8px 16px;
+    color: #ffffff;
     border: none;
-    border-radius: 1px;
+ /* Rounded buttons for modern style */
+    background: linear-gradient(135deg, #4A90E2, #3AA9F2);
     cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 3px; /* Add space between buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
-  .toggle-application-card-btn{
-    color: rgb(34, 75, 6);
-
-  }
+  
   
   .admin-dash-application-table button:hover {
-    background-color: #57b300;
+    background: linear-gradient(135deg, #3AA9F2, #1C8CFB);
+    transform: translateY(-2px); /* Subtle lift on hover */
   }
+  
+  .admin-dash-application-table button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+  }
+  
+  /* Responsiveness for Smaller Screens */
+  @media (max-width: 1024px) {
+    .admin-dash-application-card {
+      padding: 16px;
+    }
+  
+    .admin-dash-application-table th, 
+    .admin-dash-application-table td {
+      padding: 10px;
+      font-size: 0.85rem;
+    }
+  
+    .admin-dash-application-table button {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-dash-application-card {
+      padding: 12px;
+    }
+  
+    .admin-dash-application-table th, 
+    .admin-dash-application-table td {
+      padding: 8px;
+      font-size: 0.8rem;
+    }
+  
+    .admin-dash-application-table button {
+      padding: 5px 10px;
+      font-size: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .admin-dash-application-card {
+      padding: 10px;
+    }
+  
+    .admin-dash-application-table th, 
+    .admin-dash-application-table td {
+      padding: 6px;
+      font-size: 0.75rem;
+    }
+  
+    .admin-dash-application-table button {
+      padding: 4px 8px;
+      font-size: 0.7rem;
+    }
+  }
+  
   
 
 
@@ -543,3 +697,55 @@
       /* Laptop styles remain as they are */
   }
 }
+
+
+.admin-dash-header-icons {
+    display: flex;
+    flex-direction: column; /* Stack the icons vertically */
+    position: fixed; /* Stick to the left of the page */
+    top: 10%; /* Adjust as needed */
+    left: 20px; /* Distance from the left edge */
+    gap: 10px; /* Add spacing between elements */
+  }
+  
+  .toggle-user-card-btn,
+  .toggle-application-card-btn {
+    margin-top: 10px; /* Space between the buttons */
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .toggle-user-card-btn:hover,
+  .toggle-application-card-btn:hover {
+    background-color: #e0e0e0; /* Slight hover effect */
+  }
+  
+  .admin-dash-account {
+    width: 50px; /* Adjust icon size */
+    height: 50px;
+    background-color: #ccc; /* Placeholder background */
+    border-radius: 50%; /* Make it a circle */
+  }
+  .admin-dash-toggle-buttons {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .admin-dash-toggle-buttons button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .admin-dash-toggle-buttons button:hover {
+    background-color: #0056b3;
+  }
+  

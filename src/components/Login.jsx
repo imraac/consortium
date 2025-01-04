@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "./AuthProvider";
-import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa"; // Importing the eye icons
-import { motion } from "framer-motion"; // Framer Motion for animations
+import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
+import { motion } from "framer-motion";
 
-// Styles for Footer
 const styles = {
   footerContainer: {
     textAlign: "center",
@@ -24,15 +23,16 @@ const styles = {
   footerText: {
     color: "#002D74",
     margin: "0",
+    fontSize: "0.75rem",
   },
   footerLink: {
     color: "",
     textDecoration: "none",
     margin: "0 0.5rem",
+    fontSize: "0.75rem",
   },
 };
 
-// SuccessMessage Component
 const SuccessMessage = ({ message, isError }) => {
   if (!message) return null;
 
@@ -47,16 +47,29 @@ const SuccessMessage = ({ message, isError }) => {
   );
 };
 
-// Login Component
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(""); // State for success message
-  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [success, setSuccess] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth); // Track screen width
   const { login } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const getMarginTop = () => {
+    if (screenWidth < 768) return "3rem";
+    if (screenWidth < 1024) return "4rem";
+    return "8rem";
+  };
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -65,11 +78,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/login", {
-        email,
-        password,
-      });
-
+      const response = await axios.post("http://localhost:5000/login", { email, password });
       const data = response.data;
 
       setTimeout(() => {
@@ -92,11 +101,7 @@ const Login = () => {
     } catch (err) {
       setSuccess("Sorry, your password was incorrect. Please double-check your password.");
       setLoading(false);
-      if (err.response) {
-        setError(err.response.data.message || "invlid member email");
-      } else {
-        setError("Opss!");
-      }
+      setError(err.response?.data?.message || "Opss!");
     }
   };
 
@@ -112,8 +117,10 @@ const Login = () => {
         </div>
       )}
 
-      <div className="flex flex-col-reverse md:flex-row max-w-5xl mx-auto mt-[164px] w-full items-center">
-        {/* Animated Image */}
+      <div
+        className="flex flex-col-reverse md:flex-row max-w-5xl mx-auto w-full items-center"
+        style={{ marginTop: getMarginTop() }}
+      >
         <motion.div
           className="w-full md:w-1/2"
           initial={{ x: -100, opacity: 0 }}
@@ -123,7 +130,6 @@ const Login = () => {
           <img className="rounded-2xl mx-auto mt-8 md:mt-0" src="/test2.svg" alt="Login illustration" />
         </motion.div>
 
-        {/* Form Section */}
         <div className="w-full md:w-1/2 px-8 md:px-16">
           <h4 className="font-bold text-2xl text-[#002D74]">
             Join the Minority Rights Organisation (MROs) by creating an account.
@@ -133,7 +139,7 @@ const Login = () => {
 
           <form onSubmit={handleLoginSubmit} className="flex flex-col gap-4">
             <input
-              className="p-2 mt-8  border"
+              className="p-2 mt-8 border"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -142,7 +148,7 @@ const Login = () => {
             />
             <div className="relative">
               <input
-                className="p-2  border w-full"
+                className="p-2 border w-full"
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -153,7 +159,7 @@ const Login = () => {
                 className="absolute top-3 right-3 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ?<FaEye />:   <FaEyeSlash />}
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
               </div>
             </div>
             <button
@@ -177,9 +183,7 @@ const Login = () => {
           <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">
             <p>Don't have an account?</p>
             <Link to="/signup">
-              <button
-                className="py-2 px-5 text-blue border border-red-500 hover:scale-110 duration-300  hover:shadow-lg hover:shadow-[#65cafd] focus:outline-none"
-              >
+              <button className="py-2 px-5 text-blue border border-red-500 hover:scale-110 duration-300 hover:shadow-lg hover:shadow-[#65cafd] focus:outline-none">
                 Register
               </button>
             </Link>
@@ -187,13 +191,7 @@ const Login = () => {
         </div>
       </div>
 
-      <Link
-        to="/signup"
-        className="absolute top-20 left-2 md:left-[300px] flex items-center justify-center w-12 h-12 bg-gradient-to-r from-[#65cafd] via-[#65cafd] to-[#65cafd] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-2xl hover:shadow-[#65cafd] transition-all duration-300"
-      >
-        <FaArrowLeft className="text-xl" />
-      </Link>
-
+     
       <motion.div
         style={styles.footerContainer}
         initial={{ y: 50 }}
@@ -203,10 +201,21 @@ const Login = () => {
         <div style={styles.horizontalLine}></div>
         <p style={styles.footerText}>
           &copy; {new Date().getFullYear()} MROs Consortium. All rights reserved. <br />
-          <Link to="/privacy-policy" style={styles.footerLink}>Privacy policy</Link> | 
-          <Link to="/terms-and-conditions" style={styles.footerLink}>Terms and conditions</Link> | 
-          <Link to="/cookies-policy" style={styles.footerLink}>Cookies policy</Link> | 
-          <Link to="/copyright" style={styles.footerLink}>Copyright</Link>
+          <Link to="/privacy-policy" style={styles.footerLink}>
+            Privacy policy
+          </Link>{" "}
+          |{" "}
+          <Link to="/terms-and-conditions" style={styles.footerLink}>
+            Terms and conditions
+          </Link>{" "}
+          |{" "}
+          <Link to="/cookies-policy" style={styles.footerLink}>
+            Cookies policy
+          </Link>{" "}
+          |{" "}
+          <Link to="/copyright" style={styles.footerLink}>
+            Copyright
+          </Link>
         </p>
       </motion.div>
     </section>
