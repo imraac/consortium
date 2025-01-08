@@ -1,31 +1,44 @@
-.update-profile-wrapper {
-    display: flex; /* Use flexbox to align items */
-    margin: 0 auto; /* Center horizontally */
-    height: 100vh; /* Make the wrapper full height of the viewport */
-    width: 100%; /* Full width */
-}
+/* UpdateProfile.css */
 
+/* Container for the entire page */
 .update-profile-container {
-    width: 50%; /* Profile section takes half of the page */
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-    margin-right: 20px; /* Space between profile and FAQs */
-    display: flex; /* Use flexbox for vertical alignment */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
+    padding: 20px;
+    width: 100%; /* Make the container take full width */
+    margin: 0 auto;
+    margin-top: 100px;
+ 
 }
 
-.update-profile-container h2 {
-    font-size: 28px;
+/* Styling for instructions at the top */
+.instructions {
+    width: 100%; /* Make instructions span the full width */
+   
+    background-color: #eee;
+    padding: 20px;
+
     margin-bottom: 20px;
-    color: #007bff;
+    text-align: left; 
+    margin-top: 50px;/* Align text to the left */
 }
 
-.update-profile-form .form-group {
-    margin-bottom: 20px;
+
+
+.instructions p {
+    font-size: 16px;
+    color:#fa6005;
+}
+
+
+
+.update-profile-form {
+    max-width: 800px;
+    margin-left: 0px; /* Align form to the left */
+    padding: 20px;
+    background-color: #ffffff;
+  
+
+    margin-top: 20px;
+    text-align: left; /* Align form content to the left */
 }
 
 .update-profile-form label {
@@ -35,97 +48,58 @@
     color: #333;
 }
 
-.update-profile-form input,
+.update-profile-form input[type="text"],
+.update-profile-form input[type="url"],
+.update-profile-form input[type="number"],
 .update-profile-form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
 .update-profile-form textarea {
-    height: 100px;
-    resize: none;
+    resize: vertical;
+    height: 80px;
 }
 
-.submit-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
+.update-profile-form input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.update-profile-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, #65cafd, #0085d0, #006bb3); /* Gradient background */
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for scale and shadow */
 }
 
-.submit-button:hover {
-    background-color: #0056b3;
-}
-/* FAQ Box Styling */
-.faqs-container {
-    width: 50%; /* FAQ section takes the other half of the page */
-    padding: 30px; /* Increased padding for better spacing */
-    background-color: #f7f7f7; /* Light gray background for contrast */
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    font-family: 'Arial', sans-serif; /* Consistent font */
-    display: flex; /* Use flexbox for vertical alignment */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: flex-start; /* Align items at the start */
-    margin-top: 220px;
+.update-profile-form button:disabled {
+    background-color: #ccc;  /* Gray out the button when disabled */
+    cursor: not-allowed;
 }
 
-.faqs-container h4 {
-    font-size: 26px; /* Slightly larger font for the header */
-    color: #0056b3; /* Darker blue for better readability */
-    margin-bottom: 20px; /* Increased bottom margin */
-    border-bottom: 2px solid #007bff; /* Underline for emphasis */
-    padding-bottom: 10px; /* Padding for spacing */
+.update-profile-form button:hover {
+    transform: scale(1.05); /* Hover scale effect */
+    box-shadow: 0 4px 6px rgba(101, 202, 253, 0.6); /* Shadow with the gradient color */
 }
 
-.faqs-container ul {
-    list-style-type: none; /* Remove default list styling */
-    padding: 0; /* Remove default padding */
+.update-profile-form button:focus {
+    outline: none; /* Remove default focus outline */
 }
 
-.faqs-container li {
-    margin-bottom: 15px; /* Spacing between FAQ items */
-    padding: 10px; /* Padding inside each FAQ item */
-    background-color: #ffffff; /* White background for each item */
-    border-radius: 8px; /* Rounded corners for items */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.2s; /* Smooth transition on hover */
+.update-profile-form div {
+    margin-bottom: 20px;
 }
 
-.faqs-container li:hover {
-    transform: translateY(-2px); /* Slightly lift on hover */
+.update-profile-form div:last-child {
+    margin-bottom: 0;
 }
-
-.faqs-container strong {
-    color: #333; /* Darker color for question text */
-}
-
-.faqs-container p {
-    margin-top: 5px; /* Margin for spacing */
-    font-size: 16px; /* Font size for answers */
-    color: #555; /* Slightly lighter color for answer text */
-}
-.back-button-profile {
-    background: none;
-    border: none;
-    color: #007bff;
-    font-size: 14px;
-    text-decoration: underline;
-    cursor: pointer;
-    padding: 0;
-    position: absolute;
-    top: 180px; /* Adjust distance from the top of the page */
-    left: 20px; /* Adjust distance from the left of the page */
-  }
-  
-  .back-button:hover {
-    color: #0056b3; /* Darker blue on hover */
-  }
-  
-

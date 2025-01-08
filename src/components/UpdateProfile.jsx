@@ -1,113 +1,183 @@
-import React, { useState } from "react";
-import "./UpdateProfile.css";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './UpdateProfile.css';
+import Footer from './Footer';
+const UpdateProfile = () => {
+  const [formData, setFormData] = useState({
+    full_name: '',
+    acronym: '',
+    description: '',
+    mission_statement: '',
+    website: '',
+    is_ngo: false,
+    years_operational: '',
+    reason_for_joining: '',
+    willing_to_participate: false,
+    commitment_to_principles: false,
+  });
 
-function UpdateProfile() {
-  const [missionStatement, setMissionStatement] = useState("");
-  const [website, setWebsite] = useState("");
-  const [partners, setPartners] = useState("");
-  const [fieldOffices, setFieldOffices] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Profile Updates:", {
-      missionStatement,
-      website,
-      partners,
-      fieldOffices,
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
     });
-    // Add logic to update the profile (API call or state update)
   };
 
-  const handleBack = () => {
-    // Navigate back to the previous page
-    window.history.back();
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: checked,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('http://127.0.0.1:5000/agency', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        try {
+          const data = await response.json();
+          console.log('Updated agency data:', data);
+          navigate('/member-account-administrator');
+        } catch (jsonError) {
+          console.error('Error parsing JSON response:', jsonError);
+        }
+      } else {
+        const errorData = await response.json().catch(() => null);
+        console.error('Error updating agency:', errorData || response.statusText);
+      }
+    } catch (error) {
+      console.error('Error during profile update:', error);
+    }
   };
 
   return (
-    <div className="update-profile-wrapper">
-  <button onClick={handleBack} className="back-button-profile">
-    Back
-  </button>
-  <div className="update-profile-container">
-    <h2>Edit Profile</h2>
-    <form onSubmit={handleSubmit} className="update-profile-form">
-      {/* Form fields */}
-      <div className="form-group">
-        <label htmlFor="mission-statement">Mission Statement:</label>
-        <textarea
-          id="mission-statement"
-          value={missionStatement}
-          onChange={(e) => setMissionStatement(e.target.value)}
-          required
-          placeholder="Enter your mission statement..."
-        />
+    <div className="update-profile-container">
+      <div className="instructions">
+       
+        <p>
+          This page allows you to update your organization’s profile. Please fill in the fields below with the required information.
+          If you press the "Update Profile" button, the changes will be saved and you will be redirected to the "Member Account Administrator" page.
+        </p>
       </div>
 
-      <div className="form-group">
-        <label htmlFor="website">Website:</label>
-        <input
-          type="url"
-          id="website"
-          value={website}
-          onChange={(e) => setWebsite(e.target.value)}
-          placeholder="https://example.com"
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="partners">Partners in Somalia:</label>
-        <input
-          type="text"
-          id="partners"
-          value={partners}
-          onChange={(e) => setPartners(e.target.value)}
-          required
-          placeholder="List of partners in Somalia"
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="field-offices">Field Offices:</label>
-        <input
-          type="text"
-          id="field-offices"
-          value={fieldOffices}
-          onChange={(e) => setFieldOffices(e.target.value)}
-          required
-          placeholder="Enter locations of field offices"
-        />
-      </div>
-
-      <button type="submit" className="submit-button">
-        Update Profile
-      </button>
-    </form>
-  </div>
-
-  <div className="faqs-container">
-    <h4>Frequently Asked Questions (FAQs)</h4>
-    <ul>
-      <li>
-        <strong>How can I update my profile?</strong>
-        <p>You can update your profile by clicking the "Edit Profile" button at the top of this page.</p>
-      </li>
-      <li>
-        <strong>How do I add or remove field offices?</strong>
-        <p>Navigate to the "Field Offices" section to add or request the removal of offices.</p>
-      </li>
-      <li>
-        <strong>Can I update my organization's mission statement?</strong>
-        <p>Yes, the mission statement can be edited under the "Profile Information" section.</p>
-      </li>
-      <li>
-        <strong>Who can see my profile information?</strong>
-        <p>Your profile is visible to other members of the consortium but can be limited in settings.</p>
-      </li>
-    </ul>
-  </div>
-</div>
-  )
-  
-}
+      <form onSubmit={handleSubmit} className="update-profile-form">
+        <div>
+          <label htmlFor="full_name">Full Name</label>
+          <input
+            type="text"
+            id="full_name"
+            name="full_name"
+            value={formData.full_name}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="acronym">Acronym</label>
+          <input
+            type="text"
+            id="acronym"
+            name="acronym"
+            value={formData.acronym}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            value={formData.description}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="mission_statement">Mission Statement</label>
+          <textarea
+            id="mission_statement"
+            name="mission_statement"
+            value={formData.mission_statement}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="website">Website</label>
+          <input
+            type="url"
+            id="website"
+            name="website"
+            value={formData.website}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="is_ngo">Is NGO?</label>
+          <input
+            type="checkbox"
+            id="is_ngo"
+            name="is_ngo"
+            checked={formData.is_ngo}
+            onChange={handleCheckboxChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="years_operational">Years Operational</label>
+          <input
+            type="number"
+            id="years_operational"
+            name="years_operational"
+            value={formData.years_operational}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="reason_for_joining">Reason for Joining</label>
+          <textarea
+            id="reason_for_joining"
+            name="reason_for_joining"
+            value={formData.reason_for_joining}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="willing_to_participate">Willing to Participate?</label>
+          <input
+            type="checkbox"
+            id="willing_to_participate"
+            name="willing_to_participate"
+            checked={formData.willing_to_participate}
+            onChange={handleCheckboxChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="commitment_to_principles">Commitment to Principles?</label>
+          <input
+            type="checkbox"
+            id="commitment_to_principles"
+            name="commitment_to_principles"
+            checked={formData.commitment_to_principles}
+            onChange={handleCheckboxChange}
+          />
+        </div>
+        <button type="submit">Update Profile</button>
+      </form>
+ <Footer/>
+    
+    </div>
+  );
+};
 
 export default UpdateProfile;
