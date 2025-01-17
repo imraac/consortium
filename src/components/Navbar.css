@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
-  background-color: #007bff; /* Blue */
+  background-color: #007bff; 
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -42,7 +42,7 @@
   transform: scale(1.2);
 }
 
-/* Points Effect */
+
 .points_wrapper {
   display: flex;
   gap: 5px;
@@ -163,41 +163,40 @@
 
 .carousel-caption {
   position: absolute;
-  top: 50%; /* Center vertically */
-  right: 10%; /* Align to the right */
-  transform: translateY(-50%); /* Adjust position to center vertically */
-  text-align: right; /* Right-align text */
+  top: 50%; 
+  right: 10%;
+  transform: translateY(-50%); 
+  text-align: right; 
   color: white;
-  padding: 20px; /* Increase padding for a better look */
-  background: none; /* Remove background */
-  width: 40%; /* Adjust width for right-aligned captions */
+  padding: 20px;
+  background: none; 
+  width: 40%; 
 }
 
 .caption-background {
-  background: none; /* Remove background */
-  padding: 0; /* Remove padding */
+  background: none; 
+  padding: 0;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: flex-end; /* Align items to the right */
-  justify-content: center; /* Center items vertically */
+  flex-direction: column; 
+  align-items: flex-end; 
+  justify-content: center;
 }
 
 .caption-button {
-  font-size: 1rem; /* Adjust button font size for smaller screens */
-  padding: 8px 16px; /* Adjust button padding */
-  display: block; /* Make the button block-level */
-  margin: 1rem auto 0 auto; /* Center the button with auto margins */
+  font-size: 1rem; 
+  padding: 8px 16px; 
+  display: block; 
+  margin: 1rem auto 0 auto; 
   text-align: center;
-  background-color: #5bc6f8 !important; /* Dark green color */
-  color: white; /* White text color */
-  border: none; /* Remove any borders */
-  border-radius: 1px !important; /* Make corners sharp (no rounding) */
+  background-color: #5bc6f8 !important;
+  color: white; 
+  border: none;
+  border-radius: 1px !important; 
   cursor: pointer;
 }
 
-/* Ensure Carousel is Below Navbar */
+
 .carousel {
- /* Adjust this value to match your navbar height */
   position: relative;
   z-index: 0;
   margin-top: 140px;
@@ -209,7 +208,7 @@
   object-fit: cover;
 }
 
-/* Carousel Controls */
+
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
@@ -220,7 +219,7 @@
   filter: invert(1);
 }
 
-/* Carousel Caption */
+
 .carousel-caption h5 {
   font-size: 5rem;
   margin-top: -15px;
@@ -234,26 +233,24 @@
 .carousel-caption h3 {
   font-size: 5rem;
 }
-/* Media query for responsiveness */
 @media (max-width: 768px) {
   .carousel-item img {
     height: 300px;
     margin-top: 10px; 
-    /* Reduce image height on smaller screens */
   }
   @media (max-width: 768px) {
   
   
     .carousel {
-      margin-top: 79px; /* Adjust this value according to your navbar height */
+      margin-top: 79px; 
     }
   }
   
   .carousel-caption {
-    width: 75%; /* Limit caption width on smaller screens */
-    padding: 15px; /* Adjust padding for smaller screens */
-    right: 5%; /* Adjust position for smaller screens */
-    text-align: right; /* Keep right alignment */
+    width: 75%; 
+    padding: 15px; 
+    right: 5%;
+    text-align: right; 
   }
 
   .carousel-caption h5 {
@@ -266,7 +263,7 @@
   }
 
   .carousel-caption button {
-    font-size: 0.875rem; /* Further reduce button size */
+    font-size: 0.875rem; 
     padding: 6px 16px;
     margin-bottom: 100px !important;
   }
@@ -309,27 +306,26 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   background-image: url('/manngo.jpg') !important;
-  background-size: cover; /* Cover the entire section */
+  background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
 
 }
 
 .service-title {
-  color: white !important;  /* Dark color for the title */
-  font-weight: bold; /* Optional: make the title bold */
-
+  color: white !important;  
+  font-weight: bold; 
 }
 
 .service-description {
 
-  color: #070707 !important;/* White color for the description */
+  color: #070707 !important;
 }
 
 
 @media (max-width: 768px) {
   .services {
-    padding-top: 50px !important; /* Adjusts padding for smaller screens */
+    padding-top: 50px !important; 
   }
 }
 .services-col {
@@ -352,7 +348,6 @@
   line-height: 1.6;
 }
 
-/* Ensure specificity for call-us images */
 .call-us a img {
   width: 35px;
   height: 35px;
@@ -360,7 +355,6 @@
   margin-left: 7px;
 }
 
-/* For tablet and medium screens (max-width 768px) */
 @media screen and (max-width: 768px) {
   .call-us a img {
     width: 28px;
@@ -369,7 +363,6 @@
   }
 }
 
-/* For mobile phones and small screens (max-width 480px) */
 @media screen and (max-width: 480px) {
   .call-us a img {
     width: 22px;
@@ -389,12 +382,11 @@
   text-decoration: none; 
   transition: background-color 0.3s ease;
 }
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .learn-more-button {
-    background-color: #7cd4f7 !important; /* Same color for smaller screens */
+    background-color: #7cd4f7 !important; 
     font-size: 14px;
-    border-radius: 1px !important; /* Optional: slightly smaller font size for smaller screens */
+    border-radius: 1px !important; 
   }
 }
 
@@ -522,7 +514,7 @@
   text-align: center;
   padding-top: 100px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Default grid for larger screens */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   gap: 20px;
   
 }
@@ -565,7 +557,7 @@
 @media (max-width: 768px) {
   .services {
     width: 100%;
-    grid-template-columns: 1fr; /* Stack services in a single column */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -665,8 +657,8 @@ footer p {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 60vh; /* Adjust based on your design */
-  padding: 2.5rem 2rem; /* Top and bottom padding */
+  min-height: 60vh; 
+  padding: 2.5rem 2rem; 
 }
 
 .servicesHeader {
@@ -684,14 +676,14 @@ footer p {
 }
 
 .service--scroll {
-  width: 100%; /* Ensures the marquee takes full width */
-  overflow: hidden; /* Hide overflowing content */
-  position: relative; /* Positioning for inner content */
+  width: 100%; 
+  overflow: hidden; 
+  position: relative; 
 }
 
 .servicesContainer {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping of service boxes */
+  flex-wrap: wrap; 
   align-items: center;
   justify-content: center; 
   width: 100%;
@@ -703,9 +695,9 @@ footer p {
   background: #FAFAFA;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
   border-radius: 10px;
-  width: 1600px; /* Set a width for service boxes */
-  height: auto; /* Allow height to adjust based on content */
-  margin: 1rem; /* Reduced margin for smaller screens */
+  width: 1600px; 
+  height: auto; 
+  margin: 1rem; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -715,66 +707,65 @@ footer p {
 }
 
 .service--box:hover {
-  transform: scale(1.05); /* Slight scale on hover */
+  transform: scale(1.05); 
 }
 
 .service-icon {
-  font-size: 40px; /* Size for icons */
+  font-size: 40px;
 }
 
 .service-description {
-  text-align: center; /* Center-align text */
-  margin: 1rem 0; /* Space around description */
+  text-align: center; 
+  margin: 1rem 0;
 }
 
 .learn-more-button {
-  margin-top: 1rem; /* Space above the button */
-  padding: 0.5rem 1rem; /* Padding for the button */
-  background-color: #3ABEF9; /* Button color */
-  color: white; /* Text color */
-  border-radius: 5px; /* Rounded corners */
-  text-decoration: none; /* Remove underline */
-  transition: background-color 0.3s; /* Smooth transition */
+  margin-top: 1rem; 
+  padding: 0.5rem 1rem; 
+  background-color: #3ABEF9; 
+  color: white; 
+  border-radius: 5px;
+  text-decoration: none; 
+  transition: background-color 0.3s; 
 }
 
 .learn-more-button:hover {
-  background-color: #4caf50; /* Change color on hover */
+  background-color: #4caf50; 
 }
 
-/* Media Queries */
 @media screen and (max-width: 992px) {
   .service--box {
-      width: 45%; /* Adjust width for medium screens */
+      width: 45%; 
   }
 }
 
 @media screen and (max-width: 800px) {
   .services {
-      padding: 1rem; /* Adjust padding */
+      padding: 1rem; 
   }
 
   .servicesHeader h2 {
-      font-size: 3rem; /* Adjust header font size */
+      font-size: 3rem; 
   }
 
   .servicesContainer {
-      padding: 0.5rem; /* Adjust padding */
+      padding: 0.5rem; 
   }
 
   .service--box {
-      width: 48%; /* Adjust width for smaller screens */
-      margin: 0.5rem; /* Adjust margins */
+      width: 48%;
+      margin: 0.5rem; 
   }
 }
 
 @media screen and (max-width: 600px) {
   .service--box {
-      width: 90%; /* Full width for very small screens */
-      margin: 0.5rem; /* Smaller margins */
+      width: 90%; 
+      margin: 0.5rem; 
   }
 
   .servicesHeader h2 {
-      font-size: 2.5rem; /* Smaller header size */
+      font-size: 2.5rem; 
   }
 }
 
@@ -787,40 +778,37 @@ footer p {
 
 
 .call-us {
-  position: fixed; /* Fix it at the top */
-  top: 0; /* Position at the very top */
+  position: fixed; 
+  top: 0; 
   background: #65cafd;
   padding: 1rem;
   text-align: right;
   color: white;
   font-size: 1rem;
-  z-index: 1001; /* Higher than the navbar */
+  z-index: 1001; 
   width: 100%;
 }
 
-/* Navbar Styling */
 nav {
-  position: fixed; /* Keep the navbar fixed at the top */
-  top: 50px; /* Adjust to position below the "Call Us" section */
-  width: 100%; /* Ensure navbar spans the width of the screen */
+  position: fixed;
+  top: 50px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1% 2%;
-  z-index: 1000; /* Lower than .call-us */
-  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+  z-index: 1000; 
+  background-color: rgba(255, 255, 255, 0.8); 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
-  transition: backdrop-filter 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+  backdrop-filter: blur(10px); 
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease; 
 }
 
-/* Main Header */
 .main-header {
   backdrop-filter: blur(10px);
   background-image: linear-gradient(to bottom, #e7ecef00, #e7ecef);
 }
 
-/* Navbar Links */
 .nav-links ul {
   list-style: none;
  
@@ -903,76 +891,67 @@ nav {
 }
 
 .nav__menu li {
-  display: inline-block; /* Ensure li elements are inline */
+  display: inline-block; 
 }
 
-/* Base dropdown content */
 .dropdown__content {
   display: none;
   position: absolute;
-  background-color: #f7f7f7; /* Soft light gray background */
+  background-color: #f7f7f7; 
   padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  max-height: 200px; /* Set a maximum height for scrolling */
-  overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  border-radius: 8px; /* Add rounded corners for a smoother look */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  max-height: 200px; 
+  overflow-y: auto; 
+  border-radius: 8px;
 }
 
-/* Hover effect for dropdown */
 .dropdown:hover .dropdown__content {
   display: block;
 }
 
-/* Dropdown link styles */
 .dropdown__link {
-  text-decoration: none !important; /* Remove underline */
-  color: #333; /* Dark text for good readability */
-  padding: 8px 12px; /* Comfortable padding */
-  display: block; /* Make links take up full width */
-  font-weight: 500; /* Slightly bolder text for better emphasis */
-  border-radius: 6px; /* Rounded corners for the link */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+  text-decoration: none !important; 
+  color: #333; 
+  padding: 8px 12px; 
+  display: block; 
+  font-weight: 500; 
+  border-radius: 6px; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-/* Hover effect for links */
 .dropdown__link:hover {
-  background-color: #3abef9; /* Light blue background on hover */
-  color: white; /* Change text color to white on hover for contrast */
+  background-color: #3abef9; 
+  color: white; 
 }
 
-/* Styling for the dropdown content */
 .dropdown__content {
-  display: none; /* Hidden by default */
+  display: none; 
   position: absolute;
-  background-color: #ffffff; /* White background for clarity */
+  background-color: #ffffff; 
   padding: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for a soft depth effect */
-  z-index: 1;
-  min-width: 190px; /* Set a smaller minimum width for the dropdown */
-  max-width: 200px; /* Set a maximum width */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  min-width: 190px; 
+  max-width: 200px;
   left: 0;
   right: 0;
   margin: auto;
-  max-height: 200px; /* Set a maximum height */
-  overflow-y: auto; /* Enable vertical scrolling */
-/* Rounded corners for dropdown */
+  max-height: 200px; 
+  overflow-y: auto; 
 }
 
-/* Show the dropdown content when active */
 .dropdown.active .dropdown__content {
   display: block;
 }
 
-/* Mobile view adjustments */
 @media (max-width: 768px) {
   .dropdown__content {
-    min-width: 200px; /* Set a smaller minimum width */
-    max-width: 150px; /* Further reduce maximum width for mobile */
-    max-height: 150px; /* Reduce max-height for mobile */
+    min-width: 200px; 
+    max-width: 150px; 
+    max-height: 150px; 
   }
 
   .dropdown__link {
-    padding: 6px 10px; /* Smaller padding for mobile screens */
+    padding: 6px 10px; 
   }
 }
 
@@ -992,7 +971,7 @@ nav {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 10px;  /* Space between text and icon */
+  gap: 10px;  
 }
 
 .join-consortium-button:before {
@@ -1019,7 +998,7 @@ nav {
 
 .join-consortium-button svg {
   position: relative;
-  width: 15px; /* Set the width to match the SVG size */
+  width: 15px; 
   height: 10px;
   fill: none;
   stroke-linecap: round;
@@ -1047,22 +1026,20 @@ nav {
 
 .login-button {
   
-  padding: 10px 15px; /* Keep padding for a better look */
+  padding: 10px 15px; 
   
-  /* Position it at the right edge */
   position: absolute;
   right: 33px;
-  top: 50%; /* Vertically center the button if needed */
-  transform: translateY(-50%); /* Adjust for vertical centering */
+  top: 50%; 
+  transform: translateY(-50%); 
 }
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .login-button {
-    position: static; /* Reset position for small screens */
-    margin-top: 20px !important; /* Add margin for spacing */
-    padding: 8px 12px; /* Smaller padding */
-    font-size: 0.9rem; /* Smaller font size */
-    width: 100%; /* Make it full width */
+    position: static; 
+    margin-top: 20px !important;
+    padding: 8px 12px; 
+    font-size: 0.9rem; 
+    width: 100%; 
   }
 }
 
@@ -1070,7 +1047,7 @@ nav {
   background-color: #3ABEF9 !important;
 }
 
-/* Responsive Navbar */
+
 @media (max-width: 768px) {
   nav img {
     width: 150px ;
@@ -1086,14 +1063,14 @@ nav {
   }
 }
 
-/* Navbar Menu Toggle */
 
 
 
 
 
- /* Navbar Menu Toggle */
-/* Default styles for larger screens */
+
+
+
 .nav__menu {
   display: flex;
   align-items: center;
@@ -1101,45 +1078,45 @@ nav {
 }
 
 .nav__menu li {
-  display: inline-block; /* Keep items inline by default */
+  display: inline-block;
 }
 
 .nav__menu-toggle {
-  display: none; /* Hide by default */
+  display: none;
   cursor: pointer;
 }
 
-/* Styles for small screens */
+
 @media (max-width: 768px) {
   .nav__menu {
     position: absolute;
-    top: 80px; /* Position at the top of the screen */
-    left: 0; /* Align with the left edge of the screen */
-    width: 100% !important; /* Full width */
-    height: 60vh; /* Half of the viewport height */
-    background-color: white; /* Background color */
+    top: 80px;
+    left: 0;
+    width: 100% !important;
+    height: 60vh;
+    background-color: white;
     z-index: 1000;
     padding: 1rem;
-   /* Shadow for better visibility */
-    transform: translateY(-115%); /* Initially hide the menu */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for showing menu */
-    flex-direction: column; /* Stack items vertically on small screens */
+  
+    transform: translateY(-115%);
+    transition: transform 0.3s ease-in-out;
+    flex-direction: column; 
   }
 
   .nav__menu.active {
     display: flex;
-    transform: translateY(0); /* Slide the menu in from the top */
+    transform: translateY(0);
   }
 
   .nav__menu li {
-    display: block; /* Stack items vertically */
+    display: block;
     text-align: center;
-    padding: 1rem 0; /* Vertical padding */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Divider between items */
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   .nav__menu li:last-child {
-    border-bottom: none; /* Remove border from last item */
+    border-bottom: none; 
   }
 
   .nav__menu a {
@@ -1147,7 +1124,7 @@ nav {
     color: rgb(56, 53, 53);
     font-size: 1.1rem;
     font-weight: 600;
-    display: block; /* Ensure the whole item is clickable */
+    display: block; 
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
   }
@@ -1158,7 +1135,6 @@ nav {
     border-radius: 5px;
   }
 
-  /* Toggle button for mobile */
   .nav__menu-toggle {
     display: block;
     cursor: pointer;
@@ -1169,105 +1145,91 @@ nav {
 
 
 
-/* Rest of your existing styles... */
 .nav_img img {
   width: 250px !important;
-  margin-top: -2px; /* Adjust the width as needed */
+  margin-top: -2px; 
   height: auto; 
-  margin-bottom: -9px;/* Maintain aspect ratio */
+  margin-bottom: -9px;
 }
-/* Adjust button styles for smaller screens */
 @media (max-width: 768px) {
-  /* Adjust login and consortium buttons for smaller screens */
   .join-consortium-button, .login-button {
-    padding: 0.3rem 0.8rem; /* Reduce padding */
-    font-size: 0.9rem; /* Decrease font size */
-    margin: 0.5rem 0; /* Adjust margin for spacing */
-    width: 100%; /* Make buttons smaller and more responsive */
-    text-align: center; /* Ensure buttons are centered */
+    padding: 0.3rem 0.8rem; 
+    font-size: 0.9rem; 
+    margin: 0.5rem 0; 
+    width: 100%; 
+    text-align: center; 
     color: #ffffff !important;
 
   }
 
-  /* Center the buttons inside the navbar */
   .nav__buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70%; /* Ensure buttons take up the available space */
-    gap: 0rem; /* Add gap between buttons */
+    width: 70%; 
+    gap: 0rem; 
   }
 
-  /* Navbar icons smaller for mobile */
 
 
-  /* Ensure the nav__menu only takes up 60% of the screen and buttons align */
   .nav__menu {
     width: 75%;
     padding: 1rem;
     
   }
 
-  /* Ensure the icons are aligned properly in the smaller screen navbar */
  
-  /* Adjust the overall navbar styles for smaller screens */
   .nav {
     padding: 0.86rem;
-     /* Reduce navbar padding */
   }
 
-  /* Adjust the logo to fit within the smaller navbar */
   .nav img {
-    width: 120px; /* Reduce logo size for smaller screens */
+    width: 120px; 
   }
 }
-/* Default style for the "Join The Consortium" button (hidden by default) */
 .call-us .join-consortium-button {
-  display: none; /* Hidden on larger screens */
+  display: none; 
 }
 
-/* Show the "Join The Consortium" button only on smaller screens */
-/* Default style for the "Join The Consortium" button (hidden by default) */
+
 .call-us .join-consortium-button {
-  display: none; /* Hidden on larger screens */
+  display: none; 
 }
 
-/* Show the "Join The Consortium" button only on smaller screens */
 @media (max-width: 768px) {
   .call-us .join-consortium-button {
     display: inline-block !important;
-    font-size: 15px !important; /* Smaller font size */
-    padding: 4px 6px ; /* Small padding */
+    font-size: 15px !important; 
+    padding: 4px 6px ;
     margin-left: 5px !important;
-    background-color: #008080 !important; /* Teal */
+    background-color: #008080 !important; 
     border: none;
     border-radius: 1px !important;
-    color: #FFF; /* White text */
+    color: #FFF;
     cursor: pointer;
-    width: auto !important; /* Prevent the button from taking the full width */
+    width: auto !important; 
     position: relative !important;
-    left: 0 !important;  /* Align the button to the left */
-    transition: background-color 0.3s, transform 0.2s !important; /* Add a smooth transition */
+    left: 0 !important;  
+    transition: background-color 0.3s, transform 0.2s !important; 
   }
 
   .call-us .join-consortium-button:hover {
-    background-color: #005757 !important; /* Darker teal on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #005757 !important; 
+    transform: scale(1.05); 
   }
  
   .call-us .join-consortium-button i {
-    margin-right: 2px !important; /* Reduce icon-text margin */
+    margin-right: 2px !important; 
   }
 }
 
-/* Further adjustments for very small screens */
 @media (max-width: 480px) {
   .call-us .join-consortium-button {
-    font-size: 8px; /* Even smaller font size */
-    padding: 2px 4px; /* Very small padding */
-    width: auto; /* Ensure it doesn't take full width */
-    margin-left: 5px !important; /* Maintain some left margin */
+    font-size: 8px; 
+    padding: 2px 4px; 
+    width: auto; 
+    margin-left: 5px !important; 
   }
 }
 

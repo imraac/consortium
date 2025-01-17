@@ -1,105 +1,103 @@
-/* UpdateProfile.css */
-
 /* Container for the entire page */
 .update-profile-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height of the screen */
     padding: 20px;
-    width: 100%; /* Make the container take full width */
     margin: 0 auto;
-    margin-top: 100px;
- 
-}
-
-/* Styling for instructions at the top */
-.instructions {
+  }
+  
+  /* Styling for instructions at the top */
+  .instructions {
     width: 100%; /* Make instructions span the full width */
-   
     background-color: #eee;
     padding: 20px;
-
     margin-bottom: 20px;
-    text-align: left; 
-    margin-top: 50px;/* Align text to the left */
-}
-
-
-
-.instructions p {
-    font-size: 16px;
-    color:#fa6005;
-}
-
-
-
-.update-profile-form {
+    text-align: left;
+    margin-top: 50px;
+  }
+  
+  /* Styling for form container */
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    flex-grow: 1; /* Allow content to grow and take up remaining space */
+  }
+  
+  .form-container {
+    width: 60%; /* Adjust as necessary */
+  }
+  
+  .faq-container {
+    width: 35%; /* Adjust as necessary */
+    padding: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .faq-container h2 {
+    text-align: center;
+  }
+  
+  .faq-container ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .faq-container li {
+    margin-bottom: 10px;
+  }
+  
+  .update-profile-form div {
+    margin-bottom: 10px;
+  }
+  
+  .update-profile-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .update-profile-form input,
+  .update-profile-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+  }
+  
+  .update-profile-form button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .update-profile-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .update-profile-form {
     max-width: 800px;
     margin-left: 0px; /* Align form to the left */
     padding: 20px;
     background-color: #ffffff;
-  
-
     margin-top: 20px;
-    text-align: left; /* Align form content to the left */
-}
-
-.update-profile-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.update-profile-form input[type="text"],
-.update-profile-form input[type="url"],
-.update-profile-form input[type="number"],
-.update-profile-form textarea {
+    text-align: left;
+  }
+  
+  /* Footer Styling */
+  footer {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.update-profile-form textarea {
-    resize: vertical;
-    height: 80px;
-}
-
-.update-profile-form input[type="checkbox"] {
-    margin-right: 8px;
-}
-
-.update-profile-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background: linear-gradient(to right, #65cafd, #0085d0, #006bb3); /* Gradient background */
+    background-color: #333;
     color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for scale and shadow */
-}
-
-.update-profile-form button:disabled {
-    background-color: #ccc;  /* Gray out the button when disabled */
-    cursor: not-allowed;
-}
-
-.update-profile-form button:hover {
-    transform: scale(1.05); /* Hover scale effect */
-    box-shadow: 0 4px 6px rgba(101, 202, 253, 0.6); /* Shadow with the gradient color */
-}
-
-.update-profile-form button:focus {
-    outline: none; /* Remove default focus outline */
-}
-
-.update-profile-form div {
-    margin-bottom: 20px;
-}
-
-.update-profile-form div:last-child {
-    margin-bottom: 0;
-}
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    margin-top: auto; /* Pushes footer to the bottom */
+  }
+  

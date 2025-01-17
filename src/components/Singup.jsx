@@ -1,148 +1,9 @@
-// import { useState } from "react";
-// import { Link, useNavigate } from "react-router-dom";
-// import Footer from "./Footer";
-
-// const Signup = () => {
-//   const [username, setUsername] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [role, setRole] = useState("member");
-//   const [error, setError] = useState("");
-//   const [loading, setLoading] = useState(false);
-
-//   const navigate = useNavigate();
-
-//   const handleSignupSubmit = async (e) => {
-//     e.preventDefault();
-//     setLoading(true);
-//     setError("");
-
-//     try {
-//       const response = await fetch("http://localhost:5000/signup", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({ username, email, password, role }),
-//       });
-
-//       const data = await response.json();
-//       if (response.ok) {
-//         localStorage.setItem("access_token", data.access_token);
-//         console.log("Signup successful", data);
-//         navigate("/login");
-//       } else {
-//         setError(data.message);
-//       }
-//     } catch (err) {
-//       setError("Error signing up. Please try again later.");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   return (
-//     <div className="flex flex-col min-h-screen justify-center">
-//       <div className="flex flex-col md:flex-row items-start justify-between p-5 mt-28">
-//         <div className="max-w-2xl mb-5 md:mr-2">
-//           <h2 className="text-2xl font-bold text-gray-800 mb-4">Sign Up</h2>
-//           {error && <p className="text-red-600">{error}</p>}
-//           <p className="text-gray-600 mt-4">
-//             Already have an account?{" "}
-//             <Link to="/login" className="text-blue-500 hover:underline">
-//               Log in
-//             </Link>
-//           </p>
-//         </div>
-
-//         <div className="bg-gray-100 p-6 rounded-lg shadow-lg w-full md:w-1/3">
-//           <form onSubmit={handleSignupSubmit}>
-//             <div className="mb-4">
-//               <label
-//                 htmlFor="username"
-//                 className="block text-gray-600 font-bold mb-2"
-//               >
-//                 Username
-//               </label>
-//               <input
-//                 type="text"
-//                 id="username"
-//                 value={username}
-//                 onChange={(e) => setUsername(e.target.value)}
-//                 required
-//                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-//               />
-//             </div>
-//             <div className="mb-4">
-//               <label
-//                 htmlFor="email"
-//                 className="block text-gray-600 font-bold mb-2"
-//               >
-//                 Email
-//               </label>
-//               <input
-//                 type="email"
-//                 id="email"
-//                 value={email}
-//                 onChange={(e) => setEmail(e.target.value)}
-//                 required
-//                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-//               />
-//             </div>
-//             <div className="mb-4">
-//               <label
-//                 htmlFor="password"
-//                 className="block text-gray-600 font-bold mb-2"
-//               >
-//                 Password
-//               </label>
-//               <input
-//                 type="password"
-//                 id="password"
-//                 value={password}
-//                 onChange={(e) => setPassword(e.target.value)}
-//                 required
-//                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-//               />
-//             </div>
-//             <div className="mb-4">
-//               <label
-//                 htmlFor="role"
-//                 className="block text-gray-600 font-bold mb-2"
-//               >
-//                 Role
-//               </label>
-//               <select
-//                 id="role"
-//                 value={role}
-//                 onChange={(e) => setRole(e.target.value)}
-//                 required
-//                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-//               >
-//                 <option value="member">Member</option>
-//                 <option value="admin">Admin</option>
-//               </select>
-//             </div>
-//             <button
-//               type="submit"
-//               disabled={loading}
-//               className="w-full py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300 disabled:opacity-50"
-//             >
-//               Sign Up
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-//       <Footer />
-//     </div>
-//   );
-// };
-
-// export default Signup;
 
 
 
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"; // Framer Motion for animations
+import { motion } from "framer-motion"; 
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -151,7 +12,7 @@ const Signup = () => {
   const [role, setRole] = useState("member");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth); // Track screen size
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth); 
 
   const navigate = useNavigate();
 
@@ -168,14 +29,13 @@ const Signup = () => {
     };
   }, []);
 
-  // Set margin-top based on screen size
   const getMarginTop = () => {
     if (screenWidth >= 1024) {
-      return "8rem"; // For large screens
+      return "8rem"; 
     } else if (screenWidth >= 768) {
-      return "4rem"; // For medium screens
+      return "4rem";
     } else {
-      return "0"; // For smaller screens
+      return "0"; 
     }
   };
 
@@ -210,9 +70,9 @@ const Signup = () => {
     <section className="bg-white flex flex-col min-h-screen justify-between">
       <div
         className="flex flex-col-reverse md:flex-row max-w-5xl mx-auto w-full items-center"
-        style={{ marginTop: getMarginTop() }} // Apply dynamic margin-top
+        style={{ marginTop: getMarginTop() }} 
       >
-        {/* Left Column - Image */}
+      
         <div className="w-full md:w-1/2 order-1 md:order-none">
           <img
             className="rounded-2xl mx-auto mt-8 md:mt-0"
@@ -221,7 +81,6 @@ const Signup = () => {
           />
         </div>
 
-        {/* Right Column - Form */}
         <div className="w-full md:w-1/2 px-8 md:px-16">
           <h2 className="font-bold text-2xl text-[#002D74]">Sign Up</h2>
           {error && <p className="text-red-600 mt-2">{error}</p>}
@@ -324,20 +183,66 @@ const Signup = () => {
 
       {/* Footer */}
       <motion.div
-        style={{ textAlign: "center", padding: "1rem" }}
-        initial={{ y: 50 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
-        <div style={{ borderTop: "1px solid #8f827a", margin: "0 auto 1rem", width: "50%" }}></div>
-        <p style={{ color: "#002D74", margin: "0" }}>
-          &copy; {new Date().getFullYear()} MROs Consortium. All rights reserved. <br />
-          <Link to="/privacy-policy" style={{ color: "#002D74", textDecoration: "none" }}>Privacy policy</Link> | 
-          <Link to="/terms-and-conditions" style={{ color: "#002D74", textDecoration: "none" }}>Terms and conditions</Link> | 
-          <Link to="/cookies-policy" style={{ color: "#002D74", textDecoration: "none" }}>Cookies policy</Link> | 
-          <Link to="/copyright" style={{ color: "#002D74", textDecoration: "none" }}>Copyright</Link>
-        </p>
-      </motion.div>
+  style={{ textAlign: "center", padding: "1rem" }}
+  initial={{ y: 50 }}
+  animate={{ y: 0 }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+>
+  <div
+    style={{
+      borderTop: "1px solid #8f827a",
+      margin: "0 auto 1rem",
+      width: "50%",
+    }}
+  ></div>
+  <p style={{ color: "#002D74", margin: "0", fontSize: "0.8rem" }}>
+    &copy; {new Date().getFullYear()} MROs Consortium. All rights reserved. <br />
+    <Link
+      to="/privacy-policy"
+      style={{
+        color: "#002D74",
+        textDecoration: "none",
+        fontSize: "0.8rem",
+      }}
+    >
+      Privacy policy
+    </Link>{" "}
+    |{" "}
+    <Link
+      to="/terms-and-conditions"
+      style={{
+        color: "#002D74",
+        textDecoration: "none",
+        fontSize: "0.8rem",
+      }}
+    >
+      Terms and conditions
+    </Link>{" "}
+    |{" "}
+    <Link
+      to="/cookies-policy"
+      style={{
+        color: "#002D74",
+        textDecoration: "none",
+        fontSize: "0.8rem",
+      }}
+    >
+      Cookies policy
+    </Link>{" "}
+    |{" "}
+    <Link
+      to="/copyright"
+      style={{
+        color: "#002D74",
+        textDecoration: "none",
+        fontSize: "0.8rem",
+      }}
+    >
+      Copyright
+    </Link>
+  </p>
+</motion.div>
+
     </section>
   );
 };
