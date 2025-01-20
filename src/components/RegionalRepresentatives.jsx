@@ -18,8 +18,13 @@ const RegionalRepresentatives = () => {
     <div className="secretariat-page">
       {/* Hero Section */}
       <div>
-  <main className="hero-gradient animate-bg relative">
-    <header className="flex flex-row justify-center md:h-96 items-center p-8">
+  <main
+    className="hero-gradient animate-bg relative"
+    style={{
+      paddingTop: "calc(var(--navbar-height, 5px) + 1rem)", // Ensure it is below the navbar
+    }}
+  >
+    <header className="flex flex-row justify-center md:h-96 items-center p-20">
       <h1 className="text-sm md:text-lg lg:text-2xl xl:text-3xl font-semibold text-black text-center">
         Join the
         <div className="inline-block bg-orange-400 transform -rotate-3 px-1 md:px-2 rounded-md py-1 text-sm md:text-lg lg:text-xl xl:text-2xl">
@@ -28,7 +33,7 @@ const RegionalRepresentatives = () => {
         Consortium
       </h1>
     </header>
-    
+
     <img
       src="/readinguncle.jpg" // Correct image path without "/public"
       alt="Minority Rights Organizations"

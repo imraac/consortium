@@ -272,7 +272,7 @@ const App = () => {
   );
 };
 
-// This component checks if the current route is login or signup and conditionally renders the Navbar
+// This component checks if the current route is login, signup, or not-found and conditionally renders the Navbar
 const NavbarWrapper = () => {
   const location = useLocation();
   const [isMounted, setIsMounted] = useState(false);
@@ -281,8 +281,9 @@ const NavbarWrapper = () => {
     setIsMounted(true); // Ensure navbar is rendered only after the component is mounted
   }, []);
 
-  return isMounted && location.pathname !== "/login" && location.pathname !== "/signup" ? <Navbar /> : null;
+  return isMounted && !["/login", "/signup", "/not-found"].includes(location.pathname) ? (
+    <Navbar />
+  ) : null;
 };
 
 export default App;
-

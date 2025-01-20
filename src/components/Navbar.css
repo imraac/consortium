@@ -199,7 +199,7 @@
 .carousel {
   position: relative;
   z-index: 0;
-  margin-top: 140px;
+  margin-top: 95px;
 }
 
 .carousel-item img {
@@ -236,7 +236,7 @@
 @media (max-width: 768px) {
   .carousel-item img {
     height: 300px;
-    margin-top: 10px; 
+    margin-top: 1px; 
   }
   @media (max-width: 768px) {
   
@@ -649,9 +649,6 @@ footer p {
 
 
 
-
-
-
 .services {
   display: flex;
   flex-direction: column;
@@ -777,19 +774,10 @@ footer p {
 
 
 
-.call-us {
-  position: fixed; 
-  top: 0; 
-  background: #65cafd;
-  padding: 1rem;
-  text-align: right;
-  color: white;
-  font-size: 1rem;
-  z-index: 1001; 
-  width: 100%;
-}
+
 
 nav {
+  margin-top: -50px;
   position: fixed;
   top: 50px;
   width: 100%;
@@ -807,6 +795,7 @@ nav {
 .main-header {
   backdrop-filter: blur(10px);
   background-image: linear-gradient(to bottom, #e7ecef00, #e7ecef);
+  
 }
 
 .nav-links ul {
@@ -981,7 +970,7 @@ nav {
   left: 0;
   display: block;
   border-radius: 50px;
-  background: #b1dae7;
+  background: #13bcf0;
   width: 45px;
   height: 45px;
   transition: all 0.3s ease;
@@ -1003,7 +992,7 @@ nav {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke: #234567;
+  stroke: #131414;
   stroke-width: 2;
   transform: translateX(-5px);
   transition: all 0.3s ease;
@@ -1011,7 +1000,7 @@ nav {
 
 .join-consortium-button:hover:before {
   width: 100%;
-  background: #b1dae7;
+  background: #13bcf0;
 }
 
 .join-consortium-button:hover svg {
@@ -1093,12 +1082,12 @@ nav {
     top: 80px;
     left: 0;
     width: 100% !important;
-    height: 60vh;
+    height: 80vh;
     background-color: white;
     z-index: 1000;
     padding: 1rem;
   
-    transform: translateY(-115%);
+    transform: translateY(-145%);
     transition: transform 0.3s ease-in-out;
     flex-direction: column; 
   }

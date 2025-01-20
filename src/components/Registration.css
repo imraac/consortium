@@ -5,8 +5,8 @@
     border: none; /* Remove the border */
     border-radius: 8px;
     padding-left: 150px; 
-    background-color: #f9f9f9; 
-    margin-top: 150px;/* Optional: keep the background color */
+    background-color: white; 
+    margin-top: 99px;/* Optional: keep the background color */
   }
   
   .registration-form-container h1 {
@@ -54,8 +54,8 @@
   .registration-form-container button {
     width: 10%;
     padding: 12px;
-    background-color: #D15D51;
-    color:  #4CAF50;
+    background-color: #3cc2e7;
+    color:  #0b3b3b;
     border: none;
     border-radius: 4px;
     cursor: pointer;

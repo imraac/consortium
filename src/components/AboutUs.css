@@ -11,9 +11,10 @@ body, p, h1, h2, h3, h4, h5, h6, ul, li, a, span, div {
   padding: 20px;
   border-radius: 8px;
   text-align: left; /* Align text to the left */
-  margin-top: 1px;
+
   flex: 1;
   font-size: 0.55rem !important;
+
 }
 
 .about-us h1 {
@@ -138,6 +139,6 @@ ul li {
 }
 @media (max-width: 768px) { /* Adjust the breakpoint as needed */
   .hero-gradient {
-    margin-top: 138px; /* Reduced margin for smaller screens */
+    margin-top: 87px !important; /* Reduced margin for smaller screens */
   }
 }

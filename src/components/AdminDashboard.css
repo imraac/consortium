@@ -125,7 +125,7 @@
 /* Promo Card */
 /* Promo Card */
 .admin-dash-promo-card {
-    background-image: url('https://i0.wp.com/nightingaledvs.com/wp-content/uploads/2023/05/image2.png?fit=1999%2C1151&ssl=1'); /* Path to your background image */
+    background-image: url('happypeople.jpg'); /* Path to your background image */
     background-size: cover; /* Cover the entire card */
     background-position: center; /* Center the background image */
     color: #f7f7c8; /* Text color */
@@ -406,7 +406,7 @@
   padding: 20px; /* More compact padding */
   background: 
    
-    url('map2.png'); /* Add your background image here */
+  url(''); /* Add your background image here */
   background-size: cover; /* Ensure the image covers the entire card */
   background-position: center; /* Center the image for balance */
   border-radius: 12px; /* Slightly smaller radius for modern look */

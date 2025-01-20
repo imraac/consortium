@@ -29,58 +29,7 @@ const Navbar = () => {
 
   return (
     <header className="header">
-      <div className="call-us">
-  {/* <p className="moving-text">    🇸OMALIA📍 </p> */}
-  
-  <a
-    href="https://wa.me/0704390612"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="whatsapp-icon"
-  >
-    <img
-      src="/circlinkedin.webp"
-      alt="WhatsApp"
-      style={{ width: "25px", height: "25px", marginLeft: "140px" }}
-    />
-  </a>
-  <a
-    href="https://wa.me/0704390612"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="whatsapp-icon"
-  >
-    <img
-      src="/WhatsApp.svg.png"
-      alt="WhatsApp"
-      style={{ width: "25px", height: "25px", marginLeft: "7px" }}
-    />
-  </a>
-  <a
-    href="https://wa.me/0704390612"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="whatsapp-icon"
-  >
-    <img
-      src="/11244080_x_twitter_elon musk_twitter new logo_icon.svg"
-      alt="WhatsApp"
-      style={{ width: "20px", height: "20px", marginLeft: "7px" }}
-    />
-  </a>
-  <a
-    href="https://wa.me/0704390612"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="whatsapp-icon"
-  >
-    <img
-      src="/5365678_fb_facebook_facebook logo_icon.svg"
-      alt="WhatsApp"
-      style={{ width: "20px", height: "20px", marginLeft: "7px" }}
-    />
-  </a>
-</div>
+     
 
       <nav className="nav">
         <div className="container nav__data">
@@ -292,14 +241,14 @@ const Navbar = () => {
                     >
                       Coordination
                     </Link>
-                    <Link
+                    {/* <Link
                       to="/advocacy"
                       className="dropdown__link"
                       style={{ textDecoration: "none" }}
                       onClick={closeMenu}
                     >
                       Advocacy
-                    </Link>
+                    </Link> */}
                     <Link
                       to="/consortium-members"
                       className="dropdown__link"
@@ -366,7 +315,7 @@ const Navbar = () => {
       closeMenu();
     }}
   >
-    <span>Join The Consortium</span>
+    <span>Join Consortium</span>
     <svg width="15px" height="10px" viewBox="0 0 13 10">
       <path d="M1,5 L11,5"></path>
       <polyline points="8 1 12 5 8 9"></polyline>
