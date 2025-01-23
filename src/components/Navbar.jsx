@@ -315,7 +315,7 @@ const Navbar = () => {
       closeMenu();
     }}
   >
-    <span>sign up</span>
+    <span>Join Now</span>
    
   </button>
               
