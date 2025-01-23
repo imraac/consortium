@@ -157,7 +157,10 @@ const Signup = () => {
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white"
               >
                 <option value="member">Full membership</option>
-                <option value="admin">Admin</option>
+                <option value="member">Provisional membership</option>
+                <option value="member">Observer membership</option>
+                <option value="member">Affiliate  membership</option>
+                {/* <option value="admin">Admin</option> */}
               </select>
               <p className="mt-4 text-center text-xs sm:text-sm text-gray-500">
                 By continuing, you agree to our{" "}

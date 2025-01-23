@@ -188,7 +188,7 @@ import WorkingGroupsComponent from './components/WorkingGroupsComponent';
 import TwinningProgramComponent from './components/TwinningProgramComponent';
 import AdditionalServicesComponent from './components/AdditionalServicesComponent';
 import NotFoundPage from './components/NotFoundPage';  // Import the NotFoundPage component
-
+import Contact from "./components/Contact";
 const App = () => {
   return (
     <AuthProvider>
@@ -196,7 +196,7 @@ const App = () => {
         <NavbarWrapper />
         <Routes>
           {/* Redirect root ("/") to "/login" */}
-          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/" element={<Navigate to="/landingpage" />} />
           <Route path="/certification" element={<Certification />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
@@ -204,6 +204,7 @@ const App = () => {
           <Route path="/contact" element={<div>Contact Page</div>} />
           <Route path="/services" element={<div>Services Page</div>} />
           <Route path="/landingpage" element={<LandingPage />} />
+          <Route path="/contact-form" element={<Contact />} /> {/* Route for Contact page */}
 
           <Route
             path="/consortium"
