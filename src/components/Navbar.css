@@ -254,9 +254,18 @@
   }
 
   .carousel-caption h5 {
-    font-size: 1.5rem;
-    margin-top: -17px;
+    font-size: 1.7rem;
+    
+}
+
+/* Adjust for screens with max width of 768px */
+@media (max-width: 768px) {
+  .carousel-caption h5 {
+    font-size: 1.7rem; /* Adjust the font size to make it more readable */
+    margin-top:-87 !important; /* Adjust margin to make the text visible */
   }
+}
+
 
   .carousel-caption p {
     font-size: 0.875rem;
