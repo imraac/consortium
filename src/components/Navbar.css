@@ -974,12 +974,12 @@ nav {
 
 /* Active dropdown links */
 .nav__menu.active .dropdown__link {
-  color: #007bff; /* Active dropdown link text color */
+  color: #91b8e0; /* Active dropdown link text color */
   font-weight: bold;
 }
 
 .nav__menu.active .dropdown__link:hover {
-  background-color: #0056b3;
+  background-color: #272625;
   color: #fff;
 }
 

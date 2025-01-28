@@ -1,103 +1,172 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Container for the entire page */
 .update-profile-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Full height of the screen */
-    padding: 20px;
-    margin: 0 auto;
-  }
-  
-  /* Styling for instructions at the top */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the screen */
+
+  margin: 0 auto;
+  background-color: white;
+}
+
+/* Styling for instructions at the top */
+.instructions {
+  width: 100%; /* Make instructions span the full width */
+  background-color: #c6ee17;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-top: 80px;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Styling for form container */
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+  flex-grow: 1; /* Allow content to grow and take up remaining space */
+}
+
+.form-container {
+  flex: 3; /* Adjusts space dynamically */
+  background-color: white;
+  padding: 20px;
+ 
+}
+
+.faq-container {
+  flex: 2; /* Adjusts space dynamically */
+  padding: 20px;
+  background-color: white;
+
+
+
+  margin-top: 90px;
+}
+
+.faq-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.faq-container ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.faq-container li {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.update-profile-form div {
+  margin-bottom: 15px;
+}
+
+.update-profile-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.update-profile-form input,
+.update-profile-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.update-profile-form button {
+  padding: 12px 18px;
+  background-color: #282923;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.update-profile-form button:hover {
+  background-color: #c6ee17;
+}
+
+/* Footer Styling */
+footer {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  margin-top: auto; /* Pushes footer to the bottom */
+  font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .instructions {
-    width: 100%; /* Make instructions span the full width */
-    background-color: #eee;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: left;
-    margin-top: 50px;
-  }
-  
-  /* Styling for form container */
-  .content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
-    flex-grow: 1; /* Allow content to grow and take up remaining space */
-  }
-  
-  .form-container {
-    width: 60%; /* Adjust as necessary */
-  }
-  
-  .faq-container {
-    width: 35%; /* Adjust as necessary */
-    padding: 10px;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .faq-container h2 {
+    font-size: 0.9rem;
     text-align: center;
   }
-  
-  .faq-container ul {
-    list-style-type: none;
-    padding-left: 0;
+
+  .content-wrapper {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px;
   }
-  
-  .faq-container li {
-    margin-bottom: 10px;
+
+  .form-container,
+  .faq-container {
+    width: 100%; /* Full width on mobile */
+    padding: 15px;
   }
-  
-  .update-profile-form div {
-    margin-bottom: 10px;
+
+  .update-profile-form {
+    padding: 15px;
   }
-  
-  .update-profile-form label {
-    display: block;
-    margin-bottom: 5px;
+
+  .faq-container h2 {
+    font-size: 1.25rem;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .instructions {
+    font-size: 0.85rem;
+  }
+
   .update-profile-form input,
   .update-profile-form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 5px;
+    font-size: 0.9rem;
   }
-  
+
   .update-profile-form button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    font-size: 0.9rem;
   }
-  
-  .update-profile-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  .update-profile-form {
-    max-width: 800px;
-    margin-left: 0px; /* Align form to the left */
-    padding: 20px;
-    background-color: #ffffff;
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  /* Footer Styling */
+
   footer {
-    width: 100%;
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    margin-top: auto; /* Pushes footer to the bottom */
+    font-size: 0.8rem;
   }
-  
+}

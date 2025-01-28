@@ -103,10 +103,10 @@ const Dashboard = () => {
               <Link to="/update-profile">Update profile information</Link>
             </li>
             <li>
-              <Link to="/update-contact">Update contact information</Link>
+              <Link to="/not-found">Update contact information</Link>
             </li>
             <li>
-              <Link to="/member-profiles">Other member profiles</Link>
+              <Link to="/not-found">Other member profiles</Link>
             </li>
           </ul>
         </div>
