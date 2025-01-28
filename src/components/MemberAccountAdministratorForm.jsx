@@ -106,7 +106,7 @@ const MemberAccountAdministratorForm = () => {
       
       <h2>Contact Details</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="agencyRegistrationDate">Agency Date of Registration:</label>
+        <label htmlFor="agencyRegistrationDate">Agency Date of Registration Certificate:</label>
         <input
           type="date"
           id="agencyRegistrationDate"
@@ -116,7 +116,7 @@ const MemberAccountAdministratorForm = () => {
           required
         />
 
-        <label htmlFor="agencyRegistrationNumber">Agency Registration Number (optional):</label>
+        <label htmlFor="agencyRegistrationNumber">Agency Registration Certificate Number (optional):</label>
         <input
           type="text"
           id="agencyRegistrationNumber"

@@ -908,6 +908,7 @@ nav {
   transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
+
 .dropdown__link:hover {
   background-color: #3abef9; 
   color: white; 
@@ -916,36 +917,71 @@ nav {
 .dropdown__content {
   display: none; 
   position: absolute;
-  background-color: #ffffff; 
+  background-color: #d1dde9; 
   padding: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+
   min-width: 190px; 
   max-width: 200px;
   left: 0;
   right: 0;
   margin: auto;
   max-height: 200px; 
-  overflow-y: auto; 
+
 }
 
 .dropdown.active .dropdown__content {
   display: block;
 }
 
-@media (max-width: 768px) {
-  .dropdown__content {
-    min-width: 200px; 
-    max-width: 150px; 
-    max-height: 150px; 
-  }
 
-  .dropdown__link {
-    padding: 6px 10px; 
-  }
+
+
+/* Default menu link styles */
+.nav__menu .nav__link {
+  color: #333; /* Default text color */
+  padding: 10px 15px;
+  display: inline-block;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-weight: normal;
 }
 
+/* Hover effect for links */
+.nav__menu .nav__link:hover {
+/* Change color on hover */
+  background-color: #f1f1f1; /* Background on hover */
+}
 
+/* Menu active styles */
+.nav__menu.active .nav__link {
+  color: #180c0c; /* Active menu text color */
+  /* Active menu background */
+  font-weight: bold;
+}
 
+/* Dropdown content styles */
+.dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown__content {
+  display: block;
+}
+
+/* Active dropdown links */
+.nav__menu.active .dropdown__link {
+  color: #007bff; /* Active dropdown link text color */
+  font-weight: bold;
+}
+
+.nav__menu.active .dropdown__link:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
 
 
 
@@ -959,7 +995,7 @@ nav {
   font-size: 13px;
   font-weight: bold;
   color: #ffffff;
-  background-color: #2e2e2c;
+  background-color: #20201b;
   border: none;
   border-radius: 2px;
   cursor: pointer;
@@ -1134,7 +1170,7 @@ nav {
     margin: 0.5rem 0; 
     width: 100%; 
     text-align: center; 
-    color: #ffffff !important;
+    color: #ffffff ;
 
   }
 

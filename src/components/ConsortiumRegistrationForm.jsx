@@ -364,7 +364,7 @@ const ConsortiumRegistrationForm = () => {
           navigate('/contact-details');
         } else {
           const errorData = await response.json();
-          setSubmissionMessage(`Submission failed: ${errorData.message}`);
+          setSubmissionMessage(`you have taken alot of time on this page, For data security Please Login again by tapping the Join Button  : ${errorData.message}`);
         }
       } catch (error) {
         setSubmissionMessage(`Error: ${error.message}`);
@@ -388,10 +388,97 @@ const ConsortiumRegistrationForm = () => {
 
           <label htmlFor="districts">Please select the districts in Somalia/Somaliland:</label>
           <select id="districts" multiple>
-            <option value="district1">District 1</option>
-            <option value="district2">District 2</option>
-            {/* Add other districts here */}
-          </select>
+    <option value="Abdi Asis">Abdi Asis</option>
+    <option value="Adan Yabal">Adan Yabal</option>
+    <option value="Afmadow">Afmadow</option>
+    <option value="Alula">Alula</option>
+    <option value="Badhadhe">Badhadhe</option>
+    <option value="Badhan">Badhan</option>
+    <option value="Baki">Baki</option>
+    <option value="Ballcad">Ballcad</option>
+    <option value="Bardhere">Bardhere</option>
+    <option value="Baydhaba">Baydhaba</option>
+    <option value="Beletweyne">Beletweyne</option>
+    <option value="Beletxawa">Beletxawa</option>
+    <option value="Bender Bayla">Bender Bayla</option>
+    <option value="Berbera">Berbera</option>
+    <option value="Bondhere">Bondhere</option>
+    <option value="Boramo">Boramo</option>
+    <option value="Bosaso">Bosaso</option>
+    <option value="Braawe">Braawe</option>
+    <option value="Buale">Buale</option>
+    <option value="Bulo-Burte">Bulo-Burte</option>
+    <option value="Burco">Burco</option>
+    <option value="Burhakaba">Burhakaba</option>
+    <option value="Burtinle">Burtinle</option>
+    <option value="Buuhodle">Buuhodle</option>
+    <option value="Caadale">Caadale</option>
+    <option value="Cabudwaaq">Cabudwaaq</option>
+    <option value="Cadaado">Cadaado</option>
+    <option value="Caynabo">Caynabo</option>
+    <option value="Ceelafyeyn">Ceelafyeyn</option>
+    <option value="Ceel Barde">Ceel Barde</option>
+    <option value="Ceelbur">Ceelbur</option>
+    <option value="Ceeldeer">Ceeldeer</option>
+    <option value="Ceelwaaq">Ceelwaaq</option>
+    <option value="Ceerigabo">Ceerigabo</option>
+    <option value="Dangoryo">Dangoryo</option>
+    <option value="Darkeynle">Darkeynle</option>
+    <option value="Dhahar">Dhahar</option>
+    <option value="Dhusa-Mareb">Dhusa-Mareb</option>
+    <option value="Dinsor">Dinsor</option>
+    <option value="Dolow">Dolow</option>
+    <option value="Eyl">Eyl</option>
+    <option value="Galhareeri">Galhareeri</option>
+    <option value="Galkacyo">Galkacyo</option>
+    <option value="Garbaharey">Garbaharey</option>
+    <option value="Garowe">Garowe</option>
+    <option value="Gebiley">Gebiley</option>
+    <option value="Goldogob">Goldogob</option>
+    <option value="Hamar Weyne">Hamar Weyne</option>
+    <option value="Haradhere">Haradhere</option>
+    <option value="Hara Jabjab">Hara Jabjab</option>
+    <option value="Hargeysa">Hargeysa</option>
+    <option value="Hawle Wadaag">Hawle Wadaag</option>
+    <option value="Heliwa">Heliwa</option>
+    <option value="Hobyo">Hobyo</option>
+    <option value="Hodan">Hodan</option>
+    <option value="Hudur">Hudur</option>
+    <option value="Iskhushuban">Iskhushuban</option>
+    <option value="Jalalaqsi">Jalalaqsi</option>
+    <option value="Jamame">Jamame</option>
+    <option value="Jeriban">Jeriban</option>
+    <option value="Jilib">Jilib</option>
+    <option value="Jowhar">Jowhar</option>
+    <option value="Karaan">Karaan</option>
+    <option value="Kismayo">Kismayo</option>
+    <option value="Kurtunwaarey">Kurtunwaarey</option>
+    <option value="Lascaanood">Lascaanood</option>
+    <option value="Las Qorey">Las Qorey</option>
+    <option value="Lughaya">Lughaya</option>
+    <option value="Luuq">Luuq</option>
+    <option value="Mark Afgooye">Mark Afgooye</option>
+    <option value="Odwenyen">Odwenyen</option>
+    <option value="Qandala">Qandala</option>
+    <option value="Qansadhere">Qansadhere</option>
+    <option value="Qardho">Qardho</option>
+    <option value="Qoryoyley">Qoryoyley</option>
+    <option value="Sablaale">Sablaale</option>
+    <option value="Sakow">Sakow</option>
+    <option value="Shangani">Shangani</option>
+    <option value="Sheik">Sheik</option>
+    <option value="Shibis Waberi">Shibis Waberi</option>
+    <option value="Telex">Telex</option>
+    <option value="Tiyeglow">Tiyeglow</option>
+    <option value="Wadajir">Wadajir</option>
+    <option value="Wajid">Wajid</option>
+    <option value="Wanlaweyne">Wanlaweyne</option>
+    <option value="Wardhiglye">Wardhiglye</option>
+    <option value="Xudun">Xudun</option>
+    <option value="Yaqship">Yaqship</option>
+    <option value="Yeed">Yeed</option>
+    <option value="Zeylac">Zeylac</option>
+</select>
 
           <label htmlFor="activeYear">Which year did the agency become active in Somalia/Somaliland?</label>
           <input
@@ -404,7 +491,7 @@ const ConsortiumRegistrationForm = () => {
           />
           {errors.activeYear && <p className="error">{errors.activeYear}</p>}
 
-          <label htmlFor="partnerNGOs">Please list any partner NGOs in Somalia/Somaliland:</label>
+          <label htmlFor="partnerNGOs">Please list any partner Agency in Somalia/Somaliland:</label>
           <textarea
             id="partnerNGOs"
             name="partnerNGOs"
@@ -446,7 +533,7 @@ const ConsortiumRegistrationForm = () => {
             <option value="yemen">Yemen</option>
           </select>
 
-          <label htmlFor="programPlans">What are the agency's plans for programmes in 2024?</label>
+          <label htmlFor="programPlans">What are the agency's plans for programmes in the Next Year?</label>
           <textarea
             id="programPlans"
             name="programPlans"
@@ -456,7 +543,7 @@ const ConsortiumRegistrationForm = () => {
           />
           {errors.programPlans && <p className="error">{errors.programPlans}</p>}
 
-          <label htmlFor="mainDonors">Main donors for funding in 2024 (one per line):</label>
+          <label htmlFor="mainDonors">Main donors for funding in this Year (one per line):</label>
           <textarea
             id="mainDonors"
             name="mainDonors"
@@ -479,15 +566,19 @@ const ConsortiumRegistrationForm = () => {
 
           <label htmlFor="membershipType">Membership Type:</label>
           <select
-            id="membershipType"
-            name="membershipType"
-            value={formData.membershipType}
-            onChange={handleChange}
-            required
-          >
-            <option value="full">Full Membership</option>
-            {/* Add other membership types here */}
-          </select>
+  id="membershipType"
+  name="membershipType"
+  value={formData.membershipType}
+  onChange={handleChange}
+  required
+>
+  <option value="full">Full Membership</option>
+  <option value="provisional">Provisional Membership</option>
+  <option value="observer">Observer Membership</option>
+  <option value="affiliate">Affiliate Membership</option>
+  {/* Add other membership types here */}
+</select>
+
           {errors.membershipType && <p className="error">{errors.membershipType}</p>}
 
           {submissionMessage && <p className="submission-message">{submissionMessage}</p>}

@@ -12,9 +12,9 @@
 }
 
 .feedbackPage.success {
-    background-color: #79f15b;
+    background-color: #a2f781;
     color: #155724;
-    border: 4px solid #eeba5a;
+    border: 4px solid #f3ebdb;
 }
 
 .feedbackPage.error {
@@ -56,7 +56,7 @@ p {
 }
 
 .uploadButton {
-    background-color: #c6e7cd;
+    background-color: #5bb1eb;
 }
 
 .backButton:hover {

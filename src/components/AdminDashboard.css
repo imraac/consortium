@@ -134,6 +134,7 @@
     margin-top: 25px; /* Space above the card */
     position: relative; /* Set position for overlay */
     overflow: hidden; /* Prevent overflow of elements */
+    margin-top: -100px;
 }
 
 .admin-dash-promo-card::before {

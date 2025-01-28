@@ -302,6 +302,14 @@ const Navbar = () => {
                     >
                       Seats Representatives
                     </Link>
+                    <Link
+                      to="/contact-form"
+                      className="dropdown__link"
+                      style={{ textDecoration: "none" }}
+                      onClick={closeMenu}
+                    >
+                      Contact Form
+                    </Link>
                   </div>
                 )}
               </li>

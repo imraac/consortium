@@ -142,7 +142,7 @@ const ContactDetails = () => {
             Add More Directors
           </button>
 
-          <h2>Key Staffs</h2>
+          {/* <h2>Key Staffs</h2>
           {contactData.keyStaffs.map((staff, index) => (
             <div key={index} className="input-group">
               <label>Name:</label>
@@ -173,7 +173,7 @@ const ContactDetails = () => {
           ))}
           <button type="button" onClick={() => addRow('keyStaffs')}>
             Add More Staffs
-          </button>
+          </button> */}
 
           <button type="submit" className="submit-btn">
             NEXT

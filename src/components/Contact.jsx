@@ -30,7 +30,7 @@ const Contact = () => {
     },
     icon: {
       fontSize: '28px',
-      color: '#f44336',
+      color: 'black',
       margin: '10px',
       marginRight: '30px',
     },
@@ -49,7 +49,7 @@ const Contact = () => {
     },
     button: {
       display: 'inline-block',
-      background: '#f44336',
+      background: '#5BC678',
       color: 'white',
       padding: '10px 30px',
       border: 'none',
@@ -97,7 +97,7 @@ const Contact = () => {
           <div style={styles.contactDiv}>
             <i className="fa-solid fa-home" style={styles.icon}></i>
             <span>
-              <h5 style={styles.heading}>1421 Park Ave S Ste 104, Minneapolis, MN</h5>
+              <h5 style={styles.heading}>Mogadishu</h5>
               <h5 style={styles.heading}>Visit us</h5>
             </span>
           </div>
@@ -105,7 +105,7 @@ const Contact = () => {
           <div style={styles.contactDiv}>
             <i className="fa-solid fa-phone" style={styles.icon}></i>
             <span>
-              <h5 style={styles.heading}>612.872.8811</h5>
+              <h5 style={styles.heading}>+252 619272783</h5>
               <h5 style={styles.heading}>Call us</h5>
             </span>
           </div>
@@ -113,7 +113,7 @@ const Contact = () => {
           <div style={styles.contactDiv}>
             <i className="fa-solid fa-envelope" style={styles.icon}></i>
             <span>
-              <h5 style={styles.heading}>info@mnqcare.com</h5>
+              <h5 style={styles.heading}>info@mrosconsortium.org</h5>
               <h5 style={styles.heading}>Email us</h5>
             </span>
           </div>
@@ -135,6 +135,7 @@ const Contact = () => {
             </button>
           </form>
         </div>
+        
       </section>
     </>
   );

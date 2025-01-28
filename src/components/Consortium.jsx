@@ -8,7 +8,7 @@ const Consortium = () => {
     <div className="consortium-wrapper">
       {/* Horizontal line above all containers */}
       {/* Text above the horizontal line */}
-      <motion.h1
+      {/* <motion.h1
         style={{
           textAlign: 'center',         // Center the text
           fontSize: '2.5rem',         // Make the font size larger
@@ -17,22 +17,23 @@ const Consortium = () => {
           margin: '20px 0',           // Add vertical margins for spacing
           textTransform: 'uppercase',  // Transform text to uppercase for emphasis
           letterSpacing: '1px',  
-          marginTop: '-50px'      // Add letter spacing for readability
+          marginTop: '-80px'      // Add letter spacing for readability
         }}
         initial={{ opacity: 0 }} // Start with zero opacity
         animate={{ opacity: 1 }} // Animate to full opacity
         transition={{ duration: 1 }} // Transition duration
       >
         Join the Consortium
-      </motion.h1>
+      </motion.h1> */}
 
       <motion.p 
   style={{ 
     marginBottom: '20px', 
     fontSize: '16px', 
     lineHeight: '1.5', 
-    color: '#fa6005',
-    backgroundColor: '#EEE', // Added background color
+    color: '#ffffff',
+    marginTop: '-84px'  ,
+    backgroundColor: '#fa6005', // Added background color
     padding: '10px', // Optional: Add padding for better spacing
     borderRadius: '1px' // Optional: Add rounded corners
   }}
@@ -106,10 +107,10 @@ const Consortium = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <a
-            href="/assets/document.pdf" // Relative path to your document
+            href="/MROs_Membership_Application_Form.docx" // Relative path to your document
             download // Enables download functionality
           style={{
-  backgroundColor: '#D15D51',
+  backgroundColor: '#fa6005',
   color: '#fff',
   border: 'none',
   padding: '10px 20px',
@@ -122,7 +123,7 @@ const Consortium = () => {
 }}
 
           >
-            Download Registration Checklist
+           Minority Rights Organizations Consortium Membership Application Form
           </a>
         </motion.div>
       </div>
@@ -189,7 +190,7 @@ const Consortium = () => {
           <li>Brief description of the agency (how it is minority-led, Max 200 words)</li>
           <li>Mission statement (Max 200 words)</li>
           <li>Reasons for joining the MROs Consortium (Max 200 words)</li>
-          <li>Number and date of agency registration</li>
+          <li> REF: Number and date of agency certificate registration</li>
           <li>Headquarter, regional, and local contact details</li>
           <li>Years operational in Somalia/Somaliland</li>
           <li>Partners in Somalia/Somaliland</li>
@@ -255,7 +256,7 @@ const Consortium = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
-          Formed in 1999, we bring together local and international NGOs working in Somalia in order to:
+          Formed in 2024, we bring together all Minority Rights Organisations in Somalia/Somaliland Advocating for Equity:
         </motion.p>
         <motion.ul
           initial={{ opacity: 0 }}
@@ -264,15 +265,14 @@ const Consortium = () => {
         >
           <li>Share information and analysis on key issues</li>
           <li>Facilitate closer coordination and joint advocacy</li>
-          <li>Improve representation with stakeholders including local authorities, the UN system, and donors</li>
+          <li>Improve representation with stakeholders including the UN system, and donors</li>
         </motion.ul>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.7 }}
         >
-          Together, we can share resources, knowledge, and experiences that will help us all succeed in our missions.
-          Join us in making a difference today!
+         Together, as the MROs-Consortium, we can unite our resources, knowledge, and experiences to amplify our impact and achieve our shared mission of empowering minority communities. Join us in creating meaningful change today!
         </motion.p>
 
         {/* Image placeholder */}
@@ -319,7 +319,7 @@ const Consortium = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 2.1 }}
           >
-            <h2>Current Members</h2>
+            {/* <h2>Current Members</h2>
             <p>View our current members to see who is part of the consortium:</p>
             <ul>
               <li>
@@ -332,8 +332,25 @@ const Consortium = () => {
                 <br />
                 <a href="http://www.dydo.net" target="_blank" rel="noopener noreferrer">www.dydo.net</a>
               </li>
-            </ul>
+            </ul> */}
           </motion.div>
+          <div style={{ marginTop: '20px', textAlign: 'center' }}>
+  <Link to="/consortium-members">
+    <button
+      style={{
+        backgroundColor: '#fa6005',
+        color: '#fff',
+        border: 'none',
+        padding: '10px 20px',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        fontSize: '16px',
+      }}
+    >
+      Go to Consortium Members
+    </button>
+  </Link>
+</div>
         </div>
       </div>
     </div>

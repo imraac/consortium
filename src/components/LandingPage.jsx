@@ -94,16 +94,22 @@ The MROs Consortium in Somalia aims in Bringing Somalia to the Forefront.</p>
                 {/* <p style={{ color: '#FFC700' }}>
                   The MROs Consortium in Somalia aims in Bringing Somalia to the Forefront.
                 </p> */}
-                <button className="btn btn-success caption-button">
-                  <Link to="/consortium" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    JOIN CONSORTIUM
-                  </Link>
-                </button>
+               <button
+  className="btn btn-success caption-button bg-green-500 text-white py-2 px-4  shadow-md transition-transform transform hover:scale-105 active:scale-95"
+>
+  <Link
+    to="/login"
+    style={{ textDecoration: "none", color: "inherit" }}
+  >
+    JOIN CONSORTIUM
+  </Link>
+</button>
+
               </div>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="https://www.trocaire.org/wp-content/uploads/2022/06/Somalia-5-scaled-1.jpg" className="d-block w-100" alt="245D" />
+            <img src="Somalia.webp" className="d-block w-100" alt="245D" />
             <div className="carousel-caption carousel-caption-style">
               <div className="caption-background">
                 <h5>ADVOCATING FOR EQUALITY</h5>
@@ -123,7 +129,7 @@ The MROs Consortium in Somalia aims in Bringing Somalia to the Forefront.</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="https://gdb.voanews.com/019e0000-0aff-0242-99b0-08da875f3f67_w1200_r1.jpg" className="d-block w-100" alt="PCA Services" />
+            <img src="src/components/somalia2.avif" className="d-block w-100" alt="PCA Services" />
             <div className="carousel-caption carousel-caption-style">
               <div className="caption-background">
               <h5>

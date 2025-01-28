@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion"; 
+import { ArrowLeft } from "lucide-react";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -68,6 +69,25 @@ const Signup = () => {
 
   return (
     <section className="bg-white flex flex-col min-h-screen justify-between">
+       <div className="absolute top-4 left-4">
+        <Link to="/login" className="flex items-center hover:underline" style={{ color: "#002D74" }}>
+          <motion.div
+            animate={{
+              x: [0, -10, 0], // Move to the left and back
+            }}
+            transition={{
+              duration: 1, // Total time for the animation
+              repeat: Infinity, // Repeat infinitely
+              repeatType: "loop", // Loop the animation
+              ease: "easeInOut", // Smooth easing
+            }}
+          >
+            <ArrowLeft className="mr-2" />
+          </motion.div>
+          Back
+        </Link>
+      </div>
+
       <div
         className="flex flex-col-reverse md:flex-row max-w-5xl mx-auto w-full items-center"
         style={{ marginTop: getMarginTop() }} 
@@ -160,7 +180,7 @@ const Signup = () => {
                 <option value="member">Provisional membership</option>
                 <option value="member">Observer membership</option>
                 <option value="member">Affiliate  membership</option>
-                {/* <option value="admin">Admin</option> */}
+                <option value="admin">Admin</option>
               </select>
               <p className="mt-4 text-center text-xs sm:text-sm text-gray-500">
                 By continuing, you agree to our{" "}
