@@ -974,12 +974,14 @@ nav {
 
 /* Active dropdown links */
 .nav__menu.active .dropdown__link {
-  color: #91b8e0; /* Active dropdown link text color */
+  color: #1d3955; /* Active dropdown link text color */
   font-weight: bold;
+  font-size: 0.8rem; /* Smaller text size */
 }
 
+
 .nav__menu.active .dropdown__link:hover {
-  background-color: #272625;
+  background-color: #6bc2e4;
   color: #fff;
 }
 
