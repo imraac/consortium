@@ -1,10 +1,8 @@
-// SeatsRepresentatives.js
 import React from 'react';
-import './Secretariat.css'; // Import the same CSS file
-import Footer from './Footer'; // Import the Footer component
+import './Secretariat.css';
+import Footer from './Footer';
 
 const SeatsRepresentatives = () => {
-  // Seats Representatives
   const seatsRepresentatives = [
     { role: 'Somali Protection Cluster Seat', email: 'spc.seat@mrosconsortium.org' },
     { role: 'Humanitarian Country Team HCT Seat', email: 'hct.seat@mrosconsortium.org' },
@@ -18,7 +16,7 @@ const SeatsRepresentatives = () => {
   <main
     className="hero-gradient animate-bg relative"
     style={{
-      paddingTop: "calc(var(--navbar-height, 5px) + 1rem)", // Ensure it is below the navbar
+      paddingTop: "calc(var(--navbar-height, 5px) + 1rem)", 
     }}
   >
     <header className="flex flex-row justify-center md:h-96 items-center p-20">

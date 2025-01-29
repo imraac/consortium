@@ -1,11 +1,10 @@
 import React from 'react';
-import './RepresentationComponent.css'; // Optional: Create a CSS file for styling
+import './RepresentationComponent.css'; 
 import Footer from './Footer';
 const RepresentationComponent = () => {
   return (
     <>
   <div className="m-0 p-0 w-full">
-  {/* Hero Section */}
   <div className="m-0 p-0 w-full">
     <main className="hero-gradient animate-bg relative w-full m-0 p-0">
       <header className="flex flex-row justify-center md:h-96 items-center p-8">
@@ -29,7 +28,6 @@ const RepresentationComponent = () => {
 </div>
 
 
-      {/* Representation Section */}
       <div className="representation-container">
         <section className="representation-content">
           <h2>Representation</h2>
@@ -55,7 +53,6 @@ const RepresentationComponent = () => {
         </section>
       </div>
 
-      {/* Footer Section */}
     <Footer />
     </>
   );

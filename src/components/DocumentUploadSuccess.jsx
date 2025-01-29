@@ -7,7 +7,7 @@ const DocumentUploadSuccess = ({ approvalMessage }) => {
     const navigate = useNavigate();
 
     const handleClose = () => {
-        navigate("/landingpage"); // Navigate to the landing page on close
+        navigate("/landingpage");
     };
 
     return (
@@ -29,8 +29,8 @@ const DocumentUploadSuccess = ({ approvalMessage }) => {
                         id="Layer_1"
                         style={{ enableBackground: "new 0 0 512 512" }}
                         viewBox="0 0 512 512"
-                        width="64" // Adjust width
-                        height="64" // Adjust height
+                        width="64"
+                        height="64" 
                         xmlns="http://www.w3.org/2000/svg"
                     >
                         <style type="text/css">

@@ -54,7 +54,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth); // Track screen width
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth); 
   const { login } = useAuth();
   const navigate = useNavigate();
 

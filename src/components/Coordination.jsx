@@ -1,18 +1,17 @@
 
 
 import React from 'react';
-import './Coordination.css'; // Import a CSS file for styling if needed
+import './Coordination.css';
 import Footer from './Footer';
 
 const Coordination = () => {
   return (
     <div>
-      {/* Hero Section */}
       <div>
   <main
     className="hero-gradient animate-bg relative"
     style={{
-      marginTop: "0" , // Ensure there is no space between the hero and navbar
+      marginTop: "0" , 
     }}
   >
     <header className="flex flex-row justify-center md:h-96 items-center p-20">
@@ -26,15 +25,14 @@ const Coordination = () => {
     </header>
 
     <img
-      src="/readinguncle.jpg" // Correct image path without "/public"
+      src="/readinguncle.jpg"
       alt="Minority Rights Organizations"
       className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-      style={{ opacity: 0 }} // Start with opacity 0
+      style={{ opacity: 0 }} 
     />
   </main>
 </div>
  
-      {/* Coordination Section */}
       <div className="coordination-wrapper">
         <div className="text-container">
           <h2>Coordination</h2>
@@ -82,7 +80,6 @@ const Coordination = () => {
             </div>
           </div>
 
-          {/* Information Sharing Section */}
           <div>
             <h3>Information Sharing</h3>
             <p>We ensure that valuable information is shared through:</p>

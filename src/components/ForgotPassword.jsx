@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import './ForgotPassword.css'; // Ensure to import the CSS file
+import './ForgotPassword.css'; 
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
@@ -18,8 +18,7 @@ const ForgotPassword = () => {
             const res = await axios.post('http://localhost:5000/reset-password', { email });
             setMessage(res.data.message);
             
-            // Navigate to login page after a successful password reset request
-           // Update this path if your login route is different
+           
 
         } catch (err) {
             setError(err.response?.data.message || "Error sending reset email.");

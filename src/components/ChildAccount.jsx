@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./ChildAccount.css"; // Import your CSS file for styling
+import "./ChildAccount.css";
 
 const ChildAccount = () => {
     // Static data for child accounts
@@ -11,7 +11,7 @@ const ChildAccount = () => {
        
     ];
     const handleBack = () => {
-        navigate("/member-account-administrator"); // Change this to the route you want to navigate to
+        navigate("/member-account-administrator"); 
     };
 
 

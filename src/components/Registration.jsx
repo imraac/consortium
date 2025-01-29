@@ -114,7 +114,7 @@ const Registration = () => {
 
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
-        generatePDF(); // Generate PDF after successful submission
+        generatePDF(); 
         setFormData({
           fullName: '',
           acronym: '',
@@ -127,8 +127,8 @@ const Registration = () => {
           participatesInConsortium: false,
           understandsPrinciples: false,
         });
-        setCurrentStep((prev) => prev + 1); // Move to the next step
-        navigate('/personal-details'); // Navigate to the next page automatically
+        setCurrentStep((prev) => prev + 1); 
+        navigate('/personal-details');
       } else {
         setError('Registration failed');
       }

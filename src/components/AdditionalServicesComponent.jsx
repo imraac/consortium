@@ -1,12 +1,11 @@
 import React from 'react';
-import './RepresentationComponent.css'; // Reusing the same CSS file
+import './RepresentationComponent.css'; 
 import Footer from './Footer';
 
 const AdditionalServicesComponent = () => {
   return (
     <>
     <div className="m-0 p-0 w-full">
-  {/* Hero Section */}
   <div className="m-0 p-0 w-full">
     <main className="hero-gradient animate-bg relative w-full m-0 p-0">
       <header className="flex flex-row justify-center md:h-96 items-center p-8">
@@ -30,7 +29,6 @@ const AdditionalServicesComponent = () => {
 </div>
 
 
-      {/* Additional Services Section */}
       <div className="information-sharing-container">
         <h2>Additional Services</h2>
         <p>We provide a range of additional services including:</p>

@@ -1,10 +1,8 @@
-// FeatureStories.js
 import React from 'react';
-import './Secretariat.css'; // Import the same CSS file
-import Footer from './Footer'; // Import the Footer component
+import './Secretariat.css'; 
+import Footer from './Footer'; 
 
 const FeatureStories = () => {
-  // Feature Stories content
   const featureStories = [
     { title: 'Case Studies', description: 'In-depth stories of successful initiatives and projects led by consortium members.' },
     { title: 'Member Spotlights', description: 'Highlights of achievements and contributions from individual members.' },
@@ -25,15 +23,14 @@ const FeatureStories = () => {
           </header>
           
           <img
-            src="/readinguncle.jpg" // Correct image path without "/public"
+            src="/readinguncle.jpg" 
             alt="Minority Rights Organizations"
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-            style={{ opacity: 0 }} // Start with opacity 0
+            style={{ opacity: 0 }} 
           />
         </main>
       </div>
 
-      {/* Feature Stories Section */}
       <div className="secretariat-container">
         <div className="secretariat-section membership-info">
           <h2 className="consortium-title">Feature Stories</h2>
@@ -48,7 +45,6 @@ const FeatureStories = () => {
         </div>
       </div>
       
-      {/* Footer at the bottom of the page */}
       <div className='footer'>
         <Footer />
       </div>

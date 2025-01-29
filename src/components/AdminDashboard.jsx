@@ -115,7 +115,6 @@ const AdminDashboard = () => {
     setSearchTerm(e.target.value.toLowerCase());
   };
 
-  // Filter users and applications based on the search term
   const filteredUsers = users.filter(
     (user) =>
       user.email.toLowerCase().includes(searchTerm) ||
@@ -157,13 +156,14 @@ const AdminDashboard = () => {
         <main className="admin-dash-main-body">
           <div className="admin-dash-promo-card">
             <h1>This page is only visible to Minority Rights Organizations (MRO) Consortium Admin</h1>
-            <button>This Dashboard is tailored to streamline the processes involved in overseeing applications from Minority Rights Organizations (MRO) Consortium site users.</button>
+            <button>This Dashboard is tailored to streamline the processes involved in overseeing applications from Minority Rights Organizations (MRO) Consortium site users. If page not working contact Developer </button>
+
           </div>
 
-          {/* Buttons to show users and applications */}
+        
           <div className="admin-dash-toggle-buttons">
-            <button onClick={toggleUserCard}>Toggle User List</button>
-            <button onClick={toggleApplicationCard}>Toggle Application List</button>
+            {/* <button onClick={toggleUserCard}>Toggle User List</button> */}
+            <button onClick={toggleApplicationCard}>Tap Here For Application List</button>
           </div>
 
           {isUserCardVisible && (
@@ -197,6 +197,8 @@ const AdminDashboard = () => {
             <div className="admin-dash-application-card">
               <h2>Minority Rights Organizations (MRO) Consortium application requests</h2>
               <h4>Approve / Reject Member applications</h4>
+              <h>Check Document status . Pending / Approved </h>
+              <h4>Revisit applications of Prior Members Options</h4>
               <table className="admin-dash-application-table">
                 <thead>
                   <tr>

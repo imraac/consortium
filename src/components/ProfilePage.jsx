@@ -2,7 +2,7 @@
 
 
 import React, { useState, useEffect } from "react";
-import "./ProfilePage.css"; // Import the CSS file for styling
+import "./ProfilePage.css";
 import Footer from './Footer';
 
 const ProfilePage = () => {
@@ -18,9 +18,8 @@ const ProfilePage = () => {
     
   });
 
-  const [profilePicture, setProfilePicture] = useState(null); // State for profile picture
+  const [profilePicture, setProfilePicture] = useState(null); 
 
-  // Fetch agency data for mission and website and member account data
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
@@ -31,7 +30,7 @@ const ProfilePage = () => {
         }
 
         // Fetching member account data
-        const memberResponse = await fetch('http://localhost:5000/member-account/1', { // Change the ID as needed
+        const memberResponse = await fetch('http://localhost:5000/member-account/1', { 
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -53,7 +52,7 @@ const ProfilePage = () => {
           }));
         }
 
-        // Fetching agency data for mission and website
+        // Fetching agency data mission and website
         const agencyResponse = await fetch('http://localhost:5000/agency', {
           method: 'GET',
           headers: {
@@ -64,11 +63,11 @@ const ProfilePage = () => {
 
         const agencyData = await agencyResponse.json();
         if (agencyData && agencyData.agencies.length > 0) {
-          const firstAgency = agencyData.agencies[0]; // Get the first agency
+          const firstAgency = agencyData.agencies[0]; 
           setProfileData((prevData) => ({
             ...prevData,
-            mission: firstAgency.mission_statement || "", // Update mission
-            website: firstAgency.website || "", // Update website
+            mission: firstAgency.mission_statement || "", 
+            website: firstAgency.website || "", 
           }));
         }
       } catch (error) {

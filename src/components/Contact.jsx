@@ -6,7 +6,7 @@ const Contact = () => {
       width: '80%',
       margin: 'auto',
       padding: '80px 0',
-      marginTop: '80px', // Ensure the map is not hidden by the navbar
+      marginTop: '80px',
     },
     iframe: {
       width: '100%',
@@ -20,7 +20,7 @@ const Contact = () => {
       gap: '20px',
     },
     contactCol: {
-      flex: '1 1 48%', // Allow columns to resize responsively
+      flex: '1 1 48%', 
       marginBottom: '30px',
     },
     contactDiv: {
@@ -59,14 +59,13 @@ const Contact = () => {
     buttonHover: {
       background: '#d32f2f',
     },
-    // Media query for responsiveness
     '@media (max-width: 768px)': {
       contactUs: {
         width: '90%',
-        flexDirection: 'column', // Stack columns vertically on smaller screens
+        flexDirection: 'column', 
       },
       contactCol: {
-        flex: '1 1 100%', // Make columns take full width
+        flex: '1 1 100%', 
       },
       heading: {
         fontSize: '16px',

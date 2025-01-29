@@ -739,7 +739,7 @@
   
   .admin-dash-toggle-buttons button {
     padding: 10px;
-    background-color: #007bff;
+    background-color: #e69c3c;
     color: white;
     border: none;
     border-radius: 5px;
@@ -747,6 +747,6 @@
   }
   
   .admin-dash-toggle-buttons button:hover {
-    background-color: #0056b3;
+    background-color: #6eb300;
   }
   

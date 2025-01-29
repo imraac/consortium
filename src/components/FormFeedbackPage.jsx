@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import './FormFeedbackPage.css'; // Ensure you create this CSS file for styles
+import './FormFeedbackPage.css'; 
 
 const FormFeedbackPage = () => {
     const location = useLocation();
@@ -20,10 +20,8 @@ const FormFeedbackPage = () => {
                 </p>
             )}
 
-            {/* Button to go back */}
             <button className="backButton" onClick={() => window.history.back()}>Go Back</button>
 
-            {/* Link to go to /document-upload */}
             <Link to="/document-upload">
                 <button className="uploadButton">
                     Go to Document Upload

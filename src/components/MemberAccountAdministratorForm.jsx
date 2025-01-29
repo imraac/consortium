@@ -3,12 +3,11 @@
 
 
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom'; 
 import './MemberAccountAdministratorForm.css';
 
-// Contact detail page
 const MemberAccountAdministratorForm = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
   const [formData, setFormData] = useState({
     agencyRegistrationDate: '',
     agencyRegistrationNumber: '',
@@ -43,7 +42,7 @@ const MemberAccountAdministratorForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const token = localStorage.getItem('token'); // Retrieve your JWT token
+    const token = localStorage.getItem('token'); 
 
     const config = {
       headers: {
@@ -57,8 +56,8 @@ const MemberAccountAdministratorForm = () => {
         method: 'POST',
         headers: config.headers,
         body: JSON.stringify({
-          member_name: formData.hqName, // Assuming member_name is the name of the contact
-          member_email: formData.hqEmail, // Assuming member_email is the email of the contact
+          member_name: formData.hqName, 
+          member_email: formData.hqEmail, 
           agency_registration_date: formData.agencyRegistrationDate,
           agency_registration_number: formData.agencyRegistrationNumber,
           hq_name: formData.hqName,
@@ -92,11 +91,9 @@ const MemberAccountAdministratorForm = () => {
       const data = await response.json();
       console.log('Response from backend:', data);
 
-      // Redirect to agency-details page after successful submission
-      navigate('/agency-details'); // Use navigate to go to the agency-details page
+      navigate('/agency-details'); 
     } catch (error) {
       console.error('Error submitting form:', error);
-      // Handle error accordingly
     }
   };
 

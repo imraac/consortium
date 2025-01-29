@@ -18,7 +18,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Update screen width on resize
+    
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
@@ -73,13 +73,13 @@ const Signup = () => {
         <Link to="/login" className="flex items-center hover:underline" style={{ color: "#002D74" }}>
           <motion.div
             animate={{
-              x: [0, -10, 0], // Move to the left and back
+              x: [0, -10, 0], 
             }}
             transition={{
-              duration: 1, // Total time for the animation
-              repeat: Infinity, // Repeat infinitely
-              repeatType: "loop", // Loop the animation
-              ease: "easeInOut", // Smooth easing
+              duration: 1, 
+              repeat: Infinity, 
+              repeatType: "loop",
+              ease: "easeInOut", 
             }}
           >
             <ArrowLeft className="mr-2" />
@@ -204,7 +204,6 @@ const Signup = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <motion.div
   style={{ textAlign: "center", padding: "1rem" }}
   initial={{ y: 50 }}

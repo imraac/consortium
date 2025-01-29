@@ -7,9 +7,7 @@ import Footer from './Footer';
 const Certification = () => {
   return (
     <div>
-      {/* Hero Section */}
       <div className="m-0 p-0 w-full">
-  {/* Hero Section */}
   <div className="m-0 p-0 w-full">
     <main className="hero-gradient animate-bg relative w-full m-0 p-0">
       <header className="flex flex-row justify-center md:h-96 items-center p-8">
@@ -33,7 +31,6 @@ const Certification = () => {
 </div>
 
 
-      {/* Certification Content */}
       <div className="certification-wrapper">
         <h2 className="certification-title">NGO-Certification</h2>
         <p className="certification-intro">
@@ -56,7 +53,6 @@ const Certification = () => {
           </li>
         </ul>
       </div>
-         {/* Footer component */}
          <Footer />
     </div>
   );

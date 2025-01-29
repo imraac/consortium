@@ -25,11 +25,9 @@ function ContactInfo() {
       tel1,
       tel2,
     });
-    // Add logic to update the HQ contact information (API call or state update)
   };
 
   const handleBack = () => {
-    // Navigate back to the previous page
     window.history.back();
   };
 
@@ -41,7 +39,6 @@ function ContactInfo() {
       <div className="edit-hq-contact-container">
         <h2>Edit HQ Contact Information</h2>
         <form onSubmit={handleSubmit} className="edit-hq-contact-form">
-          {/* Name */}
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input
@@ -54,7 +51,6 @@ function ContactInfo() {
             />
           </div>
 
-          {/* Position */}
           <div className="form-group">
             <label htmlFor="position">Position:</label>
             <input

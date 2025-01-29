@@ -1,12 +1,12 @@
 import React from 'react';
-import './Advocacy.css'; // Adjust the path as necessary
+import './Advocacy.css'; 
 import Footer from "./Footer";
 
 const Advocacy = () => {
   return (
     <>
-      <div className="advocacy-main-container"> {/* Main container for flex layout */}
-        <div className="advocacy-container left-aligned"> {/* Left-aligned container */}
+      <div className="advocacy-main-container"> 
+        <div className="advocacy-container left-aligned"> 
           <div className="advocacy-section">
             <h2>SERVICES </h2>
             <h2>  &   ADVOCACY</h2>
@@ -41,7 +41,7 @@ const Advocacy = () => {
             </ul>
           </div>
         </div>
-        <div className="advocacy-container right-aligned"> {/* New thin and long right-aligned container */}
+        <div className="advocacy-container right-aligned"> 
           <div className="advocacy-section">
             <h2>ADDITIONAL SERVICES</h2>
             

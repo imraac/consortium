@@ -1,20 +1,17 @@
 
 
 import React, { useEffect } from 'react';
-import Footer from './Footer'; // Import the Footer component
-import './CoreValues.css'; // Import your CSS styles (if needed)
+import Footer from './Footer'; 
+import './CoreValues.css'; 
 
 const CoreValues = () => {
-  // Scroll to top when the component is rendered
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div>
-    {/* Hero Section */}
     <div className="m-0 p-0 w-full">
-  {/* Hero Section */}
   <div className="m-0 p-0 w-full">
     <main className="hero-gradient animate-bg relative w-full m-0 p-0">
       <header className="flex flex-row justify-center md:h-96 items-center p-8">
@@ -39,7 +36,6 @@ const CoreValues = () => {
 
 
 
-      {/* Core Values Section */}
       <div className="core-values-wrapper">
         <h2>Our Core Values</h2>
         <p>
@@ -71,9 +67,7 @@ const CoreValues = () => {
             </p>
           </li>
         </ul>
-        
-        {/* Footer component */}
-        <Footer />
+                <Footer />
       </div>
     </div>
   );

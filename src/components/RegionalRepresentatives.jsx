@@ -1,9 +1,7 @@
 import React from 'react';
-import './Secretariat.css'; // Reusing the same CSS file
-import Footer from './Footer'; // Import the Footer component
-
+import './Secretariat.css'; 
+import Footer from './Footer'; 
 const RegionalRepresentatives = () => {
-  // Regional representatives
   const regionalMembers = [
     { role: 'Regional Coordinator - Benadir (Mogadishu based)', email: 'rc.benadir@mrosconsortium.org' },
     { role: 'Regional Coordinator – Somaliland (Hargeisa based)', email: 'rc.somaliland@mrosconsortium.org' },
@@ -16,12 +14,11 @@ const RegionalRepresentatives = () => {
 
   return (
     <div className="secretariat-page">
-      {/* Hero Section */}
       <div>
   <main
     className="hero-gradient animate-bg relative"
     style={{
-      paddingTop: "calc(var(--navbar-height, 5px) + 1rem)", // Ensure it is below the navbar
+      paddingTop: "calc(var(--navbar-height, 5px) + 1rem)", 
     }}
   >
     <header className="flex flex-row justify-center md:h-96 items-center p-20">
@@ -35,16 +32,15 @@ const RegionalRepresentatives = () => {
     </header>
 
     <img
-      src="/readinguncle.jpg" // Correct image path without "/public"
+      src="/readinguncle.jpg" 
       alt="Minority Rights Organizations"
       className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-      style={{ opacity: 0 }} // Start with opacity 0
+      style={{ opacity: 0 }} 
     />
   </main>
 </div>
 
 
-      {/* Regional Representatives Section */}
       <div className="secretariat-container">
         <div className="secretariat-section membership-info">
           <h2 className="consortium-title">Regional Representatives</h2>
@@ -61,7 +57,6 @@ const RegionalRepresentatives = () => {
         </div>
       </div>
       
-      {/* Footer at the bottom of the page */}
       <div className='footer'>
         <Footer />
       </div>

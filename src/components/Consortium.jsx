@@ -107,19 +107,19 @@ const Consortium = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <a
-            href="/MROs_Membership_Application_Form.docx" // Relative path to your document
-            download // Enables download functionality
+            href="/MROs_Membership_Application_Form.docx" 
+            download 
           style={{
   backgroundColor: '#fa6005',
   color: '#fff',
   border: 'none',
   padding: '10px 20px',
-  marginBottom: '20px',  // Ensure positive margin is applied
+  marginBottom: '20px',  
   borderRadius: '5px',
   textDecoration: 'none',
   cursor: 'pointer',
   fontSize: '16px',
-  display: 'inline-block',  // Ensure the margin is applied properly
+  display: 'inline-block', 
 }}
 
           >
@@ -209,7 +209,6 @@ const Consortium = () => {
           I confirm that I have read and understood the requirements for registering with the MROs Consortium. I understand that all information submitted during the registration process will be held in confidence and can only be accessed by the MROs Consortium Secretariat.
         </motion.p>
 
-        {/* Registration buttons and links */}
         <div style={{ marginTop: '20px' }}>
           <motion.div
             initial={{ opacity: 0 }}
@@ -242,7 +241,6 @@ const Consortium = () => {
         </div>
       </div>
 
-      {/* Sleek Container */}
       <div className="sleek-container">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -275,7 +273,6 @@ const Consortium = () => {
          Together, as the MROs-Consortium, we can unite our resources, knowledge, and experiences to amplify our impact and achieve our shared mission of empowering minority communities. Join us in creating meaningful change today!
         </motion.p>
 
-        {/* Image placeholder */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -313,7 +310,6 @@ const Consortium = () => {
             />
           </motion.div>
           
-          {/* New Text Section */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

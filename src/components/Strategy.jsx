@@ -9,9 +9,7 @@ import Footer from './Footer';
 const Strategy = () => {
   return (
     <div className="page-wrapper">
-      {/* New header section */}
       <div className="m-0 p-0 w-full">
-  {/* Hero Section */}
   <div className="m-0 p-0 w-full">
     <main className="hero-gradient animate-bg relative w-full m-0 p-0">
       <header className="flex flex-row justify-center md:h-96 items-center p-8">
@@ -35,7 +33,6 @@ const Strategy = () => {
 </div>
 
 
-      {/* Existing content */}
       <div className="content">
         <div className="strategy-container">
           <p>
@@ -55,7 +52,7 @@ const Strategy = () => {
         </div>
       </div>
 
-      <Footer /> {/* Footer will now stick to the bottom */}
+      <Footer /> 
     </div>
   );
 };

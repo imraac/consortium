@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css'; // Import Leaflet styles
+import 'leaflet/dist/leaflet.css'; 
 import Footer from "./Footer";
 import './Navbar.css'; 
 import { Link } from 'react-router-dom';
-import Marquee from 'react-marquee-slider'; // Ensure you have this package installed
+import Marquee from 'react-marquee-slider'; 
 
 const LandingPage = () => {
   const theme = {
@@ -44,40 +44,56 @@ const LandingPage = () => {
 
   return (
     <div>
-      {/* Carousel Section */}
-      <div id="carouselExample" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+           <div id="carouselExample" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img src="/voice.jpg" className="d-block w-100" alt="FMS" />
             <div className="carousel-caption carousel-caption-style">
               <div className="caption-background">
-                <h5>
-                  <span style={{ color: '#FFC700' }}> VOICE</span> OF THE <span style={{ color: '#dbd924' }}>VOICELESS</span>
-                </h5>
-                <p style={{ color: '#ffffff', padding: '10px', borderRadius: '1px', opacity: '0.8' }}>
+                <h5><span style={{ color: '#FFC700' }}>VOICE</span> OF THE <span style={{ color: '#dbd924' }}>VOICELESS</span></h5>
+                <p style={{ color: '#ffffff', padding: '10px', opacity: '0.8' }}>
                   The MROs Consortium in Somalia aims in Bringing Somalia to the Forefront.
                 </p>
-                <button className="btn btn-success caption-button bg-green-500 text-white py-2 px-4 shadow-md transition-transform transform hover:scale-105 active:scale-95">
-                  <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
-                    JOIN CONSORTIUM
-                  </Link>
+                <button className="btn btn-success caption-button">
+                  <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>JOIN CONSORTIUM</Link>
                 </button>
               </div>
             </div>
           </div>
-          {/* Add additional carousel items */}
+          <div className="carousel-item">
+            <img src="/Somalia.webp" className="d-block w-100" alt="245D" />
+            <div className="carousel-caption carousel-caption-style">
+              <div className="caption-background">
+                <h5>ADVOCATING FOR EQUALITY</h5>
+                <p style={{ color: '#FFC700' }}>
+                  The MROs Consortium in Somalia aims to build a powerful coalition that amplifies the voices of minority communities ...
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <img src="/somalia2.avif" className="d-block w-100" alt="PCA Services" />
+            <div className="carousel-caption carousel-caption-style">
+              <div className="caption-background">
+       
+                <h5><span style={{ color: '#FFC700' }}>MARGINALIZED</span> &  <span style={{ color: '#dbd924' }}>MINORITY</span> PEOPLE</h5>
+
+                <p style={{ color: '#34362f' }}>
+                  The MROs Consortium in Somalia aims to build a powerful coalition that amplifies the voices of minority communities ...
+                </p>
+                {/* <button className="btn btn-success caption-button">JOIN CONSORTIUM</button> */}
+              </div>
+            </div>
+          </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
         </button>
         <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
         </button>
       </div>
 
-      {/* Why Us Section */}
       <section className="why-us">
         <img src="/bowl.webp" alt="" className="why-us-image" />
         <div className="why-us-content">
@@ -92,7 +108,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Statistics Section */}
       <section className="statistics" style={{ backgroundColor: 'white', padding: '40px 0' }}>
         <div className="container text-center">
           <div className="row">

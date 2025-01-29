@@ -7,7 +7,7 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden; 
     
 }
 
@@ -15,15 +15,15 @@ body {
 
     padding: 20px;
     background-color: white;
-    background-image: url('https://cdni.iconscout.com/illustration/premium/thumb/signed-document-illustration-download-in-svg-png-gif-file-formats--agreement-application-approval-approve-arrangement-paperwork-pack-business-illustrations-3382856.png');
+    background-image: url('upload.png');
     background-size: 700px 450px;
     background-repeat: no-repeat;
     background-position: center;
  
     max-width: 100%;
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 0 auto; 
     margin-top:-5px;
-    overflow: hidden; /* Prevents overflow of content */
+    overflow: hidden; 
 }
 
 .modal {

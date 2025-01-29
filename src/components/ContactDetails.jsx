@@ -2,13 +2,12 @@
 
 
 
-// ContactDetails.js
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './ContactDetails.css';
 import Footer from './Footer';
-import ProgressBar from './ProgressBar'; // Import the ProgressBar component
+import ProgressBar from './ProgressBar'; 
 
 const ContactDetails = () => {
   const navigate = useNavigate();
@@ -18,8 +17,8 @@ const ContactDetails = () => {
     keyStaffs: [{ name: '', contact: '', clan: '' }],
   });
   
-  const currentStep = 1; // Set the current step to 2 for ContactDetails
-  const totalSteps = 3; // Set total steps for tracking
+  const currentStep = 1; 
+  const totalSteps = 3;
   const stepNames = ['Registration', 'Personal Details', 'Consortium Registration', 'Contact Details', 'Agency Details'];
 
   useEffect(() => {
@@ -62,7 +61,7 @@ const ContactDetails = () => {
         await axios.post('http://localhost:5000/key-staff', staff, config);
       }
       console.log('Contact Details submitted:', contactData);
-      navigate('/consortium-registration'); // Navigate to the next page
+      navigate('/consortium-registration'); 
     } catch (error) {
       console.error('There was an error submitting the contact details!', error);
     }

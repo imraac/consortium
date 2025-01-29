@@ -22,7 +22,6 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // Close menu when a link is clicked
   const closeMenu = () => {
     setMenuOpen(false);
   };
@@ -194,7 +193,7 @@ const Navbar = () => {
                 {dropdownOpen === 3 && ( // Check if dropdown index is 3
                   <div className="dropdown__content">
                     <Link
-                      to="/resource-1" // Replace with actual path
+                      to="/resource-1" 
                       className="dropdown__link"
                       style={{ textDecoration: "none" }}
                       onClick={closeMenu}
@@ -204,7 +203,7 @@ const Navbar = () => {
 
                     </Link>
                     <Link
-                      to="/resource-2" // Replace with actual path
+                      to="/resource-2" 
                       className="dropdown__link"
                       style={{ textDecoration: "none" }}
                       onClick={closeMenu}
@@ -212,7 +211,7 @@ const Navbar = () => {
                      ⁠Report & Publication
                     </Link>
                     <Link
-                      to="/resource-3" // Replace with actual path
+                      to="/resource-3" 
                       className="dropdown__link"
                       style={{ textDecoration: "none" }}
                       onClick={closeMenu}
