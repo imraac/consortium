@@ -300,7 +300,9 @@ const Registration = () => {
     setSuccess(false);
     setLoading(true);
   
-    // Validation to ensure all required fields are filled
+    // Log the data to verify it's correct
+    console.log(formData);
+  
     if (!formData.fullName || !formData.description || !formData.missionStatement || !formData.website || !formData.yearsOperational || !formData.reasonToJoin) {
       setError('Please fill in all required fields.');
       setLoading(false);
@@ -309,7 +311,7 @@ const Registration = () => {
   
     try {
       const token = localStorage.getItem('token');
-      const userId = localStorage.getItem('userId'); // Assuming userId is stored in localStorage
+      const userId = localStorage.getItem('userId');
   
       const response = await axios.post(
         'https://mro-consortium-backend-production.up.railway.app/agency',
@@ -320,11 +322,11 @@ const Registration = () => {
           mission_statement: formData.missionStatement,
           website: formData.website,
           is_ngo: formData.isNGO,
-          years_operational: formData.yearsOperational,
+          years_operational: parseInt(formData.yearsOperational, 10) || 0, // Ensure it's an integer
           reason_for_joining: formData.reasonToJoin,
           willing_to_participate: formData.participatesInConsortium,
           commitment_to_principles: formData.understandsPrinciples,
-          user_id: userId, // Assuming the user is logged in, use userId from localStorage
+          user_id: userId, // Use valid userId
         },
         {
           headers: {
@@ -355,12 +357,9 @@ const Registration = () => {
       }
     } catch (error) {
       if (error.response) {
-        console.error(error.response.data); // Logs the response from the backend
-        if (error.response.status === 401) {
-          setError('Unauthorized access. Please log in.');
-          navigate('/login');
-        } else if (error.response.status === 422) {
-          setError('Unprocessable Content: Please check the input fields and try again.');
+        console.error("Error response:", error.response.data);
+        if (error.response.status === 422) {
+          setError(`Unprocessable Content: ${JSON.stringify(error.response.data)}`);
         } else {
           setError('An error occurred. Please try again.');
         }
