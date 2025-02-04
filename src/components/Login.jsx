@@ -259,7 +259,7 @@ const Registration = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
-      navigate('/login');
+      navigate('regitration');
     }
     window.scrollTo(0, 0);
   }, [navigate]);
