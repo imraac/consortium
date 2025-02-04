@@ -82,20 +82,20 @@ const Registration = () => {
     setError(null);
     setSuccess(false);
     setLoading(true);
-  
+
     if (!formData.fullName || !formData.description || !formData.missionStatement || !formData.website || !formData.yearsOperational || !formData.reasonToJoin) {
       setError('Please fill in all required fields.');
       setLoading(false);
       return;
     }
-  
+
     console.log('Form data being submitted:', formData); // Log the form data
-  
+
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
         'https://mro-consortium-backend-production.up.railway.app/agency',
-        JSON.stringify({
+        {
           full_name: formData.fullName,
           acronym: formData.acronym,
           description: formData.description,
@@ -106,7 +106,7 @@ const Registration = () => {
           reason_for_joining: formData.reasonToJoin,
           willing_to_participate: formData.participatesInConsortium,
           commitment_to_principles: formData.understandsPrinciples,
-        }),
+        },
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -114,7 +114,7 @@ const Registration = () => {
           },
         }
       );
-  
+
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
         generatePDF();
@@ -137,19 +137,22 @@ const Registration = () => {
       }
     } catch (error) {
       if (error.response) {
-        console.log(error.response.data); // Log the error response data
+        console.log('Error response data:', error.response.data); // Log the error response data
         if (error.response.status === 401) {
           setError('Unauthorized access. Please log in.');
           navigate('/login');
         } else {
-          setError('An error occurred. Please try again.');
+          setError(`An error occurred: ${error.response.data.message || 'Please try again.'}`);
         }
+      } else if (error.request) {
+        setError('No response received from the server. Please try again.');
+      } else {
+        setError('An unexpected error occurred. Please try again.');
       }
     } finally {
       setLoading(false);
     }
   };
-  
 
   return (
     <div className="registration-container">
