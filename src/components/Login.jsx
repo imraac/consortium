@@ -363,7 +363,7 @@ const Registration = () => {
     } catch (error) {
       if (error.response && error.response.status === 401) {
         setError('Unauthorized access. Please log in.');
-        navigate('/login');
+        navigate('/registration');
       } else {
         setError('An error occurred. Please try again.');
       }
