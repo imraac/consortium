@@ -84,7 +84,7 @@ const ConsortiumRegistrationForm = () => {
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        const response = await fetch('http://127.0.0.1:5000/consortium', {
+        const response = await fetch('mrosconsortium.org/consortium', {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${getToken()}`,
