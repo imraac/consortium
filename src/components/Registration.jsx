@@ -452,7 +452,7 @@ import axios from 'axios';
 import jsPDF from 'jspdf';
 import './Registration.css';
 import Footer from './Footer';
-import ProgressBar from './ProgressBar'; // Import the ProgressBar component
+import ProgressBar from './ProgressBar';
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -466,6 +466,8 @@ const Registration = () => {
     reasonToJoin: '',
     participatesInConsortium: false,
     understandsPrinciples: false,
+    email: '', // Add email
+    password: '', // Add password
   });
 
   const [error, setError] = useState(null);
@@ -539,7 +541,7 @@ const Registration = () => {
   
     try {
       let token = localStorage.getItem('token');
-      if (!token) {
+      if (!token && (formData.email && formData.password)) {
         const loginResponse = await axios.post('https://mro-consortium-backend-production.up.railway.app/login', {
           email: formData.email,
           password: formData.password,
@@ -587,6 +589,8 @@ const Registration = () => {
           reasonToJoin: '',
           participatesInConsortium: false,
           understandsPrinciples: false,
+          email: '', // Reset email field
+          password: '', // Reset password field
         });
         setCurrentStep((prev) => prev + 1);
         navigate('/personal-details');
@@ -597,8 +601,6 @@ const Registration = () => {
       console.error("Error Details:", error);
       if (error.response) {
         console.error("Response Data:", error.response.data);
-        console.error("Response Status:", error.response.status);
-        console.error("Response Headers:", error.response.headers);
         setError(`Error: ${error.response.data.message || "Something went wrong."}`);
       } else if (error.request) {
         console.error("No Response Received:", error.request);
@@ -628,17 +630,23 @@ const Registration = () => {
           </div>
           <div className="form-group">
             <label>Key Activities and Programs:</label>
-            <p>(Provide an overview of the main activities and programs your organization is involved in, particularly those related to minority rights.)</p>
             <textarea name="description" value={formData.description} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label>Mission Statement:</label>
-            <p>(Please describe the primary goals and mission of your organization, focusing on its relevance to minority rights.)</p>
             <textarea name="missionStatement" value={formData.missionStatement} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label>Website:</label>
             <input type="url" name="website" value={formData.website} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Email:</label>
+            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Password:</label>
+            <input type="password" name="password" value={formData.password} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label>
@@ -652,7 +660,6 @@ const Registration = () => {
           </div>
           <div className="form-group">
             <label>Reason for Joining:</label>
-            <p>(Explain how membership will benefit your organization and how you plan to contribute to the consortium’s goals.)</p>
             <textarea name="reasonToJoin" value={formData.reasonToJoin} onChange={handleChange} required />
           </div>
           <div className="form-group">
