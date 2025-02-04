@@ -142,15 +142,21 @@ const Registration = () => {
         setError('Registration failed');
       }
     } catch (error) {
-      if (error.response && error.response.status === 401) {
-        setError('Unauthorized access. Please log in.');
-        navigate('/login');
+      console.error("Error Details:", error);
+      if (error.response) {
+        console.error("Response Data:", error.response.data);
+        console.error("Response Status:", error.response.status);
+        console.error("Response Headers:", error.response.headers);
+        setError(`Error: ${error.response.data.message || "Something went wrong."}`);
+      } else if (error.request) {
+        console.error("No Response Received:", error.request);
+        setError("No response from the server. Check your internet connection.");
       } else {
-        setError('An error occurred. Please try again.');
+        console.error("Request Error:", error.message);
+        setError(`Request Error: ${error.message}`);
       }
-    } finally {
-      setLoading(false);
     }
+    
   };
   return (
     <div className="registration-container">
