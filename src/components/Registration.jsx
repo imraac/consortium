@@ -23,8 +23,8 @@ const Registration = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [currentStep, setCurrentStep] = useState(1); // Initialize current step
-  const totalSteps = 6; // Define total steps
+  const [currentStep, setCurrentStep] = useState(1);
+  const totalSteps = 6;
   const navigate = useNavigate();
   const stepNames = ['Registration', 'Personal Details', 'Consortium Registration', 'Contact Details', 'Agency Details'];
 
@@ -90,7 +90,16 @@ const Registration = () => {
     }
 
     try {
-      const token = localStorage.getItem('token');
+      let token = localStorage.getItem('token');
+      if (!token) {
+        const loginResponse = await axios.post('https://mro-consortium-backend-production.up.railway.app/login', {
+          email: formData.email,
+          password: formData.password,
+        });
+        token = loginResponse.data.access_token;
+        localStorage.setItem('token', token);
+      }
+
       const response = await axios.post(
         'https://mro-consortium-backend-production.up.railway.app/agency',
         {
@@ -114,7 +123,7 @@ const Registration = () => {
 
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
-        generatePDF(); 
+        generatePDF();
         setFormData({
           fullName: '',
           acronym: '',
@@ -127,7 +136,7 @@ const Registration = () => {
           participatesInConsortium: false,
           understandsPrinciples: false,
         });
-        setCurrentStep((prev) => prev + 1); 
+        setCurrentStep((prev) => prev + 1);
         navigate('/personal-details');
       } else {
         setError('Registration failed');
@@ -143,7 +152,6 @@ const Registration = () => {
       setLoading(false);
     }
   };
-
   return (
     <div className="registration-container">
       <ProgressBar currentStep={currentStep} totalSteps={totalSteps} stepNames={stepNames} />
