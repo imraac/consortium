@@ -294,26 +294,28 @@ const Registration = () => {
 
     doc.save('Registration_Details.pdf');
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     setSuccess(false);
     setLoading(true);
-
+  
+    // Validation to ensure all required fields are filled
     if (!formData.fullName || !formData.description || !formData.missionStatement || !formData.website || !formData.yearsOperational || !formData.reasonToJoin) {
       setError('Please fill in all required fields.');
       setLoading(false);
       return;
     }
-
+  
     try {
       const token = localStorage.getItem('token');
+      const userId = localStorage.getItem('userId'); // Assuming userId is stored in localStorage
+  
       const response = await axios.post(
         'https://mro-consortium-backend-production.up.railway.app/agency',
         {
           full_name: formData.fullName,
-          acronym: formData.acronym,
+          acronym: formData.acronym || '', // Default to empty string if not provided
           description: formData.description,
           mission_statement: formData.missionStatement,
           website: formData.website,
@@ -322,6 +324,7 @@ const Registration = () => {
           reason_for_joining: formData.reasonToJoin,
           willing_to_participate: formData.participatesInConsortium,
           commitment_to_principles: formData.understandsPrinciples,
+          user_id: userId, // Assuming the user is logged in, use userId from localStorage
         },
         {
           headers: {
@@ -329,10 +332,10 @@ const Registration = () => {
           },
         }
       );
-
+  
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
-        generatePDF(); 
+        generatePDF();
         setFormData({
           fullName: '',
           acronym: '',
@@ -345,22 +348,28 @@ const Registration = () => {
           participatesInConsortium: false,
           understandsPrinciples: false,
         });
-        setCurrentStep((prev) => prev + 1); 
+        setCurrentStep((prev) => prev + 1);
         navigate('/personal-details');
       } else {
         setError('Registration failed');
       }
     } catch (error) {
-      if (error.response && error.response.status === 401) {
-        setError('Unauthorized access. Please log in.');
-        navigate('/login');
-      } else {
-        setError('An error occurred. Please try again.');
+      if (error.response) {
+        console.error(error.response.data); // Logs the response from the backend
+        if (error.response.status === 401) {
+          setError('Unauthorized access. Please log in.');
+          navigate('/login');
+        } else if (error.response.status === 422) {
+          setError('Unprocessable Content: Please check the input fields and try again.');
+        } else {
+          setError('An error occurred. Please try again.');
+        }
       }
     } finally {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="registration-container">
