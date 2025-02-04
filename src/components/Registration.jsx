@@ -133,11 +133,14 @@ const Registration = () => {
         setError('Registration failed');
       }
     } catch (error) {
-      if (error.response && error.response.status === 401) {
-        setError('Unauthorized access. Please log in.');
-        navigate('/login');
-      } else {
-        setError('An error occurred. Please try again.');
+      if (error.response) {
+        console.log(error.response.data); // Log the error response data
+        if (error.response.status === 401) {
+          setError('Unauthorized access. Please log in.');
+          navigate('/login');
+        } else {
+          setError('An error occurred. Please try again.');
+        }
       }
     } finally {
       setLoading(false);
@@ -213,5 +216,3 @@ const Registration = () => {
 };
 
 export default Registration;
-
-
