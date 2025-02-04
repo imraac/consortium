@@ -52,13 +52,13 @@ const ContactDetails = () => {
 
     try {
       for (const founder of contactData.founders) {
-        await axios.post('http://localhost:5000/founders', founder, config);
+        await axios.post('https://mro-consortium-backend-production.up.railway.app/founders', founder, config);
       }
       for (const director of contactData.boardDirectors) {
-        await axios.post('http://localhost:5000/board-directors', director, config);
+        await axios.post('https://mro-consortium-backend-production.up.railway.app/board-directors', director, config);
       }
       for (const staff of contactData.keyStaffs) {
-        await axios.post('http://localhost:5000/key-staff', staff, config);
+        await axios.post('https://mro-consortium-backend-production.up.railway.app/key-staff', staff, config);
       }
       console.log('Contact Details submitted:', contactData);
       navigate('/consortium-registration'); 

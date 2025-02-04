@@ -70,7 +70,7 @@ const DocumentUpload = () => {
         const token = localStorage.getItem('token'); // Retrieve your JWT token
     
         try {
-            const uploadResponse = await fetch('http://127.0.0.1:5000/upload', {
+            const uploadResponse = await fetch('https://mro-consortium-backend-production.up.railway.app/upload', {
                 method: 'POST',
                 body: formData,
                 headers: {

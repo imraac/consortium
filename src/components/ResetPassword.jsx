@@ -17,7 +17,7 @@ const ResetPassword = () => {
     useEffect(() => {
         const verifyToken = async () => {
             try {
-                const res = await axios.get(`mrosconsortium.org/reset-password/${token}`);
+                const res = await axios.get(`https://mro-consortium-backend-production.up.railway.app/reset-password/${token}`);
                 if (res.status === 200) {
                     setMessage(res.data.message); 
                 } else {
@@ -39,7 +39,7 @@ const ResetPassword = () => {
         }
 
         try {
-            const res = await axios.post(`mrosconsortium.org/reset-password/${token}`, { password: newPassword });
+            const res = await axios.post(`https://mro-consortium-backend-production.up.railway.app/reset-password/${token}`, { password: newPassword });
             if (res.status === 200) {
                 setMessage("Password has been reset successfully.");
                 setError(""); 

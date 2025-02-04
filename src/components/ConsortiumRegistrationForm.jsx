@@ -84,7 +84,7 @@ const ConsortiumRegistrationForm = () => {
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        const response = await fetch('mrosconsortium.org/consortium', {
+        const response = await fetch('https://mro-consortium-backend-production.up.railway.app/consortium', {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${getToken()}`,

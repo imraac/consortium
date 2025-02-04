@@ -30,7 +30,7 @@ const ProfilePage = () => {
         }
 
         // Fetching member account data
-        const memberResponse = await fetch('http://localhost:5000/member-account/1', { 
+        const memberResponse = await fetch('https://mro-consortium-backend-production.up.railway.app/member-account/1', { 
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -53,7 +53,7 @@ const ProfilePage = () => {
         }
 
         // Fetching agency data mission and website
-        const agencyResponse = await fetch('http://localhost:5000/agency', {
+        const agencyResponse = await fetch('https://mro-consortium-backend-production.up.railway.app/agency', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,

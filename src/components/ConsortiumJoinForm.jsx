@@ -52,7 +52,7 @@ const ConsortiumJoinForm = () => {
         };
 
         try {
-            const response = await axios.post('http://127.0.0.1:5000/consortium_application', applicationData, config);
+            const response = await axios.post('https://mro-consortium-backend-production.up.railway.app/consortium_application', applicationData, config);
             navigate('/feedback', { state: { message: response.data.message, isError: false } });
         } catch (error) {
             if (error.response) {

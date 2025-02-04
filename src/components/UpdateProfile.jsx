@@ -41,7 +41,7 @@ const UpdateProfile = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/agency', {
+      const response = await fetch('https://mro-consortium-backend-production.up.railway.app/agency', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -12,7 +12,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchLoginHistory = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/login-history", {
+        const response = await fetch("https://mro-consortium-backend-production.up.railway.app/login-history", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -31,7 +31,7 @@ const Dashboard = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/logout", {
+      const response = await fetch("https://mro-consortium-backend-production.up.railway.app/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

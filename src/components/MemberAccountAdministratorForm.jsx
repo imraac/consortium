@@ -52,7 +52,7 @@ const MemberAccountAdministratorForm = () => {
     };
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/member-account', {
+      const response = await fetch('https://mro-consortium-backend-production.up.railway.app/member-account', {
         method: 'POST',
         headers: config.headers,
         body: JSON.stringify({

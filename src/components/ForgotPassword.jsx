@@ -15,7 +15,7 @@ const ForgotPassword = () => {
         setError('');
 
         try {
-            const res = await axios.post('http://localhost:5000/reset-password', { email });
+            const res = await axios.post('https://mro-consortium-backend-production.up.railway.app/reset-password', { email });
             setMessage(res.data.message);
             
            
