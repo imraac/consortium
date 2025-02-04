@@ -6,6 +6,7 @@ import './Registration.css';
 import Footer from './Footer';
 import ProgressBar from './ProgressBar'; // Import the ProgressBar component
 
+
 const Registration = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -23,8 +24,8 @@ const Registration = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [currentStep, setCurrentStep] = useState(1); // Initialize current step
-  const totalSteps = 6; // Define total steps
+  const [currentStep, setCurrentStep] = useState(1);
+  const totalSteps = 6;
   const navigate = useNavigate();
   const stepNames = ['Registration', 'Personal Details', 'Consortium Registration', 'Contact Details', 'Agency Details'];
 
@@ -38,10 +39,10 @@ const Registration = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: type === 'checkbox' ? checked : value,
-    });
+    }));
   };
 
   const generatePDF = () => {
@@ -61,13 +62,12 @@ const Registration = () => {
       { label: 'Are you an NGO?', value: formData.isNGO ? 'Yes' : 'No' },
       { label: 'Years Operational:', value: formData.yearsOperational },
       { label: 'Reason for Joining:', value: formData.reasonToJoin },
-      { label: 'Willing to participate in the consortium?', value: formData.participatesInConsortium ? 'Yes' : 'No' },
-      { label: 'Understands the principles outlined?', value: formData.understandsPrinciples ? 'Yes' : 'No' },
+      { label: 'Participates in Consortium?', value: formData.participatesInConsortium ? 'Yes' : 'No' },
+      { label: 'Understands Principles?', value: formData.understandsPrinciples ? 'Yes' : 'No' },
     ];
 
     let yPosition = 40;
     const lineSpacing = 10;
-
     textLines.forEach(({ label, value }) => {
       const splitText = doc.splitTextToSize(`${label} ${value}`, 180);
       doc.text(splitText, 10, yPosition);
@@ -114,7 +114,7 @@ const Registration = () => {
 
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
-        generatePDF(); 
+        generatePDF();
         setFormData({
           fullName: '',
           acronym: '',
@@ -127,7 +127,7 @@ const Registration = () => {
           participatesInConsortium: false,
           understandsPrinciples: false,
         });
-        setCurrentStep((prev) => prev + 1); 
+        setCurrentStep((prev) => prev + 1);
         navigate('/personal-details');
       } else {
         setError('Registration failed');
