@@ -236,6 +236,7 @@ const Registration = () => {
     reasonToJoin: '',
     participatesInConsortium: false,
     understandsPrinciples: false,
+    subject: '',  // Add subject field to state
   });
 
   const [error, setError] = useState(null);
@@ -294,55 +295,46 @@ const Registration = () => {
 
     doc.save('Registration_Details.pdf');
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     setSuccess(false);
     setLoading(true);
-  
-    // Log the form data to verify it's correct
-    console.log(formData);
-  
+
     if (!formData.fullName || !formData.description || !formData.missionStatement || !formData.website || !formData.yearsOperational || !formData.reasonToJoin) {
       setError('Please fill in all required fields.');
       setLoading(false);
       return;
     }
-  
+
     try {
       const token = localStorage.getItem('token');
-      const userId = localStorage.getItem('userId');
-  
-      const data = {
-        full_name: formData.fullName,
-        acronym: formData.acronym || '',
-        description: formData.description,
-        mission_statement: formData.missionStatement,
-        website: formData.website,
-        is_ngo: formData.isNGO,
-        years_operational: parseInt(formData.yearsOperational, 10) || 0,
-        reason_for_joining: formData.reasonToJoin,
-        willing_to_participate: formData.participatesInConsortium,
-        commitment_to_principles: formData.understandsPrinciples,
-        user_id: userId,
-        subject: formData.subject || '', // Make sure subject is included if required
-      };
-  
-      console.log(data); // Log the final data
-  
       const response = await axios.post(
         'https://mro-consortium-backend-production.up.railway.app/agency',
-        data,
+        {
+          full_name: formData.fullName,
+          acronym: formData.acronym,
+          description: formData.description,
+          mission_statement: formData.missionStatement,
+          website: formData.website,
+          is_ngo: formData.isNGO,
+          years_operational: formData.yearsOperational,
+          reason_for_joining: formData.reasonToJoin,
+          willing_to_participate: formData.participatesInConsortium,
+          commitment_to_principles: formData.understandsPrinciples,
+          subject: formData.subject ? String(formData.subject) : "", // Ensure subject is a string
+        },
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       );
-  
+
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
-        generatePDF();
+        generatePDF(); 
         setFormData({
           fullName: '',
           acronym: '',
@@ -354,26 +346,24 @@ const Registration = () => {
           reasonToJoin: '',
           participatesInConsortium: false,
           understandsPrinciples: false,
+          subject: '', // Reset the subject field
         });
-        setCurrentStep((prev) => prev + 1);
+        setCurrentStep((prev) => prev + 1); 
         navigate('/personal-details');
       } else {
         setError('Registration failed');
       }
     } catch (error) {
-      if (error.response) {
-        console.error("Error response:", error.response.data);
-        if (error.response.status === 422) {
-          setError(`Unprocessable Content: ${JSON.stringify(error.response.data)}`);
-        } else {
-          setError('An error occurred. Please try again.');
-        }
+      if (error.response && error.response.status === 401) {
+        setError('Unauthorized access. Please log in.');
+        navigate('/login');
+      } else {
+        setError('An error occurred. Please try again.');
       }
     } finally {
       setLoading(false);
     }
   };
-  
 
   return (
     <div className="registration-container">
