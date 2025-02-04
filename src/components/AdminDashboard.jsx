@@ -32,7 +32,7 @@ const AdminDashboard = () => {
 
   const fetchPendingApplications = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/admin/documents', {
+      const response = await fetch('https://mro-consortium-backend-production.up.railway.app/admin/documents', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -52,7 +52,7 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/users/list', {
+      const response = await fetch('https://mro-consortium-backend-production.up.railway.app/users/list', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -73,7 +73,7 @@ const AdminDashboard = () => {
   const updateApplicationStatus = async (id, newStatus) => {
     const method = newStatus === 'Approved' ? 'approve' : 'reject';
     try {
-      const response = await fetch(`http://127.0.0.1:5000/admin/documents/${id}/${method}`, {
+      const response = await fetch(`https://mro-consortium-backend-production.up.railway.app/admin/documents/${id}/${method}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
   };
 
   const openModal = (documentPath) => {
-    const baseUrl = 'http://127.0.0.1:5000/uploads';
+    const baseUrl = 'https://mro-consortium-backend-production.up.railway.app/uploads';
     const url = `${baseUrl}/${documentPath}`;
     if (url) {
       setModalContent(url);
