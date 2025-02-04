@@ -530,13 +530,13 @@ const Registration = () => {
     setError(null);
     setSuccess(false);
     setLoading(true);
-
+  
     if (!formData.fullName || !formData.description || !formData.missionStatement || !formData.website || !formData.yearsOperational || !formData.reasonToJoin) {
       setError('Please fill in all required fields.');
       setLoading(false);
       return;
     }
-
+  
     try {
       let token = localStorage.getItem('token');
       if (!token) {
@@ -547,28 +547,32 @@ const Registration = () => {
         token = loginResponse.data.access_token;
         localStorage.setItem('token', token);
       }
-
+  
+      // Convert formData object to a JSON string
+      const formDataString = JSON.stringify({
+        full_name: formData.fullName,
+        acronym: formData.acronym,
+        description: formData.description,
+        mission_statement: formData.missionStatement,
+        website: formData.website,
+        is_ngo: formData.isNGO,
+        years_operational: formData.yearsOperational,
+        reason_for_joining: formData.reasonToJoin,
+        willing_to_participate: formData.participatesInConsortium,
+        commitment_to_principles: formData.understandsPrinciples,
+      });
+  
       const response = await axios.post(
         'https://mro-consortium-backend-production.up.railway.app/agency',
-        {
-          full_name: formData.fullName,
-          acronym: formData.acronym,
-          description: formData.description,
-          mission_statement: formData.missionStatement,
-          website: formData.website,
-          is_ngo: formData.isNGO,
-          years_operational: formData.yearsOperational,
-          reason_for_joining: formData.reasonToJoin,
-          willing_to_participate: formData.participatesInConsortium,
-          commitment_to_principles: formData.understandsPrinciples,
-        },
+        formDataString,  // Send the JSON string
         {
           headers: {
             Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',  // Ensure the content type is set to JSON
           },
         }
       );
-
+  
       if (response.status === 200 || response.status === 201) {
         setSuccess(true);
         generatePDF();
@@ -604,8 +608,8 @@ const Registration = () => {
         setError(`Request Error: ${error.message}`);
       }
     }
-    
   };
+  
 
   return (
     <div className="registration-container">
