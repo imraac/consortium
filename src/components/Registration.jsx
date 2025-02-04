@@ -300,7 +300,7 @@ const Registration = () => {
     setSuccess(false);
     setLoading(true);
   
-    // Log the data to verify it's correct
+    // Log the form data to verify it's correct
     console.log(formData);
   
     if (!formData.fullName || !formData.description || !formData.missionStatement || !formData.website || !formData.yearsOperational || !formData.reasonToJoin) {
@@ -313,21 +313,26 @@ const Registration = () => {
       const token = localStorage.getItem('token');
       const userId = localStorage.getItem('userId');
   
+      const data = {
+        full_name: formData.fullName,
+        acronym: formData.acronym || '',
+        description: formData.description,
+        mission_statement: formData.missionStatement,
+        website: formData.website,
+        is_ngo: formData.isNGO,
+        years_operational: parseInt(formData.yearsOperational, 10) || 0,
+        reason_for_joining: formData.reasonToJoin,
+        willing_to_participate: formData.participatesInConsortium,
+        commitment_to_principles: formData.understandsPrinciples,
+        user_id: userId,
+        subject: formData.subject || '', // Make sure subject is included if required
+      };
+  
+      console.log(data); // Log the final data
+  
       const response = await axios.post(
         'https://mro-consortium-backend-production.up.railway.app/agency',
-        {
-          full_name: formData.fullName,
-          acronym: formData.acronym || '', // Default to empty string if not provided
-          description: formData.description,
-          mission_statement: formData.missionStatement,
-          website: formData.website,
-          is_ngo: formData.isNGO,
-          years_operational: parseInt(formData.yearsOperational, 10) || 0, // Ensure it's an integer
-          reason_for_joining: formData.reasonToJoin,
-          willing_to_participate: formData.participatesInConsortium,
-          commitment_to_principles: formData.understandsPrinciples,
-          user_id: userId, // Use valid userId
-        },
+        data,
         {
           headers: {
             Authorization: `Bearer ${token}`,
