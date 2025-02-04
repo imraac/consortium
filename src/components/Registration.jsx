@@ -92,7 +92,7 @@ const Registration = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        'http://127.0.0.1:5000/agency',
+        'mrosconsortium.org/agency',
         {
           full_name: formData.fullName,
           acronym: formData.acronym,
