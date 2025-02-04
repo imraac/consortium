@@ -215,10 +215,13 @@
 // export default Registration;
 
 
-
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import jsPDF from 'jspdf';
+import './Registration.css';
+import Footer from './Footer';
+import ProgressBar from './ProgressBar';
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -232,78 +235,76 @@ const Registration = () => {
     reason_for_joining: '',
     willing_to_participate: false,
     commitment_to_principles: false,
-    user_id: null, // Will be set after fetching user data
   });
 
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+  const totalSteps = 6;
   const navigate = useNavigate();
+  const stepNames = ['Registration', 'Personal Details', 'Consortium Registration', 'Contact Details', 'Agency Details'];
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
       navigate('/login');
-    } else {
-      fetchUserData(token);
     }
+    window.scrollTo(0, 0);
   }, [navigate]);
-
-  // Fetch user data to get user_id
-  const fetchUserData = async (token) => {
-    try {
-      const response = await axios.get(
-        'https://mro-consortium-backend-production.up.railway.app/user', // Adjust endpoint if needed
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      setFormData((prev) => ({ ...prev, user_id: response.data.id }));
-    } catch (error) {
-      console.error("Failed to fetch user data:", error);
-      setError("Error fetching user details.");
-    }
-  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
+    setFormData({
+      ...formData,
       [name]: type === 'checkbox' ? checked : value,
-    }));
+    });
+  };
+
+  const generatePDF = () => {
+    const doc = new jsPDF();
+    doc.setFont('Helvetica', 'bold');
+    doc.setFontSize(16);
+    doc.text('Registration Details', 105, 20, { align: 'center' });
+    doc.setFont('Helvetica', 'normal');
+    doc.setFontSize(12);
+
+    let yPosition = 40;
+    const lineSpacing = 10;
+    
+    Object.entries(formData).forEach(([key, value]) => {
+      doc.text(`${key.replace(/_/g, ' ')}: ${value}`, 10, yPosition);
+      yPosition += lineSpacing;
+    });
+
+    doc.save('Registration_Details.pdf');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+    setSuccess(false);
     setLoading(true);
-
-    // Ensure correct data types
-    const formattedData = {
-      ...formData,
-      is_ngo: Boolean(formData.is_ngo),
-      willing_to_participate: Boolean(formData.willing_to_participate),
-      commitment_to_principles: Boolean(formData.commitment_to_principles),
-      years_operational: Number(formData.years_operational), // Ensure number type
-    };
-
-    console.log("Submitting Data:", formattedData);
 
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
         'https://mro-consortium-backend-production.up.railway.app/agency',
-        formattedData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-        }
+        formData,
+        { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      console.log("Response:", response.data);
-      navigate('/personal-details');
+      if (response.status === 200 || response.status === 201) {
+        setSuccess(true);
+        generatePDF();
+        setCurrentStep((prev) => prev + 1);
+        navigate('/personal-details');
+      } else {
+        setError('Registration failed');
+      }
     } catch (error) {
-      console.error("Error Response:", error.response?.data || error.message);
-      setError(error.response?.data?.message || "An error occurred. Please try again.");
+      setError(error.response?.status === 401 ? 'Unauthorized access. Please log in.' : 'An error occurred. Please try again.');
+      if (error.response?.status === 401) navigate('/login');
     } finally {
       setLoading(false);
     }
@@ -311,30 +312,27 @@ const Registration = () => {
 
   return (
     <div className="registration-container">
-      <h1>Basic Information</h1>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="full_name" value={formData.full_name} onChange={handleChange} required placeholder="Full Name" />
-        <input type="text" name="acronym" value={formData.acronym} onChange={handleChange} placeholder="Acronym (Optional)" />
-        <textarea name="description" value={formData.description} onChange={handleChange} required placeholder="Description" />
-        <textarea name="mission_statement" value={formData.mission_statement} onChange={handleChange} required placeholder="Mission Statement" />
-        <input type="url" name="website" value={formData.website} onChange={handleChange} required placeholder="Website" />
-        <label>
-          <input type="checkbox" name="is_ngo" checked={formData.is_ngo} onChange={handleChange} />
-          Are you an NGO?
-        </label>
-        <input type="number" name="years_operational" value={formData.years_operational} onChange={handleChange} required placeholder="Years Operational" />
-        <textarea name="reason_for_joining" value={formData.reason_for_joining} onChange={handleChange} required placeholder="Reason for Joining" />
-        <label>
-          <input type="checkbox" name="willing_to_participate" checked={formData.willing_to_participate} onChange={handleChange} />
-          Willing to participate in the Consortium?
-        </label>
-        <label>
-          <input type="checkbox" name="commitment_to_principles" checked={formData.commitment_to_principles} onChange={handleChange} />
-          Commitment to Principles?
-        </label>
-        <button type="submit" disabled={loading}>{loading ? 'Submitting...' : 'Submit'}</button>
-      </form>
+      <ProgressBar currentStep={currentStep} totalSteps={totalSteps} stepNames={stepNames} />
+      <div className="registration-form-container">
+        <h1>Basic Information</h1>
+        <p>All fields are required unless stated otherwise.</p>
+        <form onSubmit={handleSubmit}>
+          {Object.keys(formData).map((key) => (
+            <div className="form-group" key={key}>
+              <label>{key.replace(/_/g, ' ').toUpperCase()}:</label>
+              {typeof formData[key] === 'boolean' ? (
+                <input type="checkbox" name={key} checked={formData[key]} onChange={handleChange} />
+              ) : (
+                <input type={key.includes('website') ? 'url' : 'text'} name={key} value={formData[key]} onChange={handleChange} required />
+              )}
+            </div>
+          ))}
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          {success && <p style={{ color: 'green' }}>Submission successful!</p>}
+          <button type="submit" disabled={loading}>{loading ? 'Submitting...' : 'Submit'}</button>
+        </form>
+      </div>
+      <Footer />
     </div>
   );
 };
