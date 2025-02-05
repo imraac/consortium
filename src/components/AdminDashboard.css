@@ -125,7 +125,7 @@
 /* Promo Card */
 /* Promo Card */
 .admin-dash-promo-card {
-    background-image: url('happypeople.jpg'); /* Path to your background image */
+    background-color: #ff6600; /* Path to your background image */
     background-size: cover; /* Cover the entire card */
     background-position: center; /* Center the background image */
     color: #f7f7c8; /* Text color */

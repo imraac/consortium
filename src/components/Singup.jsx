@@ -180,7 +180,7 @@ const Signup = () => {
                 <option value="member">Provisional membership</option>
                 <option value="member">Observer membership</option>
                 <option value="member">Affiliate  membership</option>
-                <option value="admin">Admin</option>
+                {/* <option value="admin">Admin</option> */}
               </select>
               <p className="mt-4 text-center text-xs sm:text-sm text-gray-500">
                 By continuing, you agree to our{" "}
