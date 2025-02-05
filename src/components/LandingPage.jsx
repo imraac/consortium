@@ -17,10 +17,10 @@ const LandingPage = () => {
   
   const [paused, setPaused] = useState(false);
   const statsData = [
-    { count: 5000, text: "Communities Supported" },
-    { count: 150, text: "Advocacy Campaigns" },
-    { count: 25, text: "Years of Service" },
-    { count: 112, text: "SNC Membership in 2024" },
+    { count: 0, text: "Communities Supported" },
+    { count: 0, text: "Advocacy Campaigns" },
+    { count: 0, text: "Years of Service" },
+    { count: 0, text: "SNC Membership in 2024" },
   ];
 
   const [counts, setCounts] = useState(statsData.map(() => 0));
