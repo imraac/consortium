@@ -108,7 +108,7 @@ const ConsortiumRegistrationForm = () => {
           navigate('/contact-details');
         } else {
           const errorData = await response.json();
-          setSubmissionMessage(`you have taken alot of time on this page, For data security Please Login again by tapping the Join Button  : ${errorData.message}`);
+          setSubmissionMessage(`Please speed up the process a bit for now tap the button again to upload the data. : ${errorData.message}`);
         }
       } catch (error) {
         setSubmissionMessage(`Error: ${error.message}`);
