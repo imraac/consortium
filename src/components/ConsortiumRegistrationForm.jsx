@@ -115,6 +115,7 @@ const ConsortiumRegistrationForm = () => {
       } finally {
         setIsSubmitting(false);
       }
+      
     } else {
       setSubmissionMessage('Validation failed. Please fill in the required fields.');
     }
