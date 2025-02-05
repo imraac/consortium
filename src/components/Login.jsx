@@ -99,7 +99,7 @@ const Login = () => {
         }
       }, 5000);
     } catch (err) {
-      setSuccess("Sorry, your password was incorrect. Please double-check your password.");
+      setSuccess("Sorry.Please double-check your details.");
       setLoading(false);
       setError(err.response?.data?.message || "Opss!");
     }
